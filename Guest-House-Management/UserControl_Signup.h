@@ -188,6 +188,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Register_First_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
+			this->Register_First_Name->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Register_First_Name->Location = System::Drawing::Point(261, 59);
 			this->Register_First_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Register_First_Name->Name = L"Register_First_Name";

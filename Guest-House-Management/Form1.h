@@ -2,8 +2,10 @@
 #include "UserControl_Signup.h"
 #include "UserControl_Login.h"
 #include "Form_Reception.h"
+
 #using <System.dll>
 #using <System.data.dll>
+
 namespace GuestHouseManagement {
 
 	using namespace System;
@@ -20,7 +22,7 @@ namespace GuestHouseManagement {
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
 	public:
-		Form1(void)
+		Form1()
 		{
 			InitializeComponent();
 			//
@@ -124,7 +126,7 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 
-
+	
 	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {

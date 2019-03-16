@@ -24,7 +24,7 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Guest_House_Info : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Guest_House_Info(void)
+		UserControl_Guest_House_Info()
 		{
 			InitializeComponent();
 			//
@@ -53,10 +53,13 @@ namespace GuestHouseManagement {
 	internal: System::Windows::Forms::TextBox^  Txt_Address;
 	internal: System::Windows::Forms::TextBox^  Txt_Name;
 	internal: System::Windows::Forms::Button^  Btn_Submit;
+
+
+
+	internal: System::Windows::Forms::Button^  Btn_User_Types;
+	internal: System::Windows::Forms::Button^  Btn_Room_Types;
 	internal: System::Windows::Forms::Panel^  Second_Panel;
 
-	internal: System::Windows::Forms::Button^  Btn_Room_Types;
-	internal: System::Windows::Forms::Button^  Btn_User_Types;
 
 	private:
 		/// <summary>
@@ -80,9 +83,9 @@ namespace GuestHouseManagement {
 			this->Txt_Address = (gcnew System::Windows::Forms::TextBox());
 			this->Txt_Name = (gcnew System::Windows::Forms::TextBox());
 			this->Btn_Submit = (gcnew System::Windows::Forms::Button());
-			this->Second_Panel = (gcnew System::Windows::Forms::Panel());
-			this->Btn_Room_Types = (gcnew System::Windows::Forms::Button());
 			this->Btn_User_Types = (gcnew System::Windows::Forms::Button());
+			this->Btn_Room_Types = (gcnew System::Windows::Forms::Button());
+			this->Second_Panel = (gcnew System::Windows::Forms::Panel());
 			this->SuspendLayout();
 			// 
 			// Lbl_Register_Name
@@ -189,29 +192,6 @@ namespace GuestHouseManagement {
 			this->Btn_Submit->UseVisualStyleBackColor = false;
 			this->Btn_Submit->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_Submit_Click);
 			// 
-			// Second_Panel
-			// 
-			this->Second_Panel->Location = System::Drawing::Point(0, 3);
-			this->Second_Panel->Name = L"Second_Panel";
-			this->Second_Panel->Size = System::Drawing::Size(262, 215);
-			this->Second_Panel->TabIndex = 69;
-			// 
-			// Btn_Room_Types
-			// 
-			this->Btn_Room_Types->BackColor = System::Drawing::Color::OrangeRed;
-			this->Btn_Room_Types->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Btn_Room_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->Btn_Room_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Room_Types->Location = System::Drawing::Point(315, 334);
-			this->Btn_Room_Types->Margin = System::Windows::Forms::Padding(2);
-			this->Btn_Room_Types->Name = L"Btn_Room_Types";
-			this->Btn_Room_Types->Size = System::Drawing::Size(142, 48);
-			this->Btn_Room_Types->TabIndex = 70;
-			this->Btn_Room_Types->Text = L"Room Types";
-			this->Btn_Room_Types->UseVisualStyleBackColor = false;
-			this->Btn_Room_Types->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_Room_Types_Click);
-			// 
 			// Btn_User_Types
 			// 
 			this->Btn_User_Types->BackColor = System::Drawing::Color::OrangeRed;
@@ -219,7 +199,7 @@ namespace GuestHouseManagement {
 			this->Btn_User_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Btn_User_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_User_Types->Location = System::Drawing::Point(74, 334);
+			this->Btn_User_Types->Location = System::Drawing::Point(93, 436);
 			this->Btn_User_Types->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_User_Types->Name = L"Btn_User_Types";
 			this->Btn_User_Types->Size = System::Drawing::Size(142, 48);
@@ -228,13 +208,36 @@ namespace GuestHouseManagement {
 			this->Btn_User_Types->UseVisualStyleBackColor = false;
 			this->Btn_User_Types->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_User_Types_Click);
 			// 
+			// Btn_Room_Types
+			// 
+			this->Btn_Room_Types->BackColor = System::Drawing::Color::OrangeRed;
+			this->Btn_Room_Types->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_Room_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Btn_Room_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Btn_Room_Types->Location = System::Drawing::Point(315, 436);
+			this->Btn_Room_Types->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Room_Types->Name = L"Btn_Room_Types";
+			this->Btn_Room_Types->Size = System::Drawing::Size(142, 48);
+			this->Btn_Room_Types->TabIndex = 70;
+			this->Btn_Room_Types->Text = L"Room Types";
+			this->Btn_Room_Types->UseVisualStyleBackColor = false;
+			this->Btn_Room_Types->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_Room_Types_Click);
+			// 
+			// Second_Panel
+			// 
+			this->Second_Panel->Location = System::Drawing::Point(3, 3);
+			this->Second_Panel->Name = L"Second_Panel";
+			this->Second_Panel->Size = System::Drawing::Size(599, 498);
+			this->Second_Panel->TabIndex = 72;
+			// 
 			// UserControl_Guest_House_Info
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->Btn_User_Types);
-			this->Controls->Add(this->Btn_Room_Types);
 			this->Controls->Add(this->Second_Panel);
+			this->Controls->Add(this->Btn_Room_Types);
+			this->Controls->Add(this->Btn_User_Types);
 			this->Controls->Add(this->Btn_Submit);
 			this->Controls->Add(this->Txt_Name);
 			this->Controls->Add(this->Txt_Address);
@@ -319,7 +322,7 @@ private: System::Void Btn_User_Types_Click(System::Object^  sender, System::Even
 		 }
 private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Second_Panel->Controls->Clear();
-			 Second_Panel->Controls->Add(gcnew UserControl_Room_Types);
+			 Second_Panel->Controls->Add(gcnew UserControl_Room_Types());
 			 Second_Panel->Visible = true;
 		 }
 };

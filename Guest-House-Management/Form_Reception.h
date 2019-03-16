@@ -128,6 +128,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Btn_Booking_Info);
 			this->Name = L"Form_Reception";
 			this->Text = L"Form_Reception";
+			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
 			this->ResumeLayout(false);
 
 		}
@@ -139,6 +140,8 @@ namespace GuestHouseManagement {
 		
 			 }
 private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
