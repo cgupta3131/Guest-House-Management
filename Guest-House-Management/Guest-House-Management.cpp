@@ -3,8 +3,6 @@
 #include "stdafx.h"
 #include "Form1.h"
 
-int ID = 0;
-
 using namespace GuestHouseManagement;
 
 [STAThreadAttribute]
