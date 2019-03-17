@@ -1,4 +1,4 @@
-﻿Build started 17-03-2019 11:40:33.
+﻿Build started 17-03-2019 16:02:02.
      1>Project "C:\Users\harpa\Desktop\guest house\17Mar11am\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -6,15 +6,38 @@
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
          All outputs are up-to-date.
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt "Guest-House-Management.cpp" UserControl_Staff.cpp UserControl_Staff_Register.cpp /clr:nostdlib 
+         Guest-House-Management.cpp
+         UserControl_Staff.cpp
+         UserControl_Staff_Register.cpp
+         Generating Code...
          All outputs are up-to-date.
        CoreResGen:
-         No resources are out of date with respect to their source files. Skipping resource generation.
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile UserControl_Staff_Register.resx,Debug\GuestHouseManagement.UserControl_Staff_Register.resources
+         Processing resource file "UserControl_Staff_Register.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Register.resources".
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\harpa\Desktop\guest house\17Mar11am\Debug\Guest-House-Management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form1.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Reception.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Guest_House_Info.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Login.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Room_Types.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Signup.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Edit.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Leave.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Planner.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Record.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Register.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_User_Types.resources /MANIFEST /ManifestFile:"Debug\Guest-House-Management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\harpa\Desktop\guest house\17Mar11am\Debug\Guest-House-Management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\Form_Reception.obj
+         "Debug\Guest-House-Management.obj"
+         Debug\stdafx.obj
+         Debug\UserControl_Guest_House_Info.obj
+         Debug\UserControl_Login.obj
+         Debug\UserControl_Room_Types.obj
+         Debug\UserControl_Signup.obj
+         Debug\UserControl_Staff.obj
+         Debug\UserControl_Staff_Edit.obj
+         Debug\UserControl_Staff_Leave.obj
+         Debug\UserControl_Staff_Planner.obj
+         Debug\UserControl_Staff_Record.obj
+         Debug\UserControl_Staff_Register.obj
+         Debug\UserControl_User_Types.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
          Guest-House-Management.vcxproj -> C:\Users\harpa\Desktop\guest house\17Mar11am\Debug\Guest-House-Management.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\harpa\Desktop\guest house\17Mar11am\Debug\Guest-House-Management.exe;#1" /manifest "Debug\Guest-House-Management.exe.intermediate.manifest"
        FinalizeBuildStatus:
          Deleting file "Debug\Guest-House-Management.unsuccessfulbuild".
          Touching "Debug\Guest-House-Management.lastbuildstate".
@@ -22,4 +45,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.38
+Time Elapsed 00:00:05.42

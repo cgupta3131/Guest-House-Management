@@ -1,11 +1,18 @@
 #pragma once
 
+#using <System.dll>
+#using <System.data.dll>
+
+using namespace std;
 using namespace System;
+using namespace System::Diagnostics;
 using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
+using namespace System::Data::OleDb;
+
 
 
 namespace GuestHouseManagement {
@@ -62,7 +69,9 @@ namespace GuestHouseManagement {
 
 	private: System::Windows::Forms::Label^  label9;
 	private: System::Windows::Forms::TextBox^  Text_Email;
-	private: System::Windows::Forms::Button^  Button_Register;
+	internal: System::Windows::Forms::Button^  Button_Register;
+	private: 
+
 
 
 
@@ -117,6 +126,7 @@ namespace GuestHouseManagement {
 			this->Text_Name->Name = L"Text_Name";
 			this->Text_Name->Size = System::Drawing::Size(243, 22);
 			this->Text_Name->TabIndex = 1;
+			this->Text_Name->TextChanged += gcnew System::EventHandler(this, &UserControl_Staff_Register::Text_Name_TextChanged);
 			// 
 			// label2
 			// 
@@ -162,10 +172,13 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Designation
 			// 
+			this->Text_Designation->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->Text_Designation->FormattingEnabled = true;
+			this->Text_Designation->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"Receptionist", L"Room Service", L"House Keeping", 
+				L"Watchman"});
 			this->Text_Designation->Location = System::Drawing::Point(222, 44);
 			this->Text_Designation->Name = L"Text_Designation";
-			this->Text_Designation->Size = System::Drawing::Size(239, 24);
+			this->Text_Designation->Size = System::Drawing::Size(243, 24);
 			this->Text_Designation->TabIndex = 10;
 			// 
 			// label5
@@ -181,7 +194,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Date_Join->Location = System::Drawing::Point(222, 81);
 			this->Date_Join->Name = L"Date_Join";
-			this->Date_Join->Size = System::Drawing::Size(200, 22);
+			this->Date_Join->Size = System::Drawing::Size(243, 22);
 			this->Date_Join->TabIndex = 12;
 			// 
 			// label6
@@ -195,10 +208,12 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Gender
 			// 
+			this->Text_Gender->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->Text_Gender->FormattingEnabled = true;
+			this->Text_Gender->Items->AddRange(gcnew cli::array< System::Object^  >(3) {L"Male", L"Female", L"Other"});
 			this->Text_Gender->Location = System::Drawing::Point(222, 115);
 			this->Text_Gender->Name = L"Text_Gender";
-			this->Text_Gender->Size = System::Drawing::Size(227, 24);
+			this->Text_Gender->Size = System::Drawing::Size(243, 24);
 			this->Text_Gender->TabIndex = 14;
 			// 
 			// label7
@@ -214,7 +229,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Date_Birth->Location = System::Drawing::Point(222, 156);
 			this->Date_Birth->Name = L"Date_Birth";
-			this->Date_Birth->Size = System::Drawing::Size(200, 22);
+			this->Date_Birth->Size = System::Drawing::Size(243, 22);
 			this->Date_Birth->TabIndex = 0;
 			// 
 			// label8
@@ -251,12 +266,13 @@ namespace GuestHouseManagement {
 			// 
 			// Button_Register
 			// 
-			this->Button_Register->Location = System::Drawing::Point(245, 354);
+			this->Button_Register->Location = System::Drawing::Point(278, 354);
 			this->Button_Register->Name = L"Button_Register";
 			this->Button_Register->Size = System::Drawing::Size(123, 32);
 			this->Button_Register->TabIndex = 20;
 			this->Button_Register->Text = L"Register!";
-			this->Button_Register->UseVisualStyleBackColor = true;
+			this->Button_Register->UseVisualStyleBackColor = false;
+			this->Button_Register->Click += gcnew System::EventHandler(this, &UserControl_Staff_Register::Button_Register_Click);
 			// 
 			// UserControl_Staff_Register
 			// 
@@ -283,6 +299,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label1);
 			this->Name = L"UserControl_Staff_Register";
 			this->Size = System::Drawing::Size(719, 389);
+			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Register::UserControl_Staff_Register_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -290,7 +307,80 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
-private: System::Void Designation_Click(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void Designation_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+
+
+	private: System::Void Button_Register_Click(System::Object^  sender, System::EventArgs^  e) {
+
+				 
+				 
+				 
+			MessageBox::Show("Not approved Yet!");
+
+
+			try{
+			OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
+			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+
+			String ^ employee_name = Text_Name->Text;
+			String ^ designation = Text_Designation->Text;
+			String ^ doj = Date_Join->Text;
+			String ^ gender = Text_Gender->Text;
+			String ^ dob = Date_Birth->Text;
+			String ^ id = Text_Id->Text;
+			String ^ address = Text_Add->Text;
+			String ^ contact = Text_Contact->Text;
+			String ^ email = Text_Email->Text;
+
+			Debug::WriteLine(employee_name);
+			Debug::WriteLine("\n\n\n");
+		
+			
+			String ^ insertString = "insert into Staff_Register([Employee_Name],[Designation],[Date_of_joining],[Gender],[Date_of_birth],[Identity_proof],[Address],[Contact_Number],[Email]) VALUES('" +employee_name+ "', '" +designation+ "', '" +doj+ "', '" +gender+ "', '" +dob+ "', '" +id+ "', '" +address+ "', '" +contact+ "', '" +email+ "' );";
+			//String ^ insertString = "insert into User([Email],[Password],[Contact_Number],[Approved],[First_Name],[Last_Name],[Category]) values(@email,@password,@contact,@approved,@firstname,@lastname,@category);";
+			//String ^ insertString = "insert into [User] values('" +email+ "', '" +password+ "', '" +contact+ "', '" +approved+ "', '" +firstname+ "', '" +lastname+ "', '" +category+ "' );";
+			Debug::WriteLine(insertString);
+			Debug::WriteLine("\n\n\n");
+
+			//OleDbDataReader ^ dr;
+			DB_Connection->Open();
+
+			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
+			//dr = cmd->ExecuteReader();
+			//cmd->ExecuteNonQuery();
+			cmd->Parameters->Add(gcnew OleDbParameter("@Employee_Name",Convert::ToString(employee_name)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Designation",Convert::ToString(designation)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Date_of_joining",Convert::ToString(doj)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Gender",Convert::ToString(gender)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Date_of_birth",Convert::ToString(dob)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Identity_proof",Convert::ToString(id)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Address",Convert::ToString(address)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Contact_Number",Convert::ToString(contact)));
+			cmd->Parameters->Add(gcnew OleDbParameter("@Email",Convert::ToString(email)));
+
+			//cmd->Parameters->AddWithValue("@email",Register_Email->Text);
+			//cmd->Parameters->AddWithValue("@password",Register_Password->Text);
+			//cmd->Parameters->AddWithValue("@contact",Register_Contact->Text);
+			//cmd->Parameters->AddWithValue("@approved","NO");
+			//cmd->Parameters->AddWithValue("@firstname",Register_First_Name->Text);
+			//cmd->Parameters->AddWithValue("@lastname",Register_Last_Name->Text);
+			//cmd->Parameters->AddWithValue("@category",Register_Category->Text);
+			
+			cmd->ExecuteNonQuery();
+			DB_Connection->Close();
+
+			}
+
+			catch(Exception ^ ex)
+			{
+				MessageBox::Show(ex->Message);
+			}
+
+	}
+		 private: System::Void Text_Name_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+				  }
+private: System::Void UserControl_Staff_Register_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
