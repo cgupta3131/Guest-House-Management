@@ -1,5 +1,5 @@
-﻿Build started 3/17/2019 3:07:01 AM.
-     1>Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
+﻿Build started 17-03-2019 11:40:33.
+     1>Project "C:\Users\harpa\Desktop\guest house\17Mar11am\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
        GenerateTargetFrameworkMonikerAttribute:
@@ -14,12 +14,12 @@
          All outputs are up-to-date.
        Link:
          All outputs are up-to-date.
-         Guest-House-Management.vcxproj -> C:\Users\cgupta3131\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe
+         Guest-House-Management.vcxproj -> C:\Users\harpa\Desktop\guest house\17Mar11am\Debug\Guest-House-Management.exe
        FinalizeBuildStatus:
          Deleting file "Debug\Guest-House-Management.unsuccessfulbuild".
          Touching "Debug\Guest-House-Management.lastbuildstate".
-     1>Done Building Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\harpa\Desktop\guest house\17Mar11am\Guest-House-Management\Guest-House-Management.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.12
+Time Elapsed 00:00:00.38
