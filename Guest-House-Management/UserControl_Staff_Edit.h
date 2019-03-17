@@ -57,9 +57,12 @@ namespace GuestHouseManagement {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Name = L"UserControl_Staff_Edit";
 			this->Size = System::Drawing::Size(719, 389);
+			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Edit::UserControl_Staff_Edit_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void UserControl_Staff_Edit_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
 	};
 }
