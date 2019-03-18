@@ -93,7 +93,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="UserControl_Approve_Users.cpp" />
+    <ClCompile Include="UserControl_Add_Room.cpp" />
     <ClCompile Include="UserControl_Guest_House_Info.cpp" />
     <ClCompile Include="UserControl_Login.cpp" />
     <ClCompile Include="UserControl_Room_Types.cpp" />
@@ -104,6 +104,7 @@
     <ClCompile Include="UserControl_Staff_Planner.cpp" />
     <ClCompile Include="UserControl_Staff_Record.cpp" />
     <ClCompile Include="UserControl_Staff_Register.cpp" />
+    <ClCompile Include="UserControl_Status_Room.cpp" />
     <ClCompile Include="UserControl_User_Types.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -115,16 +116,13 @@
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="UserControl_Approve_Users.h">
+    <ClInclude Include="UserControl_Add_Room.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Guest_House_Info.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Login.h">
-      <FileType>CppControl</FileType>
-    </ClInclude>
-    <ClInclude Include="UserControl_Room_Types.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Signup.h">
@@ -148,6 +146,9 @@
     <ClInclude Include="UserControl_Staff_Register.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="UserControl_Status_Room.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_User_Types.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -163,17 +164,14 @@
     <EmbeddedResource Include="Form_Reception.resx">
       <DependentUpon>Form_Reception.h</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_Approve_Users.resx">
-      <DependentUpon>UserControl_Approve_Users.h</DependentUpon>
+    <EmbeddedResource Include="UserControl_Add_Room.resx">
+      <DependentUpon>UserControl_Add_Room.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Guest_House_Info.resx">
       <DependentUpon>UserControl_Guest_House_Info.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Login.resx">
       <DependentUpon>UserControl_Login.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_Room_Types.resx">
-      <DependentUpon>UserControl_Room_Types.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Signup.resx">
       <DependentUpon>UserControl_Signup.h</DependentUpon>
@@ -195,6 +193,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Register.resx">
       <DependentUpon>UserControl_Staff_Register.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Status_Room.resx">
+      <DependentUpon>UserControl_Status_Room.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_User_Types.resx">
       <DependentUpon>UserControl_User_Types.h</DependentUpon>

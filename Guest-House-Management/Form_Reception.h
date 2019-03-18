@@ -1,6 +1,8 @@
 #pragma once
 #include "UserControl_Guest_House_Info.h"
-#include "UserControl_Approve_Users.h"
+#include "UserControl_Add_Room.h"
+#include "UserControl_Status_Room.h"
+
 namespace GuestHouseManagement {
 
 	using namespace System;
@@ -46,6 +48,9 @@ namespace GuestHouseManagement {
 
 
 	internal: System::Windows::Forms::Panel^  Output_Panel;
+	private: System::Windows::Forms::Button^  Btn_Add_Room;
+	private: System::Windows::Forms::Button^  Btn_Status_Room;
+	internal: 
 	private: 
 
 	private:
@@ -66,24 +71,24 @@ namespace GuestHouseManagement {
 			this->Btn_Guest_Info = (gcnew System::Windows::Forms::Button());
 			this->Btn_Users_Approval = (gcnew System::Windows::Forms::Button());
 			this->Output_Panel = (gcnew System::Windows::Forms::Panel());
+			this->Btn_Add_Room = (gcnew System::Windows::Forms::Button());
+			this->Btn_Status_Room = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Booking_Info
 			// 
-			this->Btn_Booking_Info->Location = System::Drawing::Point(57, 433);
-			this->Btn_Booking_Info->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Btn_Booking_Info->Location = System::Drawing::Point(43, 352);
 			this->Btn_Booking_Info->Name = L"Btn_Booking_Info";
-			this->Btn_Booking_Info->Size = System::Drawing::Size(221, 121);
+			this->Btn_Booking_Info->Size = System::Drawing::Size(166, 98);
 			this->Btn_Booking_Info->TabIndex = 1;
 			this->Btn_Booking_Info->Text = L"Booking Info";
 			this->Btn_Booking_Info->UseVisualStyleBackColor = true;
 			// 
 			// Btn_Staff_Info
 			// 
-			this->Btn_Staff_Info->Location = System::Drawing::Point(57, 256);
-			this->Btn_Staff_Info->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Btn_Staff_Info->Location = System::Drawing::Point(43, 208);
 			this->Btn_Staff_Info->Name = L"Btn_Staff_Info";
-			this->Btn_Staff_Info->Size = System::Drawing::Size(221, 121);
+			this->Btn_Staff_Info->Size = System::Drawing::Size(166, 98);
 			this->Btn_Staff_Info->TabIndex = 2;
 			this->Btn_Staff_Info->Text = L"Staff Info";
 			this->Btn_Staff_Info->UseVisualStyleBackColor = true;
@@ -91,10 +96,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Guest_Info
 			// 
-			this->Btn_Guest_Info->Location = System::Drawing::Point(57, 87);
-			this->Btn_Guest_Info->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Btn_Guest_Info->Location = System::Drawing::Point(43, 71);
 			this->Btn_Guest_Info->Name = L"Btn_Guest_Info";
-			this->Btn_Guest_Info->Size = System::Drawing::Size(221, 121);
+			this->Btn_Guest_Info->Size = System::Drawing::Size(166, 98);
 			this->Btn_Guest_Info->TabIndex = 3;
 			this->Btn_Guest_Info->Text = L"Guest House Info";
 			this->Btn_Guest_Info->UseVisualStyleBackColor = true;
@@ -102,10 +106,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Users_Approval
 			// 
-			this->Btn_Users_Approval->Location = System::Drawing::Point(57, 598);
-			this->Btn_Users_Approval->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Btn_Users_Approval->Location = System::Drawing::Point(43, 486);
 			this->Btn_Users_Approval->Name = L"Btn_Users_Approval";
-			this->Btn_Users_Approval->Size = System::Drawing::Size(221, 121);
+			this->Btn_Users_Approval->Size = System::Drawing::Size(166, 98);
 			this->Btn_Users_Approval->TabIndex = 4;
 			this->Btn_Users_Approval->Text = L"Users Approval";
 			this->Btn_Users_Approval->UseVisualStyleBackColor = true;
@@ -115,23 +118,44 @@ namespace GuestHouseManagement {
 			// 
 			this->Output_Panel->BackColor = System::Drawing::Color::CornflowerBlue;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->Output_Panel->Location = System::Drawing::Point(372, 87);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Output_Panel->Location = System::Drawing::Point(279, 71);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(909, 681);
+			this->Output_Panel->Size = System::Drawing::Size(682, 553);
 			this->Output_Panel->TabIndex = 16;
+			// 
+			// Btn_Add_Room
+			// 
+			this->Btn_Add_Room->Location = System::Drawing::Point(43, 619);
+			this->Btn_Add_Room->Name = L"Btn_Add_Room";
+			this->Btn_Add_Room->Size = System::Drawing::Size(166, 98);
+			this->Btn_Add_Room->TabIndex = 17;
+			this->Btn_Add_Room->Text = L"Add Room";
+			this->Btn_Add_Room->UseVisualStyleBackColor = true;
+			this->Btn_Add_Room->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Add_Room_Click);
+			// 
+			// Btn_Status_Room
+			// 
+			this->Btn_Status_Room->Location = System::Drawing::Point(279, 629);
+			this->Btn_Status_Room->Name = L"Btn_Status_Room";
+			this->Btn_Status_Room->Size = System::Drawing::Size(166, 98);
+			this->Btn_Status_Room->TabIndex = 18;
+			this->Btn_Status_Room->Text = L"Room Status";
+			this->Btn_Status_Room->UseVisualStyleBackColor = true;
+			this->Btn_Status_Room->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Status_Room_Click);
 			// 
 			// Form_Reception
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1344, 897);
+			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->Btn_Status_Room);
+			this->Controls->Add(this->Btn_Add_Room);
 			this->Controls->Add(this->Output_Panel);
 			this->Controls->Add(this->Btn_Users_Approval);
 			this->Controls->Add(this->Btn_Guest_Info);
 			this->Controls->Add(this->Btn_Staff_Info);
 			this->Controls->Add(this->Btn_Booking_Info);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Form_Reception";
 			this->Text = L"Form_Reception";
 			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
@@ -150,8 +174,17 @@ private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::Even
 private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {
+
+			  
+		 }
+private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventArgs^  e) {
+
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Approve_Users);
+			 Output_Panel->Controls->Add(gcnew UserControl_Add_Room1);
+		 }
+private: System::Void Btn_Status_Room_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Status_Room);
 		 }
 };
 }
