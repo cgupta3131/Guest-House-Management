@@ -66,6 +66,9 @@
     <ClCompile Include="UserControl_Staff_Edit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Approve_Users.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -113,6 +116,9 @@
     <ClInclude Include="UserControl_Staff_Edit.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UserControl_Approve_Users.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -139,6 +145,24 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_User_Types.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Edit.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Leave.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Planner.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Record.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Register.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
