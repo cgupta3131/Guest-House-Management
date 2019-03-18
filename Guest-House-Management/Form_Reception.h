@@ -1,6 +1,6 @@
 #pragma once
 #include "UserControl_Guest_House_Info.h"
-
+#include "UserControl_Approve_Users.h"
 namespace GuestHouseManagement {
 
 	using namespace System;
@@ -70,18 +70,20 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Booking_Info
 			// 
-			this->Btn_Booking_Info->Location = System::Drawing::Point(43, 352);
+			this->Btn_Booking_Info->Location = System::Drawing::Point(57, 433);
+			this->Btn_Booking_Info->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Btn_Booking_Info->Name = L"Btn_Booking_Info";
-			this->Btn_Booking_Info->Size = System::Drawing::Size(166, 98);
+			this->Btn_Booking_Info->Size = System::Drawing::Size(221, 121);
 			this->Btn_Booking_Info->TabIndex = 1;
 			this->Btn_Booking_Info->Text = L"Booking Info";
 			this->Btn_Booking_Info->UseVisualStyleBackColor = true;
 			// 
 			// Btn_Staff_Info
 			// 
-			this->Btn_Staff_Info->Location = System::Drawing::Point(43, 208);
+			this->Btn_Staff_Info->Location = System::Drawing::Point(57, 256);
+			this->Btn_Staff_Info->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Btn_Staff_Info->Name = L"Btn_Staff_Info";
-			this->Btn_Staff_Info->Size = System::Drawing::Size(166, 98);
+			this->Btn_Staff_Info->Size = System::Drawing::Size(221, 121);
 			this->Btn_Staff_Info->TabIndex = 2;
 			this->Btn_Staff_Info->Text = L"Staff Info";
 			this->Btn_Staff_Info->UseVisualStyleBackColor = true;
@@ -89,9 +91,10 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Guest_Info
 			// 
-			this->Btn_Guest_Info->Location = System::Drawing::Point(43, 71);
+			this->Btn_Guest_Info->Location = System::Drawing::Point(57, 87);
+			this->Btn_Guest_Info->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Btn_Guest_Info->Name = L"Btn_Guest_Info";
-			this->Btn_Guest_Info->Size = System::Drawing::Size(166, 98);
+			this->Btn_Guest_Info->Size = System::Drawing::Size(221, 121);
 			this->Btn_Guest_Info->TabIndex = 3;
 			this->Btn_Guest_Info->Text = L"Guest House Info";
 			this->Btn_Guest_Info->UseVisualStyleBackColor = true;
@@ -99,33 +102,36 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Users_Approval
 			// 
-			this->Btn_Users_Approval->Location = System::Drawing::Point(43, 486);
+			this->Btn_Users_Approval->Location = System::Drawing::Point(57, 598);
+			this->Btn_Users_Approval->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Btn_Users_Approval->Name = L"Btn_Users_Approval";
-			this->Btn_Users_Approval->Size = System::Drawing::Size(166, 98);
+			this->Btn_Users_Approval->Size = System::Drawing::Size(221, 121);
 			this->Btn_Users_Approval->TabIndex = 4;
 			this->Btn_Users_Approval->Text = L"Users Approval";
 			this->Btn_Users_Approval->UseVisualStyleBackColor = true;
+			this->Btn_Users_Approval->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Users_Approval_Click);
 			// 
 			// Output_Panel
 			// 
 			this->Output_Panel->BackColor = System::Drawing::Color::CornflowerBlue;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->Output_Panel->Location = System::Drawing::Point(279, 71);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Output_Panel->Location = System::Drawing::Point(372, 87);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(682, 553);
+			this->Output_Panel->Size = System::Drawing::Size(909, 681);
 			this->Output_Panel->TabIndex = 16;
 			// 
 			// Form_Reception
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->ClientSize = System::Drawing::Size(1344, 897);
 			this->Controls->Add(this->Output_Panel);
 			this->Controls->Add(this->Btn_Users_Approval);
 			this->Controls->Add(this->Btn_Guest_Info);
 			this->Controls->Add(this->Btn_Staff_Info);
 			this->Controls->Add(this->Btn_Booking_Info);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"Form_Reception";
 			this->Text = L"Form_Reception";
 			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
@@ -142,6 +148,10 @@ namespace GuestHouseManagement {
 private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Approve_Users);
 		 }
 };
 }
