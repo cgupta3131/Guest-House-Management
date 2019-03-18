@@ -66,6 +66,12 @@
     <ClCompile Include="UserControl_Staff_Edit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Add_Room.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Status_Room.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -92,9 +98,6 @@
     <ClInclude Include="UserControl_User_Types.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UserControl_Room_Types.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="UserControl_Staff.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -111,6 +114,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Edit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Status_Room.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -139,6 +148,24 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_User_Types.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Edit.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Leave.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Planner.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Record.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Register.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

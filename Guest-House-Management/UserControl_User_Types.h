@@ -137,6 +137,7 @@ namespace GuestHouseManagement {
 		cmd->ExecuteNonQuery();
 		DB_Connection->Close();
 
+		//To Refresh User Conrtol
 		this->Controls->Clear();
 		this->InitializeComponent();
 	}

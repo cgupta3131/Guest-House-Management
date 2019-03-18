@@ -251,7 +251,6 @@ namespace GuestHouseManagement {
 			this->Register_Category->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Register_Category->FormattingEnabled = true;
-			this->Register_Category->Items->AddRange(gcnew cli::array< System::Object^  >(3) {L"Student", L"Faculty", L"Parent"});
 			this->Register_Category->Location = System::Drawing::Point(261, 353);
 			this->Register_Category->Margin = System::Windows::Forms::Padding(2);
 			this->Register_Category->Name = L"Register_Category";
@@ -363,6 +362,19 @@ namespace GuestHouseManagement {
 
 
 private: System::Void UserControl_Signup_Load(System::Object^  sender, System::EventArgs^  e) {
+
+			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+			DB_Connection->Open();
+			String ^ getRoomData = "Select * from Room_Types";
+
+			OleDbCommand ^ cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
+			OleDbDataReader ^ room_data = cmd->ExecuteReader();
+			
+			while(room_data->Read() == true)
+				Register_Category->Items->Add(room_data->GetString(1));
+
+			DB_Connection->Close();
 		 }
 };
 }
