@@ -97,6 +97,12 @@
     <ClCompile Include="UserControl_Login.cpp" />
     <ClCompile Include="UserControl_Room_Types.cpp" />
     <ClCompile Include="UserControl_Signup.cpp" />
+    <ClCompile Include="UserControl_Staff.cpp" />
+    <ClCompile Include="UserControl_Staff_Edit.cpp" />
+    <ClCompile Include="UserControl_Staff_Leave.cpp" />
+    <ClCompile Include="UserControl_Staff_Planner.cpp" />
+    <ClCompile Include="UserControl_Staff_Record.cpp" />
+    <ClCompile Include="UserControl_Staff_Register.cpp" />
     <ClCompile Include="UserControl_User_Types.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -118,6 +124,24 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Signup.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Edit.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Leave.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Planner.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Record.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Register.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_User_Types.h">
@@ -146,6 +170,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Signup.resx">
       <DependentUpon>UserControl_Signup.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff.resx">
+      <DependentUpon>UserControl_Staff.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Edit.resx">
+      <DependentUpon>UserControl_Staff_Edit.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Leave.resx">
+      <DependentUpon>UserControl_Staff_Leave.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Planner.resx">
+      <DependentUpon>UserControl_Staff_Planner.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Record.resx">
+      <DependentUpon>UserControl_Staff_Record.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Register.resx">
+      <DependentUpon>UserControl_Staff_Register.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_User_Types.resx">
       <DependentUpon>UserControl_User_Types.h</DependentUpon>

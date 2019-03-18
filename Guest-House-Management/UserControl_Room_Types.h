@@ -101,6 +101,7 @@ namespace GuestHouseManagement {
 #pragma endregion
 	cliext::vector<String^> vec;
 	String ^ room;
+	
 	void button_click(System::Object^  sender, System::EventArgs^  e)
 	{
 		for(int i=0;i<vec.size();i++)
@@ -109,7 +110,7 @@ namespace GuestHouseManagement {
 			RichTextBox ^tb = (RichTextBox^)this->Controls["TextBox" + (i)];
 			String ^str = tb->Text;
 
-			MessageBox::Show(str);
+			//MessageBox::Show(str);
 			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 			DB_Connection->Open();
@@ -125,17 +126,31 @@ namespace GuestHouseManagement {
 			DB_Connection->Close();
 
 		}
+
+		OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+		DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+		DB_Connection->Open();
+		String ^ insertString = "insert into Room_Types([Room_Type]) VALUES('" +room+ "' );";
+		OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
+		cmd->Parameters->Add(gcnew OleDbParameter("@Room_Type",Convert::ToString(room)));
+		cmd->ExecuteNonQuery();
+		DB_Connection->Close();
+
+		this->Controls->Clear();
+		this->InitializeComponent();
 	}
 
 
-	private: System::Void UserControl_Room_Types_Load(System::Object^  sender, System::EventArgs^  e) {
-			
+	public: System::Void UserControl_Room_Types_Load(System::Object^  sender, System::EventArgs^  e) {
+				
+				
 			 }
 	
 	private: System::Void Btn_Add_Click(System::Object^  sender, System::EventArgs^  e) {
 
 			try{
-			
+
+			Btn_Add->Visible = false;
 			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 			DB_Connection->Open();
@@ -155,17 +170,19 @@ namespace GuestHouseManagement {
 			else
 			{
 				DB_Connection->Close();
-				DB_Connection->Open();
+				MessageBox::Show(room);
+				if(String::IsNullOrWhiteSpace(room))
+					MessageBox::Show("Please Enter Some Room Type");
+				else
+				{
+					DB_Connection->Open();
 
-				String ^ getUserData = "Select * from User_Types";
+					String ^ getUserData = "Select * from User_Types";
 				cmd = gcnew OleDbCommand(getUserData, DB_Connection);
 
 				OleDbDataReader ^ user_data = cmd->ExecuteReader();
 
 				int n = 0;
-				//std::vector<std::string> vec;
-				//cliext::vector<String^> vec;
-
 				while(user_data->Read() == true)
 				{
 					String ^ tmp = user_data->GetString(1);
@@ -195,16 +212,19 @@ namespace GuestHouseManagement {
 				}
 
 				Button ^ btn = gcnew Button();
+				Button ^btn2 = gcnew Button();
 				btn->Text = "Submit";
 				btn->Name = "Btn_Submit";
 
 				btn->ForeColor = System::Drawing::SystemColors::WindowText;
 				btn->Location = System::Drawing::Point(40,30*n+30);
 				btn->Click += gcnew System::EventHandler(this,&UserControl_Room_Types::button_click);
+				//btn2->Click += gcnew System::EventHandler(this, &UserControl_Room_Types::UserControl_Room_Types_Load);
 				this->Controls->Add(btn);
 
 				DB_Connection->Close();
 
+				}
 			}
 			
 			
