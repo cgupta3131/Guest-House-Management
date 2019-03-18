@@ -75,16 +75,24 @@ namespace GuestHouseManagement {
 		int x = static_cast<int>(btn->Tag);
 
 		OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+		
 		DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+
 		DB_Connection->Open();
 			
-		String ^ approveUser = "UPDATE User_Table SET [Approved]='YES' where [ID] = " + x +  "";
+		String ^ approveUser = "UPDATE User_Table SET [Approved] = @app Where [ID] = @idNum;";
 		
 		OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(approveUser, DB_Connection);
+		cmd->Parameters->AddWithValue("@app", "YES");
+		cmd->Parameters->AddWithValue("@idNum", x);
+		String ^ temp = Convert::ToString(x);
+		MessageBox::Show(temp);
 		cmd->ExecuteNonQuery();
 
 		DB_Connection->Close();
 		MessageBox::Show("User approved");
+		this->Controls->Clear();
+		this->InitializeComponent();
 
 	}
 
@@ -93,8 +101,22 @@ namespace GuestHouseManagement {
 		Button^ btn = gcnew Button();
 		btn = static_cast<Button^>(sender);
 		int x = static_cast<int>(btn->Tag);
-		String ^ temp = Convert::ToString(x);
-		MessageBox::Show(temp);
+
+		OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+		
+		DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+		DB_Connection->Open();
+			
+		String ^ approveUser = "DELETE From User_Table Where [ID] = @idNum;";
+		
+		OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(approveUser, DB_Connection);
+		cmd->Parameters->AddWithValue("@idNum", x);
+		cmd->ExecuteNonQuery();
+		DB_Connection->Close();
+		MessageBox::Show("User Deleted");
+
+		this->Controls->Clear();
+		this->InitializeComponent();
 	}
 
 	private: System::Void UserControl_Approve_Users_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -121,7 +143,7 @@ namespace GuestHouseManagement {
 					Button ^ btnApprove = gcnew Button();
 					btnApprove->Width = 120;
 					btnApprove->Height = 30;
-					btnApprove->Tag = i;
+					btnApprove->Tag = users_data->GetInt32(0);
 					btnApprove->Text = "Approve";
 					btnApprove->Location = System::Drawing::Point(120,140*i);
 					btnApprove->Click += gcnew System::EventHandler(this,&UserControl_Approve_Users::approve_button_click);
@@ -130,7 +152,7 @@ namespace GuestHouseManagement {
 					Button ^ btnCancel = gcnew Button();
 					btnCancel->Width = 120;
 					btnCancel->Height = 30;
-					btnCancel->Tag = i;
+					btnCancel->Tag = users_data->GetInt32(0);
 					btnCancel->Text = "Cancel";
 					btnCancel->Location = System::Drawing::Point(120,140*i+40);
 					btnCancel->Click += gcnew System::EventHandler(this,&UserControl_Approve_Users::cancel_button_click);

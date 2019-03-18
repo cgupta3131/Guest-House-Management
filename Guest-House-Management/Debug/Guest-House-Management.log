@@ -1,4 +1,4 @@
-﻿Build started 3/19/2019 12:31:33 AM.
+﻿Build started 3/19/2019 1:05:52 AM.
      1>Project "C:\Users\Aman Raj\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -47,4 +47,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:08.10
+Time Elapsed 00:00:09.23
