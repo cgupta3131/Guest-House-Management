@@ -93,6 +93,9 @@
     <ClCompile Include="UserControl_Floor_Map.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Booking_Approval.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -167,6 +170,9 @@
     <ClInclude Include="UserControl_Floor_Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UserControl_Booking_Approval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -232,6 +238,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Customer_Homepage.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Floor_Map.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

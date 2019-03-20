@@ -4,6 +4,7 @@
 #include <string.h>
 
 #include "Form_Reception.h"
+#include "Form_Customer_Homepage.h"
 #include "UserControl_Customer_Homepage.h"
 
 using namespace std;
@@ -183,7 +184,7 @@ namespace GuestHouseManagement {
 		
 			//Debug::WriteLine(inputString);
 			String ^ isApproved;
-			String ^ userCategory; 
+			//String ^ userCategory; 
 			String ^ stored_username;
 			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
 			
@@ -222,7 +223,7 @@ namespace GuestHouseManagement {
 					}
 					else if(stored_username=="receptionist")
 					{
-						MessageBox::Show("Receptionist login successfull");
+						MessageBox::Show("Receptionist login successful");
 						Form_Reception ^form2 = gcnew Form_Reception();
 						form2->ShowDialog();
 					}
@@ -230,7 +231,7 @@ namespace GuestHouseManagement {
 					{
 
 						MessageBox::Show("User Login Successful!");
-						Form_Reception ^form2 = gcnew Form_Reception();
+						Form_Customer_Homepage ^form2 = gcnew Form_Customer_Homepage();
 						form2->ShowDialog();
 						//this->Visible = false;
 						//Form1 ^ form1 = gcnew Form1();

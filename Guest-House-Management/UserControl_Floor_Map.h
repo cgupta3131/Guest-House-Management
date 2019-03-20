@@ -120,12 +120,12 @@ namespace GuestHouseManagement {
 				 cliext::vector<String^> vec;
 				 while(room_data->Read() == true)
 				 {
-					 String ^temp = room_data->GetString(0);
+					 String ^temp2 = room_data->GetString(0);
 					 int flag = 0;
 
 					 for(int i=0;i<vec.size();i++)
 					 {
-						 if(vec[i] == temp)
+						 if(vec[i] == temp2)
 						 {
 							 flag = 1;
 							 break;
@@ -133,7 +133,7 @@ namespace GuestHouseManagement {
 					 }
 
 					 if(flag == 0)
-						 vec.push_back(temp);
+						 vec.push_back(temp2);
 				 }
 				 String ^ xyz = Convert::ToString(vec.size());
 				 //MessageBox::Show(xyz);

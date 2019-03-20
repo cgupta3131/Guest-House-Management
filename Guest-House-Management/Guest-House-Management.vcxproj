@@ -97,6 +97,7 @@
     </ClCompile>
     <ClCompile Include="UserControl_Add_Room.cpp" />
     <ClCompile Include="UserControl_Approve_Users.cpp" />
+    <ClCompile Include="UserControl_Booking_Approval.cpp" />
     <ClCompile Include="UserControl_Customer_Homepage.cpp" />
     <ClCompile Include="UserControl_Floor_Map.cpp" />
     <ClCompile Include="UserControl_Guest_House_Info.cpp" />
@@ -117,6 +118,9 @@
   <ItemGroup>
     <ClInclude Include="Form_Customer_Homepage.h">
       <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Booking_Approval.h">
+      <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Customer_Booking.h">
       <FileType>CppControl</FileType>
@@ -188,6 +192,9 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UserControl_Booking_Approval.resx">
+      <DependentUpon>UserControl_Booking_Approval.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Customer_Booking.resx">
       <DependentUpon>UserControl_Customer_Booking.h</DependentUpon>
     </EmbeddedResource>
