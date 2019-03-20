@@ -171,7 +171,6 @@ private: System::Void Planner_Button_Click(System::Object^  sender, System::Even
 				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Planner);
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-
 				Staff_Panel->Controls->Clear();
 				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Edit);
 		 }

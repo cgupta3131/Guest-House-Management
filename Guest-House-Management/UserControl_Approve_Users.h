@@ -85,8 +85,8 @@ namespace GuestHouseManagement {
 		OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(approveUser, DB_Connection);
 		cmd->Parameters->AddWithValue("@app", "YES");
 		cmd->Parameters->AddWithValue("@idNum", x);
-		String ^ temp = Convert::ToString(x);
-		MessageBox::Show(temp);
+		//String ^ temp = Convert::ToString(x);
+		//MessageBox::Show(temp);
 		cmd->ExecuteNonQuery();
 
 		DB_Connection->Close();
@@ -113,7 +113,7 @@ namespace GuestHouseManagement {
 		cmd->Parameters->AddWithValue("@idNum", x);
 		cmd->ExecuteNonQuery();
 		DB_Connection->Close();
-		MessageBox::Show("User Deleted");
+		MessageBox::Show("User Deleted"); 
 
 		this->Controls->Clear();
 		this->InitializeComponent();
@@ -133,7 +133,7 @@ namespace GuestHouseManagement {
 
 				while(users_data->Read() == true)
 				{
-					MessageBox::Show(users_data->GetString(1) + i);
+					//MessageBox::Show(users_data->GetString(1) + i);
 					i=i+1;
 					Label ^ lb = gcnew Label();
 					lb->Text = users_data->GetString(1) + " \n" + users_data->GetString(3) + " \n" + users_data->GetString(5) + " " + users_data->GetString(6) + " \n" + users_data->GetString(7);

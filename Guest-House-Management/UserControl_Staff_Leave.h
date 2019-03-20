@@ -74,9 +74,9 @@ namespace GuestHouseManagement {
 			this->label1->AutoSize = true;
 			this->label1->Location = System::Drawing::Point(134, 103);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(45, 17);
+			this->label1->Size = System::Drawing::Size(70, 17);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"Name";
+			this->label1->Text = L"Employee";
 			// 
 			// comboBox1
 			// 
@@ -99,7 +99,8 @@ namespace GuestHouseManagement {
 			// 
 			// dateTimePicker1
 			// 
-			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy";
+			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(278, 161);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(219, 22);
@@ -118,7 +119,8 @@ namespace GuestHouseManagement {
 			// 
 			// dateTimePicker2
 			// 
-			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Short;
+			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy";
+			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker2->Location = System::Drawing::Point(278, 212);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(219, 22);
@@ -156,7 +158,9 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void UserControl_Staff_Leave_Load(System::Object^  sender, System::EventArgs^  e) {
 				 Fillcombo();
-				 
+				 this->dateTimePicker1->MinDate=System::DateTime().Now;
+				 this->dateTimePicker2->MinDate=System::DateTime().Now;
+				 this->dateTimePicker2->Enabled=false;
 			 }
 
 
@@ -188,9 +192,29 @@ namespace GuestHouseManagement {
 				MessageBox::Show(ex->Message);
 			}
 	}
+//validating dates
+bool validDates()
+{
+	TimeSpan span = dateTimePicker1->Value - System::DateTime().Now;
+	if(span.TotalDays<0) return false;
+	span = dateTimePicker2->Value - dateTimePicker1->Value;
+	if(span.TotalDays<0) return false;
+
+	return true;
+}
 private: System::Void btn_submit_Click(System::Object^  sender, System::EventArgs^  e) {
 
 			 //Getting details of selected Person
+			 if(comboBox1->Text=="" || !validDates())
+			 {
+				 if(comboBox1->Text=="")
+					MessageBox::Show("Please select a valid Employee!");
+				 else
+					 MessageBox::Show("Please enter valid Dates!");
+			 }
+			 else
+			 {
+			 
 			String ^ selected = comboBox1->Text;
 			 //MessageBox::Show(selected);
 			 
@@ -208,7 +232,7 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			//MessageBox::Show(leaveFrom+" "+leaveUpto);
 			//calculating total number of days for leave using sustem variables and saving into totalDays
 			TimeSpan span = dateTimePicker2->Value - dateTimePicker1->Value;
-			int totalDays = span.TotalDays + 1;
+			int totalDays = Convert::ToInt32(span.TotalDays) + 1;
 
 			 try{
 			
@@ -277,11 +301,14 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			{
 				MessageBox::Show(ex->Message);
 			}
-			
+			}
 		 }
 private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+			 this->dateTimePicker2->Enabled=true;
+			 this->dateTimePicker2->MinDate=this->dateTimePicker1->Value;
+
 		 }
 };
 }

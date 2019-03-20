@@ -2,6 +2,8 @@
 #include "UserControl_Guest_House_Info.h"
 #include "UserControl_Add_Room.h"
 #include "UserControl_Status_Room.h"
+#include "UserControl_Approve_Users.h"
+#include "UserControl_Floor_Map.h"
 
 namespace GuestHouseManagement {
 
@@ -50,6 +52,7 @@ namespace GuestHouseManagement {
 	internal: System::Windows::Forms::Panel^  Output_Panel;
 	private: System::Windows::Forms::Button^  Btn_Add_Room;
 	private: System::Windows::Forms::Button^  Btn_Status_Room;
+	private: System::Windows::Forms::Button^  Btn_Floor_Map;
 	internal: 
 	private: 
 
@@ -73,6 +76,7 @@ namespace GuestHouseManagement {
 			this->Output_Panel = (gcnew System::Windows::Forms::Panel());
 			this->Btn_Add_Room = (gcnew System::Windows::Forms::Button());
 			this->Btn_Status_Room = (gcnew System::Windows::Forms::Button());
+			this->Btn_Floor_Map = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Booking_Info
@@ -144,11 +148,22 @@ namespace GuestHouseManagement {
 			this->Btn_Status_Room->UseVisualStyleBackColor = true;
 			this->Btn_Status_Room->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Status_Room_Click);
 			// 
+			// Btn_Floor_Map
+			// 
+			this->Btn_Floor_Map->Location = System::Drawing::Point(509, 629);
+			this->Btn_Floor_Map->Name = L"Btn_Floor_Map";
+			this->Btn_Floor_Map->Size = System::Drawing::Size(166, 98);
+			this->Btn_Floor_Map->TabIndex = 20;
+			this->Btn_Floor_Map->Text = L"Floor Map";
+			this->Btn_Floor_Map->UseVisualStyleBackColor = true;
+			this->Btn_Floor_Map->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Floor_Map_Click);
+			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->Btn_Floor_Map);
 			this->Controls->Add(this->Btn_Status_Room);
 			this->Controls->Add(this->Btn_Add_Room);
 			this->Controls->Add(this->Output_Panel);
@@ -174,7 +189,8 @@ private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::Even
 private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {
-
+			  Output_Panel->Controls->Clear();
+			  Output_Panel->Controls->Add(gcnew UserControl_Approve_Users);
 			  
 		 }
 private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -185,6 +201,10 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 private: System::Void Btn_Status_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Status_Room);
+		 }
+private: System::Void Btn_Floor_Map_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Floor_Map);
 		 }
 };
 }

@@ -236,7 +236,7 @@ private: System::Void Txt_Floor_SelectedIndexChanged(System::Object^  sender, Sy
 
 		 }
 private: System::Void Txt_Room_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-			 Txt_Status->Items->Add("Working Condition");
+			 Txt_Status->Items->Add("Available");
 			 Txt_Status->Items->Add("Cleaning in Progress");
 			 Txt_Status->Items->Add("Unavailable");
 		 }	

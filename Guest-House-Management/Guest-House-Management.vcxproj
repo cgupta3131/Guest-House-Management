@@ -87,6 +87,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="Form_Customer_Homepage.cpp" />
+    <ClCompile Include="Form_Edit_Staff_Details.cpp" />
     <ClCompile Include="Form_Reception.cpp" />
     <ClCompile Include="Guest-House-Management.cpp" />
     <ClCompile Include="stdafx.cpp">
@@ -94,21 +96,35 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="UserControl_Add_Room.cpp" />
+    <ClCompile Include="UserControl_Approve_Users.cpp" />
+    <ClCompile Include="UserControl_Customer_Homepage.cpp" />
+    <ClCompile Include="UserControl_Floor_Map.cpp" />
     <ClCompile Include="UserControl_Guest_House_Info.cpp" />
     <ClCompile Include="UserControl_Login.cpp" />
     <ClCompile Include="UserControl_Room_Types.cpp" />
     <ClCompile Include="UserControl_Signup.cpp" />
     <ClCompile Include="UserControl_Staff.cpp" />
     <ClCompile Include="UserControl_Staff_Edit.cpp" />
+    <ClCompile Include="UserControl_Staff_Edit_Details.cpp" />
     <ClCompile Include="UserControl_Staff_Leave.cpp" />
     <ClCompile Include="UserControl_Staff_Planner.cpp" />
     <ClCompile Include="UserControl_Staff_Record.cpp" />
     <ClCompile Include="UserControl_Staff_Register.cpp" />
+    <ClCompile Include="UserControl_Staff_View_Details.cpp" />
     <ClCompile Include="UserControl_Status_Room.cpp" />
     <ClCompile Include="UserControl_User_Types.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Form_Customer_Homepage.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Booking.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="Form1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Form_Edit_Staff_Details.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Form_Reception.h">
@@ -117,6 +133,15 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="UserControl_Add_Room.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Approve_Users.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Homepage.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Floor_Map.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Guest_House_Info.h">
@@ -134,6 +159,9 @@
     <ClInclude Include="UserControl_Staff_Edit.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="UserControl_Staff_Edit_Details.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_Staff_Leave.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -144,6 +172,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Register.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_View_Details.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Status_Room.h">
@@ -157,15 +188,30 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UserControl_Customer_Booking.resx">
+      <DependentUpon>UserControl_Customer_Booking.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resX">
       <DependentUpon>Form1.h</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Edit_Staff_Details.resx">
+      <DependentUpon>Form_Edit_Staff_Details.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Reception.resx">
       <DependentUpon>Form_Reception.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Add_Room.resx">
       <DependentUpon>UserControl_Add_Room.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Approve_Users.resx">
+      <DependentUpon>UserControl_Approve_Users.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Customer_Homepage.resx">
+      <DependentUpon>UserControl_Customer_Homepage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Floor_Map.resx">
+      <DependentUpon>UserControl_Floor_Map.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Guest_House_Info.resx">
       <DependentUpon>UserControl_Guest_House_Info.h</DependentUpon>
@@ -182,6 +228,9 @@
     <EmbeddedResource Include="UserControl_Staff_Edit.resx">
       <DependentUpon>UserControl_Staff_Edit.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Edit_Details.resx">
+      <DependentUpon>UserControl_Staff_Edit_Details.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Leave.resx">
       <DependentUpon>UserControl_Staff_Leave.h</DependentUpon>
     </EmbeddedResource>
@@ -193,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Register.resx">
       <DependentUpon>UserControl_Staff_Register.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_View_Details.resx">
+      <DependentUpon>UserControl_Staff_View_Details.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Status_Room.resx">
       <DependentUpon>UserControl_Status_Room.h</DependentUpon>
