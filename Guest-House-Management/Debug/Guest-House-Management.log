@@ -1,7 +1,7 @@
-﻿Build started 3/20/2019 6:18:16 PM.
+﻿Build started 3/21/2019 7:30:21 PM.
      1>Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Guest-House-Management.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
@@ -55,4 +55,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.57
+Time Elapsed 00:00:05.54

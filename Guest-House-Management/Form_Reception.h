@@ -219,7 +219,7 @@ private: System::Void Btn_Floor_Map_Click(System::Object^  sender, System::Event
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Floor_Map);
 		 }
-private: System::Void Btn_Booking_App_Click(System::Object^  sender, System::EventArgs^  e) {
+public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Booking_Approval);
 		 }

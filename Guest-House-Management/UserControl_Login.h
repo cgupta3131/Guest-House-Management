@@ -230,8 +230,9 @@ namespace GuestHouseManagement {
 					else
 					{
 
-						MessageBox::Show("User Login Successful!");
-						Form_Customer_Homepage ^form2 = gcnew Form_Customer_Homepage();
+						//MessageBox::Show("User Login Successful!");
+						Form_Reception ^form2 = gcnew Form_Reception();
+						//Form_Customer_Homepage ^form2 = gcnew Form_Customer_Homepage();
 						form2->ShowDialog();
 						//this->Visible = false;
 						//Form1 ^ form1 = gcnew Form1();

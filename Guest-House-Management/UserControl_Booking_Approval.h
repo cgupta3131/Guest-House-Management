@@ -2,7 +2,9 @@
 #using <System.dll>
 #using <System.data.dll>
 #include <cliext/vector>
+#include<string.h>
 #include<ctype.h>
+//
 
 using namespace std;
 using namespace System;
@@ -106,28 +108,105 @@ namespace GuestHouseManagement {
 
 		}
 #pragma endregion
+
 		static int n = 0;
+		static String ^txt = "";
+		String ^txt2;
+
 		void approve_button_click(System::Object^  sender, System::EventArgs^  e)
 		{
 			Button^ btn = gcnew Button();
 			btn = static_cast<Button^>(sender);
 			int x = static_cast<int>(btn->Tag);
+			String ^room_number;
 
 			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			DB_Connection->Open();
 
-			String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app Where [Serial_Number] = @idNum;";
-			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(approveUser, DB_Connection);
+			DB_Connection->Open();
+			String ^ getroomNo = "Select * from [Room_No] where [Category] = '" + txt + "' AND [Status] = 'Available' ;";
+			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getroomNo, DB_Connection);
+			OleDbDataReader ^ room_data = cmd->ExecuteReader();
+			cliext::vector<String^> vec;
+			while(room_data->Read() == true)
+			{
+				room_number = room_data->GetString(1);
+				vec.push_back(room_number);
+			}
+			DB_Connection->Close();
+
+			for(int i=0;i<vec.size();i++)
+			{
+				//vec[i] denotes the Potential Room No. Available
+				DB_Connection->Open();
+				String ^getRooms = "Select * from [Bookin_Request] where [Room_Type] = '" + txt +"' AND [Approved] = 'YES';";
+				cmd = gcnew OleDbCommand(getRooms,DB_Connection);
+				OleDbDataReader ^roomdata = cmd->ExecuteReader();
+
+				while(roomdata->Read() == true)
+				{
+					String ^datefrom = roomdata->GetString(4); //yyyymmdd
+					String ^dateto = roomdata->GetString(5);
+					//mydatefrom and //mydateto
+					int datefrom_int = System::Convert::ToInt32(datefrom);
+					int dateto_int = System::Convert::ToInt32(dateto);
+					int mydatefrom_int = System::Convert::ToInt32(mydatefrom);
+					int mydateto_int = System::Convert::ToInt32(mydateto);
+					int flag = 1;
+
+					if(mydatefrom_int < datefrom_int)
+					{
+						if(mydateto_int <= datefrom_int)
+						{
+							//I can book
+							flag = 1;
+							break;
+						}
+						else
+							//I can't book book
+					}
+
+					else if(mydatefrom_int == datefrom_int)
+					{
+						//I can't book
+					}
+
+					else if(mydatefrom_int > datefrom_int)
+					{
+						if(mydatefrom_int >= dateto_int)
+						{
+							//I can book
+							flag = 1;
+							break;
+						}
+						else
+							//I can't book
+					}
+
+				}
+				if(flag == 0)
+					MessageBox::Show("No room available for the given duration")
+				DB_Connection->Close();
+			}
+			DB_Connection->Open();
+			//---------------------Room Number and Approved Status in Booking Request UPDATED--------------------//
+			String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app, [Room_No] = '" + room_number + "' Where [Serial_Number] = @idNum;";
+			cmd = gcnew OleDbCommand(approveUser, DB_Connection);
 			cmd->Parameters->AddWithValue("@app", "YES");
 			cmd->Parameters->AddWithValue("@idNum", x);
 			cmd->ExecuteNonQuery();
-
 			DB_Connection->Close();
-			MessageBox::Show("Booking approved");
-			this->Controls->Clear();
-			this->InitializeComponent();
 
+			DB_Connection->Open();
+			String ^ updateRoomStatus = "UPDATE [Room_No] SET [Status] = 'Taken' Where [Room_No] = '"+ room_number +"' ;";
+			cmd = gcnew OleDbCommand(updateRoomStatus, DB_Connection);
+			cmd->ExecuteNonQuery();
+			DB_Connection->Close();
+
+			//--------DISPLAYING THE MESSAGE-------------//
+			MessageBox::Show("Booking approved");
+			UserControl_Booking_Approval_Load(sender,e);
+			
 		}
 
 		void cancel_button_click(System::Object^  sender, System::EventArgs^  e)
@@ -143,26 +222,29 @@ namespace GuestHouseManagement {
 
 			String ^ approveUser = "DELETE From Booking_Request Where [Serial_Number] = @idNum;";
 
+
 			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(approveUser, DB_Connection);
 			cmd->Parameters->AddWithValue("@idNum", x);
 			cmd->ExecuteNonQuery();
 			DB_Connection->Close();
-			MessageBox::Show("Booking Deleted"); 
-
-	
+			MessageBox::Show("Booking Deleted");
+			UserControl_Booking_Approval_Load(sender,e);
 		}
 
 	private: System::Void UserControl_Booking_Approval_Load(System::Object^  sender, System::EventArgs^  e) {
 
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				 OleDb::OleDbConnection ^ DB_Connection2 = gcnew OleDb::OleDbConnection();
+				 DB_Connection2->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+
 				 DB_Connection->Open();
 				 String ^ getRoomData = "Select * from [Room_Types]";
-
 				 OleDbCommand ^ cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
 				 OleDbDataReader ^ room_type = cmd->ExecuteReader();
 
 				 cliext::vector<String^> vec;
+				 Txt_Room_Type->Items->Clear();
 				 while(room_type->Read() == true)
 				 {
 					 String ^temp = room_type->GetString(1);
@@ -170,26 +252,51 @@ namespace GuestHouseManagement {
 				 }
 				 Txt_Room_Type->Items->Add("All");
 				 DB_Connection->Close();
+
+				 DB_Connection2->Open();
+				 String ^room_types = "Update [Room_Types] SET Count_Room = 0";
+				 OleDbCommand ^ cmd3 = gcnew OleDbCommand(room_types, DB_Connection2);
+				 cmd3->ExecuteNonQuery();
+				 DB_Connection2->Close();
+
+				 //For updating the Number of Rooms in the Database of Room_Types Table
+				 DB_Connection->Open();
+				 String ^roomNo = "Select * from [Room_No] where [Status] = 'Available' ;";
+				 OleDbCommand ^ cmd2 = gcnew OleDbCommand(roomNo, DB_Connection);
+				 OleDbDataReader ^ room_no = cmd2->ExecuteReader();
+
+				 while(room_no->Read() == true)
+				 {
+					 DB_Connection2->Open();
+					 String ^temp = room_no->GetString(2);
+					 String ^room_types = "Update [Room_Types] SET Count_Room = Count_Room + 1 where [Room_Type] = '" + temp + "';";
+					 OleDbCommand ^ cmd3 = gcnew OleDbCommand(room_types, DB_Connection2);
+					 cmd3->ExecuteNonQuery();
+					 DB_Connection2->Close();
+				 }
+
+				 DB_Connection->Close();
+				 Txt_Room_Type->Text = txt;
+				 Txt_Room_Type_SelectedIndexChanged(sender,e);
 			 }
 	private: System::Void Txt_Room_Type_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 
-				 for (int i=0;i<n;i++)
+				for (int i=0;i<n;i++)
 				 {
-					 //MessageBox::Show("World");
 					 Control ^temp2 = this->Controls["TextBox"+(i)];
 					 Controls->Remove(temp2);
 					 Control ^temp3 = this->Controls["btnApp"+(i)];
 					 Controls->Remove(temp3);
 					 Control ^temp4 = this->Controls["btnDiss"+(i)];
 					 Controls->Remove(temp4);
-				 }
+				}
 
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();
 
 				 String ^ getUsers = "Select * from Booking_Request where [Room_Type] = '" + Txt_Room_Type->Text + "' AND [Approved] = 'NO' ";
-				 String ^txt = Txt_Room_Type->Text;
+				 txt = Txt_Room_Type->Text;
 				 //MessageBox::Show(getUsers);
 				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUsers, DB_Connection);
 				 OleDbDataReader ^ users_data = cmd->ExecuteReader();
@@ -200,7 +307,7 @@ namespace GuestHouseManagement {
 				 {
 					 n=n+1;
 					 i=i+1;
-					 
+					 txt2 = users_data->GetString(6);
 					 TextBox ^tb = gcnew TextBox();
 					 tb->Text = users_data->GetString(3) + "\r\n" + users_data->GetString(4) + "\r\n" + users_data->GetString(5);
 					 //MessageBox::Show(tb->Text);
@@ -233,6 +340,7 @@ namespace GuestHouseManagement {
 					 btnCancel->Click += gcnew System::EventHandler(this,&UserControl_Booking_Approval::cancel_button_click);
 					 this->Controls->Add(btnCancel);
 				 }
+				 DB_Connection->Close();
 
 			 }
 };

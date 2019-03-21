@@ -88,6 +88,7 @@ namespace GuestHouseManagement {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->Controls->Add(this->Btn_Add);
 			this->Controls->Add(this->Txt_User_Type);
 			this->Name = L"UserControl_User_Types";
@@ -137,100 +138,112 @@ namespace GuestHouseManagement {
 		cmd->ExecuteNonQuery();
 		DB_Connection->Close();
 
-		//To Refresh User Conrtol
+		//To Refresh User Control
 		this->Controls->Clear();
 		this->InitializeComponent();
 	}
 
 	private: System::Void UserControl_User_Types_Load(System::Object^  sender, System::EventArgs^  e) {
+				  
 			 }
 	private: System::Void Btn_Add_Click(System::Object^  sender, System::EventArgs^  e) {
+				
+				 //for(int i=1;i<5;i++)
+				 //{
+					// TextBox ^tb = gcnew TextBox();
+					// tb->Text = Convert::ToString(i);
+					// tb->Location = System::Drawing::Point(60,70*i);
+					// tb->Width = 270;
+					// tb->Height = 50;
+					// tb->Name = "TextBox" + i;
+					// tb->Multiline = true;
+					// //tb->ReadOnly = true;
+					// tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+					// this->Controls->Add(tb);
+				 //}
 			
 
-			try{
+					 Btn_Add->Visible = false;
+					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					 DB_Connection->Open();
 
-			Btn_Add->Visible = false;
-			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			DB_Connection->Open();
-			
-			user = Txt_User_Type->Text;
-			String ^ getUserData = "Select * from User_Types where [User_Type] = '" + user + "';";
-		
-			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
-			OleDbDataReader ^ user_data = cmd->ExecuteReader();
-			
-			if(user_data->Read() == true)
-			{
-				MessageBox::Show("User Type Already Exists");
-				DB_Connection->Close();
+					 user = Txt_User_Type->Text;
+					 String ^ getUserData = "Select * from User_Types where [User_Type] = '" + user + "';";
 
-			}
-			else
-			{
-				DB_Connection->Close();
-				if(String::IsNullOrWhiteSpace(user))
-					MessageBox::Show("Please Enter Some User Type");
-				else
-				{
-				DB_Connection->Open();
+					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
+					 OleDbDataReader ^ user_data = cmd->ExecuteReader();
 
-				String ^ getRoomData = "Select * from Room_Types";
-				cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
+					 if(user_data->Read() == true)
+					 {
+						 MessageBox::Show("User Type Already Exists");
+						 DB_Connection->Close();
+					 }
+					 else
+					 {
+						 DB_Connection->Close();
+						 if(String::IsNullOrWhiteSpace(user))
+							 MessageBox::Show("Please Enter Some User Type");
+						 else
+						 {
+							 Txt_User_Type->Visible = false;
+							 Btn_Add->Visible = false;
+							 DB_Connection->Open();
 
-				OleDbDataReader ^ room_data = cmd->ExecuteReader();
+							 String ^ getRoomData = "Select * from Room_Types";
+							 cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
 
-				int n = 0;
-				while(room_data->Read() == true)
-				{
-					String ^ tmp = room_data->GetString(1);
-					vec.push_back(tmp);
-					n=n+1;
-				}
+							 OleDbDataReader ^ room_data = cmd->ExecuteReader();
 
-				for(int i=0;i<vec.size();i++)
-				{
+							 int n = 0;
+							 while(room_data->Read() == true)
+							 {
+								 String ^ tmp = room_data->GetString(1);
+								 vec.push_back(tmp);
+								 n=n+1;
+							 }
 
-					Label ^ lb = gcnew Label();
-					lb->Text = vec[i];
-					lb->Location = System::Drawing::Point(20,140*i);
 
-					this->Controls->Add(lb);
+							 for(int i=0;i<vec.size();i++)
+							 {
+								 Label ^lb = gcnew Label();
+								 lb->Text = vec[i];
+								 lb->Location = System::Drawing::Point(20,70*(i+1));
+								 this->Controls->Add(lb);
+							
+								 TextBox ^tb = gcnew TextBox();
+								 //tb->Text = Convert::ToString(i);
+								 tb->Location = System::Drawing::Point(100,70*(i+1));
+								 tb->Width = 70;
+								 tb->Height = 10;
+								 tb->Name = "TextBox" + i;
+								 //tb->Multiline = true;
+								 tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+								 this->Controls->Add(tb);
+							 }
 
-					RichTextBox ^ tb = gcnew RichTextBox();
+							 Button ^ btn = gcnew Button();
+							 btn->Text = "Submit";
+							 btn->Name = "Btn_Submit";
 
-					tb->Name = "TextBox" + i;
-					//tb->Enabled = true;
-					//tb->ReadOnly = false;
-					//tb->Text = Convert::ToString(i);
-					tb->Width = 270;
-					tb->Height = 50;
-					tb->Location = System::Drawing::Point(60,140*i);
-					this->Controls->Add(tb);
-				}
+							 btn->ForeColor = System::Drawing::SystemColors::WindowText;
+							 btn->Location = System::Drawing::Point(40,30*n+30);
+							 btn->Click += gcnew System::EventHandler(this,&UserControl_User_Types::button_click);
+							 this->Controls->Add(btn);
 
-				Button ^ btn = gcnew Button();
-				btn->Text = "Submit";
-				btn->Name = "Btn_Submit";
+							 DB_Connection->Close();
 
-				btn->ForeColor = System::Drawing::SystemColors::WindowText;
-				btn->Location = System::Drawing::Point(40,30*n+30);
-				btn->Click += gcnew System::EventHandler(this,&UserControl_User_Types::button_click);
-				this->Controls->Add(btn);
+						 }
+					 }
 
-				DB_Connection->Close();
 
-			}
-			}
-			
-			
 
-			}
+				 
 
-			catch(Exception ^ ex)
-			{
-				MessageBox::Show(ex->Message);
-			}
+				 /*catch(Exception ^ ex)
+				 {
+					 MessageBox::Show(ex->Message);
+				 }*/
 			 }
 	};
 }
