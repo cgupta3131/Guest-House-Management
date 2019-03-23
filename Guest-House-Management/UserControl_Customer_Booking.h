@@ -424,8 +424,10 @@ namespace GuestHouseManagement {
 
 					 DateTime ^ st_date = dateTimePicker1->Value;
 					 String ^ start_date = st_date->ToString("dd-MM-yyyy");
+					 //String ^ start_date = st_date->ToString("yyyyMMdd");
 					 DateTime ^ en_date = dateTimePicker2->Value;
 					 String ^ end_date = en_date->ToString("dd-MM-yyyy");
+					 //String ^ end_date = en_date->ToString("yyyyMMdd");
 
 					 String ^customer_username = username_info;
 					 String ^customer_type = User_Type_Box->Text;
