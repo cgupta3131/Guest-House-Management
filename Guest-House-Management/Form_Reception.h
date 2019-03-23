@@ -5,6 +5,7 @@
 #include "UserControl_Approve_Users.h"
 #include "UserControl_Floor_Map.h"
 #include "UserControl_Booking_Approval.h"
+#include "UserControl_Customer_Feedback.h"
 namespace GuestHouseManagement {
 
 	using namespace System;
@@ -54,6 +55,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Btn_Status_Room;
 	private: System::Windows::Forms::Button^  Btn_Floor_Map;
 	private: System::Windows::Forms::Button^  Btn_Booking_App;
+	private: System::Windows::Forms::Button^  Btn_Customer_Feedback;
 	internal: 
 	private: 
 
@@ -79,6 +81,7 @@ namespace GuestHouseManagement {
 			this->Btn_Status_Room = (gcnew System::Windows::Forms::Button());
 			this->Btn_Floor_Map = (gcnew System::Windows::Forms::Button());
 			this->Btn_Booking_App = (gcnew System::Windows::Forms::Button());
+			this->Btn_Customer_Feedback = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Booking_Info
@@ -170,11 +173,22 @@ namespace GuestHouseManagement {
 			this->Btn_Booking_App->UseVisualStyleBackColor = true;
 			this->Btn_Booking_App->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Booking_App_Click);
 			// 
+			// Btn_Customer_Feedback
+			// 
+			this->Btn_Customer_Feedback->Location = System::Drawing::Point(266, 12);
+			this->Btn_Customer_Feedback->Name = L"Btn_Customer_Feedback";
+			this->Btn_Customer_Feedback->Size = System::Drawing::Size(164, 43);
+			this->Btn_Customer_Feedback->TabIndex = 22;
+			this->Btn_Customer_Feedback->Text = L"Customer Feedback";
+			this->Btn_Customer_Feedback->UseVisualStyleBackColor = true;
+			this->Btn_Customer_Feedback->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Customer_Feedback_Click);
+			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->Btn_Customer_Feedback);
 			this->Controls->Add(this->Btn_Booking_App);
 			this->Controls->Add(this->Btn_Floor_Map);
 			this->Controls->Add(this->Btn_Status_Room);
@@ -222,6 +236,10 @@ private: System::Void Btn_Floor_Map_Click(System::Object^  sender, System::Event
 public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Booking_Approval);
+		 }
+private: System::Void Btn_Customer_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback);
 		 }
 };
 }

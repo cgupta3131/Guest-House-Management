@@ -1,4 +1,6 @@
 #pragma once
+#include <regex>
+
 #using <System.dll>
 #using <System.data.dll>
 
@@ -12,7 +14,24 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace System::Data::OleDb;
 
+static std::string tostring(System::String^ string)
+{
+	using System::Runtime::InteropServices::Marshal;
 
+	if (string->Length == 0 || string->Length < 0)
+	{
+		//MessageBox::Show("No field can be empty");
+
+	}
+
+	System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
+	char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
+	std::string returnString(charPointer, string->Length);
+	Marshal::FreeHGlobal(pointer);
+
+
+	return returnString;
+}
 
 namespace GuestHouseManagement {
 
@@ -262,7 +281,40 @@ namespace GuestHouseManagement {
 			 }
 private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 
-			
+			string sfloor = tostring(Txt_Floor->Text);
+			 remove_if(sfloor.begin(), sfloor.end(), isspace);
+			 string froom = tostring(Txt_Room_End->Text);
+			 remove_if(froom.begin(), froom.end(), isspace);
+			 string sroom = tostring(Txt_Room_Start->Text);
+			 remove_if(sroom.begin(), sroom.end(), isspace);
+			 string scategory = tostring(Txt_Category->Text);
+			 /*
+			 string sfloor = msclr::interop::marshal_as<std::string>(Txt_Floor->Text);
+			 remove_if(sfloor.begin(), sfloor.end(), isspace);
+			 string sroom = msclr::interop::marshal_as<std::string>(Txt_Room_Start->Text);
+			 remove_if(froom.begin(), froom.end(), isspace);
+			 string froom = msclr::interop::marshal_as<std::string>(Txt_Room_End->Text);
+			 remove_if(sroom.begin(), sroom.end(), isspace);
+			 string scategory = msclr::interop::marshal_as<std::string>(Txt_Category->Text);
+			 */
+
+			 regex rx("^[0-9]+$");
+			 if(!regex_match(sfloor.cbegin(), sfloor.cend(), rx)){
+			 MessageBox::Show("Enter Floor in digits[0-9]");
+			 goto ErrExit;
+			 }
+			 
+			 rx = "^[A-Z|a-z]{0,1}[0-9]+[A-Z|a-z]{0,1}$";
+			 if(!regex_match(sroom.cbegin(), sroom.cend(), rx)){
+				 MessageBox::Show("Enter Room in format: A(number using digits[0-9])A");
+				 goto ErrExit;
+			 }
+
+			 if(scategory.compare("") == 0){
+			 MessageBox::Show("No Item is Selected");
+			 goto ErrExit;
+			 }
+			 
 
 			 //For the Individual Room booking case
 			 if(this->Txt_Room_End->Visible == false)
@@ -294,6 +346,12 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 			 //For the Range Room booking case
 			 else
 			 {
+
+				rx = "^[A-Z|a-z]{0,1}[0-9]+[A-Z|a-z]{0,1}$";
+				 if(!regex_match(froom.cbegin(), froom.cend(), rx)){
+					 MessageBox::Show("Enter Room in format: A(number using digits[0-9])A");
+					 goto ErrExit;
+				 }
 				OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
 				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 
@@ -330,6 +388,8 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 			//To Refresh User Conrtol
 			//this->Controls->Clear();
 			//this->InitializeComponent();
+ErrExit:
+			 ;
 		 }
 private: System::Void Btn_Range_Click(System::Object^  sender, System::EventArgs^  e) {
 

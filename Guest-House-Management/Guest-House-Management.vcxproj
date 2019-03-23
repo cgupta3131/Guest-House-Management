@@ -88,18 +88,27 @@
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
     <ClCompile Include="Form_Customer_Homepage.cpp" />
+    <ClCompile Include="Form_Edit_Booking.cpp" />
     <ClCompile Include="Form_Edit_Staff_Details.cpp" />
+    <ClCompile Include="Form_Feedback.cpp" />
     <ClCompile Include="Form_Reception.cpp" />
     <ClCompile Include="Guest-House-Management.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="UserControl_Add_Cab_Details.cpp" />
+    <ClCompile Include="UserControl_Add_Places.cpp" />
+    <ClCompile Include="UserControl_Add_Restaurant.cpp" />
     <ClCompile Include="UserControl_Add_Room.cpp" />
     <ClCompile Include="UserControl_Approve_Users.cpp" />
     <ClCompile Include="UserControl_Booking_Approval.cpp" />
+    <ClCompile Include="UserControl_Customer_Admin_Feedback.cpp" />
+    <ClCompile Include="UserControl_Customer_Book_Edit.cpp" />
+    <ClCompile Include="UserControl_Customer_Feedback.cpp" />
     <ClCompile Include="UserControl_Customer_Homepage.cpp" />
     <ClCompile Include="UserControl_Floor_Map.cpp" />
+    <ClCompile Include="UserControl_GuestHouseDetails.cpp" />
     <ClCompile Include="UserControl_Guest_House_Info.cpp" />
     <ClCompile Include="UserControl_Login.cpp" />
     <ClCompile Include="UserControl_Room_Types.cpp" />
@@ -108,6 +117,7 @@
     <ClCompile Include="UserControl_Staff_Edit.cpp" />
     <ClCompile Include="UserControl_Staff_Edit_Details.cpp" />
     <ClCompile Include="UserControl_Staff_Leave.cpp" />
+    <ClCompile Include="UserControl_Staff_Leave_Approval.cpp" />
     <ClCompile Include="UserControl_Staff_Planner.cpp" />
     <ClCompile Include="UserControl_Staff_Record.cpp" />
     <ClCompile Include="UserControl_Staff_Register.cpp" />
@@ -119,7 +129,25 @@
     <ClInclude Include="Form_Customer_Homepage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Form_Edit_Booking.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="Form_Feedback.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Cab_Details.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Places.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Restaurant.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_Booking_Approval.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Admin_Feedback.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Customer_Booking.h">
@@ -142,10 +170,19 @@
     <ClInclude Include="UserControl_Approve_Users.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="UserControl_Customer_Book_Edit.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Feedback.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_Customer_Homepage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Floor_Map.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_GuestHouseDetails.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Guest_House_Info.h">
@@ -167,6 +204,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Leave.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Leave_Approval.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Planner.h">
@@ -192,8 +232,29 @@
     <ResourceCompile Include="app.rc" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form_Customer_Homepage.resx">
+      <DependentUpon>Form_Customer_Homepage.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Edit_Booking.resx">
+      <DependentUpon>Form_Edit_Booking.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Feedback.resx">
+      <DependentUpon>Form_Feedback.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Add_Cab_Details.resx">
+      <DependentUpon>UserControl_Add_Cab_Details.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Add_Places.resx">
+      <DependentUpon>UserControl_Add_Places.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Add_Restaurant.resx">
+      <DependentUpon>UserControl_Add_Restaurant.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Booking_Approval.resx">
       <DependentUpon>UserControl_Booking_Approval.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Customer_Admin_Feedback.resx">
+      <DependentUpon>UserControl_Customer_Admin_Feedback.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Customer_Booking.resx">
       <DependentUpon>UserControl_Customer_Booking.h</DependentUpon>
@@ -214,11 +275,20 @@
     <EmbeddedResource Include="UserControl_Approve_Users.resx">
       <DependentUpon>UserControl_Approve_Users.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Customer_Book_Edit.resx">
+      <DependentUpon>UserControl_Customer_Book_Edit.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Customer_Feedback.resx">
+      <DependentUpon>UserControl_Customer_Feedback.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Customer_Homepage.resx">
       <DependentUpon>UserControl_Customer_Homepage.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Floor_Map.resx">
       <DependentUpon>UserControl_Floor_Map.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_GuestHouseDetails.resx">
+      <DependentUpon>UserControl_GuestHouseDetails.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Guest_House_Info.resx">
       <DependentUpon>UserControl_Guest_House_Info.h</DependentUpon>
@@ -240,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Leave.resx">
       <DependentUpon>UserControl_Staff_Leave.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Leave_Approval.resx">
+      <DependentUpon>UserControl_Staff_Leave_Approval.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Planner.resx">
       <DependentUpon>UserControl_Staff_Planner.h</DependentUpon>

@@ -2,6 +2,8 @@
 #using <System.dll>
 #using <System.data.dll>
 #include <string.h>
+#include <regex>
+#include <msclr\marshal_cppstd.h>
 
 #include "Form_Reception.h"
 #include "Form_Customer_Homepage.h"
@@ -177,6 +179,17 @@ namespace GuestHouseManagement {
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 			DB_Connection->Open();
 			
+			string sname = msclr::interop::marshal_as<std::string>(Txt_username->Text);
+			remove_if(sname.begin(), sname.end(), isspace);
+			string spassword = msclr::interop::marshal_as<std::string>(Txt_password->Text);
+			remove_if(spassword.begin(), spassword.end(), isspace);
+
+			regex rx("^[A-Z|a-z|.|0-9|_']+$");
+			if(!regex_match(sname.cbegin(), sname.cend(), rx)){
+				MessageBox::Show("Enter Username in Correct Format");
+				goto ErrExit;
+			}
+
 			String ^ username = Txt_username->Text;
 			String ^ password = Txt_password->Text;
 		
@@ -230,9 +243,9 @@ namespace GuestHouseManagement {
 					else
 					{
 
-						//MessageBox::Show("User Login Successful!");
-						Form_Reception ^form2 = gcnew Form_Reception();
-						//Form_Customer_Homepage ^form2 = gcnew Form_Customer_Homepage();
+						MessageBox::Show("User Login Successful!");
+						//Form_Reception ^form2 = gcnew Form_Reception();
+						Form_Customer_Homepage ^form2 = gcnew Form_Customer_Homepage(username);
 						form2->ShowDialog();
 						//this->Visible = false;
 						//Form1 ^ form1 = gcnew Form1();
@@ -253,7 +266,10 @@ namespace GuestHouseManagement {
 			catch(Exception ^ ex)
 			{
 				MessageBox::Show(ex->Message);
+
 			}
+ErrExit:
+			;
 			 }
 private: System::Void UserControl_Login_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }

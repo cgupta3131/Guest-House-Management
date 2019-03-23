@@ -2,6 +2,8 @@
 # include <cstdlib>
 # include <ctype.h>
 # include <iomanip>
+# include <regex>
+# include <msclr\marshal_cppstd.h>
 
 #using <System.dll>
 #using <System.data.dll>
@@ -347,6 +349,17 @@ if(Text_Name->Text->Length>50)
  return;
 }
 
+string sname = msclr::interop::marshal_as<std::string>(Text_Name->Text);
+remove_if(sname.begin(), sname.end(), isspace);
+string semail = msclr::interop::marshal_as<std::string>(Text_Email->Text);
+remove_if(semail.begin(), semail.end(), isspace);
+
+regex rx("^[A-Z|a-z|.|']+$");
+if(!regex_match(sname.cbegin(), sname.cend(), rx)){
+	MessageBox::Show("Employee Name can't contain any special characters or digits");
+	goto ErrExit;
+}
+
 String ^ str = Text_Name->Text;
     for(int i=0;i<str->Length;i++)
 {
@@ -368,9 +381,16 @@ if(Text_Add->Text->Length>100)
 }
 if(Text_Email->Text->Length>50) 
 {
- MessageBox::Show("Email Address can't be more than 50 characters long and must not contain ',;\" or any such characters");
+ MessageBox::Show("Email Address can't be more than 50 characters long");
  return;
 }
+
+rx = "^[^@|,|;]+@[^@|,|;]+$";
+if(!regex_match(semail.cbegin(), semail.cend(), rx)){
+	MessageBox::Show("Enter email address(in form ID@domain). Must not contain ',;\" or any such characters");
+	goto ErrExit;
+}
+
 //Checking if the contact number contains only digits
 str = Text_Contact->Text;
     for(int i=0;i<str->Length;i++)
@@ -446,7 +466,8 @@ if(Text_Contact->Text->Length!=10)
   {
    MessageBox::Show(ex->Message);
   }
-
+ErrExit:
+  ;
 }
   private: System::Void Text_Name_TextChanged(System::Object^  sender, System::EventArgs^  e) {
      }

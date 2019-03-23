@@ -145,47 +145,47 @@ namespace GuestHouseManagement {
 
 				while(roomdata->Read() == true)
 				{
-					String ^datefrom = roomdata->GetString(4); //yyyymmdd
-					String ^dateto = roomdata->GetString(5);
+					//String ^datefrom = roomdata->GetString(4); //yyyymmdd
+					//String ^dateto = roomdata->GetString(5);
 					//mydatefrom and //mydateto
-					int datefrom_int = System::Convert::ToInt32(datefrom);
-					int dateto_int = System::Convert::ToInt32(dateto);
-					int mydatefrom_int = System::Convert::ToInt32(mydatefrom);
-					int mydateto_int = System::Convert::ToInt32(mydateto);
-					int flag = 1;
+					//int datefrom_int = System::Convert::ToInt32(datefrom);
+					//int dateto_int = System::Convert::ToInt32(dateto);
+					//int mydatefrom_int = System::Convert::ToInt32(mydatefrom);
+					//int mydateto_int = System::Convert::ToInt32(mydateto);
+					//int flag = 1;
 
-					if(mydatefrom_int < datefrom_int)
-					{
-						if(mydateto_int <= datefrom_int)
-						{
-							//I can book
-							flag = 1;
-							break;
-						}
-						else
-							//I can't book book
-					}
+					//if(mydatefrom_int < datefrom_int)
+					//{
+					//	if(mydateto_int <= datefrom_int)
+					//	{
+					//		//I can book
+					//		flag = 1;
+					//		break;
+					//	}
+					//	else
+					//		//I can't book book
+					//}
 
-					else if(mydatefrom_int == datefrom_int)
-					{
-						//I can't book
-					}
+					//else if(mydatefrom_int == datefrom_int)
+					//{
+					//	//I can't book
+					//}
 
-					else if(mydatefrom_int > datefrom_int)
-					{
-						if(mydatefrom_int >= dateto_int)
-						{
-							//I can book
-							flag = 1;
-							break;
-						}
-						else
-							//I can't book
-					}
+					//else if(mydatefrom_int > datefrom_int)
+					//{
+					//	if(mydatefrom_int >= dateto_int)
+					//	{
+					//		//I can book
+					//		flag = 1;
+					//		break;
+					//	}
+					//	else
+					//		//I can't book
+					//}
 
 				}
-				if(flag == 0)
-					MessageBox::Show("No room available for the given duration")
+				//if(flag == 0)
+					MessageBox::Show("No room available for the given duration");
 				DB_Connection->Close();
 			}
 			DB_Connection->Open();

@@ -1,6 +1,8 @@
 #pragma once
 #using <System.dll>
 #using <System.data.dll>
+#include <regex>
+#include <msclr\marshal_cppstd.h>
 
 using namespace std;
 using namespace System;
@@ -317,6 +319,63 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void Btn_Create_Click(System::Object^  sender, System::EventArgs^  e) 
 	{
+			string sfirstname = msclr::interop::marshal_as<std::string>(Register_First_Name->Text);
+			remove_if(sfirstname.begin(), sfirstname.end(), isspace);
+			string slastname = msclr::interop::marshal_as<std::string>(Register_Last_Name->Text);
+			remove_if(slastname.begin(), slastname.end(), isspace);
+			string semail = msclr::interop::marshal_as<std::string>(Register_Email->Text);
+			remove_if(semail.begin(), semail.end(), isspace);
+			string spassword = msclr::interop::marshal_as<std::string>(Register_Password->Text);
+			remove_if(spassword.begin(), spassword.end(), isspace);
+			string sconfirm_password = msclr::interop::marshal_as<std::string>(Register_Confirm->Text);
+			remove_if(sconfirm_password.begin(), sconfirm_password.end(), isspace);
+			string scontact = msclr::interop::marshal_as<std::string>(Register_Contact->Text);
+			remove_if(scontact.begin(), scontact.end(), isspace);
+			string scategory = msclr::interop::marshal_as<std::string>(Register_Category->Text);
+
+			regex rx("^[A-Z|a-z|.|']+$");
+			if(!regex_match(sfirstname.cbegin(), sfirstname.cend(), rx)){
+				MessageBox::Show("Enter First Name in alphabets");
+				goto ErrExit;
+			}
+
+			rx = "^[A-Z|a-z|.|']+$";
+			if(!regex_match(slastname.cbegin(), slastname.cend(), rx)){
+				MessageBox::Show("Enter Last Name in alphabets");
+				goto ErrExit;
+			}
+
+			rx = "^[^@]+@[^@]+$";
+			if(!regex_match(semail.cbegin(), semail.cend(), rx)){
+				MessageBox::Show("Enter email address(in form ID@domain)");
+				goto ErrExit;
+			}
+
+			if(spassword.size()<3){
+				MessageBox::Show("Password has to be a minimum of three letters");
+				goto ErrExit;
+			}
+
+			if(sconfirm_password.size()<3){
+				MessageBox::Show("Confirm Password has to be a minimum of three letters");
+				goto ErrExit;
+			}
+
+			if(spassword.compare(sconfirm_password) != 0){
+				MessageBox::Show("Password not equal to confirm password");
+				goto ErrExit;
+			}
+
+			rx = "^[0-9]{10}$";
+			if(!regex_match(scontact.cbegin(), scontact.cend(), rx)){
+				MessageBox::Show("Enter 10 digit Contact Number [use digits from 0-9]");
+				goto ErrExit;
+			}
+
+			if(scategory.compare("") == 0){
+				MessageBox::Show("No Item is Selected");
+				goto ErrExit;
+			}
 			try{
 			OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
@@ -372,7 +431,8 @@ namespace GuestHouseManagement {
 				MessageBox::Show(ex->Message);
 			}
 
-
+ErrExit:
+			;
 	}
 
 

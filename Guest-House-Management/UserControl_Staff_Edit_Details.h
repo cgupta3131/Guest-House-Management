@@ -1,4 +1,5 @@
 #pragma once
+#include <regex>
 
 using namespace std;
 using namespace System;
@@ -10,6 +11,24 @@ using namespace System::Data;
 using namespace System::Drawing;
 using namespace System::Data::OleDb;
 
+static std::string tosstring(System::String^ string)
+{
+	using System::Runtime::InteropServices::Marshal;
+
+	if (string->Length == 0 || string->Length < 0)
+	{
+		//MessageBox::Show("No field can be empty");
+
+	}
+
+	System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
+	char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
+	std::string returnString(charPointer, string->Length);
+	Marshal::FreeHGlobal(pointer);
+
+
+	return returnString;
+}
 
 namespace GuestHouseManagement {
 
@@ -370,6 +389,32 @@ namespace GuestHouseManagement {
 			 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 				extern int S_ID;
+
+				string sname = tosstring(Text_Name->Text);
+				remove_if(sname.begin(), sname.end(), isspace);
+				string semail = tosstring(Text_Email->Text);
+				remove_if(semail.begin(), semail.end(), isspace);
+				string scontact = tosstring(Text_Contact->Text);
+				remove_if(scontact.begin(), scontact.end(), isspace);
+
+				regex rx("^[A-Z|a-z|.|']+$");
+				if(!regex_match(sname.cbegin(), sname.cend(), rx)){
+					MessageBox::Show("Enter Name in alphabets");
+					goto ErrExit;
+				}
+
+				rx = "^[^@]+@[^@]+$";
+				if(!regex_match(semail.cbegin(), semail.cend(), rx)){
+					MessageBox::Show("Enter email address(in form ID@domain)");
+					goto ErrExit;
+				}
+
+				rx = "^[0-9]{10}$";
+				if(!regex_match(scontact.cbegin(), scontact.cend(), rx)){
+					MessageBox::Show("Enter 10 digit Contact Number [use digits from 0-9]");
+					goto ErrExit;
+				}
+
 				String ^ new_desig = "";
 				String ^ new_iden = "";
 				String ^ new_add = "";
@@ -395,6 +440,8 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 				MessageBox::Show("Changes Saved","Yaay");
 				DB_Connection->Close();
 				//this->Close();
+ErrExit:
+				;
 		 }
 };
 }

@@ -96,6 +96,36 @@
     <ClCompile Include="UserControl_Booking_Approval.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Customer_Feedback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Form_Edit_Booking.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Form_Feedback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Add_Cab_Details.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Add_Places.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Add_Restaurant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Customer_Book_Edit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_GuestHouseDetails.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Staff_Leave_Approval.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Customer_Admin_Feedback.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -173,6 +203,36 @@
     <ClInclude Include="UserControl_Booking_Approval.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UserControl_Customer_Feedback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Form_Edit_Booking.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Form_Feedback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Cab_Details.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Places.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Restaurant.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Book_Edit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_GuestHouseDetails.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Leave_Approval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Admin_Feedback.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -241,6 +301,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Floor_Map.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Booking_Approval.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>
