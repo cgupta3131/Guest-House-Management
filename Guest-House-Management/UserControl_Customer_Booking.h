@@ -43,7 +43,7 @@ namespace GuestHouseManagement {
 
 	internal: System::Windows::Forms::TextBox^  Register_First_Name;
 	internal: System::Windows::Forms::Label^  Lbl_Register_Name;
-	internal: System::Windows::Forms::Label^  label1;
+
 	internal: System::Windows::Forms::Label^  label3;
 	internal: System::Windows::Forms::Label^  label4;
 	internal: System::Windows::Forms::Label^  label5;
@@ -64,16 +64,25 @@ namespace GuestHouseManagement {
 	internal: System::Windows::Forms::ComboBox^  User_Type_Box;
 	private: 
 
-	internal: System::Windows::Forms::ComboBox^  RoomTypeBox;
+
 
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker1;
 	internal: 
 	private: System::Windows::Forms::DateTimePicker^  dateTimePicker2;
-	internal: System::Windows::Forms::ComboBox^  Number_Rooms;
+
 	private: 
 
 	private: 
-	internal: System::Windows::Forms::Label^  label9;
+
+	private: System::Windows::Forms::Button^  Btn_Room_Add;
+	internal: System::Windows::Forms::Label^  label10;
+	internal: System::Windows::Forms::ComboBox^  Number_Rooms;
+	private: 
+
+	internal: System::Windows::Forms::ComboBox^  RoomTypeBox;
+
+	internal: System::Windows::Forms::Label^  label11;
+	internal: 
 	private: 
 	internal: 
 	private: 
@@ -94,7 +103,6 @@ namespace GuestHouseManagement {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->Register_First_Name = (gcnew System::Windows::Forms::TextBox());
 			this->Lbl_Register_Name = (gcnew System::Windows::Forms::Label());
-			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->label5 = (gcnew System::Windows::Forms::Label());
@@ -106,11 +114,13 @@ namespace GuestHouseManagement {
 			this->TextBox_Email = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->User_Type_Box = (gcnew System::Windows::Forms::ComboBox());
-			this->RoomTypeBox = (gcnew System::Windows::Forms::ComboBox());
 			this->dateTimePicker1 = (gcnew System::Windows::Forms::DateTimePicker());
 			this->dateTimePicker2 = (gcnew System::Windows::Forms::DateTimePicker());
+			this->Btn_Room_Add = (gcnew System::Windows::Forms::Button());
+			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->Number_Rooms = (gcnew System::Windows::Forms::ComboBox());
-			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->RoomTypeBox = (gcnew System::Windows::Forms::ComboBox());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label2
@@ -148,19 +158,6 @@ namespace GuestHouseManagement {
 			this->Lbl_Register_Name->TabIndex = 52;
 			this->Lbl_Register_Name->Text = L"Username";
 			this->Lbl_Register_Name->Click += gcnew System::EventHandler(this, &UserControl_Customer_Booking::Lbl_Register_Name_Click);
-			// 
-			// label1
-			// 
-			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(18, 370);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(96, 21);
-			this->label1->TabIndex = 53;
-			this->label1->Text = L"Room Type";
-			this->label1->Click += gcnew System::EventHandler(this, &UserControl_Customer_Booking::label1_Click);
 			// 
 			// label3
 			// 
@@ -278,7 +275,7 @@ namespace GuestHouseManagement {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(539, 199);
+			this->button1->Location = System::Drawing::Point(184, 380);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(91, 30);
@@ -300,19 +297,6 @@ namespace GuestHouseManagement {
 			this->User_Type_Box->TabIndex = 68;
 			this->User_Type_Box->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Customer_Booking::User_Type_Box_SelectedIndexChanged);
 			// 
-			// RoomTypeBox
-			// 
-			this->RoomTypeBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->RoomTypeBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->RoomTypeBox->FormattingEnabled = true;
-			this->RoomTypeBox->Location = System::Drawing::Point(196, 357);
-			this->RoomTypeBox->Margin = System::Windows::Forms::Padding(2);
-			this->RoomTypeBox->Name = L"RoomTypeBox";
-			this->RoomTypeBox->Size = System::Drawing::Size(267, 25);
-			this->RoomTypeBox->TabIndex = 69;
-			this->RoomTypeBox->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Customer_Booking::RoomTypeBox_SelectedIndexChanged);
-			// 
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->Location = System::Drawing::Point(144, 187);
@@ -331,6 +315,29 @@ namespace GuestHouseManagement {
 			this->dateTimePicker2->TabIndex = 71;
 			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &UserControl_Customer_Booking::dateTimePicker2_ValueChanged);
 			// 
+			// Btn_Room_Add
+			// 
+			this->Btn_Room_Add->Location = System::Drawing::Point(610, 124);
+			this->Btn_Room_Add->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Room_Add->Name = L"Btn_Room_Add";
+			this->Btn_Room_Add->Size = System::Drawing::Size(91, 30);
+			this->Btn_Room_Add->TabIndex = 74;
+			this->Btn_Room_Add->Text = L"Add Room";
+			this->Btn_Room_Add->UseVisualStyleBackColor = true;
+			this->Btn_Room_Add->Click += gcnew System::EventHandler(this, &UserControl_Customer_Booking::Btn_Room_Add_Click);
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(486, 70);
+			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(147, 21);
+			this->label10->TabIndex = 81;
+			this->label10->Text = L"Number of Rooms";
+			// 
 			// Number_Rooms
 			// 
 			this->Number_Rooms->AutoCompleteCustomSource->AddRange(gcnew cli::array< System::String^  >(9) {L"1", L"2", L"3", L"4", L"5", 
@@ -341,34 +348,47 @@ namespace GuestHouseManagement {
 			this->Number_Rooms->FormattingEnabled = true;
 			this->Number_Rooms->Items->AddRange(gcnew cli::array< System::Object^  >(10) {L"1", L"2", L"3", L"4", L"5", L"6", L"7", L"8", 
 				L"9", L"10"});
-			this->Number_Rooms->Location = System::Drawing::Point(180, 400);
+			this->Number_Rooms->Location = System::Drawing::Point(667, 70);
 			this->Number_Rooms->Margin = System::Windows::Forms::Padding(2);
 			this->Number_Rooms->Name = L"Number_Rooms";
-			this->Number_Rooms->Size = System::Drawing::Size(267, 25);
-			this->Number_Rooms->TabIndex = 72;
-			this->Number_Rooms->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Customer_Booking::Number_Rooms_SelectedIndexChanged);
+			this->Number_Rooms->Size = System::Drawing::Size(125, 25);
+			this->Number_Rooms->TabIndex = 80;
 			// 
-			// label9
+			// RoomTypeBox
 			// 
-			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->RoomTypeBox->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->RoomTypeBox->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(14, 398);
-			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(147, 21);
-			this->label9->TabIndex = 73;
-			this->label9->Text = L"Number of Rooms";
+			this->RoomTypeBox->FormattingEnabled = true;
+			this->RoomTypeBox->Location = System::Drawing::Point(667, 27);
+			this->RoomTypeBox->Margin = System::Windows::Forms::Padding(2);
+			this->RoomTypeBox->Name = L"RoomTypeBox";
+			this->RoomTypeBox->Size = System::Drawing::Size(125, 25);
+			this->RoomTypeBox->TabIndex = 79;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(486, 31);
+			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(96, 21);
+			this->label11->TabIndex = 78;
+			this->label11->Text = L"Room Type";
 			// 
 			// UserControl_Customer_Booking
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->label9);
+			this->Controls->Add(this->label10);
 			this->Controls->Add(this->Number_Rooms);
+			this->Controls->Add(this->RoomTypeBox);
+			this->Controls->Add(this->label11);
+			this->Controls->Add(this->Btn_Room_Add);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->dateTimePicker1);
-			this->Controls->Add(this->RoomTypeBox);
 			this->Controls->Add(this->User_Type_Box);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->TextBox_Email);
@@ -380,22 +400,21 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
-			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Lbl_Register_Name);
 			this->Controls->Add(this->Register_First_Name);
 			this->Controls->Add(this->label2);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Customer_Booking";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(855, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Customer_Booking::UserControl_Customer_Booking_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	String ^final;
 	private: System::Void UserControl_Customer_Booking_Load(System::Object^  sender, System::EventArgs^  e) {
 
-				 MessageBox::Show("1");
 				 this->dateTimePicker1->MinDate=System::DateTime().Now;
 				 this->dateTimePicker2->MinDate=System::DateTime().Now;
 				 this->dateTimePicker2->Enabled=false;
@@ -408,26 +427,22 @@ namespace GuestHouseManagement {
 				 OleDbCommand ^ cmdRoomType = gcnew OleDbCommand(getRoomTypes, DB_Connection);
 				 OleDbDataReader ^ room_data = cmdRoomType->ExecuteReader();
 
-				 MessageBox::Show("2");
 				 while(room_data->Read() == true)
 				 {
-					 RoomTypeBox->Items->Add(room_data->GetString(1));
+				 RoomTypeBox->Items->Add(room_data->GetString(1));
 				 }
 
 				 String ^ getUserTypes = "Select * from User_Types";
 				 OleDbCommand ^ cmdUserType = gcnew OleDbCommand(getUserTypes, DB_Connection);
 				 OleDbDataReader ^ UserType_data = cmdUserType->ExecuteReader();
-				 MessageBox::Show("3");
 				 while(UserType_data->Read() == true)
 				 {
 					 User_Type_Box->Items->Add(UserType_data->GetString(1));
 				 }
 				
-				 MessageBox::Show("4");
 				 String ^ getUserData = "Select * From User_Table where Username like '%" + username_info + "%'";
 				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
 				 OleDbDataReader ^ user_data = cmd->ExecuteReader();
-				 MessageBox::Show("5");
 				 while(user_data->Read()==true)
 				 {
 					 Register_First_Name->Text = user_data->GetString(5);
@@ -466,6 +481,7 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void TextBox_Email_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 try
 				 {
@@ -492,15 +508,15 @@ namespace GuestHouseManagement {
 					 String ^customer_contact = Textbox_contact->Text;
 					 String ^customer_email = TextBox_Email->Text;
 
-					 String ^ insert_booking = "insert into Booking_Request([Customer_Username],[Customer_Type],[Customer_Name],[Date_From],[Date_Upto],[Room_Type],[Contact_Number],[Email],[Approved]) VALUES('" +customer_username+ "', '" +customer_type+ "', '" +customer_name+ "', '" +start_date+ "', '" +end_date+ "', '" +new_room_type+ "', '" +customer_contact+ "', '" +customer_email+ "', 'NO' );";
+					 String ^ insert_booking = "insert into Booking_Request([Customer_Username],[Customer_Type],[Customer_Name],[Date_From],[Date_Upto],[Room_Type],[Contact_Number],[Email],[Approved]) VALUES('" +customer_username+ "', '" +customer_type+ "', '" +customer_name+ "', '" +start_date+ "', '" +end_date+ "', '" + final + "', '" +customer_contact+ "', '" +customer_email+ "', 'NO' );";
 					 OleDbCommand ^ cmdInsert = gcnew OleDbCommand(insert_booking, DB_Connection);
 					 //Debug::WriteLine(insert_booking);
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Customer_Username",Convert::ToString(customer_username)));
-					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Customer_Type",Convert::ToString(new_room_type)));
+					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Customer_Type",Convert::ToString(customer_type)));
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Customer_Name",Convert::ToString(customer_name)));
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Date_From",Convert::ToString(start_date)));
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Date_Upto",Convert::ToString(end_date)));
-					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Room_Type",Convert::ToString(room_type)));
+					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Room_Type",Convert::ToString(final)));
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Contact_Number",Convert::ToString(customer_contact)));
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Email",Convert::ToString(customer_email)));
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Approved",Convert::ToString("NO")));
@@ -523,5 +539,31 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void Number_Rooms_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
+	
+	private: System::Void add_room_function() {
+			 }
+	
+	static int j=0;
+	private: System::Void Btn_Room_Add_Click(System::Object^  sender, System::EventArgs^  e) {
+
+				 String ^room_type = RoomTypeBox->Text;
+				 String ^count = Number_Rooms->Text;
+
+				 final = final + room_type + ":" + count + ",";
+
+				 j=j+1;
+				 TextBox ^tb = gcnew TextBox();
+				 tb->Text = room_type + ":" + count;
+				 tb->Size = System::Drawing::Size(125, 25);
+				 tb->ReadOnly = true;
+				 tb->Location = System::Drawing::Point(667,150+30*j);
+				 this->Controls->Add(tb);
+				 RoomTypeBox->Text = "";
+				 Number_Rooms->SelectedIndex = -1;
+				 RoomTypeBox->Items->Remove(room_type);
+
+		 }
+private: System::Void label9_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }
