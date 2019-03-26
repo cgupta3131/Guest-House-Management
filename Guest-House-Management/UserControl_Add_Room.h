@@ -359,7 +359,7 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 				String ^ room_start = Txt_Room_Start->Text;
 				String ^ room_end = Txt_Room_End->Text;
 				String ^ category = Txt_Category->Text;
-				String ^ status = "Working Condition";
+				String ^ status = "Available";
 
 				int start = System::Convert::ToInt32(room_start);
 				int end = System::Convert::ToInt32(room_end);

@@ -129,6 +129,7 @@ namespace GuestHouseManagement {
 
 		}
 
+
 		OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 		DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 		DB_Connection->Open();
@@ -227,7 +228,7 @@ namespace GuestHouseManagement {
 							 btn->Name = "Btn_Submit";
 
 							 btn->ForeColor = System::Drawing::SystemColors::WindowText;
-							 btn->Location = System::Drawing::Point(40,30*n+30);
+							 btn->Location = System::Drawing::Point(40,70*n+100);
 							 btn->Click += gcnew System::EventHandler(this,&UserControl_User_Types::button_click);
 							 this->Controls->Add(btn);
 

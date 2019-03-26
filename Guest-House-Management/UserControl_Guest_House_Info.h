@@ -1,7 +1,7 @@
 #pragma once
 #using <System.dll>
 #using <System.data.dll>
-#include "UserControl_Room_Types.h"
+#include "UserControl_Room_Types2.h"
 #include "UserControl_User_Types.h"
 
 using namespace std;
@@ -322,7 +322,7 @@ private: System::Void Btn_User_Types_Click(System::Object^  sender, System::Even
 		 }
 private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Second_Panel->Controls->Clear();
-			 Second_Panel->Controls->Add(gcnew UserControl_Room_Types());
+			 Second_Panel->Controls->Add(gcnew UserControl_Room_Types2());
 			 Second_Panel->Visible = true;
 		 }
 };

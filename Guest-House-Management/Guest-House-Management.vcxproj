@@ -112,6 +112,7 @@
     <ClCompile Include="UserControl_Guest_House_Info.cpp" />
     <ClCompile Include="UserControl_Login.cpp" />
     <ClCompile Include="UserControl_Room_Types.cpp" />
+    <ClCompile Include="UserControl_Room_Types2.cpp" />
     <ClCompile Include="UserControl_Signup.cpp" />
     <ClCompile Include="UserControl_Staff.cpp" />
     <ClCompile Include="UserControl_Staff_Edit.cpp" />
@@ -191,7 +192,9 @@
     <ClInclude Include="UserControl_Login.h">
       <FileType>CppControl</FileType>
     </ClInclude>
-    <ClInclude Include="UserControl_Room_Types.h" />
+    <ClInclude Include="UserControl_Room_Types2.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_Signup.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -298,6 +301,9 @@
       <DependentUpon>UserControl_Login.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Room_Types.resx" />
+    <EmbeddedResource Include="UserControl_Room_Types2.resx">
+      <DependentUpon>UserControl_Room_Types2.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Signup.resx">
       <DependentUpon>UserControl_Signup.h</DependentUpon>
     </EmbeddedResource>
@@ -334,6 +340,9 @@
     <EmbeddedResource Include="UserControl_User_Types.resx">
       <DependentUpon>UserControl_User_Types.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Debug\UserControl_Room_Types.obj" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

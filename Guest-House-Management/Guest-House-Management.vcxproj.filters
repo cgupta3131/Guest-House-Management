@@ -126,6 +126,9 @@
     <ClCompile Include="UserControl_Customer_Admin_Feedback.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Room_Types2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -233,7 +236,7 @@
     <ClInclude Include="UserControl_Customer_Admin_Feedback.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UserControl_Room_Types.h">
+    <ClInclude Include="UserControl_Room_Types2.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -345,5 +348,8 @@
     <EmbeddedResource Include="UserControl_Room_Types.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="Debug\UserControl_Room_Types.obj" />
   </ItemGroup>
 </Project>
