@@ -108,6 +108,7 @@
     <ClCompile Include="UserControl_Customer_Feedback.cpp" />
     <ClCompile Include="UserControl_Customer_Homepage.cpp" />
     <ClCompile Include="UserControl_Floor_Map.cpp" />
+    <ClCompile Include="UserControl_Generate_Bill.cpp" />
     <ClCompile Include="UserControl_GuestHouseDetails.cpp" />
     <ClCompile Include="UserControl_Guest_House_Info.cpp" />
     <ClCompile Include="UserControl_Login.cpp" />
@@ -181,6 +182,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Floor_Map.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Generate_Bill.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_GuestHouseDetails.h">
@@ -290,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Floor_Map.resx">
       <DependentUpon>UserControl_Floor_Map.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Generate_Bill.resx">
+      <DependentUpon>UserControl_Generate_Bill.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_GuestHouseDetails.resx">
       <DependentUpon>UserControl_GuestHouseDetails.h</DependentUpon>

@@ -6,6 +6,7 @@
 #include "UserControl_Floor_Map.h"
 #include "UserControl_Booking_Approval.h"
 #include "UserControl_Customer_Feedback.h"
+#include "UserControl_Generate_Bill.h"
 namespace GuestHouseManagement {
 
 	using namespace System;
@@ -56,6 +57,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Btn_Floor_Map;
 	private: System::Windows::Forms::Button^  Btn_Booking_App;
 	private: System::Windows::Forms::Button^  Btn_Customer_Feedback;
+	private: System::Windows::Forms::Button^  button1;
 	internal: 
 	private: 
 
@@ -82,6 +84,7 @@ namespace GuestHouseManagement {
 			this->Btn_Floor_Map = (gcnew System::Windows::Forms::Button());
 			this->Btn_Booking_App = (gcnew System::Windows::Forms::Button());
 			this->Btn_Customer_Feedback = (gcnew System::Windows::Forms::Button());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Booking_Info
@@ -183,11 +186,22 @@ namespace GuestHouseManagement {
 			this->Btn_Customer_Feedback->UseVisualStyleBackColor = true;
 			this->Btn_Customer_Feedback->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Customer_Feedback_Click);
 			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(562, 12);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(164, 43);
+			this->button1->TabIndex = 23;
+			this->button1->Text = L"Generate Bill";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form_Reception::button1_Click);
+			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Btn_Customer_Feedback);
 			this->Controls->Add(this->Btn_Booking_App);
 			this->Controls->Add(this->Btn_Floor_Map);
@@ -240,6 +254,10 @@ public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::Even
 private: System::Void Btn_Customer_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback);
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Generate_Bill);
 		 }
 };
 }
