@@ -139,9 +139,17 @@ namespace GuestHouseManagement {
 				datefrom = room_data->GetString(4);
 				dateto = room_data->GetString(5);
 			}
+			//MessageBox::Show(room_type);
 			DB_Connection->Close();
+			int len = room_type->Length;
+			//MessageBox::Show(Convert::ToString(len));
+			Char ^room_count2 = room_type[len-1];
+			String ^room_count3 = Convert::ToString(room_count2); 
+			//MessageBox::Show(Convert::ToString(room_count2));
 
-
+			int room_cnt = Convert::ToInt32(room_count3);
+			room_type = room_type->Substring(0,len-2);
+			//MessageBox::Show(room_type);
 			//Extracting Data of Room Available
 			DB_Connection->Open();
 			String ^ getroomNo2 = "Select * from [Room_No] where [Category] = '" + room_type + "' AND [Status] = 'Available' ;";
@@ -169,6 +177,8 @@ namespace GuestHouseManagement {
 			DB_Connection->Close();*/
 			int flag = 1;
 			String ^room_to_be_booked = vec[0];
+			cliext::vector<String^> vec_can_be_booked;
+	
 			for(int i=0;i<vec.size();i++)
 			{
 				//vec[i] denotes the Potential Room No. Available
@@ -176,9 +186,10 @@ namespace GuestHouseManagement {
 				String ^getUsers = "Select * from [Booking_Request] where [Approved] = 'YES' AND [Room_No] = '" + vec[i] + "' ;";
 				cmd = gcnew OleDbCommand(getUsers,DB_Connection);
 				OleDbDataReader ^roomdata = cmd->ExecuteReader();
-
+				int flag = 0;
 				while(roomdata->Read() == true)
 				{
+					flag = 1;
 					String ^temp = roomdata->GetString(4);
 					//String ^datefrom2 = "20190401";
 					//String ^dateto2 = "20190408";
@@ -201,21 +212,22 @@ namespace GuestHouseManagement {
 					{
 						if(mydateto_int <= datefrom_int)
 						{
-							room_to_be_booked = vec[i];
+							vec_can_be_booked.push_back(vec[i]);
+							//room_to_be_booked = vec[i];
 							//I can book
-							flag = 1;
-							break;
+							//flag = 1;
+							//break;
 						}
 						else
 						{
-							flag = 0;
+							//flag = 0;
 							//I can't book book
 						}
 					}
 
 					else if(mydatefrom_int == datefrom_int)
 					{
-						flag = 0;
+						//flag = 0;
 						//I can't book
 					}
 
@@ -223,39 +235,61 @@ namespace GuestHouseManagement {
 					{
 						if(mydatefrom_int >= dateto_int)
 						{
-							room_to_be_booked = vec[i];
+							vec_can_be_booked.push_back(vec[i]);
+							//room_to_be_booked = vec[i];
 							//I can book
-							flag = 1;
-							break;
+							//flag = 1;
+							//break;
 						}
 						else
 						{
-							flag = 0;
+							//flag = 0;
 							//I can't book
 						}
 					}
 
 				}
+
+				if(flag == 0)
+					vec_can_be_booked.push_back(vec[i]);
 				DB_Connection->Close();
-				if(flag == 1)
-					break;
+				
 			}
 
-
-			if(flag == 0)
+			//MessageBox::Show(Convert::ToString(room_cnt));
+			//MessageBox::Show(Convert::ToString(vec_can_be_booked.size()));
+			if(vec_can_be_booked.size() < room_cnt )
 				MessageBox::Show("No room available for the given Room Type and Duration");
 			else
 			{
+				String ^room_numbers;
+				for(int i=0;i<room_cnt;i++)
+					 room_numbers = room_numbers + vec_can_be_booked[i] + ","; 
+				
 				DB_Connection->Open();
-				String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app, [Room_No] = '" + room_to_be_booked + "' Where [ID] = @idNum;";
+				String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app, [Room_No] = '" + room_numbers + "' Where [ID] = @idNum;";
 				cmd = gcnew OleDbCommand(approveUser, DB_Connection);
 				cmd->Parameters->AddWithValue("@app", "YES");
 				cmd->Parameters->AddWithValue("@idNum", x);
 				cmd->ExecuteNonQuery();
 				DB_Connection->Close();
-
+				
 				MessageBox::Show("Booking approved");
 			}
+			/*if(flag == 0)
+			MessageBox::Show("No room available for the given Room Type and Duration");
+			else
+			{
+			DB_Connection->Open();
+			String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app, [Room_No] = '" + room_to_be_booked + "' Where [ID] = @idNum;";
+			cmd = gcnew OleDbCommand(approveUser, DB_Connection);
+			cmd->Parameters->AddWithValue("@app", "YES");
+			cmd->Parameters->AddWithValue("@idNum", x);
+			cmd->ExecuteNonQuery();
+			DB_Connection->Close();
+
+			MessageBox::Show("Booking approved");
+			}*/
 
 			Txt_Room_Type_SelectedIndexChanged(sender,e);
 			
@@ -347,8 +381,16 @@ namespace GuestHouseManagement {
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();
-
-				 String ^ getUsers = "Select * from Booking_Request where [Room_Type] = '" + Txt_Room_Type->Text + "' AND [Approved] = 'NO' ";
+				 String ^first = Txt_Room_Type->Text + ":1";
+				 String ^second = Txt_Room_Type->Text + ":2";
+				 String ^third = Txt_Room_Type->Text + ":3";
+				 String ^fourth = Txt_Room_Type->Text + ":4";
+				 String ^fifth = Txt_Room_Type->Text + ":5";
+				 String ^sixth = Txt_Room_Type->Text + ":6";
+				 String ^seveneth = Txt_Room_Type->Text + ":7";
+				 String ^eighth = Txt_Room_Type->Text + ":8";
+				 String ^ninth = Txt_Room_Type->Text + ":9";
+				 String ^ getUsers = "Select * from Booking_Request where ( [Room_Type] = '" + first + "' OR [Room_Type] = '" + second + "' OR [Room_Type] = '" + third + "' OR [Room_Type] = '" +						fourth + "' OR [Room_Type] = '" + fifth + "' OR [Room_Type] = '" + sixth + "' OR [Room_Type] = '" + seveneth + "' OR [Room_Type] = '" + eighth + "' OR [Room_Type] = '" + ninth +					"' ) AND [Approved] = 'NO' ";
 				 txt = Txt_Room_Type->Text;
 				 //MessageBox::Show(getUsers);
 				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUsers, DB_Connection);
