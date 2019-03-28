@@ -1,4 +1,6 @@
 #pragma once
+#include <regex>
+#include "tosstring.h"
 
 using namespace std;
 using namespace System;
@@ -485,6 +487,39 @@ namespace GuestHouseManagement {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 try
 				 {
+					 string susername = tosstring(Register_First_Name->Text);
+					 remove_if(susername.begin(), susername.end(), isspace);
+					 string sbf_name = tosstring(Textbox_name->Text);
+					 remove_if(sbf_name.begin(), sbf_name.end(), isspace);
+					 string scontact = tosstring(Textbox_contact->Text);
+					 remove_if(scontact.begin(), scontact.end(), isspace);
+					 string semail = tosstring(TextBox_Email->Text);
+					 remove_if(semail.begin(), semail.end(), isspace);
+					 string scust = tosstring(User_Type_Box->Text);
+
+					 regex rx("^[A-Z|a-z|.|']+$");
+					 if(!regex_match(sbf_name.cbegin(), sbf_name.cend(), rx)){
+						 MessageBox::Show("Enter Booking For: Name in alphabets");
+						 goto ErrExit;
+					 }
+
+					 rx = "^[0-9]{10}$";
+					 if(!regex_match(scontact.cbegin(), scontact.cend(), rx)){
+						 MessageBox::Show("Enter 10 digit Contact Number [use digits from 0-9]");
+						 goto ErrExit;
+					 }
+
+					 rx = "^[^@]+@[^@]+$";
+					 if(!regex_match(semail.cbegin(), semail.cend(), rx)){
+						 MessageBox::Show("Enter email address(in form ID@domain)");
+						 goto ErrExit;
+					 }
+
+					 if(scust.compare("") == 0){
+						 MessageBox::Show("No Customer Type is Selected");
+						 goto ErrExit;
+					 }
+
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
@@ -530,6 +565,8 @@ namespace GuestHouseManagement {
 				 {
 					 MessageBox::Show(ex->Message);
 				 }
+ErrExit:
+				 ;
 			 }
 	private: System::Void User_Type_Box_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
@@ -545,7 +582,16 @@ namespace GuestHouseManagement {
 	
 	static int j=0;
 	private: System::Void Btn_Room_Add_Click(System::Object^  sender, System::EventArgs^  e) {
-
+				 string sroom = tosstring(RoomTypeBox->Text);
+				 string c_room = tosstring(Number_Rooms->Text);
+				 if(sroom.compare("") == 0){
+					 MessageBox::Show("No Room Type is Selected");
+					 goto ErrExit;
+				 }
+				 if(c_room.compare("") == 0){
+					 MessageBox::Show("Number of Rooms can't be empty");
+					 goto ErrExit;
+				 }
 				 String ^room_type = RoomTypeBox->Text;
 				 String ^count = Number_Rooms->Text;
 
@@ -561,6 +607,8 @@ namespace GuestHouseManagement {
 				 RoomTypeBox->Text = "";
 				 Number_Rooms->SelectedIndex = -1;
 				 RoomTypeBox->Items->Remove(room_type);
+ErrExit:
+				 ;
 
 		 }
 private: System::Void label9_Click(System::Object^  sender, System::EventArgs^  e) {

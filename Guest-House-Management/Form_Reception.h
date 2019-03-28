@@ -7,6 +7,10 @@
 #include "UserControl_Booking_Approval.h"
 #include "UserControl_Customer_Feedback.h"
 #include "UserControl_Generate_Bill.h"
+#include "UserControl_Staff_Housekeeping_Approval.h"
+#include "UserControl_Staff_Booking_Display.h"
+#include "UserControl_User_Types.h"
+
 namespace GuestHouseManagement {
 
 	using namespace System;
@@ -58,6 +62,8 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Btn_Booking_App;
 	private: System::Windows::Forms::Button^  Btn_Customer_Feedback;
 	private: System::Windows::Forms::Button^  button1;
+	private: System::Windows::Forms::Button^  button2;
+	private: System::Windows::Forms::Button^  Btn_Housekeeping_App;
 	internal: 
 	private: 
 
@@ -85,6 +91,8 @@ namespace GuestHouseManagement {
 			this->Btn_Booking_App = (gcnew System::Windows::Forms::Button());
 			this->Btn_Customer_Feedback = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->button2 = (gcnew System::Windows::Forms::Button());
+			this->Btn_Housekeeping_App = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Booking_Info
@@ -178,7 +186,7 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Customer_Feedback
 			// 
-			this->Btn_Customer_Feedback->Location = System::Drawing::Point(266, 12);
+			this->Btn_Customer_Feedback->Location = System::Drawing::Point(155, 22);
 			this->Btn_Customer_Feedback->Name = L"Btn_Customer_Feedback";
 			this->Btn_Customer_Feedback->Size = System::Drawing::Size(164, 43);
 			this->Btn_Customer_Feedback->TabIndex = 22;
@@ -188,7 +196,7 @@ namespace GuestHouseManagement {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(562, 12);
+			this->button1->Location = System::Drawing::Point(371, 12);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(164, 43);
 			this->button1->TabIndex = 23;
@@ -196,11 +204,33 @@ namespace GuestHouseManagement {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &Form_Reception::button1_Click);
 			// 
+			// button2
+			// 
+			this->button2->Location = System::Drawing::Point(826, 1);
+			this->button2->Name = L"button2";
+			this->button2->Size = System::Drawing::Size(149, 54);
+			this->button2->TabIndex = 26;
+			this->button2->Text = L"Display Bookings";
+			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &Form_Reception::button2_Click_1);
+			// 
+			// Btn_Housekeeping_App
+			// 
+			this->Btn_Housekeeping_App->Location = System::Drawing::Point(630, 1);
+			this->Btn_Housekeeping_App->Name = L"Btn_Housekeeping_App";
+			this->Btn_Housekeeping_App->Size = System::Drawing::Size(166, 54);
+			this->Btn_Housekeeping_App->TabIndex = 25;
+			this->Btn_Housekeeping_App->Text = L"Housekeeping Approval";
+			this->Btn_Housekeeping_App->UseVisualStyleBackColor = true;
+			this->Btn_Housekeeping_App->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Housekeeping_App_Click);
+			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->button2);
+			this->Controls->Add(this->Btn_Housekeeping_App);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Btn_Customer_Feedback);
 			this->Controls->Add(this->Btn_Booking_App);
@@ -258,6 +288,14 @@ private: System::Void Btn_Customer_Feedback_Click(System::Object^  sender, Syste
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Generate_Bill);
+		 }
+private: System::Void Btn_Housekeeping_App_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Housekeeping_Approval);
+		 }
+private: System::Void button2_Click_1(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Booking_Display);
 		 }
 };
 }

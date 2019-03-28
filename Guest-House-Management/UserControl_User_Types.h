@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <regex>
+#include "tosstring.h"
 //#include <msclr\marshal_cppstd.h>
 #include <cliext/vector>
 //#include <msclr\marshal.h>
@@ -50,6 +52,7 @@ namespace GuestHouseManagement {
 	protected: 
 	private: System::Windows::Forms::TextBox^  Txt_User_Type;
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -69,9 +72,11 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Add
 			// 
-			this->Btn_Add->Location = System::Drawing::Point(313, 114);
+			this->Btn_Add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Btn_Add->Location = System::Drawing::Point(337, 108);
 			this->Btn_Add->Name = L"Btn_Add";
-			this->Btn_Add->Size = System::Drawing::Size(75, 23);
+			this->Btn_Add->Size = System::Drawing::Size(82, 32);
 			this->Btn_Add->TabIndex = 3;
 			this->Btn_Add->Text = L"Add";
 			this->Btn_Add->UseVisualStyleBackColor = true;
@@ -79,7 +84,7 @@ namespace GuestHouseManagement {
 			// 
 			// Txt_User_Type
 			// 
-			this->Txt_User_Type->Location = System::Drawing::Point(118, 118);
+			this->Txt_User_Type->Location = System::Drawing::Point(163, 117);
 			this->Txt_User_Type->Name = L"Txt_User_Type";
 			this->Txt_User_Type->Size = System::Drawing::Size(113, 20);
 			this->Txt_User_Type->TabIndex = 2;
@@ -110,6 +115,15 @@ namespace GuestHouseManagement {
 			RichTextBox ^tb = (RichTextBox^)this->Controls["TextBox" + (i)];
 			String ^str = tb->Text;
 
+			string sstr = tosstring(str);
+			remove_if(sstr.begin(), sstr.end(), isspace);
+
+			regex rx("^[0-9]+$");
+			if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
+				MessageBox::Show("Enter prices in digits[0-9]");
+				goto ErrExit;
+			}
+
 			//MessageBox::Show(str);
 			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
@@ -124,9 +138,6 @@ namespace GuestHouseManagement {
 
 			cmd->ExecuteNonQuery();
 			DB_Connection->Close();
-
-
-
 		}
 
 
@@ -142,6 +153,8 @@ namespace GuestHouseManagement {
 		//To Refresh User Control
 		this->Controls->Clear();
 		this->InitializeComponent();
+ErrExit:
+		;
 	}
 
 	private: System::Void UserControl_User_Types_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -162,7 +175,14 @@ namespace GuestHouseManagement {
 					// tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 					// this->Controls->Add(tb);
 				 //}
-			
+					 string sname = tosstring(Txt_User_Type->Text);
+					 remove_if(sname.begin(), sname.end(), isspace);
+
+					 regex rx("^[A-Z|a-z|.|0-9|_']+$");
+					 if(!regex_match(sname.cbegin(), sname.cend(), rx)){
+						 MessageBox::Show("Enter UserType in Alphanumeric characters");
+						 goto ErrExit;
+					 }
 
 					 Btn_Add->Visible = false;
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
@@ -206,15 +226,18 @@ namespace GuestHouseManagement {
 
 
 							 for(int i=0;i<vec.size();i++)
-							 {
+							 {	
+								 int j = i%2;
 								 Label ^lb = gcnew Label();
 								 lb->Text = vec[i];
-								 lb->Location = System::Drawing::Point(20,70*(i+1));
+								 lb->Location = System::Drawing::Point(20 + 300*j,70*((i/2)+1));
+								 lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+									 static_cast<System::Byte>(0)));
 								 this->Controls->Add(lb);
 							
 								 TextBox ^tb = gcnew TextBox();
 								 //tb->Text = Convert::ToString(i);
-								 tb->Location = System::Drawing::Point(100,70*(i+1));
+								 tb->Location = System::Drawing::Point(125 + 300*j,70*((i/2)+1));
 								 tb->Width = 70;
 								 tb->Height = 10;
 								 tb->Name = "TextBox" + i;
@@ -227,8 +250,10 @@ namespace GuestHouseManagement {
 							 btn->Text = "Submit";
 							 btn->Name = "Btn_Submit";
 
+							 btn->Height = 60;
+							 btn->Width = 150;
 							 btn->ForeColor = System::Drawing::SystemColors::WindowText;
-							 btn->Location = System::Drawing::Point(40,70*n+100);
+							 btn->Location = System::Drawing::Point(400,35*n+100);
 							 btn->Click += gcnew System::EventHandler(this,&UserControl_User_Types::button_click);
 							 this->Controls->Add(btn);
 
@@ -245,6 +270,8 @@ namespace GuestHouseManagement {
 				 {
 					 MessageBox::Show(ex->Message);
 				 }*/
+ErrExit:
+					 ;
 			 }
 	};
 }

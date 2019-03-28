@@ -107,6 +107,7 @@
     <ClCompile Include="UserControl_Customer_Book_Edit.cpp" />
     <ClCompile Include="UserControl_Customer_Feedback.cpp" />
     <ClCompile Include="UserControl_Customer_Homepage.cpp" />
+    <ClCompile Include="UserControl_Customer_Housekeeping.cpp" />
     <ClCompile Include="UserControl_Floor_Map.cpp" />
     <ClCompile Include="UserControl_Generate_Bill.cpp" />
     <ClCompile Include="UserControl_GuestHouseDetails.cpp" />
@@ -116,8 +117,10 @@
     <ClCompile Include="UserControl_Room_Types2.cpp" />
     <ClCompile Include="UserControl_Signup.cpp" />
     <ClCompile Include="UserControl_Staff.cpp" />
+    <ClCompile Include="UserControl_Staff_Booking_Display.cpp" />
     <ClCompile Include="UserControl_Staff_Edit.cpp" />
     <ClCompile Include="UserControl_Staff_Edit_Details.cpp" />
+    <ClCompile Include="UserControl_Staff_Housekeeping_Approval.cpp" />
     <ClCompile Include="UserControl_Staff_Leave.cpp" />
     <ClCompile Include="UserControl_Staff_Leave_Approval.cpp" />
     <ClCompile Include="UserControl_Staff_Planner.cpp" />
@@ -137,6 +140,7 @@
     <ClInclude Include="Form_Feedback.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="tosstring.h" />
     <ClInclude Include="UserControl_Add_Cab_Details.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -181,6 +185,9 @@
     <ClInclude Include="UserControl_Customer_Homepage.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="UserControl_Customer_Housekeeping.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_Floor_Map.h">
       <FileType>CppControl</FileType>
     </ClInclude>
@@ -205,10 +212,16 @@
     <ClInclude Include="UserControl_Staff.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="UserControl_Staff_Booking_Display.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="UserControl_Staff_Edit.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Edit_Details.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Housekeeping_Approval.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Leave.h">
@@ -292,6 +305,9 @@
     <EmbeddedResource Include="UserControl_Customer_Homepage.resx">
       <DependentUpon>UserControl_Customer_Homepage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Customer_Housekeeping.resx">
+      <DependentUpon>UserControl_Customer_Housekeeping.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Floor_Map.resx">
       <DependentUpon>UserControl_Floor_Map.h</DependentUpon>
     </EmbeddedResource>
@@ -310,6 +326,7 @@
     <EmbeddedResource Include="UserControl_Room_Types.resx" />
     <EmbeddedResource Include="UserControl_Room_Types2.resx">
       <DependentUpon>UserControl_Room_Types2.h</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Signup.resx">
       <DependentUpon>UserControl_Signup.h</DependentUpon>
@@ -317,11 +334,17 @@
     <EmbeddedResource Include="UserControl_Staff.resx">
       <DependentUpon>UserControl_Staff.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Booking_Display.resx">
+      <DependentUpon>UserControl_Staff_Booking_Display.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Edit.resx">
       <DependentUpon>UserControl_Staff_Edit.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Edit_Details.resx">
       <DependentUpon>UserControl_Staff_Edit_Details.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Housekeeping_Approval.resx">
+      <DependentUpon>UserControl_Staff_Housekeeping_Approval.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Leave.resx">
       <DependentUpon>UserControl_Staff_Leave.h</DependentUpon>

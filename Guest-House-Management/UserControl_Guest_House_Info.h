@@ -1,8 +1,11 @@
 #pragma once
 #using <System.dll>
 #using <System.data.dll>
+//#include "UserControl_Room_Types.h"
 #include "UserControl_Room_Types2.h"
 #include "UserControl_User_Types.h"
+#include <regex>
+#include "tosstring.h"
 
 using namespace std;
 using namespace System;
@@ -256,74 +259,91 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 	private: System::Void UserControl_Guest_House_Info_Load(System::Object^  sender, System::EventArgs^  e) {
-			Second_Panel->Visible = false;
-			try{
-			
-			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			DB_Connection->Open();
-					
-			String ^ getGHData = "Select * from Guest_House_Info";
-		
-			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getGHData, DB_Connection);
-			
-			OleDbDataReader ^ gh_data = cmd->ExecuteReader();
-			
-			while(gh_data->Read() == true)
-			{
-				Txt_Name->Text = gh_data->GetString(1);
-				Txt_Address->Text = gh_data->GetString(2);
-				Txt_Contact->Text = gh_data->GetString(3);
-				Txt_Email->Text = gh_data->GetString(4);
-			}
+				 Second_Panel->Visible = false;
+				 try{
 
-			DB_Connection->Close();
-			}
+					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					 DB_Connection->Open();
 
-			catch(Exception ^ ex)
-			{
-				MessageBox::Show(ex->Message);
-			}
+					 String ^ getGHData = "Select * from Guest_House_Info";
+
+					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getGHData, DB_Connection);
+
+					 OleDbDataReader ^ gh_data = cmd->ExecuteReader();
+
+					 while(gh_data->Read() == true)
+					 {
+						 Txt_Name->Text = gh_data->GetString(1);
+						 Txt_Address->Text = gh_data->GetString(2);
+						 Txt_Contact->Text = gh_data->GetString(3);
+						 Txt_Email->Text = gh_data->GetString(4);
+					 }
+
+					 DB_Connection->Close();
+				 }
+
+				 catch(Exception ^ ex)
+				 {
+					 MessageBox::Show(ex->Message);
+				 }
 
 			 }
-private: System::Void Btn_Submit_Click(System::Object^  sender, System::EventArgs^  e) {
-
-		
-			try{
-			
-			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			DB_Connection->Open();
-			
-			String ^ name = Txt_Name->Text;
-			String ^ address = Txt_Address->Text;
-			String ^ contact = Txt_Contact->Text;
-			String ^ email = Txt_Email->Text;
-
-			String ^ getGHData = "Update [Guest_House_Info] SET [GH_Name] = '" + name + "', [GH_Address] = '" + address + "', [GH_Contact] = '" + contact + "', [GH_Email] = '" + email + "' ;";
-		
-			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getGHData, DB_Connection);
-			cmd->ExecuteNonQuery();
-			DB_Connection->Close();
-
-			}
-
-			catch(Exception ^ ex)
-			{
-				MessageBox::Show(ex->Message);
-			}
+	private: System::Void Btn_Submit_Click(System::Object^  sender, System::EventArgs^  e) {
 
 
-		 }
-private: System::Void Btn_User_Types_Click(System::Object^  sender, System::EventArgs^  e) {
-			 Second_Panel->Controls->Clear();
-			 Second_Panel->Controls->Add(gcnew UserControl_User_Types);
-			 Second_Panel->Visible = true;
-		 }
-private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
-			 Second_Panel->Controls->Clear();
-			 Second_Panel->Controls->Add(gcnew UserControl_Room_Types2());
-			 Second_Panel->Visible = true;
-		 }
-};
+				 try{
+					 string semail = tosstring(Txt_Email->Text);
+					 remove_if(semail.begin(), semail.end(), isspace);
+					 string scontact = tosstring(Txt_Contact->Text);
+					 remove_if(scontact.begin(), scontact.end(), isspace);
+
+					 regex rx("^[^@]+@[^@]+$");
+					 if(!regex_match(semail.cbegin(), semail.cend(), rx)){
+						 MessageBox::Show("Enter email address(in form ID@domain)");
+						 goto ErrExit;
+					 }
+
+					 rx = "^[0-9]{10}$";
+					 if(!regex_match(scontact.cbegin(), scontact.cend(), rx)){
+						 MessageBox::Show("Enter 10 digit Contact Number [use digits from 0-9]");
+						 goto ErrExit;
+					 }
+
+					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					 DB_Connection->Open();
+
+					 String ^ name = Txt_Name->Text;
+					 String ^ address = Txt_Address->Text;
+					 String ^ contact = Txt_Contact->Text;
+					 String ^ email = Txt_Email->Text;
+
+					 String ^ getGHData = "Update [Guest_House_Info] SET [GH_Name] = '" + name + "', [GH_Address] = '" + address + "', [GH_Contact] = '" + contact + "', [GH_Email] = '" + email + "' ;";
+
+					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getGHData, DB_Connection);
+					 cmd->ExecuteNonQuery();
+					 DB_Connection->Close();
+
+				 }
+
+				 catch(Exception ^ ex)
+				 {
+					 MessageBox::Show(ex->Message);
+				 }
+ErrExit:
+				 ;
+			 }
+	private: System::Void Btn_User_Types_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Second_Panel->Controls->Clear();
+				 Second_Panel->Controls->Add(gcnew UserControl_User_Types);
+				 Second_Panel->Visible = true;
+			 }
+
+	private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Second_Panel->Controls->Clear();
+				 Second_Panel->Controls->Add(gcnew UserControl_Room_Types2);
+				 Second_Panel->Visible = true;
+			 }
+	};
 }

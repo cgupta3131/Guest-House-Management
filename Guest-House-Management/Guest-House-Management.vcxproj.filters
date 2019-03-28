@@ -132,6 +132,15 @@
     <ClCompile Include="UserControl_Generate_Bill.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Customer_Housekeeping.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Staff_Housekeeping_Approval.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Staff_Booking_Display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -245,6 +254,18 @@
     <ClInclude Include="UserControl_Generate_Bill.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="tosstring.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Customer_Housekeeping.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Housekeeping_Approval.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Booking_Display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -355,6 +376,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Room_Types2.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Generate_Bill.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

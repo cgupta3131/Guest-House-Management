@@ -2,6 +2,7 @@
 #using <System.dll>
 #using <System.data.dll>
 #include <cliext/vector>
+#include "tosstring.h"
 
 using namespace std;
 using namespace System;
@@ -178,17 +179,17 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void UserControl_Status_Room_Load(System::Object^  sender, System::EventArgs^  e) {
 
-				OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-				DB_Connection->Open();
-				String ^ getRoomData = "Select * from [Room_No]";
+				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				 DB_Connection->Open();
+				 String ^ getRoomData = "Select * from [Room_No]";
 
-				OleDbCommand ^ cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
-				OleDbDataReader ^ room_data = cmd->ExecuteReader();
+				 OleDbCommand ^ cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
+				 OleDbDataReader ^ room_data = cmd->ExecuteReader();
 
-				cliext::vector<String^> vec;
-				while(room_data->Read() == true)
-				{
+				 cliext::vector<String^> vec;
+				 while(room_data->Read() == true)
+				 {
 					 String ^temp = room_data->GetString(0);
 					 int flag = 0;
 
@@ -200,61 +201,81 @@ namespace GuestHouseManagement {
 							 break;
 						 }
 					 }
-				
+
 					 if(flag == 0)
 						 vec.push_back(temp);
-				}
-				String ^ xyz = Convert::ToString(vec.size());
-				MessageBox::Show(xyz);
-				for(int i=0;i<vec.size();i++)
-				 {
-					Txt_Floor->Items->Add(vec[i]);
 				 }
-					
+				 String ^ xyz = Convert::ToString(vec.size());
+				 MessageBox::Show(xyz);
+				 for(int i=0;i<vec.size();i++)
+				 {
+					 Txt_Floor->Items->Add(vec[i]);
+				 }
 
-				DB_Connection->Close();
+
+				 DB_Connection->Close();
 			 }
-private: System::Void Txt_Floor_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void Txt_Floor_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 
 
-			 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			 DB_Connection->Open();
+				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				 DB_Connection->Open();
 
-			 String ^ getRoomData = "Select * from [Room_No] where [Floor] = '" + Txt_Floor->Text + "';";
+				 String ^ getRoomData = "Select * from [Room_No] where [Floor] = '" + Txt_Floor->Text + "';";
 
-			 OleDbCommand ^ cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
-			 OleDbDataReader ^ room_data = cmd->ExecuteReader();
-			 Txt_Room->Items->Clear();
+				 OleDbCommand ^ cmd = gcnew OleDbCommand(getRoomData, DB_Connection);
+				 OleDbDataReader ^ room_data = cmd->ExecuteReader();
+				 Txt_Room->Items->Clear();
 
-			 cliext::vector<String^> vec;
+				 cliext::vector<String^> vec;
 
-			 while(room_data->Read() == true)
-				 Txt_Room->Items->Add(room_data->GetString(1));
+				 while(room_data->Read() == true)
+					 Txt_Room->Items->Add(room_data->GetString(1));
 
-			 DB_Connection->Close();
+				 DB_Connection->Close();
 
-		 }
-private: System::Void Txt_Room_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-			 Txt_Status->Items->Add("Available");
-			 Txt_Status->Items->Add("Cleaning in Progress");
-			 Txt_Status->Items->Add("Unavailable");
-		 }	
-private: System::Void Btn_Status_Change_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void Txt_Room_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+				 Txt_Status->Items->Add("Available");
+				 Txt_Status->Items->Add("Cleaning in Progress");
+				 Txt_Status->Items->Add("Unavailable");
+			 }	
+	private: System::Void Btn_Status_Change_Click(System::Object^  sender, System::EventArgs^  e) {
 
-			    OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
-				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
+				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 
-				String ^ room = Txt_Room->Text;
-				String ^ status = Txt_Status->Text;
-				
-				String ^ insertString = "UPDATE Room_No SET [Status] = '" +status+ "' WHERE [Room_No] = '" +room+ "';";
+				 string sfloor = tosstring(Txt_Floor->Text);
+				 string sroom = tosstring(Txt_Room->Text);
+				 string sstatus = tosstring(Txt_Status->Text);
 
-				DB_Connection->Open();
-				OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
-				cmd->ExecuteNonQuery();
-				DB_Connection->Close();
+				 if(sfloor.compare("") == 0){
+					 MessageBox::Show("No Floor Item is Selected");
+					 goto ErrExit;
+				 }
 
-		 }
-};
+				 if(sroom.compare("") == 0){
+					 MessageBox::Show("No Room Item is Selected");
+					 goto ErrExit;
+				 }
+
+				 if(sstatus.compare("") == 0){
+					 MessageBox::Show("No Item is Selected");
+					 goto ErrExit;
+				 }
+
+				 String ^ room = Txt_Room->Text;
+				 String ^ status = Txt_Status->Text;
+
+				 String ^ insertString = "UPDATE Room_No SET [Status] = '" +status+ "' WHERE [Room_No] = '" +room+ "';";
+
+				 DB_Connection->Open();
+				 OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
+				 cmd->ExecuteNonQuery();
+				 DB_Connection->Close();
+ErrExit:
+				 ;
+			 }
+	};
 }

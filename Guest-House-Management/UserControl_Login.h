@@ -57,6 +57,8 @@ namespace GuestHouseManagement {
 
 	internal: System::Windows::Forms::Label^  Lbl_username;
 
+
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -85,10 +87,10 @@ namespace GuestHouseManagement {
 			this->Btn_Forget->Font = (gcnew System::Drawing::Font(L"Segoe Script", 8.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Btn_Forget->ForeColor = System::Drawing::Color::White;
-			this->Btn_Forget->Location = System::Drawing::Point(492, 308);
-			this->Btn_Forget->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Forget->Location = System::Drawing::Point(369, 250);
+			this->Btn_Forget->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Forget->Name = L"Btn_Forget";
-			this->Btn_Forget->Size = System::Drawing::Size(181, 36);
+			this->Btn_Forget->Size = System::Drawing::Size(136, 29);
 			this->Btn_Forget->TabIndex = 41;
 			this->Btn_Forget->Text = L"Forget Password\?";
 			this->Btn_Forget->UseVisualStyleBackColor = false;
@@ -99,10 +101,10 @@ namespace GuestHouseManagement {
 			this->Btn_submit->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->Btn_submit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 14.25F));
 			this->Btn_submit->ForeColor = System::Drawing::Color::AliceBlue;
-			this->Btn_submit->Location = System::Drawing::Point(357, 418);
-			this->Btn_submit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_submit->Location = System::Drawing::Point(268, 340);
+			this->Btn_submit->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_submit->Name = L"Btn_submit";
-			this->Btn_submit->Size = System::Drawing::Size(197, 59);
+			this->Btn_submit->Size = System::Drawing::Size(148, 48);
 			this->Btn_submit->TabIndex = 40;
 			this->Btn_submit->Text = L"Submit";
 			this->Btn_submit->UseVisualStyleBackColor = false;
@@ -113,9 +115,10 @@ namespace GuestHouseManagement {
 			this->Lbl_password->AutoSize = true;
 			this->Lbl_password->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Lbl_password->Location = System::Drawing::Point(248, 251);
+			this->Lbl_password->Location = System::Drawing::Point(186, 204);
+			this->Lbl_password->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lbl_password->Name = L"Lbl_password";
-			this->Lbl_password->Size = System::Drawing::Size(138, 33);
+			this->Lbl_password->Size = System::Drawing::Size(104, 24);
 			this->Lbl_password->TabIndex = 39;
 			this->Lbl_password->Text = L"Password";
 			// 
@@ -123,21 +126,21 @@ namespace GuestHouseManagement {
 			// 
 			this->Txt_password->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_password->Location = System::Drawing::Point(447, 251);
-			this->Txt_password->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Txt_password->Location = System::Drawing::Point(335, 204);
+			this->Txt_password->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_password->Name = L"Txt_password";
 			this->Txt_password->PasswordChar = '*';
-			this->Txt_password->Size = System::Drawing::Size(225, 32);
+			this->Txt_password->Size = System::Drawing::Size(170, 27);
 			this->Txt_password->TabIndex = 38;
 			// 
 			// Txt_username
 			// 
 			this->Txt_username->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_username->Location = System::Drawing::Point(447, 203);
-			this->Txt_username->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Txt_username->Location = System::Drawing::Point(335, 165);
+			this->Txt_username->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_username->Name = L"Txt_username";
-			this->Txt_username->Size = System::Drawing::Size(225, 32);
+			this->Txt_username->Size = System::Drawing::Size(170, 27);
 			this->Txt_username->TabIndex = 37;
 			// 
 			// Lbl_username
@@ -145,15 +148,16 @@ namespace GuestHouseManagement {
 			this->Lbl_username->AutoSize = true;
 			this->Lbl_username->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Lbl_username->Location = System::Drawing::Point(248, 203);
+			this->Lbl_username->Location = System::Drawing::Point(186, 165);
+			this->Lbl_username->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lbl_username->Name = L"Lbl_username";
-			this->Lbl_username->Size = System::Drawing::Size(146, 33);
+			this->Lbl_username->Size = System::Drawing::Size(113, 24);
 			this->Lbl_username->TabIndex = 36;
 			this->Lbl_username->Text = L"Username";
 			// 
 			// UserControl_Login
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->Btn_Forget);
 			this->Controls->Add(this->Btn_submit);
@@ -161,9 +165,8 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Txt_password);
 			this->Controls->Add(this->Txt_username);
 			this->Controls->Add(this->Lbl_username);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"UserControl_Login";
-			this->Size = System::Drawing::Size(909, 681);
+			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Login::UserControl_Login_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

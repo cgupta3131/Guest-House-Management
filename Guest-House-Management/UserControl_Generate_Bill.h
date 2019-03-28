@@ -168,6 +168,8 @@ namespace GuestHouseManagement {
 				tb->BorderStyle = System::Windows::Forms::BorderStyle::None;
 				tb->Multiline = true;
 				tb->ReadOnly = true;
+				tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+					static_cast<System::Byte>(0)));
 				tb->Name = "TextBox" + i;
 				this->Controls->Add(tb);
 			}
@@ -205,13 +207,19 @@ namespace GuestHouseManagement {
 					 {
 						 i=i+1;
 						 TextBox ^ tb = gcnew TextBox();
-						 tb->Text = users_data->GetString(1) + "\r\n"+ users_data->GetString(3) + "\r\n" + users_data->GetString(4) + "\r\n" + users_data->GetString(5);
+						 tb->Text = "Username : " + users_data->GetString(1) + "\r\n" + 
+									"Name : " + users_data->GetString(3) + "\r\n" + 
+									"Check-in : " + users_data->GetString(4) + "\r\n" +
+									"Check-out : " + users_data->GetString(5) + "\r\n";
+
 						 tb->Location = System::Drawing::Point(20,140*i);
-						 tb->Width = 100;
+						 tb->Width = 300;
 						 tb->Height = 100;
 						 tb->Multiline = true;
 						 tb->ReadOnly = true;
 						 tb->Name = "TextBox" + i;
+						 tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+							 static_cast<System::Byte>(0)));
 						 this->Controls->Add(tb);
 
 						 Button ^ btnCheckout = gcnew Button();
@@ -219,7 +227,7 @@ namespace GuestHouseManagement {
 						 btnCheckout->Height = 30;
 						 btnCheckout->Tag = users_data->GetInt32(0);
 						 btnCheckout->Text = "Checkout";
-						 btnCheckout->Location = System::Drawing::Point(120,140*i);
+						 btnCheckout->Location = System::Drawing::Point(350,140*i);
 						 btnCheckout->Click += gcnew System::EventHandler(this,&UserControl_Generate_Bill::approve_button_click);
 						 this->Controls->Add(btnCheckout);
 

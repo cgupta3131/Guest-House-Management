@@ -402,12 +402,14 @@ namespace GuestHouseManagement {
 					 
 					 String^ full_rooms = users_data->GetString(6);
 					 cliext::vector<String^> room_full_data;
+					 cliext::vector<String^> aux_vec;
 					 String ^temp;
 					 for(int j=0;j<full_rooms->Length;j++)
 					 {
 						 if(full_rooms[j] == ',')
 						 {
 							 room_full_data.push_back(temp);
+							 aux_vec.push_back(temp);
 							 temp = "";
 						 }
 						 else
@@ -431,14 +433,25 @@ namespace GuestHouseManagement {
 					 i=i+1;
 					 txt2 = users_data->GetString(6);
 					 TextBox ^tb = gcnew TextBox();
-					 tb->Text = users_data->GetString(3) + "\r\n" + users_data->GetString(4) + "\r\n" + users_data->GetString(5);
-					 tb->Location = System::Drawing::Point(20,140*i);
-					 tb->Width = 100;
-					 tb->Height = 100;
+					 tb->Text = "Username : " + users_data->GetString(1) + "\r\n" + 
+								 "Name : " + users_data->GetString(3) + "\r\n" + 
+								 "Check-in : " + users_data->GetString(4) + "\r\n" +
+								 "Check-out : " + users_data->GetString(5) + "\r\n" + 
+								 "Room Type : "; 
+					for(int j=0;j<aux_vec.size();j++)
+						tb->Text = tb->Text + aux_vec[j] + " ";
+
+					tb->Text =  tb->Text + "\r\n" + "Contact No. : " + users_data->GetString(7); 
+
+					 tb->Location = System::Drawing::Point(20,140*i); 
+					 tb->Width = 450;
+					 tb->Height = 110;
 					 tb->Name = "TextBox" + i;
 					 tb->Multiline = true;
 					 tb->ReadOnly = true;
 					 tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+					 tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						 static_cast<System::Byte>(0)));
 					 this->Controls->Add(tb);
 
 					 Button ^ btnApprove = gcnew Button();
@@ -447,7 +460,9 @@ namespace GuestHouseManagement {
 					 btnApprove->Name = "btnApp" + i;
 					 btnApprove->Tag = users_data->GetInt32(0);
 					 btnApprove->Text = "Approve";
-					 btnApprove->Location = System::Drawing::Point(320,140*i);
+					 btnApprove->Location = System::Drawing::Point(500,140*i);
+					 btnApprove->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						 static_cast<System::Byte>(0)));
 					 btnApprove->Click += gcnew System::EventHandler(this,&UserControl_Booking_Approval::approve_button_click);
 					 this->Controls->Add(btnApprove);
 
@@ -457,7 +472,9 @@ namespace GuestHouseManagement {
 					 btnCancel->Name = "btnDiss" + i;
 					 btnCancel->Tag = users_data->GetInt32(0);
 					 btnCancel->Text = "Cancel";
-					 btnCancel->Location = System::Drawing::Point(320,140*i+40);
+					 btnCancel->Location = System::Drawing::Point(500,140*i+40);
+					 btnCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						 static_cast<System::Byte>(0)));
 					 btnCancel->Click += gcnew System::EventHandler(this,&UserControl_Booking_Approval::cancel_button_click);
 					 this->Controls->Add(btnCancel);
 				 }

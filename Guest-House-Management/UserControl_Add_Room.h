@@ -1,5 +1,7 @@
 #pragma once
 #include <regex>
+#include "tosstring.h"
+#include <cctype>
 
 #using <System.dll>
 #using <System.data.dll>
@@ -13,25 +15,6 @@ using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
 using namespace System::Data::OleDb;
-
-static std::string tostring(System::String^ string)
-{
-	using System::Runtime::InteropServices::Marshal;
-
-	if (string->Length == 0 || string->Length < 0)
-	{
-		//MessageBox::Show("No field can be empty");
-
-	}
-
-	System::IntPtr pointer = Marshal::StringToHGlobalAnsi(string);
-	char* charPointer = reinterpret_cast<char*>(pointer.ToPointer());
-	std::string returnString(charPointer, string->Length);
-	Marshal::FreeHGlobal(pointer);
-
-
-	return returnString;
-}
 
 namespace GuestHouseManagement {
 
@@ -281,13 +264,17 @@ namespace GuestHouseManagement {
 			 }
 private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 
-			string sfloor = tostring(Txt_Floor->Text);
+			 string sfloor = tosstring(Txt_Floor->Text);
 			 remove_if(sfloor.begin(), sfloor.end(), isspace);
-			 string froom = tostring(Txt_Room_End->Text);
+			 string froom = tosstring(Txt_Room_End->Text);
 			 remove_if(froom.begin(), froom.end(), isspace);
-			 string sroom = tostring(Txt_Room_Start->Text);
+			 string sroom = tosstring(Txt_Room_Start->Text);
 			 remove_if(sroom.begin(), sroom.end(), isspace);
-			 string scategory = tostring(Txt_Category->Text);
+			 string scategory = tosstring(Txt_Category->Text);
+
+			 string prefix;//
+			 string suffix;
+			 string nroom_start = sroom;
 			 /*
 			 string sfloor = msclr::interop::marshal_as<std::string>(Txt_Floor->Text);
 			 remove_if(sfloor.begin(), sfloor.end(), isspace);
@@ -315,6 +302,23 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 			 goto ErrExit;
 			 }
 			 
+			 
+			 size_t p = 0;
+			 int issuffix = 0;
+			 size_t len = nroom_start.length();
+			 while(p < len){
+				 if (isalpha(nroom_start[p])){
+					 if(issuffix)
+						 suffix = nroom_start[p];
+					 else
+						 prefix = nroom_start[p];
+					 issuffix = 1;
+					 nroom_start.erase(p,1);
+					 len--;
+				 }else
+					 p++;
+			 }
+			 
 
 			 //For the Individual Room booking case
 			 if(this->Txt_Room_End->Visible == false)
@@ -325,11 +329,22 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 				String ^ floor = Txt_Floor->Text;
 				String ^ room = Txt_Room_Start->Text;
 				String ^ category = Txt_Category->Text;
-				String ^ status = "Working Condition";
+				String ^ status = "Available";
 
 				String ^ insertString = "insert into Room_No([Floor],[Room_No],[Category],[Status]) VALUES('" +floor+ "', '" +room+ "', '" +category+ "', '" +status+ "');";
+				String ^ check_isnewroom = "Select [Room_No] from [Room_No] where [Room_No] = '" +room+ "';";
+				//string sisnewroom = tosstring(isnewroom);
+				//Console.WriteLine(String.IsNullOrWhiteSpace(isnewroom));
 
 				DB_Connection->Open();
+
+				OleDbCommand ^ cmd2 = gcnew OleDbCommand(check_isnewroom, DB_Connection);//
+				OleDbDataReader ^ isnewroom = cmd2->ExecuteReader();
+				
+				if(isnewroom->Read()==true){
+					MessageBox::Show("Room already exists. Choose another.");
+					goto ErrExit;
+				}
 
 				OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 				cmd->Parameters->Add(gcnew OleDbParameter("@Floor",Convert::ToString(floor)));
@@ -347,11 +362,39 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 			 else
 			 {
 
+				 p = 0;//
+				 string alpha_sroom = sroom;
+				 len = alpha_sroom.length();
+				 while(p < len){
+					 if (!isalpha(alpha_sroom[p])){
+						 alpha_sroom.erase(p,1);
+						 len--;
+					 }else
+						 p++;
+				 }
+				 p=0;
+				 string alpha_froom = froom;
+				 len = alpha_froom.length();
+				 while(p < len){
+					 if (!isalpha(alpha_froom[p])){
+						 alpha_froom.erase(p,1);
+						 len--;
+					 }else
+						 p++;
+				 }
+
+				 if(alpha_sroom.compare(alpha_froom)!=0){
+					MessageBox::Show("Rooms must have same strings");
+					goto ErrExit;
+				 }
+
+
 				rx = "^[A-Z|a-z]{0,1}[0-9]+[A-Z|a-z]{0,1}$";
 				 if(!regex_match(froom.cbegin(), froom.cend(), rx)){
 					 MessageBox::Show("Enter Room in format: A(number using digits[0-9])A");
 					 goto ErrExit;
 				 }
+
 				OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
 				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 
@@ -361,13 +404,46 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
 				String ^ category = Txt_Category->Text;
 				String ^ status = "Available";
 
-				int start = System::Convert::ToInt32(room_start);
-				int end = System::Convert::ToInt32(room_end);
-				
+				p = 0;//
+				string nroom_end = froom;
+				len = nroom_end.length();
+				while(p < len){
+					if (isalpha(nroom_end[p])){
+
+						nroom_end.erase(p,1);
+						len--;
+					}else{
+						p++;
+					}
+				}
+
+				String^ Prefix = gcnew String(prefix.c_str());//
+				String^ Suffix = gcnew String(suffix.c_str());
+				String^ nstart = gcnew String(nroom_start.c_str());
+				String^ nend = gcnew String(nroom_end.c_str());
+
+				int start = System::Convert::ToInt32(nstart);
+				int end = System::Convert::ToInt32(nend);
+				for(int i=start;i<=end;i++){//
+					String ^room =  Convert::ToString(i);
+					room = Prefix + room + Suffix;
+					String ^ check_isnewroom = "Select * from [Room_No] where [Room_No] = '" +room+ "';";
+					//string sisnewroom = tosstring(isnewroom);
+					DB_Connection->Open();
+					OleDbCommand ^ cmd = gcnew OleDbCommand(check_isnewroom, DB_Connection);
+					OleDbDataReader ^ isnewroom = cmd->ExecuteReader();
+
+					if(isnewroom->Read()==true){
+						MessageBox::Show("Room " + room + " already exists. Choose another Range.");
+						goto ErrExit;
+					}
+					DB_Connection->Close();
+				}
 				int i = start;
 				for(int i=start;i<=end;i++)
 				{
 					String ^room =  Convert::ToString(i);
+					room = Prefix + room + Suffix;//
 					MessageBox::Show(room);
 					String ^ insertString = "insert into Room_No([Floor],[Room_No],[Category],[Status]) VALUES('" +floor+ "', '" +room+ "', '" +category+ "', '" +status+ "');";
 					DB_Connection->Open();

@@ -1,6 +1,8 @@
 #pragma once
 #include <vector>
 #include <string>
+#include <regex>
+#include "tosstring.h"
 //#include <msclr\marshal_cppstd.h>
 #include <cliext/vector>
 //#include <msclr\marshal.h>
@@ -49,6 +51,8 @@ namespace GuestHouseManagement {
 	protected: 
 	private: System::Windows::Forms::Button^  Btn_Add;
 	private: System::Windows::Forms::TextBox^  Txt_Occupancy;
+	private: System::Windows::Forms::Label^  label1;
+	private: System::Windows::Forms::Label^  label2;
 
 	protected: 
 
@@ -68,6 +72,8 @@ namespace GuestHouseManagement {
 			this->Txt_Room_Type = (gcnew System::Windows::Forms::TextBox());
 			this->Btn_Add = (gcnew System::Windows::Forms::Button());
 			this->Txt_Occupancy = (gcnew System::Windows::Forms::TextBox());
+			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Txt_Room_Type
@@ -76,7 +82,7 @@ namespace GuestHouseManagement {
 			this->Txt_Room_Type->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Txt_Room_Type->ForeColor = System::Drawing::Color::Black;
-			this->Txt_Room_Type->Location = System::Drawing::Point(109, 106);
+			this->Txt_Room_Type->Location = System::Drawing::Point(123, 106);
 			this->Txt_Room_Type->Name = L"Txt_Room_Type";
 			this->Txt_Room_Type->Size = System::Drawing::Size(113, 20);
 			this->Txt_Room_Type->TabIndex = 0;
@@ -84,9 +90,11 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Add
 			// 
-			this->Btn_Add->Location = System::Drawing::Point(373, 104);
+			this->Btn_Add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Btn_Add->Location = System::Drawing::Point(285, 118);
 			this->Btn_Add->Name = L"Btn_Add";
-			this->Btn_Add->Size = System::Drawing::Size(75, 23);
+			this->Btn_Add->Size = System::Drawing::Size(75, 30);
 			this->Btn_Add->TabIndex = 1;
 			this->Btn_Add->Text = L"Add";
 			this->Btn_Add->UseVisualStyleBackColor = true;
@@ -94,16 +102,34 @@ namespace GuestHouseManagement {
 			// 
 			// Txt_Occupancy
 			// 
-			this->Txt_Occupancy->Location = System::Drawing::Point(242, 107);
+			this->Txt_Occupancy->Location = System::Drawing::Point(123, 142);
 			this->Txt_Occupancy->Name = L"Txt_Occupancy";
 			this->Txt_Occupancy->Size = System::Drawing::Size(113, 20);
 			this->Txt_Occupancy->TabIndex = 2;
+			// 
+			// label1
+			// 
+			this->label1->Location = System::Drawing::Point(3, 106);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(100, 23);
+			this->label1->TabIndex = 3;
+			this->label1->Text = L"Enter Room Type";
+			// 
+			// label2
+			// 
+			this->label2->Location = System::Drawing::Point(3, 142);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(110, 36);
+			this->label2->TabIndex = 4;
+			this->label2->Text = L"Enter Occupancy";
 			// 
 			// UserControl_Room_Types2
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
+			this->Controls->Add(this->label2);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Txt_Occupancy);
 			this->Controls->Add(this->Btn_Add);
 			this->Controls->Add(this->Txt_Room_Type);
@@ -125,13 +151,22 @@ namespace GuestHouseManagement {
 			{
 				TextBox ^tb = (TextBox^)this->Controls["TextBox" + (i)];
 				String ^str = tb->Text;
+				string sstr = tosstring(str);
+				remove_if(sstr.begin(), sstr.end(), isspace);
+
+				regex rx("^[0-9]+$");
+				if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
+					MessageBox::Show("Enter prices in digits[0-9]");
+					goto ErrExit;
+				}
+
 				if(tb->Text == "")
 				{
 					f=1;
 					MessageBox::Show("Price field can't be empty");
 					break;
 				}
-					
+
 			}
 
 			if(f == 0)
@@ -171,6 +206,8 @@ namespace GuestHouseManagement {
 				MessageBox::Show("Room has been successfully Added");
 				this->Controls->Clear();
 				this->InitializeComponent();
+ErrExit:
+				;
 			}
 		}
 
@@ -184,13 +221,29 @@ namespace GuestHouseManagement {
 
 	public: System::Void UserControl_Room_Types_Load(System::Object^  sender, System::EventArgs^  e) {
 
-					
+
 			}
 
 	private: System::Void Btn_Add_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 try{
-					 
+					 string sroom = tosstring(Txt_Room_Type->Text);
+					 remove_if(sroom.begin(), sroom.end(), isspace);
+					 string soccy = tosstring(Txt_Occupancy->Text);
+					 remove_if(soccy.begin(), soccy.end(), isspace);
+
+					 regex rx("^[0-9|A-Z|a-z|.|']+$");
+					 if(!regex_match(sroom.cbegin(), sroom.cend(), rx)){
+						 MessageBox::Show("Enter Room Type in alphanumeric characters");
+						 goto ErrExit;
+					 }
+
+					 rx = "^[0-9|A-Z|a-z|.|']+$";
+					 if(!regex_match(soccy.cbegin(), soccy.cend(), rx)){
+						 MessageBox::Show("Enter Room Type in alphanumeric characters");
+						 goto ErrExit;
+					 }
+
 					 if(Txt_Room_Type->Text == "")
 					 {
 						 MessageBox::Show("Room-Type can't be empty");
@@ -224,6 +277,8 @@ namespace GuestHouseManagement {
 						 Btn_Add->Visible = false;
 						 Txt_Room_Type->Visible = false;
 						 Txt_Occupancy->Visible = false;
+						 label1->Visible = false;
+						 label2->Visible = false;
 						 if(String::IsNullOrWhiteSpace(room))
 							 MessageBox::Show("Please Enter Some Room Type");
 						 else
@@ -254,17 +309,27 @@ namespace GuestHouseManagement {
 
 								 this->Controls->Add(lb);
 
+								 Label ^ lb2 = gcnew Label();
+								 lb2->Text = "Enter Price for the User Type specified";
+								 lb2->Location = System::Drawing::Point(200,20);
+								 lb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+									 static_cast<System::Byte>(0)));
+
+								 this->Controls->Add(lb2);
+
 								 TextBox ^ tb = gcnew TextBox();
 								 tb->Name = "TextBox" + i;
 								 tb->Width = 100;
 								 tb->Height = 50;
-								 tb->Location = System::Drawing::Point(120,50*(i+1));
+								 tb->Location = System::Drawing::Point(200,50*(i+1));
 								 tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 									 static_cast<System::Byte>(0)));
 								 this->Controls->Add(tb);
 							 }
 
 							 Button ^ btn = gcnew Button();
+							 btn->Height = 50;
+							 btn->Width = 100;
 							 btn->Text = "Submit";
 							 btn->Name = "Btn_Submit";
 
@@ -274,6 +339,8 @@ namespace GuestHouseManagement {
 							 this->Controls->Add(btn);
 
 							 Button ^ btn2 = gcnew Button();
+							 btn->Height = 50;
+							 btn->Width = 100;
 							 btn2->Text = "Go Back";
 							 btn2->Name = "Btn_Back";
 
@@ -293,6 +360,8 @@ namespace GuestHouseManagement {
 				 {
 					 MessageBox::Show(ex->Message);
 				 }
+ErrExit:
+				 ;
 			 }
 	private: System::Void Txt_Room_Type_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 
@@ -303,8 +372,8 @@ namespace GuestHouseManagement {
 				 if(Txt_Room_Type->Text == "Enter some text here")
 					 Txt_Room_Type->Text = "";
 			 }
-	
-};
+
+	};
 
 
 }

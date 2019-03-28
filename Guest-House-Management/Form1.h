@@ -91,10 +91,11 @@ namespace GuestHouseManagement {
 			// 
 			// Output_Panel
 			// 
+			this->Output_Panel->AutoSize = true;
 			this->Output_Panel->BackColor = System::Drawing::Color::CornflowerBlue;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->Output_Panel->Location = System::Drawing::Point(285, 93);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
 			this->Output_Panel->Name = L"Output_Panel";
 			this->Output_Panel->Size = System::Drawing::Size(682, 553);
 			this->Output_Panel->TabIndex = 15;
@@ -114,6 +115,7 @@ namespace GuestHouseManagement {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoSize = true;
 			this->ClientSize = System::Drawing::Size(1008, 729);
 			this->Controls->Add(this->Staff_Button);
 			this->Controls->Add(this->Output_Panel);
@@ -123,6 +125,7 @@ namespace GuestHouseManagement {
 			this->Text = L"Form1";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
