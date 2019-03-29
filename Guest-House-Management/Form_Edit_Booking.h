@@ -93,6 +93,7 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			//MessageBox::Show("123");
 			this->Lbl_Register_Name = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -344,44 +345,53 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 	private: System::Void Form_Edit_Booking_Load(System::Object^  sender, System::EventArgs^  e) {
+
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();
 
 				 int ^ id_for_deletion2 = Convert::ToInt32(id_for_deletion);
 
-				 String ^ getUserData = "Select * from Booking_Request where ID like " + id_for_deletion2 ;
+				 String ^ getUserData = "Select * from Booking_Request where [ID] = " + id_for_deletion2 + ";" ;
+
 				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
 				 OleDbDataReader ^ user_data = cmd->ExecuteReader();
-
 				 RoomTypeFinder->Text="Not Applicable";
+
 				 while(user_data->Read()==true)
 				 {
-					 Textbox_id->Text = user_data->GetValue(0)->ToString();
+					 int temp_number = user_data->GetInt32(0);
+					 Textbox_id->Text = Convert::ToString(temp_number);
+					 MessageBox::Show(Textbox_id->Text);
 					 TextBox_Username->Text = user_data->GetString(1);
 					 Textbox_name->Text = user_data->GetString(3);
 					 Textbox_Email->Text = user_data->GetString(8);
 					 textBox1->Text = user_data->GetString(9);
 					 textBox2->Text = user_data->GetString(4);
 					 textBox3->Text = user_data->GetString(5);
-					 if(textBox1->Text=="YES")
+
+					 if(textBox1->Text == "YES")
 					 {
 						 String^ rooms_nums = user_data->GetString(14);
-						 cliext::queue<String^> room_num_data;
-						 String ^temp;
+
+						 cliext::vector<String^> room_num_data;
+
+						 String ^temp = "";
 						 for(int j=0;j<rooms_nums->Length;j++)
 						 {
 							 if(rooms_nums[j] == ',')
 							 {
-								 room_num_data.push(temp);
+								 room_num_data.push_back(temp);
 								 temp = "";
 							 }
 							 else
 								 temp = temp + rooms_nums[j];
 						 }
 
+						 for(int j=0;j<room_num_data.size();j++)
+							 MessageBox::Show(room_num_data[j]);
 
-						 String ^str=""; 
+						 
 						 String^ full_rooms = user_data->GetString(6);
 						 cliext::vector<String^> room_full_data;
 
@@ -396,27 +406,32 @@ namespace GuestHouseManagement {
 								 temp = temp + full_rooms[j];
 						 }
 
+						 int global_count = 0;
+						 String ^str = ""; 
+
 						 for(int j=0;j<room_full_data.size();j++)
 						 {
 
 							 int len = room_full_data[j]->Length;
-							 str=str + room_full_data[j] + "  --  ";
+							 str = str + room_full_data[j] + "  --  ";
 							 int no_of_rooms = Convert::ToInt32(room_full_data[j]->Substring(len-1,1));
 
 							 for(int i=0;i<no_of_rooms;i++)
 							 {
-								 str=str + room_num_data.front() + " , ";
-								 room_num_data.pop();								 
+								 str = str + room_num_data[global_count] + " , ";
+								 global_count++;
 							 }
-							 str=str->Substring(0,str->Length-2);
-							 str=str+" ; ";
+
+							 str = str->Substring(0,str->Length-2);
+							 str = str + " ; ";
 
 						 }
-						 RoomTypeFinder->Text=str;
+						 RoomTypeFinder->Text = str;
 					 }	 
 
 				 }
 				 DB_Connection->Close();
+
 				 if(check==1) 
 				 {
 					 // Don't allow to change room type also
@@ -434,7 +449,7 @@ namespace GuestHouseManagement {
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
 
-					 String ^ delete_booking = "delete from Booking_Request where Serial_Number=@nso";
+					 String ^ delete_booking = "delete from Booking_Request where [ID] = @nso";
 					 OleDbCommand ^ cmdDel = gcnew OleDbCommand(delete_booking, DB_Connection);
 					 cmdDel->Parameters->Add(gcnew OleDbParameter("@nso",id_for_deletion2));
 					 OleDbDataReader ^ remove_booking = cmdDel->ExecuteReader();

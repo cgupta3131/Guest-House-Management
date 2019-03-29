@@ -104,7 +104,7 @@ namespace GuestHouseManagement {
 
 		}
 #pragma endregion
-
+		cliext::vector<String^> bookedToday;
 		String ^temp;
 		static int n = 0;
 	private: System::Void UserControl_Floor_Map_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -140,6 +140,71 @@ namespace GuestHouseManagement {
 				 for(int i=0;i<vec.size();i++)
 				 {
 					 Txt_Floor->Items->Add(vec[i]);
+				 }
+
+				 DB_Connection->Close();
+
+				 /////////////////   GET TODAY BOOKED ROOMS VECTOR    //////////////
+				 DB_Connection->Open();
+
+				 String ^ getBookedData = "Select * from [Booking_Request] where [Approved]='YES';";
+
+				 OleDbCommand ^ cmd2 = gcnew OleDbCommand(getBookedData, DB_Connection);
+				 OleDbDataReader ^ booked_data = cmd2->ExecuteReader();
+
+				 String^ temp;
+				 String^ datefrom;
+				 String ^dateto;
+				 int datefrom_int;
+				 int dateto_int;
+				 int datetoday_int;
+
+				 String ^datetoday = System::DateTime().Now.ToString("yyyyMMdd");
+				 datetoday_int = System::Convert::ToInt32(datetoday);
+
+				 String ^timenow = System::DateTime().Now.ToString("hhmm");
+				 int timenow_int = System::Convert::ToInt32(timenow);
+				 MessageBox::Show(timenow);
+
+				 String ^ampm = System::DateTime().Now.ToString("tt");
+				 MessageBox::Show(ampm);
+				 //MessageBox::Show(datetoday);
+				 while(booked_data->Read() == true)
+				 {
+					 temp = booked_data->GetString(4);
+					 datefrom = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
+					 temp = booked_data->GetString(5);
+					 dateto = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
+					 datefrom_int = System::Convert::ToInt32(datefrom);
+					 dateto_int = System::Convert::ToInt32(dateto);
+
+					 temp="";
+					 if(datefrom_int<=datetoday_int && dateto_int>=datetoday_int)
+					 {
+						 if (datefrom_int==datetoday_int && ampm=="AM")
+						 {
+							 continue;
+						 }
+
+						 if (dateto_int==datetoday_int && ampm=="PM")
+						 {
+							 continue;
+						 }
+
+						 String^ rooms = booked_data->GetString(14);
+						 //MessageBox::Show(rooms);
+						 for(int j=0;j<rooms->Length;j++)
+						 {
+							 if(rooms[j] == ',')
+							 {
+								 bookedToday.push_back(temp);
+								 temp = "";
+							 }
+							 else
+								 temp = temp + rooms[j];
+						 }
+						 //bookedToday.push_back();
+					 }
 				 }
 
 				 DB_Connection->Close();

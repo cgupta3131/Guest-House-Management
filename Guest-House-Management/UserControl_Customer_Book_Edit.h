@@ -215,7 +215,7 @@ namespace GuestHouseManagement {
 					 // add check that show only booking requests that are more than the current date
 					
 
-					String ^ book_id = Convert::ToString(user_booking->GetValue(0));
+					String ^ book_id = Convert::ToString(user_booking->GetInt32(0));
 					String ^ book_name = user_booking->GetString(3);
 					String ^ book_date = user_booking->GetString(4);
 					String ^ book_upto = user_booking->GetString(5);
@@ -290,28 +290,40 @@ namespace GuestHouseManagement {
 			//MessageBox::Show("scr=" + Convert::ToString(scr));
 			int pos=(loc-140-scr)/30;
 			//MessageBox::Show(Convert::ToString(loc));
-			
-			String ^str_id=vec_id[pos];
-			String ^str1=v1[pos];
-			String ^str2=v2[pos];
+			String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
 
-			MessageBox::Show(str_id + " " + str1 + " " + str2);
-			DateTime dt1=Convert::ToDateTime(str1);
+			String ^str_id=vec_id[pos];
+
+			String ^temp=v1[pos];
+			String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			temp=v2[pos];
+			String ^str2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			int str1_int = System::Convert::ToInt32(str1);
+			int str2_int = System::Convert::ToInt32(str2);
+			int datetoday_int = System::Convert::ToInt32(today_date);
+
+			//MessageBox::Show(str_id + " " + str1 + " " + str2);
+			/*DateTime dt1=Convert::ToDateTime(str1);
 			DateTime dt2=Convert::ToDateTime(str2);
 			TimeSpan span1=dt1-System::DateTime().Now.Date;
-			TimeSpan span2=dt2-System::DateTime().Now.Date;
-			MessageBox::Show("1");
-			if(span1.TotalDays>0)
+			TimeSpan span2=dt2-System::DateTime().Now.Date;*/
+
+			int diff1 = str1_int - datetoday_int;
+			int diff2 = str2_int - datetoday_int;
+			//MessageBox::Show("1");
+			if(diff1 > 0)
 			{
-				MessageBox::Show("2");
+				//MessageBox::Show("2");
 				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
 				f2->ShowDialog();
 			}
-			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			else if(diff1 <=0 && diff2 >=0)
 			{
 					/*Add code to go to in stay facilities*/
-					 MessageBox::Show("3");
-					if(span2.TotalDays==0)
+					 //MessageBox::Show("3");
+					if(diff2==0)
 					{
 						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 						form3->ShowDialog();
@@ -321,7 +333,90 @@ namespace GuestHouseManagement {
 			}
 			else
 			{
-				MessageBox::Show("4");
+				//MessageBox::Show("4");
+				/* Add code to check if feedback already submitted 
+					Also see that feedback is asked for on the last day of stay
+					Also allow to remove from history */ 
+					OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					DB_Connection->Open();
+
+					int str_temp = Convert::ToInt32(str_id);
+					String ^ getPastBookings = "Select * From Booking_Request where [ID] = " + str_temp + ";";
+					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
+					OleDbDataReader ^ user_booking = cmd->ExecuteReader();
+				 
+					/*while(user_booking->Read()==true)
+					{
+					List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
+					}*/
+
+					if(user_booking->Read()==true)
+					{
+						if(user_booking->GetInt32(10) == 0)
+						{
+							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+							form3->ShowDialog();
+						}
+						//MessageBox::Show("7");
+						// add code to close this form
+						Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
+						f2->ShowDialog();
+					}
+					DB_Connection->Close();
+			}
+
+		}
+
+		public: System::Void bt2_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			Button ^ bt2=(System::Windows::Forms::Button^) sender;
+			int loc=bt2->Location.Y;
+
+			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
+			int scr=this->AutoScrollPosition.Y;
+			//MessageBox::Show("scr=" + Convert::ToString(scr));
+			int pos=(loc-140-scr)/30;
+			//MessageBox::Show(Convert::ToString(loc));
+			String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
+
+			String ^str_id=vec_id[pos];
+
+			String ^temp=v1[pos];
+			String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			temp=v2[pos];
+			String ^str2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			int str1_int = System::Convert::ToInt32(str1);
+			int str2_int = System::Convert::ToInt32(str2);
+			int datetoday_int = System::Convert::ToInt32(today_date);
+
+			/*DateTime dt1=Convert::ToDateTime(str1);
+			DateTime dt2=Convert::ToDateTime(str2);
+			TimeSpan span1=dt1-System::DateTime().Now.Date;
+			TimeSpan span2=dt2-System::DateTime().Now.Date;*/
+
+			int diff1 = str1_int - datetoday_int;
+			int diff2 = str2_int - datetoday_int;
+			if(diff1 > 0)
+			{
+				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
+				f2->ShowDialog();
+			}
+			else if(diff1 <=0 && diff2 >=0)
+			{
+					/*Add code to go to in stay facilities*/
+					if(diff2==0)
+					{
+						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+						form3->ShowDialog();
+					}
+					Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
+					f1->ShowDialog();
+			}
+			else
+			{
 				/* Add code to check if feedback already submitted 
 					Also see that feedback is asked for on the last day of stay
 					Also allow to remove from history */ 
@@ -340,78 +435,8 @@ namespace GuestHouseManagement {
 
 					if(user_booking->Read()==true)
 					{
-						MessageBox::Show("5");
 						// add check that show only booking requests that are more than the current date
-						if(user_booking->GetValue(10)==0)
-						{
-							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
-							form3->ShowDialog();
-						}
-						// add code to close this form
-
-						Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
-						f2->ShowDialog();
-					}
-					DB_Connection->Close();
-			}
-
-		}
-
-		public: System::Void bt2_Click(System::Object^  sender, System::EventArgs^  e)
-		{
-			Button ^ bt2=(System::Windows::Forms::Button^) sender;
-			int loc=bt2->Location.Y;
-			
-			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
-			int scr=this->AutoScrollPosition.Y;
-			//MessageBox::Show("scr=" + Convert::ToString(scr));
-			int pos=(loc-140-scr)/30;
-			//MessageBox::Show(Convert::ToString(loc));
-
-			String ^str_id=vec_id[pos];
-			String ^str1=v1[pos];
-			String ^str2=v2[pos];
-
-			DateTime dt1=Convert::ToDateTime(str1);
-			DateTime dt2=Convert::ToDateTime(str2);
-
-			TimeSpan span1=dt1-System::DateTime().Now.Date;
-			TimeSpan span2=dt2-System::DateTime().Now.Date;
-			
-			if(span1.TotalDays>0)
-			{
-				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
-				f2->ShowDialog();
-			}
-			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
-			{
-					/*Add code to go to in stay facilities*/
-					 
-					if(span2.TotalDays==0)
-					{
-						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
-						form3->ShowDialog();
-					}
-					Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
-					f1->ShowDialog();
-			}
-			else
-			{
-				/* Add code to check if feedback already submitted 
-					Also see that feedback is asked for on the last day of stay
-					Also allow to remove from history */ 
-					OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-					DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-					DB_Connection->Open();
-
-					String ^ getPastBookings = "Select * From Booking_Request where ID like " + Convert::ToInt32(str_id);
-					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
-					OleDbDataReader ^ user_booking = cmd->ExecuteReader();
-				 
-					if(user_booking->Read()==true)
-					{
-						// add check that show only booking requests that are more than the current date
-						if(user_booking->GetValue(10)==0)
+						if(user_booking->GetInt32(10)==0)
 						{
 							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 							form3->ShowDialog();
@@ -430,33 +455,42 @@ namespace GuestHouseManagement {
 		{
 			Button ^ bt3=(System::Windows::Forms::Button^) sender;
 			int loc=bt3->Location.Y;
-			
+
 			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
 			int scr=this->AutoScrollPosition.Y;
 			//MessageBox::Show("scr=" + Convert::ToString(scr));
 			int pos=(loc-140-scr)/30;
 			//MessageBox::Show(Convert::ToString(loc));
+			String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
 
 			String ^str_id=vec_id[pos];
-			String ^str1=v1[pos];
-			String ^str2=v2[pos];
 
-			DateTime dt1=Convert::ToDateTime(str1);
+			String ^temp=v1[pos];
+			String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			temp=v2[pos];
+			String ^str2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			int str1_int = System::Convert::ToInt32(str1);
+			int str2_int = System::Convert::ToInt32(str2);
+			int datetoday_int = System::Convert::ToInt32(today_date);
+
+			/*DateTime dt1=Convert::ToDateTime(str1);
 			DateTime dt2=Convert::ToDateTime(str2);
-
 			TimeSpan span1=dt1-System::DateTime().Now.Date;
-			TimeSpan span2=dt2-System::DateTime().Now.Date;
-			
-			if(span1.TotalDays>0)
+			TimeSpan span2=dt2-System::DateTime().Now.Date;*/
+
+			int diff1 = str1_int - datetoday_int;
+			int diff2 = str2_int - datetoday_int;
+			if(diff1 > 0)
 			{
 				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
 				f2->ShowDialog();
 			}
-			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			else if(diff1 <=0 && diff2 >=0)
 			{
 					/*Add code to go to in stay facilities*/
-					 
-					if(span2.TotalDays==0)
+					if(diff2==0)
 					{
 						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 						form3->ShowDialog();
@@ -485,7 +519,7 @@ namespace GuestHouseManagement {
 					if(user_booking->Read()==true)
 					{
 						// add check that show only booking requests that are more than the current date
-						if(user_booking->GetValue(10)==0)
+						if(user_booking->GetInt32(10)==0)
 						{
 							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 							form3->ShowDialog();
@@ -503,33 +537,42 @@ namespace GuestHouseManagement {
 		{
 			Button ^ bt4=(System::Windows::Forms::Button^) sender;
 			int loc=bt4->Location.Y;
-			
+
 			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
 			int scr=this->AutoScrollPosition.Y;
 			//MessageBox::Show("scr=" + Convert::ToString(scr));
 			int pos=(loc-140-scr)/30;
 			//MessageBox::Show(Convert::ToString(loc));
+			String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
 
 			String ^str_id=vec_id[pos];
-			String ^str1=v1[pos];
-			String ^str2=v2[pos];
 
-			DateTime dt1=Convert::ToDateTime(str1);
+			String ^temp=v1[pos];
+			String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			temp=v2[pos];
+			String ^str2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+			int str1_int = System::Convert::ToInt32(str1);
+			int str2_int = System::Convert::ToInt32(str2);
+			int datetoday_int = System::Convert::ToInt32(today_date);
+
+			/*DateTime dt1=Convert::ToDateTime(str1);
 			DateTime dt2=Convert::ToDateTime(str2);
-
 			TimeSpan span1=dt1-System::DateTime().Now.Date;
-			TimeSpan span2=dt2-System::DateTime().Now.Date;
-			
-			if(span1.TotalDays>0)
+			TimeSpan span2=dt2-System::DateTime().Now.Date;*/
+
+			int diff1 = str1_int - datetoday_int;
+			int diff2 = str2_int - datetoday_int;
+			if(diff1 > 0)
 			{
 				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
 				f2->ShowDialog();
 			}
-			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			else if(diff1 <=0 && diff2 >=0)
 			{
 					/*Add code to go to in stay facilities*/
-					 
-					if(span2.TotalDays==0)
+					if(diff2==0)
 					{
 						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 						form3->ShowDialog();
@@ -558,7 +601,7 @@ namespace GuestHouseManagement {
 					if(user_booking->Read()==true)
 					{
 						// add check that show only booking requests that are more than the current date
-						if(user_booking->GetValue(10)==0)
+						if(user_booking->GetInt32(10)==0)
 						{
 							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 							form3->ShowDialog();

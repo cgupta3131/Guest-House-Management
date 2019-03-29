@@ -182,9 +182,9 @@ namespace GuestHouseManagement {
 
 					 while(user_data->Read() == true)
 					 {
-						 textBox1->Text=Convert::ToString(user_data->GetValue(1));
-						 textBox2->Text=Convert::ToString(user_data->GetValue(2));
-						 textBox3->Text=Convert::ToString(user_data->GetValue(3));
+						 textBox1->Text=Convert::ToString(user_data->GetInt32(1));
+						 textBox2->Text=Convert::ToString(user_data->GetInt32(2));
+						 textBox3->Text=Convert::ToString(user_data->GetInt32(3));
 					 }
 					 DB_Connection->Close();
 				 }

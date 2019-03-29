@@ -192,9 +192,9 @@ namespace GuestHouseManagement {
 				 while(feedback_data->Read() == true)
 				 {
 					 count = count + 1;
-					 f1 = f1 + Convert::ToDecimal(feedback_data->GetValue(10));
-					 f2 = f2 + Convert::ToDecimal(feedback_data->GetValue(11));
-					 f3 = f3 + Convert::ToDecimal(feedback_data->GetValue(12));
+					 f1 = f1 + Convert::ToDecimal(feedback_data->GetInt32(10));
+					 f2 = f2 + Convert::ToDecimal(feedback_data->GetInt32(11));
+					 f3 = f3 + Convert::ToDecimal(feedback_data->GetInt32(12));
 				 }
 				 if(count==0)
 				 {

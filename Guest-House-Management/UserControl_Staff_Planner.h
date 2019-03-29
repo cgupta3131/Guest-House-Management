@@ -428,7 +428,7 @@ namespace GuestHouseManagement {
 				{		
 					is_working=false;
 					//MessageBox::Show("eid1oia " +employee_id);
-					employee_id=Convert::ToString(e_data->GetValue(0));
+					employee_id=Convert::ToString(e_data->GetInt32(0));
 					employee_name=e_data->GetString(1);
 					Control ^temp2 = this->Controls[employee_id];
 					Controls->Remove(temp2);
@@ -829,7 +829,7 @@ namespace GuestHouseManagement {
 						 }
 						 DB_Connection->Close();
 						 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
-						 //"UPDATE Staff_Leave SET Approved = 'Approved' WHERE Serial_Number = " + ser_num + ";";
+						 //"UPDATE Staff_Leave SET Approved = 'Approved' WHERE [ID] = " + ser_num + ";";
 						 DB_Connection->Open();
 
 						 if(currentshift=="D"){

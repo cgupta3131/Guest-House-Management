@@ -591,9 +591,9 @@ private: System::Void Btn_Create_Click(System::Object^  sender, System::EventArg
 				 DB_Connection->Open();
 
 				 //int ser_num=1;
-				 String ^ getUserData = "Select * From Booking_Request where Serial_Number like " + ser_num;
+				 String ^ getUserData = "Select * From Booking_Request where [ID] like " + ser_num;
 				 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
-				 cmdUpdate->CommandText = "UPDATE Booking_Request SET [Mess_Feedback] = " + count1 + " , [Cleanliness_Feedback] = " + count2 + " , [Service_Feedback] = " + count3 + " , [Comments_Feedback] = '" + comments + "'WHERE Serial_Number = " + ser_num + ";";
+				 cmdUpdate->CommandText = "UPDATE [Booking_Request] SET [Mess_Feedback] = " + count1 + " , [Cleanliness_Feedback] = " + count2 + " , [Service_Feedback] = " + count3 + " , [Comments_Feedback] = '" + comments + "' WHERE [ID] = " + ser_num + ";";
 
 				 cmdUpdate->ExecuteNonQuery();
 				 DB_Connection->Close();

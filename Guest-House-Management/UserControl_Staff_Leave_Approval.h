@@ -239,17 +239,17 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 
-		bool validDates(String ^ leaveFrom)
-		{
-			DateTime oDate = new DateTime();
-			oDate = DateTime.ParseExact(leaveFrom, "dd-MM-yyyy", NULL);
-			//DateTime oDate = Convert::ToDateTime(leaveFrom);
-			//MessageBox::Show(Convert::ToString(oDate));
-			TimeSpan span = oDate - System::DateTime().Now.Date;
-			if(span.TotalDays<0) return false;
+		//bool validDates(String ^ leaveFrom)
+		//{
+		//	DateTime oDate = new DateTime();
+		//	oDate = DateTime.ParseExact(leaveFrom, "dd-MM-yyyy", NULL);
+		//	//DateTime oDate = Convert::ToDateTime(leaveFrom);
+		//	//MessageBox::Show(Convert::ToString(oDate));
+		//	TimeSpan span = oDate - System::DateTime().Now.Date;
+		//	if(span.TotalDays<0) return false;
 
-			return true;
-		}
+		//	return true;
+		//}
 
 
 		void loadDataGrid()
@@ -260,7 +260,7 @@ namespace GuestHouseManagement {
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 			DB_Connection->Open();
 
-			String ^ getLeaveRequest = "Select * From Staff_Leave;";
+			String ^ getLeaveRequest = "Select * From Staff_Leave where [Approved] = 'Pending';";
 			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getLeaveRequest, DB_Connection);
 			OleDbDataReader ^ user_leave = cmd->ExecuteReader();
 
@@ -268,13 +268,23 @@ namespace GuestHouseManagement {
 			{
 
 				dataGridView1->RowTemplate->Height = 50;
-				String ^ Emp_name = Convert::ToString(user_leave->GetValue(1));
-				String ^ leave_id = Convert::ToString(user_leave->GetValue(0));
+				String ^ Emp_name = Convert::ToString(user_leave->GetInt32(1));
+				String ^ leave_id = Convert::ToString(user_leave->GetInt32(0));
 				String ^ emp_desig = user_leave->GetString(3);
 				String ^ leave_from = user_leave->GetString(4);
-				if( user_leave->GetString(7)!="Pending") continue; //validateDates
 				String ^ leave_upto = user_leave->GetString(5);
-				String ^ totalDays = Convert::ToString(user_leave->GetValue(6));
+				String ^ temp =  user_leave->GetString(4);
+				String ^ totalDays = Convert::ToString(user_leave->GetInt32(6));
+				String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
+
+				String ^datefrom = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+
+				int datefrom_int = System::Convert::ToInt32(datefrom);
+				int datetoday_int = System::Convert::ToInt32(today_date);
+
+				if(datetoday_int > datefrom_int)
+					continue;
+
 				dataGridView1->Rows->Add(leave_id,Emp_name,emp_desig,leave_from,leave_upto,totalDays);
 			}
 			DB_Connection->Close();
@@ -294,9 +304,9 @@ namespace GuestHouseManagement {
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
 					 int ser_num = Convert::ToInt32(dataGridView1->CurrentRow->Cells[0]->Value);
-					 String ^ getUserData = "Select * From Staff_Leave where Serial_Number like " + ser_num ;
+					 String ^ getUserData = "Select * From Staff_Leave where ID like " + ser_num ;
 					 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
-					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Approved' WHERE Serial_Number = " + ser_num + ";";
+					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Approved' WHERE ID = " + ser_num + ";";
 					 cmdUpdate->ExecuteNonQuery();
 
 
@@ -311,9 +321,9 @@ namespace GuestHouseManagement {
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
 					 int ser_num = Convert::ToInt32(dataGridView1->CurrentRow->Cells[0]->Value);
-					 String ^ getUserData = "Select * From Staff_Leave where Serial_Number like " + ser_num ;
+					 String ^ getUserData = "Select * From Staff_Leave where [ID] like " + ser_num ;
 					 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
-					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Not Approved' WHERE Serial_Number = " + ser_num + ";";
+					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Not Approved' WHERE [ID] = " + ser_num + ";";
 					 cmdUpdate->ExecuteNonQuery();
 
 
