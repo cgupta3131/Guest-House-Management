@@ -160,155 +160,156 @@ namespace GuestHouseManagement {
 				 Fillcombo();
 				 this->dateTimePicker1->MinDate=System::DateTime().Now;
 				 this->dateTimePicker2->MinDate=System::DateTime().Now;
-				 this->dateTimePicker2->Enabled=false;
+				 //this->dateTimePicker2->Enabled=false;
 			 }
 
 
-	void Fillcombo()
-	{
-		try{
-			
-			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			DB_Connection->Open();
-
-			String ^ getUserData = "Select * from Staff_Register;";
-
-			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
-			
-			OleDbDataReader ^ user_data = cmd->ExecuteReader();
-			
-			while(user_data->Read() == true)
-			{
-				String ^ newEntry = "ID: "+ user_data->GetInt32(0) + " - " + user_data->GetString(1); //Id - Name
-				//MessageBox::Show(newEntry);
-				comboBox1->Items->Add(newEntry);
-			}
-			//cmd->ExecuteNonQuery();
-			DB_Connection->Close();
-		}
-		catch(Exception ^ ex)
-			{
-				MessageBox::Show(ex->Message);
-			}
-	}
-//validating dates
-bool validDates()
-{
-	TimeSpan span = dateTimePicker1->Value - System::DateTime().Now;
-	if(span.TotalDays<0) return false;
-	span = dateTimePicker2->Value - dateTimePicker1->Value;
-	if(span.TotalDays<0) return false;
-
-	return true;
-}
-private: System::Void btn_submit_Click(System::Object^  sender, System::EventArgs^  e) {
-
-			 //Getting details of selected Person
-			 if(comboBox1->Text=="" || !validDates())
+			 void Fillcombo()
 			 {
+				 try{
+
+					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					 DB_Connection->Open();
+
+					 String ^ getUserData = "Select * from Staff_Register;";
+
+					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
+
+					 OleDbDataReader ^ user_data = cmd->ExecuteReader();
+
+					 while(user_data->Read() == true)
+					 {
+						 String ^ newEntry = "ID: "+ user_data->GetInt32(0) + " - " + user_data->GetString(1); //Id - Name
+						 //MessageBox::Show(newEntry);
+						 comboBox1->Items->Add(newEntry);
+					 }
+					 //cmd->ExecuteNonQuery();
+					 DB_Connection->Close();
+				 }
+				 catch(Exception ^ ex)
+				 {
+					 MessageBox::Show(ex->Message);
+				 }
+			 }
+			 //validating dates
+			 bool validDates()
+			 {
+				 TimeSpan span = dateTimePicker1->Value - System::DateTime().Now;
+				 if(span.TotalDays<0) return false;
+				 span = dateTimePicker2->Value - dateTimePicker1->Value;
+				 if(span.TotalDays<0) return false;
+
+				 return true;
+			 }
+	private: System::Void btn_submit_Click(System::Object^  sender, System::EventArgs^  e) {
+
+				 //Getting details of selected Person
 				 if(comboBox1->Text=="")
-					MessageBox::Show("Please select a valid Employee!");
+				 {
+					 if(comboBox1->Text=="")
+						 MessageBox::Show("Please select a valid Employee!");
+					 else
+						 MessageBox::Show("Please enter valid Dates!");
+				 }
 				 else
-					 MessageBox::Show("Please enter valid Dates!");
+				 {
+
+					 String ^ selected = comboBox1->Text;
+					 //MessageBox::Show(selected);
+
+
+
+					 String ^ employeeName="default";
+
+					 int e_id=Convert::ToInt32(selected->ToString()->Split(' ')[1]);
+					 //MessageBox::Show(employeeName +" " + e_id);
+
+					 String ^ designation="default";
+
+					 String ^ leaveFrom = dateTimePicker1->Text;
+					 String ^ leaveUpto = dateTimePicker2->Text;
+					 //MessageBox::Show(leaveFrom+" "+leaveUpto);
+					 //calculating total number of days for leave using sustem variables and saving into totalDays
+					 TimeSpan span = dateTimePicker2->Value - dateTimePicker1->Value;
+					 int totalDays = Convert::ToInt32(span.TotalDays) + 1;
+
+					 try{
+
+						 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+						 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+						 DB_Connection->Open();
+
+						 String ^ getUserData = "Select * from Staff_Register where [Employee_ID] = "+e_id+";";
+
+						 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
+
+						 OleDbDataReader ^ user_data = cmd->ExecuteReader();
+
+						 while(user_data->Read() == true)
+						 {
+							 employeeName = user_data->GetString(1);
+							 designation = user_data->GetString(2);
+						 }
+						 //cmd->ExecuteNonQuery();
+						 DB_Connection->Close();
+					 }
+					 catch(Exception ^ ex)
+					 {
+						 MessageBox::Show(ex->Message);
+					 }
+
+					 //MessageBox::Show(e_id+" "+employeeName+" "+designation+" "+totalDays);
+					 //writing into Staff_Leave table
+					 try{
+						 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
+						 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb;";
+
+
+
+						 Debug::WriteLine(employeeName);
+						 Debug::WriteLine("\n\n\n");
+
+
+						 String ^ insertString = "insert into Staff_Leave([Employee_Name],[EID],[Designation],[Leave_from],[Leave_upto],[Total_Number_of_days]) VALUES('" +employeeName+ "', " +e_id+ ", '" +designation+ "', '" +leaveFrom+ "', '" +leaveUpto+ "', " +totalDays+ " );";
+
+						 Debug::WriteLine(insertString);
+						 Debug::WriteLine("\n\n\n");
+
+						 //OleDbDataReader ^ dr;
+						 DB_Connection->Open();
+
+						 OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
+						 
+
+						 cmd->Parameters->Add(gcnew OleDbParameter("@Employee_Name",Convert::ToString(employeeName)));
+						 cmd->Parameters->Add(gcnew OleDbParameter("@EID",e_id));
+						 cmd->Parameters->Add(gcnew OleDbParameter("@Designation",Convert::ToString(designation)));
+						 cmd->Parameters->Add(gcnew OleDbParameter("@Leave_from",Convert::ToString(leaveFrom)));
+						 cmd->Parameters->Add(gcnew OleDbParameter("@Leave_upto",Convert::ToString(leaveUpto)));
+						 cmd->Parameters->Add(gcnew OleDbParameter("@Total_Number_of_days",totalDays));
+
+
+
+
+						 cmd->ExecuteNonQuery();
+						 DB_Connection->Close();
+
+					 }
+
+					 catch(Exception ^ ex)
+					 {
+						 MessageBox::Show(ex->Message);
+					 }
+					 MessageBox::Show("You leave request has been sent for approval, "+employeeName);
+				 }
 			 }
-			 else
-			 {
-			 
-			String ^ selected = comboBox1->Text;
-			 //MessageBox::Show(selected);
-			 
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
+				 //this->dateTimePicker2->Enabled=true;
+				 this->dateTimePicker2->MinDate=this->dateTimePicker1->Value;
 
-			 
-			String ^ employeeName="default";
-
-			int e_id=Convert::ToInt32(selected->ToString()->Split(' ')[1]);
-			//MessageBox::Show(employeeName +" " + e_id);
-			
-			String ^ designation="default";
-
-			String ^ leaveFrom = dateTimePicker1->Text;
-			String ^ leaveUpto = dateTimePicker2->Text;
-			//MessageBox::Show(leaveFrom+" "+leaveUpto);
-			//calculating total number of days for leave using sustem variables and saving into totalDays
-			TimeSpan span = dateTimePicker2->Value - dateTimePicker1->Value;
-			int totalDays = Convert::ToInt32(span.TotalDays) + 1;
-
-			 try{
-			
-			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			DB_Connection->Open();
-
-			String ^ getUserData = "Select * from Staff_Register where [Employee_ID] = "+e_id+";";
-
-			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
-			
-			OleDbDataReader ^ user_data = cmd->ExecuteReader();
-			
-			while(user_data->Read() == true)
-			{
-				employeeName = user_data->GetString(1);
-				designation = user_data->GetString(2);
-			}
-			//cmd->ExecuteNonQuery();
-			DB_Connection->Close();
-		}
-		catch(Exception ^ ex)
-			{
-				MessageBox::Show(ex->Message);
-			}
-
-		//MessageBox::Show(e_id+" "+employeeName+" "+designation+" "+totalDays);
-		//writing into Staff_Leave table
-			 try{
-			OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
-			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb;";
-
-
-
-			Debug::WriteLine(employeeName);
-			Debug::WriteLine("\n\n\n");
-		
-			
-			String ^ insertString = "insert into Staff_Leave([Employee_Name],[EID],[Designation],[Leave_from],[Leave_upto],[Total_Number_of_days]) VALUES('" +employeeName+ "', " +e_id+ ", '" +designation+ "', '" +leaveFrom+ "', '" +leaveUpto+ "', " +totalDays+ " );";
-			
-			Debug::WriteLine(insertString);
-			Debug::WriteLine("\n\n\n");
-
-			//OleDbDataReader ^ dr;
-			DB_Connection->Open();
-
-			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
-		
-
-			cmd->Parameters->Add(gcnew OleDbParameter("@Employee_Name",Convert::ToString(employeeName)));
-			cmd->Parameters->Add(gcnew OleDbParameter("@EID",e_id));
-			cmd->Parameters->Add(gcnew OleDbParameter("@Designation",Convert::ToString(designation)));
-			cmd->Parameters->Add(gcnew OleDbParameter("@Leave_from",Convert::ToString(leaveFrom)));
-			cmd->Parameters->Add(gcnew OleDbParameter("@Leave_upto",Convert::ToString(leaveUpto)));
-			cmd->Parameters->Add(gcnew OleDbParameter("@Total_Number_of_days",totalDays));
-			
-
-
-			
-			cmd->ExecuteNonQuery();
-			DB_Connection->Close();
-
-			}
-
-			catch(Exception ^ ex)
-			{
-				MessageBox::Show(ex->Message);
-			}
-			}
-		 }
-private: System::Void comboBox1_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
-			 this->dateTimePicker2->Enabled=true;
-			 this->dateTimePicker2->MinDate=this->dateTimePicker1->Value;
-
-		 }
-};
+			 }
+	};
 }

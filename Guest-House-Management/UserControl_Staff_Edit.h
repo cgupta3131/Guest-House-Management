@@ -154,84 +154,84 @@ namespace GuestHouseManagement {
 
 		}
 #pragma endregion
-		
+
 	private: System::Void Button_Search_Click(System::Object^  sender, System::EventArgs^  e) {
-				OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-				DB_Connection->Open();
-				List_Search->Items->Clear();
-				extern int joke[];
-				int  j = 0;
-				int count=0;
-				if(combo_Search->Text == "By Name")
-				{
-					String ^ input = Text_Search->Text;
-					String ^ query = "Select * From Staff_Register where Employee_Name like '%" + input + "%'";
+				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				 DB_Connection->Open();
+				 List_Search->Items->Clear();
+				 extern int joke[];
+				 int  j = 0;
+				 int count=0;
+				 if(combo_Search->Text == "By Name")
+				 {
+					 String ^ input = Text_Search->Text;
+					 String ^ query = "Select * From Staff_Register where Employee_Name like '%" + input + "%'";
 
-					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
-			
-					OleDbDataReader ^ user_data = cmd->ExecuteReader();
+					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
 
-					String ^ sname;
-					while(user_data->Read() == true)
-					{
-						count++;
-						sname=user_data->GetString(1);
-						joke[j]=user_data->GetInt32(0);
-						List_Search->Items->Add(sname + " - " + "ID(" + joke[j++] + ")");
-					}
-					DB_Connection->Close();
-				}
-				else
-				{
-					if(Text_Search->Text == "")
-					{
-						MessageBox::Show("Field must not be empty!", "Warning");
-						return;
-					}
+					 OleDbDataReader ^ user_data = cmd->ExecuteReader();
 
-					String ^ str = Text_Search->Text;
-					for(int i=0;i<str->Length;i++)
-					{
-						if(!isdigit(str[i])) 
-						{
-							MessageBox::Show("Search by ID can contain only digits");
-							return;	
-						}
-					}
-					int ^ input = Convert::ToInt32(Text_Search->Text);
-					String ^ query = "Select * From Staff_Register where Employee_ID = " + input + ";";
-					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
-					OleDbDataReader ^ user_data = cmd->ExecuteReader();
-					while(user_data->Read() == true)
-					{
-						count++;
-						List_Search->Items->Add(user_data->GetString(1));
-						joke[j]=Convert::ToInt32(input);
-					}
-					DB_Connection->Close();
-				}
-				if(count==0)
-				{
-					MessageBox::Show("No search result found","Warning");
-					Text_Search->Clear();
-				}
-				
+					 String ^ sname;
+					 while(user_data->Read() == true)
+					 {
+						 count++;
+						 sname=user_data->GetString(1);
+						 joke[j]=user_data->GetInt32(0);
+						 List_Search->Items->Add(sname + " - " + "ID(" + joke[j++] + ")");
+					 }
+					 DB_Connection->Close();
+				 }
+				 else
+				 {
+					 if(Text_Search->Text == "")
+					 {
+						 MessageBox::Show("Field must not be empty!", "Warning");
+						 return;
+					 }
+
+					 String ^ str = Text_Search->Text;
+					 for(int i=0;i<str->Length;i++)
+					 {
+						 if(!isdigit(str[i])) 
+						 {
+							 MessageBox::Show("Search by ID can contain only digits");
+							 return;	
+						 }
+					 }
+					 int ^ input = Convert::ToInt32(Text_Search->Text);
+					 String ^ query = "Select * From Staff_Register where Employee_ID = " + input + ";";
+					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
+					 OleDbDataReader ^ user_data = cmd->ExecuteReader();
+					 while(user_data->Read() == true)
+					 {
+						 count++;
+						 List_Search->Items->Add(user_data->GetString(1));
+						 joke[j]=Convert::ToInt32(input);
+					 }
+					 DB_Connection->Close();
+				 }
+				 if(count==0)
+				 {
+					 MessageBox::Show("No search result found","Warning");
+					 Text_Search->Clear();
+				 }
+
 			 }
 
-private: System::Void List_Search_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-			 int  Index = List_Search->SelectedIndex;
-			 extern int joke[];
-			 extern int S_ID;
-			 S_ID = joke[Index];
-			 //MessageBox::Show(Convert::ToString(S_ID));
-			 Form_Edit_Staff_Details ^ f2 = gcnew Form_Edit_Staff_Details();
-			 f2->ShowDialog();
-		 }
+	private: System::Void List_Search_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+				 int  Index = List_Search->SelectedIndex;
+				 extern int joke[];
+				 extern int S_ID;
+				 S_ID = joke[Index];
+				 //MessageBox::Show(Convert::ToString(S_ID));
+				 Form_Edit_Staff_Details ^ f2 = gcnew Form_Edit_Staff_Details();
+				 f2->ShowDialog();
+			 }
 
-private: System::Void UserControl_Staff_Edit_Load(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void combo_Search_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-};
+	private: System::Void UserControl_Staff_Edit_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void combo_Search_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	};
 }

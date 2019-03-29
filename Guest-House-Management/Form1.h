@@ -46,7 +46,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Btn_Signup;
 	internal: System::Windows::Forms::Panel^  Output_Panel;
 
-	private: System::Windows::Forms::Button^  Staff_Button;
+
 	internal: 
 	private: 
 
@@ -66,14 +66,14 @@ namespace GuestHouseManagement {
 			this->Btn_Login = (gcnew System::Windows::Forms::Button());
 			this->Btn_Signup = (gcnew System::Windows::Forms::Button());
 			this->Output_Panel = (gcnew System::Windows::Forms::Panel());
-			this->Staff_Button = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Login
 			// 
-			this->Btn_Login->Location = System::Drawing::Point(39, 102);
+			this->Btn_Login->Location = System::Drawing::Point(52, 126);
+			this->Btn_Login->Margin = System::Windows::Forms::Padding(4);
 			this->Btn_Login->Name = L"Btn_Login";
-			this->Btn_Login->Size = System::Drawing::Size(166, 98);
+			this->Btn_Login->Size = System::Drawing::Size(221, 121);
 			this->Btn_Login->TabIndex = 0;
 			this->Btn_Login->Text = L"Login";
 			this->Btn_Login->UseVisualStyleBackColor = true;
@@ -81,9 +81,10 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Signup
 			// 
-			this->Btn_Signup->Location = System::Drawing::Point(39, 324);
+			this->Btn_Signup->Location = System::Drawing::Point(52, 274);
+			this->Btn_Signup->Margin = System::Windows::Forms::Padding(4);
 			this->Btn_Signup->Name = L"Btn_Signup";
-			this->Btn_Signup->Size = System::Drawing::Size(166, 98);
+			this->Btn_Signup->Size = System::Drawing::Size(221, 121);
 			this->Btn_Signup->TabIndex = 1;
 			this->Btn_Signup->Text = L"Signup";
 			this->Btn_Signup->UseVisualStyleBackColor = true;
@@ -94,33 +95,24 @@ namespace GuestHouseManagement {
 			this->Output_Panel->AutoSize = true;
 			this->Output_Panel->BackColor = System::Drawing::Color::CornflowerBlue;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->Output_Panel->Location = System::Drawing::Point(285, 93);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Output_Panel->Location = System::Drawing::Point(380, 114);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(682, 553);
+			this->Output_Panel->Size = System::Drawing::Size(909, 681);
 			this->Output_Panel->TabIndex = 15;
 			this->Output_Panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::Output_Panel_Paint);
 			// 
-			// Staff_Button
-			// 
-			this->Staff_Button->Location = System::Drawing::Point(39, 206);
-			this->Staff_Button->Name = L"Staff_Button";
-			this->Staff_Button->Size = System::Drawing::Size(166, 98);
-			this->Staff_Button->TabIndex = 17;
-			this->Staff_Button->Text = L"Staff";
-			this->Staff_Button->UseVisualStyleBackColor = true;
-			this->Staff_Button->Click += gcnew System::EventHandler(this, &Form1::Staff_Button_Click);
-			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->AutoSize = true;
-			this->ClientSize = System::Drawing::Size(1008, 729);
-			this->Controls->Add(this->Staff_Button);
+			this->ClientSize = System::Drawing::Size(1344, 897);
 			this->Controls->Add(this->Output_Panel);
 			this->Controls->Add(this->Btn_Signup);
 			this->Controls->Add(this->Btn_Login);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
@@ -130,14 +122,14 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 
-	
+
 	private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 			 }
 	private: System::Void Btn_Login_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
-				 Output_Panel->Controls->Add(gcnew UserControl_Login);
+				 Output_Panel->Controls->Add(gcnew UserControl_Login(this));
 			 }
 	private: System::Void Btn_Signup_Click(System::Object^  sender, System::EventArgs^  e) {
 
@@ -146,10 +138,9 @@ namespace GuestHouseManagement {
 			 }
 
 	private: System::Void Staff_Button_Click(System::Object^  sender, System::EventArgs^  e) {
-				 
-				Output_Panel->Controls->Clear();
-				Output_Panel->Controls->Add(gcnew UserControl_Staff);
-		 }
-};
+
+
+			 }
+	};
 }
 

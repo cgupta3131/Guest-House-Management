@@ -113,9 +113,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_ID
 			// 
-			this->Text_ID->Enabled = false;
 			this->Text_ID->Location = System::Drawing::Point(265, 54);
 			this->Text_ID->Name = L"Text_ID";
+			this->Text_ID->ReadOnly = true;
 			this->Text_ID->Size = System::Drawing::Size(249, 22);
 			this->Text_ID->TabIndex = 1;
 			// 
@@ -130,9 +130,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Name
 			// 
-			this->Text_Name->Enabled = false;
 			this->Text_Name->Location = System::Drawing::Point(265, 21);
 			this->Text_Name->Name = L"Text_Name";
+			this->Text_Name->ReadOnly = true;
 			this->Text_Name->Size = System::Drawing::Size(249, 22);
 			this->Text_Name->TabIndex = 3;
 			// 
@@ -147,9 +147,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Desig
 			// 
-			this->Text_Desig->Enabled = false;
 			this->Text_Desig->Location = System::Drawing::Point(265, 94);
 			this->Text_Desig->Name = L"Text_Desig";
+			this->Text_Desig->ReadOnly = true;
 			this->Text_Desig->Size = System::Drawing::Size(249, 22);
 			this->Text_Desig->TabIndex = 5;
 			// 
@@ -164,9 +164,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Join
 			// 
-			this->Text_Join->Enabled = false;
 			this->Text_Join->Location = System::Drawing::Point(265, 136);
 			this->Text_Join->Name = L"Text_Join";
+			this->Text_Join->ReadOnly = true;
 			this->Text_Join->Size = System::Drawing::Size(249, 22);
 			this->Text_Join->TabIndex = 7;
 			// 
@@ -181,9 +181,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Gender
 			// 
-			this->Text_Gender->Enabled = false;
 			this->Text_Gender->Location = System::Drawing::Point(265, 174);
 			this->Text_Gender->Name = L"Text_Gender";
+			this->Text_Gender->ReadOnly = true;
 			this->Text_Gender->Size = System::Drawing::Size(249, 22);
 			this->Text_Gender->TabIndex = 9;
 			this->Text_Gender->TextChanged += gcnew System::EventHandler(this, &UserControl_Staff_View_Details::textBox1_TextChanged);
@@ -199,9 +199,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Birth
 			// 
-			this->Text_Birth->Enabled = false;
 			this->Text_Birth->Location = System::Drawing::Point(265, 224);
 			this->Text_Birth->Name = L"Text_Birth";
+			this->Text_Birth->ReadOnly = true;
 			this->Text_Birth->Size = System::Drawing::Size(249, 22);
 			this->Text_Birth->TabIndex = 11;
 			// 
@@ -216,9 +216,9 @@ namespace GuestHouseManagement {
 			// 
 			// Text_ID_Proof
 			// 
-			this->Text_ID_Proof->Enabled = false;
 			this->Text_ID_Proof->Location = System::Drawing::Point(265, 276);
 			this->Text_ID_Proof->Name = L"Text_ID_Proof";
+			this->Text_ID_Proof->ReadOnly = true;
 			this->Text_ID_Proof->Size = System::Drawing::Size(249, 22);
 			this->Text_ID_Proof->TabIndex = 13;
 			// 
@@ -233,12 +233,13 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Address
 			// 
-			this->Text_Address->Enabled = false;
 			this->Text_Address->Location = System::Drawing::Point(265, 330);
 			this->Text_Address->Multiline = true;
 			this->Text_Address->Name = L"Text_Address";
+			this->Text_Address->ReadOnly = true;
 			this->Text_Address->Size = System::Drawing::Size(249, 22);
 			this->Text_Address->TabIndex = 15;
+			this->Text_Address->TextChanged += gcnew System::EventHandler(this, &UserControl_Staff_View_Details::Text_Address_TextChanged);
 			// 
 			// label9
 			// 
@@ -251,10 +252,10 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Contact
 			// 
-			this->Text_Contact->Enabled = false;
 			this->Text_Contact->Location = System::Drawing::Point(265, 386);
 			this->Text_Contact->Multiline = true;
 			this->Text_Contact->Name = L"Text_Contact";
+			this->Text_Contact->ReadOnly = true;
 			this->Text_Contact->Size = System::Drawing::Size(249, 22);
 			this->Text_Contact->TabIndex = 17;
 			// 
@@ -269,19 +270,19 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Email
 			// 
-			this->Text_Email->Enabled = false;
 			this->Text_Email->Location = System::Drawing::Point(265, 434);
 			this->Text_Email->Multiline = true;
 			this->Text_Email->Name = L"Text_Email";
+			this->Text_Email->ReadOnly = true;
 			this->Text_Email->Size = System::Drawing::Size(249, 22);
 			this->Text_Email->TabIndex = 19;
 			// 
 			// Text_Resignation
 			// 
-			this->Text_Resignation->Enabled = false;
 			this->Text_Resignation->Location = System::Drawing::Point(265, 471);
 			this->Text_Resignation->Multiline = true;
 			this->Text_Resignation->Name = L"Text_Resignation";
+			this->Text_Resignation->ReadOnly = true;
 			this->Text_Resignation->Size = System::Drawing::Size(249, 22);
 			this->Text_Resignation->TabIndex = 21;
 			// 
@@ -329,41 +330,43 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 	private: System::Void UserControl_Staff_View_Details_Load(System::Object^  sender, System::EventArgs^  e) {
-				extern int S_ID;
-				Text_ID->Text = Convert::ToString(S_ID);
-				OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-				DB_Connection->Open();
+				 extern int S_ID;
+				 Text_ID->Text = Convert::ToString(S_ID);
+				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				 DB_Connection->Open();
 
-				String ^ getUserData = "Select * From Staff_Register where Employee_ID like '%" + Convert::ToString(S_ID) + "%'";
-				OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
-			
-				OleDbDataReader ^ user_data = cmd->ExecuteReader();
-			
-				while(user_data->Read() == true)
-				{
-					Text_Name->Text = user_data->GetString(1);
-					Text_ID->Text = Convert::ToString(S_ID);
-					Text_Desig->Text = user_data->GetString(2);
-					Text_Join->Text = user_data->GetString(3);
-					Text_Gender->Text = user_data->GetString(4);
-					Text_Birth->Text = user_data->GetString(5);
-					Text_ID_Proof->Text = user_data->GetString(6);
-					Text_Address->Text = user_data->GetString(7);
-					Text_Contact->Text = user_data->GetString(8);
-					if(user_data->GetString(9) != ""){
-						Text_Email->Text = user_data->GetString(9);
-					}
-					if(user_data->GetString(10) != ""){
-						Text_Resignation->Text = user_data->GetString(10);
-					}
-					
-				}
-				//cmd->ExecuteNonQuery();
-				DB_Connection->Close();
+				 String ^ getUserData = "Select * From Staff_Register where Employee_ID like '%" + Convert::ToString(S_ID) + "%'";
+				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
+
+				 OleDbDataReader ^ user_data = cmd->ExecuteReader();
+
+				 while(user_data->Read() == true)
+				 {
+					 Text_Name->Text = user_data->GetString(1);
+					 Text_ID->Text = Convert::ToString(S_ID);
+					 Text_Desig->Text = user_data->GetString(2);
+					 Text_Join->Text = user_data->GetString(3);
+					 Text_Gender->Text = user_data->GetString(4);
+					 Text_Birth->Text = user_data->GetString(5);
+					 Text_ID_Proof->Text = user_data->GetString(6);
+					 Text_Address->Text = user_data->GetString(7);
+					 Text_Contact->Text = user_data->GetString(8);
+					 if(user_data->GetString(9) != ""){
+						 Text_Email->Text = user_data->GetString(9);
+					 }
+					 if(user_data->GetString(10) != ""){
+						 Text_Resignation->Text = user_data->GetString(10);
+					 }
+
+				 }
+				 //cmd->ExecuteNonQuery();
+				 DB_Connection->Close();
 			 }
-	
-private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
-		 }
-};
+
+	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void Text_Address_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	};
 }

@@ -2,6 +2,7 @@
 
 #include "UserControl_Staff_View_Details.h"
 #include "UserControl_Staff_Edit_Details.h"
+#include "UserControl_Staff_Record.h"
 
 namespace GuestHouseManagement {
 
@@ -41,6 +42,7 @@ namespace GuestHouseManagement {
 	protected: 
 	private: System::Windows::Forms::Button^  Button_View;
 	private: System::Windows::Forms::Panel^  Details_Panel;
+	private: System::Windows::Forms::Button^  Leave_Button;
 
 
 
@@ -67,6 +69,7 @@ namespace GuestHouseManagement {
 			this->Button_Edit = (gcnew System::Windows::Forms::Button());
 			this->Button_View = (gcnew System::Windows::Forms::Button());
 			this->Details_Panel = (gcnew System::Windows::Forms::Panel());
+			this->Leave_Button = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Button_Edit
@@ -96,11 +99,22 @@ namespace GuestHouseManagement {
 			this->Details_Panel->Size = System::Drawing::Size(658, 502);
 			this->Details_Panel->TabIndex = 2;
 			// 
+			// Leave_Button
+			// 
+			this->Leave_Button->Location = System::Drawing::Point(27, 335);
+			this->Leave_Button->Name = L"Leave_Button";
+			this->Leave_Button->Size = System::Drawing::Size(110, 54);
+			this->Leave_Button->TabIndex = 3;
+			this->Leave_Button->Text = L"Leave Record";
+			this->Leave_Button->UseVisualStyleBackColor = true;
+			this->Leave_Button->Click += gcnew System::EventHandler(this, &Form_Edit_Staff_Details::Leave_Button_Click);
+			// 
 			// Form_Edit_Staff_Details
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(917, 567);
+			this->Controls->Add(this->Leave_Button);
 			this->Controls->Add(this->Details_Panel);
 			this->Controls->Add(this->Button_View);
 			this->Controls->Add(this->Button_Edit);
@@ -113,17 +127,21 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void Form_Edit_Staff_Details_Load(System::Object^  sender, System::EventArgs^  e) {
 				 extern int S_ID;
-				 
+
 			 }
 	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void Button_View_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Details_Panel->Controls->Clear();
-				Details_Panel->Controls->Add(gcnew UserControl_Staff_View_Details);
+				 Details_Panel->Controls->Add(gcnew UserControl_Staff_View_Details);
 			 }
 	private: System::Void Button_Edit_Click(System::Object^  sender, System::EventArgs^  e) {
-				  Details_Panel->Controls->Clear();
-				Details_Panel->Controls->Add(gcnew UserControl_Staff_Edit_Details);
+				 Details_Panel->Controls->Clear();
+				 Details_Panel->Controls->Add(gcnew UserControl_Staff_Edit_Details);
 			 }
-};
+	private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Details_Panel->Controls->Clear();
+				 Details_Panel->Controls->Add(gcnew UserControl_Staff_Record);
+			 }
+	};
 }

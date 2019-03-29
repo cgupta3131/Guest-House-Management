@@ -49,6 +49,34 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::DataGridViewButtonColumn^  Column5;
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	protected: 
 
 
@@ -65,6 +93,9 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -91,12 +122,41 @@ namespace GuestHouseManagement {
 			// 
 			// dataGridView1
 			// 
+			this->dataGridView1->AllowUserToAddRows = false;
+			this->dataGridView1->AllowUserToDeleteRows = false;
+			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle1->BackColor = System::Drawing::Color::Moccasin;
+			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::Raised;
+			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle2->BackColor = System::Drawing::Color::Moccasin;
+			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
+			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			this->dataGridView1->ColumnHeadersHeight = 60;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {this->Column1, 
 				this->Column0, this->Column2, this->Column3, this->Column4, this->Column7, this->Column5});
-			this->dataGridView1->Location = System::Drawing::Point(35, 111);
+			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle3->BackColor = System::Drawing::Color::SandyBrown;
+			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle3;
+			this->dataGridView1->Location = System::Drawing::Point(35, 106);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->Size = System::Drawing::Size(844, 538);
 			this->dataGridView1->TabIndex = 1;
@@ -117,6 +177,7 @@ namespace GuestHouseManagement {
 			this->Column1->FillWeight = 52.79188F;
 			this->Column1->HeaderText = L"Request ID";
 			this->Column1->Name = L"Column1";
+			this->Column1->ReadOnly = true;
 			// 
 			// Column0
 			// 
@@ -127,7 +188,7 @@ namespace GuestHouseManagement {
 			// 
 			// Column2
 			// 
-			this->Column2->FillWeight = 74.7533F;
+			this->Column2->FillWeight = 75;
 			this->Column2->HeaderText = L"Designation";
 			this->Column2->Name = L"Column2";
 			this->Column2->ReadOnly = true;
@@ -156,7 +217,7 @@ namespace GuestHouseManagement {
 			// Column5
 			// 
 			this->Column5->FillWeight = 56.06498F;
-			this->Column5->HeaderText = L"Approve/Disapprove";
+			this->Column5->HeaderText = L"Options";
 			this->Column5->Name = L"Column5";
 			this->Column5->ReadOnly = true;
 			// 
@@ -180,7 +241,9 @@ namespace GuestHouseManagement {
 
 		bool validDates(String ^ leaveFrom)
 		{
-			DateTime oDate = Convert::ToDateTime(leaveFrom);
+			DateTime oDate = new DateTime();
+			oDate = DateTime.ParseExact(leaveFrom, "dd-MM-yyyy", NULL);
+			//DateTime oDate = Convert::ToDateTime(leaveFrom);
 			//MessageBox::Show(Convert::ToString(oDate));
 			TimeSpan span = oDate - System::DateTime().Now.Date;
 			if(span.TotalDays<0) return false;
@@ -204,12 +267,12 @@ namespace GuestHouseManagement {
 			while(user_leave->Read()==true)
 			{
 
-				dataGridView1->RowTemplate->Height = 40;
+				dataGridView1->RowTemplate->Height = 50;
 				String ^ Emp_name = Convert::ToString(user_leave->GetValue(1));
 				String ^ leave_id = Convert::ToString(user_leave->GetValue(0));
 				String ^ emp_desig = user_leave->GetString(3);
 				String ^ leave_from = user_leave->GetString(4);
-				if(!validDates(leave_from) || user_leave->GetString(7)!="Pending") continue;
+				if( user_leave->GetString(7)!="Pending") continue; //validateDates
 				String ^ leave_upto = user_leave->GetString(5);
 				String ^ totalDays = Convert::ToString(user_leave->GetValue(6));
 				dataGridView1->Rows->Add(leave_id,Emp_name,emp_desig,leave_from,leave_upto,totalDays);
@@ -223,8 +286,9 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 				 String ^ name = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
-				 if(MessageBox::Show("Approve "+ name + "'s leave?", "Approval", MessageBoxButtons::YesNo,MessageBoxIcon::Question)
-					 == System::Windows::Forms::DialogResult::Yes)
+				 System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
+				 opt=MessageBox::Show("Approve "+ name + "'s leave?", "Approval", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
+				 if(opt== System::Windows::Forms::DialogResult::Yes)
 				 {
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
@@ -241,7 +305,7 @@ namespace GuestHouseManagement {
 					 loadDataGrid();
 
 				 }
-				 else
+				 else if(opt== System::Windows::Forms::DialogResult::No)
 				 {
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";

@@ -84,9 +84,6 @@
     <ClCompile Include="UserControl_Staff_View_Details.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UserControl_Customer_Homepage.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Form_Customer_Homepage.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -139,6 +136,30 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="UserControl_Staff_Booking_Display.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Form_Show_Guest_House_Facilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Add_Mess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_In_Stay_Facilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_Mess_Rates.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_View_Cab.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_View_Mess.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_View_Restaurants.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="UserControl_View_TouristPlaces.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -203,9 +224,6 @@
     <ClInclude Include="UserControl_Staff_View_Details.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="UserControl_Customer_Homepage.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="UserControl_Customer_Booking.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -264,6 +282,30 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Booking_Display.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Form_Show_Guest_House_Facilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Add_Mess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_In_Stay_Facilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_Mess_Rates.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_View_Cab.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_View_Mess.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_View_Restaurants.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="UserControl_View_TouristPlaces.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -379,6 +421,15 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Generate_Bill.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Customer_Housekeeping.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Booking_Display.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Housekeeping_Approval.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

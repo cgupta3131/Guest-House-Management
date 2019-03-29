@@ -1,6 +1,11 @@
 #pragma once
 #include "Form_Edit_Booking.h"
 #include "Form_Feedback.h"
+#include "Form_Show_Guest_House_Facilities.h"
+#include<string>
+#include <iomanip>
+#include <cliext/vector>
+
 using namespace std;
 using namespace System;
 using namespace System::Diagnostics;
@@ -9,7 +14,12 @@ using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
-using namespace System::Data::OleDb;
+using namespace System::Data::OleDb;using namespace System;
+using namespace System::ComponentModel;
+using namespace System::Collections;
+using namespace System::Windows::Forms;
+using namespace System::Data;
+using namespace System::Drawing;
 
 namespace GuestHouseManagement {
 
@@ -20,6 +30,14 @@ namespace GuestHouseManagement {
 	{
 	public:
 		String ^username_info;
+		cliext::vector<String^> vec_id;
+		cliext::vector<String^> v1;
+	internal: System::Windows::Forms::Label^  label2;
+	public: 
+	internal: System::Windows::Forms::Label^  label3;
+	internal: System::Windows::Forms::Label^  label4;
+	internal: System::Windows::Forms::Label^  label5;
+			  cliext::vector<String^> v2;
 		UserControl_Customer_Book_Edit(String ^ user)
 		{
 			InitializeComponent();
@@ -40,17 +58,27 @@ namespace GuestHouseManagement {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::DataGridView^  dataGridView1;
+
 	internal: System::Windows::Forms::Label^  label1;
 
 	internal: 
 
 
 
-	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^  column3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -87,174 +115,465 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->button1 = (gcnew System::Windows::Forms::Button());
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->BeginInit();
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
-			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->AllowUserToAddRows = false;
-			this->dataGridView1->AllowUserToDeleteRows = false;
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {this->column1, 
-				this->column2, this->column3});
-			this->dataGridView1->Location = System::Drawing::Point(41, 115);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->ReadOnly = true;
-			this->dataGridView1->RowTemplate->Height = 24;
-			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
-			this->dataGridView1->Size = System::Drawing::Size(877, 346);
-			this->dataGridView1->TabIndex = 0;
-			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UserControl_Customer_Book_Edit::dataGridView1_CellContentClick);
-			// 
-			// column1
-			// 
-			this->column1->HeaderText = L"Booking ID";
-			this->column1->Name = L"column1";
-			this->column1->ReadOnly = true;
-			this->column1->Width = 140;
-			// 
-			// column2
-			// 
-			this->column2->HeaderText = L"Booking For";
-			this->column2->Name = L"column2";
-			this->column2->ReadOnly = true;
-			this->column2->Width = 150;
-			// 
-			// column3
-			// 
-			this->column3->HeaderText = L"Booking From";
-			this->column3->Name = L"column3";
-			this->column3->ReadOnly = true;
-			this->column3->Width = 170;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(323, 51);
+			this->label1->Location = System::Drawing::Point(397, 50);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(200, 23);
+			this->label1->Size = System::Drawing::Size(153, 23);
 			this->label1->TabIndex = 44;
-			this->label1->Text = L"Past Booking History";
+			this->label1->Text = L"Booking History";
 			// 
-			// button1
+			// label2
 			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(741, 36);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(114, 49);
-			this->button1->TabIndex = 45;
-			this->button1->Text = L"Reload";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &UserControl_Customer_Book_Edit::button1_Click);
+			this->label2->Location = System::Drawing::Point(92, 111);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(111, 23);
+			this->label2->TabIndex = 45;
+			this->label2->Text = L"Booking ID";
+			this->label2->Visible = false;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(324, 111);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(116, 23);
+			this->label3->TabIndex = 46;
+			this->label3->Text = L"Booking for";
+			this->label3->Visible = false;
+			// 
+			// label4
+			// 
+			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(563, 111);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(109, 23);
+			this->label4->TabIndex = 47;
+			this->label4->Text = L"Start Date";
+			this->label4->Visible = false;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(790, 111);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(102, 23);
+			this->label5->TabIndex = 48;
+			this->label5->Text = L"End Date";
+			this->label5->Visible = false;
 			// 
 			// UserControl_Customer_Book_Edit
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->button1);
+			this->AutoScroll = true;
+			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label4);
+			this->Controls->Add(this->label3);
+			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dataGridView1);
 			this->Name = L"UserControl_Customer_Book_Edit";
 			this->Size = System::Drawing::Size(994, 534);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Customer_Book_Edit::UserControl_Customer_Book_Edit_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
 	private: System::Void UserControl_Customer_Book_Edit_Load(System::Object^  sender, System::EventArgs^  e) {
-				 dataGridView1->Rows->Clear();
+				
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();
 
-				 String ^ getPastBookings = "Select * From Booking_Request where Customer_Username like '%" + username_info + "%'";
+				 String ^ getPastBookings = "Select * From Booking_Request where Customer_Username like '" + username_info + "' ORDER BY ID DESC";
 				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
 				 OleDbDataReader ^ user_booking = cmd->ExecuteReader();
 				 
-
-				 /*while(user_booking->Read()==true)
-				 {
-				 List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
-				 }*/
-
+				 int i = 0;
 				 while(user_booking->Read()==true)
 				 {
 					 // add check that show only booking requests that are more than the current date
-					dataGridView1->RowTemplate->Height = 80;
+					
+
 					String ^ book_id = Convert::ToString(user_booking->GetValue(0));
 					String ^ book_name = user_booking->GetString(3);
 					String ^ book_date = user_booking->GetString(4);
-					dataGridView1->Rows->Add(book_id,book_name,book_date);
+					String ^ book_upto = user_booking->GetString(5);
+
+					Button ^ bt1 = gcnew Button;
+					Button ^ bt2 = gcnew Button;
+					Button ^ bt3 = gcnew Button;
+					Button ^ bt4 = gcnew Button;
+
+					vec_id.push_back(book_id);
+					v1.push_back(book_date);
+					v2.push_back(book_upto);
+					
+					bt1->Text = book_id;
+					bt2->Text = book_name;
+					bt3->Text = book_date;
+					bt4->Text = book_upto;
+					
+					bt1->Size = System::Drawing::Size(170,30);
+					bt1->Location = System::Drawing::Point(30,140 + 30*i);
+					bt2->Size = System::Drawing::Size(170,30);
+					bt2->Location = System::Drawing::Point(200,140 + 30*i);
+					bt3->Size = System::Drawing::Size(170,30);
+					bt3->Location = System::Drawing::Point(370,140 + 30*i);
+					bt4->Size = System::Drawing::Size(170,30);
+					bt4->Location = System::Drawing::Point(540,140 + 30*i);
+
+					this->Controls->Add(bt1);
+					bt1->Click+=gcnew EventHandler(this,&UserControl_Customer_Book_Edit::bt1_Click);
+
+					this->Controls->Add(bt2);
+					bt2->Click+=gcnew EventHandler(this,&UserControl_Customer_Book_Edit::bt2_Click);
+
+					this->Controls->Add(bt3);
+					bt3->Click+=gcnew EventHandler(this,&UserControl_Customer_Book_Edit::bt3_Click);
+
+					this->Controls->Add(bt4);
+					bt4->Click+=gcnew EventHandler(this,&UserControl_Customer_Book_Edit::bt4_Click);
+
+
+					i++;
+					
+					//dataGridView1->Rows->Add(book_id,book_name,book_date,book_upto);
 				 }
+				 if(i!=0)
+				 {
+					 label2->Visible=true;
+					 label3->Visible=true;
+					 label4->Visible=true;
+					 label5->Visible=true;
+				 }
+				 /*	 for(int i=0;i<vec_id.size();i++)
+				 {
+
+				 MessageBox::Show(vec_id[i]);
+				 }*/
 				 DB_Connection->Close();
+				
+				 
 			 }
 	private: System::Void List_Search_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 
 			 }
-	private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
-				 //Console::WriteLine(dataGridView1->CurrentRow->Cells[0]->ToString());
-				String ^str=dataGridView1->CurrentRow->Cells[2]->Value->ToString();
-				//MessageBox::Show(str);
-				DateTime dt=Convert::ToDateTime(str);
-				TimeSpan span=dt-System::DateTime().Now.Date;
-				String ^ booking_id = dataGridView1->CurrentRow->Cells[0]->Value->ToString();
-				MessageBox::Show(Convert::ToString(span.TotalDays));
-				if(span.TotalDays>0)
-				{
-					/*Modify code to allow edit only if not in any */
-					Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(booking_id);
-					f2->ShowDialog();
-				}
-				else if(span.TotalDays<0)
-				{
-					/* Add code to check if feedback already submitted 
-					   Also see that feedback is asked for on the last day of stay*/ 
-					
-					Form_Feedback ^form3 = gcnew Form_Feedback(booking_id);
-					form3->ShowDialog();
-				}
-				else
-				{
-					 /*Add code to go to in stay facilities*/
-				}
-				
-			 }
-private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
-			     dataGridView1->Rows->Clear();
-				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-				 DB_Connection->Open();
 
-				 String ^ getPastBookings = "Select * From Booking_Request where Customer_Username like '%" + username_info + "%'";
-				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
-				 OleDbDataReader ^ user_booking = cmd->ExecuteReader();
+		public: System::Void bt1_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			Button ^ bt1=(System::Windows::Forms::Button^) sender;
+			int loc=bt1->Location.Y;
+
+			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
+			int scr=this->AutoScrollPosition.Y;
+			//MessageBox::Show("scr=" + Convert::ToString(scr));
+			int pos=(loc-140-scr)/30;
+			//MessageBox::Show(Convert::ToString(loc));
+			
+			String ^str_id=vec_id[pos];
+			String ^str1=v1[pos];
+			String ^str2=v2[pos];
+
+			MessageBox::Show(str_id + " " + str1 + " " + str2);
+			DateTime dt1=Convert::ToDateTime(str1);
+			DateTime dt2=Convert::ToDateTime(str2);
+			TimeSpan span1=dt1-System::DateTime().Now.Date;
+			TimeSpan span2=dt2-System::DateTime().Now.Date;
+			MessageBox::Show("1");
+			if(span1.TotalDays>0)
+			{
+				MessageBox::Show("2");
+				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
+				f2->ShowDialog();
+			}
+			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			{
+					/*Add code to go to in stay facilities*/
+					 MessageBox::Show("3");
+					if(span2.TotalDays==0)
+					{
+						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+						form3->ShowDialog();
+					}
+					Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
+					f1->ShowDialog();
+			}
+			else
+			{
+				MessageBox::Show("4");
+				/* Add code to check if feedback already submitted 
+					Also see that feedback is asked for on the last day of stay
+					Also allow to remove from history */ 
+					OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					DB_Connection->Open();
+
+					String ^ getPastBookings = "Select * From Booking_Request where ID like " + Convert::ToInt32(str_id);
+					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
+					OleDbDataReader ^ user_booking = cmd->ExecuteReader();
 				 
-				 /*while(user_booking->Read()==true)
-				 {
-				 List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
-				 }*/
+					/*while(user_booking->Read()==true)
+					{
+					List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
+					}*/
 
-				 while(user_booking->Read()==true)
-				 {
-					 // add check that show only booking requests that are more than the current date
-					dataGridView1->RowTemplate->Height = 80;
-					String ^ book_id = Convert::ToString(user_booking->GetValue(0));
-					String ^ book_name = user_booking->GetString(3);
-					String ^ book_date = user_booking->GetString(4);
-					dataGridView1->Rows->Add(book_id,book_name,book_date);
-				 }
-				 DB_Connection->Close();
-		 }
+					if(user_booking->Read()==true)
+					{
+						MessageBox::Show("5");
+						// add check that show only booking requests that are more than the current date
+						if(user_booking->GetValue(10)==0)
+						{
+							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+							form3->ShowDialog();
+						}
+						// add code to close this form
+
+						Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
+						f2->ShowDialog();
+					}
+					DB_Connection->Close();
+			}
+
+		}
+
+		public: System::Void bt2_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			Button ^ bt2=(System::Windows::Forms::Button^) sender;
+			int loc=bt2->Location.Y;
+			
+			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
+			int scr=this->AutoScrollPosition.Y;
+			//MessageBox::Show("scr=" + Convert::ToString(scr));
+			int pos=(loc-140-scr)/30;
+			//MessageBox::Show(Convert::ToString(loc));
+
+			String ^str_id=vec_id[pos];
+			String ^str1=v1[pos];
+			String ^str2=v2[pos];
+
+			DateTime dt1=Convert::ToDateTime(str1);
+			DateTime dt2=Convert::ToDateTime(str2);
+
+			TimeSpan span1=dt1-System::DateTime().Now.Date;
+			TimeSpan span2=dt2-System::DateTime().Now.Date;
+			
+			if(span1.TotalDays>0)
+			{
+				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
+				f2->ShowDialog();
+			}
+			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			{
+					/*Add code to go to in stay facilities*/
+					 
+					if(span2.TotalDays==0)
+					{
+						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+						form3->ShowDialog();
+					}
+					Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
+					f1->ShowDialog();
+			}
+			else
+			{
+				/* Add code to check if feedback already submitted 
+					Also see that feedback is asked for on the last day of stay
+					Also allow to remove from history */ 
+					OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					DB_Connection->Open();
+
+					String ^ getPastBookings = "Select * From Booking_Request where ID like " + Convert::ToInt32(str_id);
+					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
+					OleDbDataReader ^ user_booking = cmd->ExecuteReader();
+				 
+					if(user_booking->Read()==true)
+					{
+						// add check that show only booking requests that are more than the current date
+						if(user_booking->GetValue(10)==0)
+						{
+							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+							form3->ShowDialog();
+						}
+						// add code to close this form
+
+						Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
+						f2->ShowDialog();
+					}
+					DB_Connection->Close();
+			}
+		}
+
+
+		public: System::Void bt3_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			Button ^ bt3=(System::Windows::Forms::Button^) sender;
+			int loc=bt3->Location.Y;
+			
+			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
+			int scr=this->AutoScrollPosition.Y;
+			//MessageBox::Show("scr=" + Convert::ToString(scr));
+			int pos=(loc-140-scr)/30;
+			//MessageBox::Show(Convert::ToString(loc));
+
+			String ^str_id=vec_id[pos];
+			String ^str1=v1[pos];
+			String ^str2=v2[pos];
+
+			DateTime dt1=Convert::ToDateTime(str1);
+			DateTime dt2=Convert::ToDateTime(str2);
+
+			TimeSpan span1=dt1-System::DateTime().Now.Date;
+			TimeSpan span2=dt2-System::DateTime().Now.Date;
+			
+			if(span1.TotalDays>0)
+			{
+				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
+				f2->ShowDialog();
+			}
+			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			{
+					/*Add code to go to in stay facilities*/
+					 
+					if(span2.TotalDays==0)
+					{
+						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+						form3->ShowDialog();
+					}
+					Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
+					f1->ShowDialog();
+			}
+			else
+			{
+				/* Add code to check if feedback already submitted 
+					Also see that feedback is asked for on the last day of stay
+					Also allow to remove from history */ 
+					OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					DB_Connection->Open();
+
+					String ^ getPastBookings = "Select * From Booking_Request where ID like " + Convert::ToInt32(str_id);
+					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
+					OleDbDataReader ^ user_booking = cmd->ExecuteReader();
+				 
+					/*while(user_booking->Read()==true)
+					{
+					List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
+					}*/
+
+					if(user_booking->Read()==true)
+					{
+						// add check that show only booking requests that are more than the current date
+						if(user_booking->GetValue(10)==0)
+						{
+							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+							form3->ShowDialog();
+						}
+						// add code to close this form
+
+						Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
+						f2->ShowDialog();
+					}
+					DB_Connection->Close();
+			}
+		}
+
+		public: System::Void bt4_Click(System::Object^  sender, System::EventArgs^  e)
+		{
+			Button ^ bt4=(System::Windows::Forms::Button^) sender;
+			int loc=bt4->Location.Y;
+			
+			// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
+			int scr=this->AutoScrollPosition.Y;
+			//MessageBox::Show("scr=" + Convert::ToString(scr));
+			int pos=(loc-140-scr)/30;
+			//MessageBox::Show(Convert::ToString(loc));
+
+			String ^str_id=vec_id[pos];
+			String ^str1=v1[pos];
+			String ^str2=v2[pos];
+
+			DateTime dt1=Convert::ToDateTime(str1);
+			DateTime dt2=Convert::ToDateTime(str2);
+
+			TimeSpan span1=dt1-System::DateTime().Now.Date;
+			TimeSpan span2=dt2-System::DateTime().Now.Date;
+			
+			if(span1.TotalDays>0)
+			{
+				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
+				f2->ShowDialog();
+			}
+			else if(span1.TotalDays<=0 && span2.TotalDays>=0)
+			{
+					/*Add code to go to in stay facilities*/
+					 
+					if(span2.TotalDays==0)
+					{
+						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+						form3->ShowDialog();
+					}
+					Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
+					f1->ShowDialog();
+			}
+			else
+			{
+				/* Add code to check if feedback already submitted 
+					Also see that feedback is asked for on the last day of stay
+					Also allow to remove from history */ 
+					OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+					DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+					DB_Connection->Open();
+
+					String ^ getPastBookings = "Select * From Booking_Request where ID like " + Convert::ToInt32(str_id);
+					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
+					OleDbDataReader ^ user_booking = cmd->ExecuteReader();
+				 
+					/*while(user_booking->Read()==true)
+					{
+					List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
+					}*/
+
+					if(user_booking->Read()==true)
+					{
+						// add check that show only booking requests that are more than the current date
+						if(user_booking->GetValue(10)==0)
+						{
+							Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
+							form3->ShowDialog();
+						}
+						// add code to close this form
+
+						Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
+						f2->ShowDialog();
+					}
+					DB_Connection->Close();
+			}
+		}
 };
 }
+
+
+
+

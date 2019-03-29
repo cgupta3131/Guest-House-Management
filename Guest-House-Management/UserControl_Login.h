@@ -7,7 +7,7 @@
 
 #include "Form_Reception.h"
 #include "Form_Customer_Homepage.h"
-#include "UserControl_Customer_Homepage.h"
+
 
 using namespace std;
 using namespace System;
@@ -28,9 +28,12 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Login : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Login(void)
+		Form ^ gf;
+		UserControl_Login(Form ^ f1)
 		{
 			InitializeComponent();
+
+			gf = f1;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -183,9 +186,9 @@ namespace GuestHouseManagement {
 			DB_Connection->Open();
 			
 			string sname = msclr::interop::marshal_as<std::string>(Txt_username->Text);
-			remove_if(sname.begin(), sname.end(), isspace);
+			//remove_if(sname.begin(), sname.end(), isspace);
 			string spassword = msclr::interop::marshal_as<std::string>(Txt_password->Text);
-			remove_if(spassword.begin(), spassword.end(), isspace);
+			//remove_if(spassword.begin(), spassword.end(), isspace);
 
 			regex rx("^[A-Z|a-z|.|0-9|_']+$");
 			if(!regex_match(sname.cbegin(), sname.cend(), rx)){
@@ -231,7 +234,7 @@ namespace GuestHouseManagement {
 					if(stored_username=="admin")
 					{
 						MessageBox::Show("Admin Login Successful!");
-						Form_Reception ^form2 = gcnew Form_Reception();
+						Form_Reception ^form2 = gcnew Form_Reception(gf);
 						form2->ShowDialog();
 			 
 						//myForm = gcnew Form_Reception();
@@ -239,17 +242,17 @@ namespace GuestHouseManagement {
 					}
 					else if(stored_username=="receptionist")
 					{
-						MessageBox::Show("Receptionist login successful");
-						Form_Reception ^form2 = gcnew Form_Reception();
+						MessageBox::Show("Receptionist login successfull");
+						Form_Reception ^ form2 = gcnew Form_Reception(gf);
 						form2->ShowDialog();
 					}
 					else
 					{
 
 						MessageBox::Show("User Login Successful!");
-						//Form_Reception ^form2 = gcnew Form_Reception();
-						Form_Customer_Homepage ^form2 = gcnew Form_Customer_Homepage(username);
-						form2->ShowDialog();
+						//this->Visible = false;
+						Form_Customer_Homepage ^form_custom = gcnew Form_Customer_Homepage(username, gf);
+						form_custom->ShowDialog();
 						//this->Visible = false;
 						//Form1 ^ form1 = gcnew Form1();
 						//form1->ShowDialog();

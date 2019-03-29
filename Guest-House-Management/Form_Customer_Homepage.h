@@ -5,6 +5,8 @@
 //#include "UserControl_My_Bookings.h"
 #include "UserControl_Customer_Book_Edit.h"
 #include "UserControl_Customer_Housekeeping.h"
+#include "UserControl_GuestHouseDetails.h"
+#include "UserControl_In_Stay_Facilities.h"
 
 namespace GuestHouseManagement {
 
@@ -26,9 +28,13 @@ namespace GuestHouseManagement {
 	{
 	public:
 		String ^username_info;
-		Form_Customer_Homepage(String ^user)
+	private: System::Windows::Forms::Button^  Button_Logout;
+	public: 
+		Form ^ gf;
+		Form_Customer_Homepage(String ^user, Form ^ f1)
 		{
 			InitializeComponent();
+			gf = f1;
 			this->label1->Text="Welcome " + user;
 			username_info=user;
 			//String ^username_info;
@@ -82,12 +88,13 @@ namespace GuestHouseManagement {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->Button_My_Bookings = (gcnew System::Windows::Forms::Button());
 			this->Button_House_Keeping = (gcnew System::Windows::Forms::Button());
+			this->Button_Logout = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Button_Book
 			// 
 			this->Button_Book->Location = System::Drawing::Point(18, 47);
-			this->Button_Book->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Button_Book->Margin = System::Windows::Forms::Padding(2);
 			this->Button_Book->Name = L"Button_Book";
 			this->Button_Book->Size = System::Drawing::Size(154, 64);
 			this->Button_Book->TabIndex = 0;
@@ -98,17 +105,18 @@ namespace GuestHouseManagement {
 			// Button_Guest_House_Facilities
 			// 
 			this->Button_Guest_House_Facilities->Location = System::Drawing::Point(18, 130);
-			this->Button_Guest_House_Facilities->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Button_Guest_House_Facilities->Margin = System::Windows::Forms::Padding(2);
 			this->Button_Guest_House_Facilities->Name = L"Button_Guest_House_Facilities";
 			this->Button_Guest_House_Facilities->Size = System::Drawing::Size(154, 64);
 			this->Button_Guest_House_Facilities->TabIndex = 2;
 			this->Button_Guest_House_Facilities->Text = L"Guest House Facilities";
 			this->Button_Guest_House_Facilities->UseVisualStyleBackColor = true;
+			this->Button_Guest_House_Facilities->Click += gcnew System::EventHandler(this, &Form_Customer_Homepage::Button_Guest_House_Facilities_Click);
 			// 
 			// Button_Feedback
 			// 
 			this->Button_Feedback->Location = System::Drawing::Point(18, 383);
-			this->Button_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Button_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Button_Feedback->Name = L"Button_Feedback";
 			this->Button_Feedback->Size = System::Drawing::Size(154, 64);
 			this->Button_Feedback->TabIndex = 3;
@@ -121,7 +129,7 @@ namespace GuestHouseManagement {
 			this->Output_Panel->BackColor = System::Drawing::Color::CornflowerBlue;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->Output_Panel->Location = System::Drawing::Point(187, 13);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
 			this->Output_Panel->Name = L"Output_Panel";
 			this->Output_Panel->Size = System::Drawing::Size(746, 434);
 			this->Output_Panel->TabIndex = 16;
@@ -140,7 +148,7 @@ namespace GuestHouseManagement {
 			// Button_My_Bookings
 			// 
 			this->Button_My_Bookings->Location = System::Drawing::Point(18, 206);
-			this->Button_My_Bookings->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Button_My_Bookings->Margin = System::Windows::Forms::Padding(2);
 			this->Button_My_Bookings->Name = L"Button_My_Bookings";
 			this->Button_My_Bookings->Size = System::Drawing::Size(154, 64);
 			this->Button_My_Bookings->TabIndex = 18;
@@ -158,11 +166,23 @@ namespace GuestHouseManagement {
 			this->Button_House_Keeping->UseVisualStyleBackColor = true;
 			this->Button_House_Keeping->Click += gcnew System::EventHandler(this, &Form_Customer_Homepage::Button_House_Keeping_Click);
 			// 
+			// Button_Logout
+			// 
+			this->Button_Logout->Location = System::Drawing::Point(18, 456);
+			this->Button_Logout->Margin = System::Windows::Forms::Padding(2);
+			this->Button_Logout->Name = L"Button_Logout";
+			this->Button_Logout->Size = System::Drawing::Size(154, 64);
+			this->Button_Logout->TabIndex = 21;
+			this->Button_Logout->Text = L"Logout";
+			this->Button_Logout->UseVisualStyleBackColor = true;
+			this->Button_Logout->Click += gcnew System::EventHandler(this, &Form_Customer_Homepage::Button_Logout_Click);
+			// 
 			// Form_Customer_Homepage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(941, 465);
+			this->ClientSize = System::Drawing::Size(941, 531);
+			this->Controls->Add(this->Button_Logout);
 			this->Controls->Add(this->Button_House_Keeping);
 			this->Controls->Add(this->Button_My_Bookings);
 			this->Controls->Add(this->label1);
@@ -170,7 +190,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Button_Feedback);
 			this->Controls->Add(this->Button_Guest_House_Facilities);
 			this->Controls->Add(this->Button_Book);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Form_Customer_Homepage";
 			this->Text = L"Form_Customer_Homepage";
 			this->Load += gcnew System::EventHandler(this, &Form_Customer_Homepage::Form_Customer_Homepage_Load);
@@ -180,7 +200,7 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 	private: System::Void Form_Customer_Homepage_Load(System::Object^  sender, System::EventArgs^  e) {
-
+				 gf->Hide();
 			 }
 	private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 			 }
@@ -207,6 +227,14 @@ private: System::Void Button_Cancel_Click(System::Object^  sender, System::Event
 private: System::Void Button_House_Keeping_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Housekeeping(username_info));
+		 }
+private: System::Void Button_Logout_Click(System::Object^  sender, System::EventArgs^  e) {
+			 gf->Close();
+			 Application::Restart();
+		 }
+private: System::Void Button_Guest_House_Facilities_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_In_Stay_Facilities);
 		 }
 };
 }

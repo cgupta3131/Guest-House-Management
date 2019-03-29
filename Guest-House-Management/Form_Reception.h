@@ -1,4 +1,5 @@
 #pragma once
+#include "stdafx.h"
 #include "UserControl_Guest_House_Info.h"
 #include "UserControl_Add_Room.h"
 #include "UserControl_Status_Room.h"
@@ -10,6 +11,8 @@
 #include "UserControl_Staff_Housekeeping_Approval.h"
 #include "UserControl_Staff_Booking_Display.h"
 #include "UserControl_User_Types.h"
+#include "UserControl_Staff_Leave_Approval.h"
+
 
 namespace GuestHouseManagement {
 
@@ -26,9 +29,19 @@ namespace GuestHouseManagement {
 	public ref class Form_Reception : public System::Windows::Forms::Form
 	{
 	public:
-		Form_Reception(void)
+		Form ^ gf;
+	private: System::Windows::Forms::Button^  Button_Logout;
+	private: System::Windows::Forms::Button^  button3;
+	public: 
+		Form ^ gf2;
+		Form_Reception(){
+
+		}
+		Form_Reception(Form ^ f1)
 		{
 			InitializeComponent();
+
+			gf = f1;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -64,6 +77,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  Btn_Housekeeping_App;
+
 	internal: 
 	private: 
 
@@ -93,11 +107,13 @@ namespace GuestHouseManagement {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->Btn_Housekeeping_App = (gcnew System::Windows::Forms::Button());
+			this->Button_Logout = (gcnew System::Windows::Forms::Button());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Booking_Info
 			// 
-			this->Btn_Booking_Info->Location = System::Drawing::Point(43, 352);
+			this->Btn_Booking_Info->Location = System::Drawing::Point(43, 312);
 			this->Btn_Booking_Info->Name = L"Btn_Booking_Info";
 			this->Btn_Booking_Info->Size = System::Drawing::Size(166, 98);
 			this->Btn_Booking_Info->TabIndex = 1;
@@ -106,9 +122,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Staff_Info
 			// 
-			this->Btn_Staff_Info->Location = System::Drawing::Point(43, 208);
+			this->Btn_Staff_Info->Location = System::Drawing::Point(43, 234);
 			this->Btn_Staff_Info->Name = L"Btn_Staff_Info";
-			this->Btn_Staff_Info->Size = System::Drawing::Size(166, 98);
+			this->Btn_Staff_Info->Size = System::Drawing::Size(166, 62);
 			this->Btn_Staff_Info->TabIndex = 2;
 			this->Btn_Staff_Info->Text = L"Staff Info";
 			this->Btn_Staff_Info->UseVisualStyleBackColor = true;
@@ -206,7 +222,7 @@ namespace GuestHouseManagement {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(826, 1);
+			this->button2->Location = System::Drawing::Point(812, 6);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(149, 54);
 			this->button2->TabIndex = 26;
@@ -216,7 +232,7 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Housekeeping_App
 			// 
-			this->Btn_Housekeeping_App->Location = System::Drawing::Point(630, 1);
+			this->Btn_Housekeeping_App->Location = System::Drawing::Point(594, 6);
 			this->Btn_Housekeeping_App->Name = L"Btn_Housekeeping_App";
 			this->Btn_Housekeeping_App->Size = System::Drawing::Size(166, 54);
 			this->Btn_Housekeeping_App->TabIndex = 25;
@@ -224,11 +240,33 @@ namespace GuestHouseManagement {
 			this->Btn_Housekeeping_App->UseVisualStyleBackColor = true;
 			this->Btn_Housekeeping_App->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Housekeeping_App_Click);
 			// 
+			// Button_Logout
+			// 
+			this->Button_Logout->Location = System::Drawing::Point(43, 430);
+			this->Button_Logout->Name = L"Button_Logout";
+			this->Button_Logout->Size = System::Drawing::Size(166, 50);
+			this->Button_Logout->TabIndex = 27;
+			this->Button_Logout->Text = L"Logout";
+			this->Button_Logout->UseVisualStyleBackColor = true;
+			this->Button_Logout->Click += gcnew System::EventHandler(this, &Form_Reception::Button_Logout_Click);
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(43, 175);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(166, 50);
+			this->button3->TabIndex = 21;
+			this->button3->Text = L"Leave Approval";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &Form_Reception::button3_Click_1);
+			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->button3);
+			this->Controls->Add(this->Button_Logout);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->Btn_Housekeeping_App);
 			this->Controls->Add(this->button1);
@@ -256,8 +294,11 @@ namespace GuestHouseManagement {
 		
 			 }
 private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff);
 		 }
 private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
+			 gf->Hide();
 		 }
 private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {
 			  Output_Panel->Controls->Clear();
@@ -296,6 +337,26 @@ private: System::Void Btn_Housekeeping_App_Click(System::Object^  sender, System
 private: System::Void button2_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Booking_Display);
+		 }
+private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
+			 if(this->Owner == nullptr)
+				 return;
+
+			 this->Owner->Show();
+			 this->Hide();
+		 }
+private: System::Void Button_Logout_Click(System::Object^  sender, System::EventArgs^  e) {
+			 //gf->Close();
+			 //gf->ShowDialog();
+
+			 this->Close();
+			 gf->Show();
+			 gf->Close();
+			 Application::Restart();
+		 }
+private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave_Approval);
 		 }
 };
 }

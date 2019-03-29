@@ -48,7 +48,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Register_Button;
 	protected: 
 	private: System::Windows::Forms::Button^  Leave_Button;
-	private: System::Windows::Forms::Button^  Record_Button;
+
 	private: System::Windows::Forms::Button^  Planner_Button;
 	private: System::Windows::Forms::Panel^  Staff_Panel;
 	private: System::Windows::Forms::Button^  button1;
@@ -69,7 +69,6 @@ namespace GuestHouseManagement {
 		{
 			this->Register_Button = (gcnew System::Windows::Forms::Button());
 			this->Leave_Button = (gcnew System::Windows::Forms::Button());
-			this->Record_Button = (gcnew System::Windows::Forms::Button());
 			this->Planner_Button = (gcnew System::Windows::Forms::Button());
 			this->Staff_Panel = (gcnew System::Windows::Forms::Panel());
 			this->button1 = (gcnew System::Windows::Forms::Button());
@@ -77,9 +76,10 @@ namespace GuestHouseManagement {
 			// 
 			// Register_Button
 			// 
-			this->Register_Button->Location = System::Drawing::Point(60, 82);
+			this->Register_Button->Location = System::Drawing::Point(45, 67);
+			this->Register_Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Register_Button->Name = L"Register_Button";
-			this->Register_Button->Size = System::Drawing::Size(120, 56);
+			this->Register_Button->Size = System::Drawing::Size(90, 46);
 			this->Register_Button->TabIndex = 0;
 			this->Register_Button->Text = L"Register";
 			this->Register_Button->UseVisualStyleBackColor = true;
@@ -87,29 +87,21 @@ namespace GuestHouseManagement {
 			// 
 			// Leave_Button
 			// 
-			this->Leave_Button->Location = System::Drawing::Point(237, 82);
+			this->Leave_Button->Location = System::Drawing::Point(178, 67);
+			this->Leave_Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Leave_Button->Name = L"Leave_Button";
-			this->Leave_Button->Size = System::Drawing::Size(112, 56);
+			this->Leave_Button->Size = System::Drawing::Size(84, 46);
 			this->Leave_Button->TabIndex = 1;
 			this->Leave_Button->Text = L"Leave Request";
 			this->Leave_Button->UseVisualStyleBackColor = true;
 			this->Leave_Button->Click += gcnew System::EventHandler(this, &UserControl_Staff::Leave_Button_Click);
 			// 
-			// Record_Button
-			// 
-			this->Record_Button->Location = System::Drawing::Point(398, 82);
-			this->Record_Button->Name = L"Record_Button";
-			this->Record_Button->Size = System::Drawing::Size(117, 56);
-			this->Record_Button->TabIndex = 2;
-			this->Record_Button->Text = L"Record";
-			this->Record_Button->UseVisualStyleBackColor = true;
-			this->Record_Button->Click += gcnew System::EventHandler(this, &UserControl_Staff::Record_Button_Click);
-			// 
 			// Planner_Button
 			// 
-			this->Planner_Button->Location = System::Drawing::Point(705, 82);
+			this->Planner_Button->Location = System::Drawing::Point(529, 67);
+			this->Planner_Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Planner_Button->Name = L"Planner_Button";
-			this->Planner_Button->Size = System::Drawing::Size(117, 56);
+			this->Planner_Button->Size = System::Drawing::Size(88, 46);
 			this->Planner_Button->TabIndex = 3;
 			this->Planner_Button->Text = L"Planner";
 			this->Planner_Button->UseVisualStyleBackColor = true;
@@ -117,16 +109,18 @@ namespace GuestHouseManagement {
 			// 
 			// Staff_Panel
 			// 
-			this->Staff_Panel->Location = System::Drawing::Point(60, 236);
+			this->Staff_Panel->Location = System::Drawing::Point(45, 192);
+			this->Staff_Panel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Staff_Panel->Name = L"Staff_Panel";
-			this->Staff_Panel->Size = System::Drawing::Size(719, 389);
+			this->Staff_Panel->Size = System::Drawing::Size(539, 316);
 			this->Staff_Panel->TabIndex = 4;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(554, 82);
+			this->button1->Location = System::Drawing::Point(416, 67);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(117, 56);
+			this->button1->Size = System::Drawing::Size(88, 46);
 			this->button1->TabIndex = 5;
 			this->button1->Text = L"Edit Records";
 			this->button1->UseVisualStyleBackColor = true;
@@ -134,16 +128,16 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Staff_Panel);
 			this->Controls->Add(this->Planner_Button);
-			this->Controls->Add(this->Record_Button);
 			this->Controls->Add(this->Leave_Button);
 			this->Controls->Add(this->Register_Button);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Staff";
-			this->Size = System::Drawing::Size(909, 681);
+			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff::UserControl_Staff_Load);
 			this->ResumeLayout(false);
 
