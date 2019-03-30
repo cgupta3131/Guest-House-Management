@@ -127,7 +127,7 @@ namespace GuestHouseManagement {
 		}
 
 	private: System::Void UserControl_Staff_Housekeeping_Approval_Load(System::Object^  sender, System::EventArgs^  e) {
-				 for (int i=0;i<n;i++)
+				 for (int i=1;i<=n;i++)
 				 {
 					 Control ^temp2 = this->Controls["TextBox"+(i)];
 					 Controls->Remove(temp2);

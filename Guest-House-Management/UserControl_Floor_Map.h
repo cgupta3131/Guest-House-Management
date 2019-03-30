@@ -164,10 +164,10 @@ namespace GuestHouseManagement {
 
 				 String ^timenow = System::DateTime().Now.ToString("hhmm");
 				 int timenow_int = System::Convert::ToInt32(timenow);
-				 MessageBox::Show(timenow);
+				 //MessageBox::Show(timenow);
 
 				 String ^ampm = System::DateTime().Now.ToString("tt");
-				 MessageBox::Show(ampm);
+				 //MessageBox::Show(ampm);
 				 //MessageBox::Show(datetoday);
 				 while(booked_data->Read() == true)
 				 {

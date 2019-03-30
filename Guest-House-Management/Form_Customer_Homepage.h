@@ -200,6 +200,7 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 	private: System::Void Form_Customer_Homepage_Load(System::Object^  sender, System::EventArgs^  e) {
+				 this->ControlBox = false;
 				 gf->Hide();
 			 }
 	private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {

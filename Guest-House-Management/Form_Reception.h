@@ -298,6 +298,7 @@ private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::Even
 			 Output_Panel->Controls->Add(gcnew UserControl_Staff);
 		 }
 private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
+			 this->ControlBox = false;
 			 gf->Hide();
 		 }
 private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {

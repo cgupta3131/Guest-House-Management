@@ -154,18 +154,21 @@ namespace GuestHouseManagement {
 				string sstr = tosstring(str);
 				remove_if(sstr.begin(), sstr.end(), isspace);
 
+				if(tb->Text == "")
+				{
+					f=1;
+					MessageBox::Show("Price field can't be empty");
+					goto ErrExit;
+					//break;
+				}
+
 				regex rx("^[0-9]+$");
 				if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
 					MessageBox::Show("Enter prices in digits[0-9]");
 					goto ErrExit;
 				}
 
-				if(tb->Text == "")
-				{
-					f=1;
-					MessageBox::Show("Price field can't be empty");
-					break;
-				}
+				
 
 			}
 

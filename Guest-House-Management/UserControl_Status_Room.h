@@ -206,7 +206,7 @@ namespace GuestHouseManagement {
 						 vec.push_back(temp);
 				 }
 				 String ^ xyz = Convert::ToString(vec.size());
-				 MessageBox::Show(xyz);
+				 //MessageBox::Show(xyz);
 				 for(int i=0;i<vec.size();i++)
 				 {
 					 Txt_Floor->Items->Add(vec[i]);

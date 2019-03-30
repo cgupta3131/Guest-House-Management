@@ -94,6 +94,7 @@ namespace GuestHouseManagement {
 			DB_Connection->Close();
 
 			this->Controls->Clear();
+
 			DB_Connection->Open();
 			String ^getUsers = "Select * from [Booking_Request] where [ID] = " + x + ";";
 			cmd = gcnew OleDbCommand(getUsers, DB_Connection);

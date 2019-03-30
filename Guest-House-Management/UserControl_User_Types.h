@@ -124,52 +124,72 @@ namespace GuestHouseManagement {
 	String ^ user;
 	void button_click(System::Object^  sender, System::EventArgs^  e)
 	{
+		int f = 0;
 		for(int i=0;i<vec.size();i++)
 		{
 
-			RichTextBox ^tb = (RichTextBox^)this->Controls["TextBox" + (i)];
+			TextBox ^tb = (TextBox^)this->Controls["TextBox" + (i)];
 			String ^str = tb->Text;
 
 			string sstr = tosstring(str);
 			remove_if(sstr.begin(), sstr.end(), isspace);
-
-			regex rx("^[0-9]+$");
-			if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
-				MessageBox::Show("Enter prices in digits[0-9]");
+			if(tb->Text == "")
+			{
+				f=1;
+				MessageBox::Show("Price field can't be empty");
 				goto ErrExit;
 			}
 
+			regex rx("^[0-9]+$");
+			if(!regex_match(sstr.cbegin(), sstr.cend(), rx))
+			{
+				MessageBox::Show("Enter prices in digits[0-9]");
+				goto ErrExit;
+			}
 			//MessageBox::Show(str);
+			
+		}
+
+		if(f == 0)
+		{
+			for(int i=0;i<vec.size();i++)
+			{
+				TextBox ^tb = (TextBox^)this->Controls["TextBox" + (i)];
+				String ^str = tb->Text;
+
+				OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
+				DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+				DB_Connection->Open();
+				String ^ insertString = "insert into User_Room_Price([User_Types],[Room_Types],[Price]) VALUES('" +user+ "', '" +vec[i]+ "', '" +str+ "' );";
+
+				OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
+
+				cmd->Parameters->Add(gcnew OleDbParameter("@User_Types",Convert::ToString(user)));
+				cmd->Parameters->Add(gcnew OleDbParameter("@Room_Types",Convert::ToString(vec[i])));
+				cmd->Parameters->Add(gcnew OleDbParameter("@Price",Convert::ToString(str)));
+
+				cmd->ExecuteNonQuery();
+				DB_Connection->Close();
+			}
+
 			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 			DB_Connection->Open();
-			String ^ insertString = "insert into User_Room_Price([User_Types],[Room_Types],[Price]) VALUES('" +user+ "', '" +vec[i]+ "', '" +str+ "' );";
-
+			String ^ insertString = "insert into User_Types([User_Type]) VALUES('" +user+ "' );";
 			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
-
-			cmd->Parameters->Add(gcnew OleDbParameter("@User_Types",Convert::ToString(user)));
-			cmd->Parameters->Add(gcnew OleDbParameter("@Room_Types",Convert::ToString(vec[i])));
-			cmd->Parameters->Add(gcnew OleDbParameter("@Price",Convert::ToString(str)));
-
+			cmd->Parameters->Add(gcnew OleDbParameter("@User_Type",Convert::ToString(user)));
 			cmd->ExecuteNonQuery();
 			DB_Connection->Close();
+
+			//To Refresh User Control
+			this->Controls->Clear();
+			this->InitializeComponent();
+ErrExit:
+			;
+
 		}
 
-
-		OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-		DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-		DB_Connection->Open();
-		String ^ insertString = "insert into User_Types([User_Type]) VALUES('" +user+ "' );";
-		OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
-		cmd->Parameters->Add(gcnew OleDbParameter("@User_Type",Convert::ToString(user)));
-		cmd->ExecuteNonQuery();
-		DB_Connection->Close();
-
-		//To Refresh User Control
-		this->Controls->Clear();
-		this->InitializeComponent();
-ErrExit:
-		;
+		
 	}
 
 	private: System::Void UserControl_User_Types_Load(System::Object^  sender, System::EventArgs^  e) {
@@ -177,19 +197,7 @@ ErrExit:
 			 }
 	private: System::Void Btn_Add_Click(System::Object^  sender, System::EventArgs^  e) {
 				
-				 //for(int i=1;i<5;i++)
-				 //{
-					// TextBox ^tb = gcnew TextBox();
-					// tb->Text = Convert::ToString(i);
-					// tb->Location = System::Drawing::Point(60,70*i);
-					// tb->Width = 270;
-					// tb->Height = 50;
-					// tb->Name = "TextBox" + i;
-					// tb->Multiline = true;
-					// //tb->ReadOnly = true;
-					// tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-					// this->Controls->Add(tb);
-				 //}
+
 					 string sname = tosstring(Txt_User_Type->Text);
 					 remove_if(sname.begin(), sname.end(), isspace);
 

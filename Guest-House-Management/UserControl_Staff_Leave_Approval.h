@@ -263,16 +263,18 @@ namespace GuestHouseManagement {
 			String ^ getLeaveRequest = "Select * From Staff_Leave where [Approved] = 'Pending';";
 			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getLeaveRequest, DB_Connection);
 			OleDbDataReader ^ user_leave = cmd->ExecuteReader();
-
+			//MessageBox:Show("2");
 			while(user_leave->Read()==true)
 			{
 
 				dataGridView1->RowTemplate->Height = 50;
-				String ^ Emp_name = Convert::ToString(user_leave->GetInt32(1));
+				//String ^ Emp_name = Convert::ToString(user_leave->GetInt32(1));
+				String ^ Emp_name = user_leave->GetString(1);
 				String ^ leave_id = Convert::ToString(user_leave->GetInt32(0));
 				String ^ emp_desig = user_leave->GetString(3);
 				String ^ leave_from = user_leave->GetString(4);
 				String ^ leave_upto = user_leave->GetString(5);
+
 				String ^ temp =  user_leave->GetString(4);
 				String ^ totalDays = Convert::ToString(user_leave->GetInt32(6));
 				String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
@@ -293,11 +295,13 @@ namespace GuestHouseManagement {
 
 	private: System::Void UserControl_Staff_Leave_Approval_Load(System::Object^  sender, System::EventArgs^  e) {
 				 loadDataGrid();
+				 
 			 }
 	private: System::Void dataGridView1_CellContentClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
 				 String ^ name = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
 				 System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
 				 opt=MessageBox::Show("Approve "+ name + "'s leave?", "Approval", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
+
 				 if(opt== System::Windows::Forms::DialogResult::Yes)
 				 {
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
