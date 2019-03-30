@@ -162,6 +162,9 @@
     <ClCompile Include="UserControl_View_TouristPlaces.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="UserControl_Staff_Planner_Requirements.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -308,6 +311,9 @@
     <ClInclude Include="UserControl_View_TouristPlaces.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="UserControl_Staff_Planner_Requirements.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -372,9 +378,6 @@
     <EmbeddedResource Include="UserControl_Customer_Booking.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControl_Customer_Homepage.resx">
-      <Filter>Resource Files</Filter>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Floor_Map.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
@@ -430,6 +433,30 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Housekeeping_Approval.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Show_Guest_House_Facilities.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Add_Mess.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_In_Stay_Facilities.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Mess_Rates.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_View_Cab.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_View_Mess.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_View_Restaurants.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_View_TouristPlaces.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

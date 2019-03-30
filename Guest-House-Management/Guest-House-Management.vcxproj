@@ -127,6 +127,7 @@
     <ClCompile Include="UserControl_Staff_Leave.cpp" />
     <ClCompile Include="UserControl_Staff_Leave_Approval.cpp" />
     <ClCompile Include="UserControl_Staff_Planner.cpp" />
+    <ClCompile Include="UserControl_Staff_Planner_Requirements.cpp" />
     <ClCompile Include="UserControl_Staff_Record.cpp" />
     <ClCompile Include="UserControl_Staff_Register.cpp" />
     <ClCompile Include="UserControl_Staff_View_Details.cpp" />
@@ -247,6 +248,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Planner.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Staff_Planner_Requirements.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Staff_Record.h">
@@ -391,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Planner.resx">
       <DependentUpon>UserControl_Staff_Planner.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Staff_Planner_Requirements.resx">
+      <DependentUpon>UserControl_Staff_Planner_Requirements.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Staff_Record.resx">
       <DependentUpon>UserControl_Staff_Record.h</DependentUpon>

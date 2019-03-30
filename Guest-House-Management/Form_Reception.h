@@ -76,6 +76,14 @@ namespace GuestHouseManagement {
 	internal: 
 	private: System::Windows::Forms::Button^  Btn_Unread_Feedback;
 	private: System::Windows::Forms::Button^  Btn_All_Feedback;
+	private: System::Windows::Forms::LinkLabel^  label3;
+	private: System::Windows::Forms::LinkLabel^  label4;
+	private: System::Windows::Forms::LinkLabel^  label5;
+	private: System::Windows::Forms::LinkLabel^  label2;
+	private: System::Windows::Forms::Button^  button11;
+	private: System::Windows::Forms::Button^  button10;
+	private: System::Windows::Forms::Button^  button9;
+	private: System::Windows::Forms::Button^  button8;
 	public: 
 		Form ^ gf2;
 		Form_Reception(){
@@ -142,6 +150,10 @@ namespace GuestHouseManagement {
 			this->Btn_Guest_Info = (gcnew System::Windows::Forms::Button());
 			this->Btn_Users_Approval = (gcnew System::Windows::Forms::Button());
 			this->Output_Panel = (gcnew System::Windows::Forms::Panel());
+			this->label3 = (gcnew System::Windows::Forms::LinkLabel());
+			this->label2 = (gcnew System::Windows::Forms::LinkLabel());
+			this->label5 = (gcnew System::Windows::Forms::LinkLabel());
+			this->label4 = (gcnew System::Windows::Forms::LinkLabel());
 			this->Btn_Add_Room = (gcnew System::Windows::Forms::Button());
 			this->Btn_Status_Room = (gcnew System::Windows::Forms::Button());
 			this->Btn_Floor_Map = (gcnew System::Windows::Forms::Button());
@@ -170,6 +182,10 @@ namespace GuestHouseManagement {
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->User_Button = (gcnew System::Windows::Forms::Button());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->button11 = (gcnew System::Windows::Forms::Button());
+			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->button9 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->Btn_Read_Feedback = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->Btn_Unread_Feedback = (gcnew System::Windows::Forms::Button());
@@ -177,6 +193,7 @@ namespace GuestHouseManagement {
 			this->Btn_All_Feedback = (gcnew System::Windows::Forms::Button());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->Btn_Create = (gcnew System::Windows::Forms::Button());
+			this->Output_Panel->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -219,12 +236,93 @@ namespace GuestHouseManagement {
 			// 
 			this->Output_Panel->BackColor = System::Drawing::Color::CornflowerBlue;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->Output_Panel->Controls->Add(this->label3);
+			this->Output_Panel->Controls->Add(this->label2);
+			this->Output_Panel->Controls->Add(this->label5);
+			this->Output_Panel->Controls->Add(this->label4);
 			this->Output_Panel->Location = System::Drawing::Point(279, 71);
 			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
 			this->Output_Panel->Name = L"Output_Panel";
 			this->Output_Panel->Size = System::Drawing::Size(682, 553);
 			this->Output_Panel->TabIndex = 16;
 			this->Output_Panel->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Output_Panel_MouseEnter);
+			// 
+			// label3
+			// 
+			this->label3->ActiveLinkColor = System::Drawing::Color::Silver;
+			this->label3->BackColor = System::Drawing::Color::Linen;
+			this->label3->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label3->DisabledLinkColor = System::Drawing::Color::White;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label3->ForeColor = System::Drawing::SystemColors::Desktop;
+			this->label3->LinkColor = System::Drawing::Color::Black;
+			this->label3->Location = System::Drawing::Point(149, 194);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(142, 79);
+			this->label3->TabIndex = 35;
+			this->label3->TabStop = true;
+			this->label3->Text = L"Room Service";
+			this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label2
+			// 
+			this->label2->ActiveLinkColor = System::Drawing::Color::Silver;
+			this->label2->BackColor = System::Drawing::Color::Linen;
+			this->label2->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label2->DisabledLinkColor = System::Drawing::Color::White;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->ForeColor = System::Drawing::SystemColors::Desktop;
+			this->label2->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->label2->LinkColor = System::Drawing::Color::Black;
+			this->label2->Location = System::Drawing::Point(149, 109);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(142, 79);
+			this->label2->TabIndex = 32;
+			this->label2->TabStop = true;
+			this->label2->Text = L"HouseKeeping";
+			this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label5
+			// 
+			this->label5->ActiveLinkColor = System::Drawing::Color::Silver;
+			this->label5->BackColor = System::Drawing::Color::Linen;
+			this->label5->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label5->DisabledLinkColor = System::Drawing::Color::White;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->ForeColor = System::Drawing::SystemColors::Desktop;
+			this->label5->LinkColor = System::Drawing::Color::Black;
+			this->label5->Location = System::Drawing::Point(149, 367);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(142, 79);
+			this->label5->TabIndex = 33;
+			this->label5->TabStop = true;
+			this->label5->Text = L"Security";
+			this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
+			// 
+			// label4
+			// 
+			this->label4->ActiveLinkColor = System::Drawing::Color::Silver;
+			this->label4->BackColor = System::Drawing::Color::Linen;
+			this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->label4->DisabledLinkColor = System::Drawing::Color::White;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label4->ForeColor = System::Drawing::SystemColors::Desktop;
+			this->label4->LinkColor = System::Drawing::Color::Black;
+			this->label4->Location = System::Drawing::Point(149, 281);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(142, 79);
+			this->label4->TabIndex = 34;
+			this->label4->TabStop = true;
+			this->label4->Text = L"Receptionist";
+			this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// Btn_Add_Room
 			// 
@@ -527,6 +625,10 @@ namespace GuestHouseManagement {
 			// 
 			// panel7
 			// 
+			this->panel7->Controls->Add(this->button11);
+			this->panel7->Controls->Add(this->button10);
+			this->panel7->Controls->Add(this->button9);
+			this->panel7->Controls->Add(this->button8);
 			this->panel7->Controls->Add(this->Btn_Read_Feedback);
 			this->panel7->Controls->Add(this->button5);
 			this->panel7->Controls->Add(this->Btn_Unread_Feedback);
@@ -538,6 +640,46 @@ namespace GuestHouseManagement {
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(262, 531);
 			this->panel7->TabIndex = 0;
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(129, 171);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(75, 23);
+			this->button11->TabIndex = 80;
+			this->button11->Text = L"button11";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &Form_Reception::button11_Click);
+			// 
+			// button10
+			// 
+			this->button10->Location = System::Drawing::Point(129, 142);
+			this->button10->Name = L"button10";
+			this->button10->Size = System::Drawing::Size(75, 23);
+			this->button10->TabIndex = 79;
+			this->button10->Text = L"button10";
+			this->button10->UseVisualStyleBackColor = true;
+			this->button10->Click += gcnew System::EventHandler(this, &Form_Reception::button10_Click);
+			// 
+			// button9
+			// 
+			this->button9->Location = System::Drawing::Point(129, 96);
+			this->button9->Name = L"button9";
+			this->button9->Size = System::Drawing::Size(75, 23);
+			this->button9->TabIndex = 78;
+			this->button9->Text = L"button9";
+			this->button9->UseVisualStyleBackColor = true;
+			this->button9->Click += gcnew System::EventHandler(this, &Form_Reception::button9_Click);
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(129, 49);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(75, 23);
+			this->button8->TabIndex = 36;
+			this->button8->Text = L"button8";
+			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &Form_Reception::button8_Click);
 			// 
 			// Btn_Read_Feedback
 			// 
@@ -595,7 +737,7 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_All_Feedback
 			// 
-			this->Btn_All_Feedback->Location = System::Drawing::Point(31, 323);
+			this->Btn_All_Feedback->Location = System::Drawing::Point(2, 321);
 			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_All_Feedback->Name = L"Btn_All_Feedback";
 			this->Btn_All_Feedback->Size = System::Drawing::Size(114, 52);
@@ -654,6 +796,7 @@ namespace GuestHouseManagement {
 			this->Text = L"Form_Reception";
 			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_MouseEnter);
+			this->Output_Panel->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel3->ResumeLayout(false);
@@ -816,7 +959,7 @@ private: System::Void panel2_MouseLeave(System::Object^  sender, System::EventAr
 
 private: System::Void Planner_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5));
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5,0));
 		 }
 private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
@@ -859,6 +1002,24 @@ private: System::Void Btn_Unread_Feedback_Click(System::Object^  sender, System:
 private: System::Void Btn_Read_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5,1));
+		 }
+
+private: System::Void button8_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5,0));
+		 }
+private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5,1));
+		 }
+
+private: System::Void button10_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5,2));
+		 }
+private: System::Void button11_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5,3));
 		 }
 };
 }
