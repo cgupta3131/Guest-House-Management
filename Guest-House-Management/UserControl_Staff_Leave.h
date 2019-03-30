@@ -19,9 +19,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Staff_Leave : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Staff_Leave(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Staff_Leave(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -72,9 +83,10 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(134, 103);
+			this->label1->Location = System::Drawing::Point(100, 84);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(70, 17);
+			this->label1->Size = System::Drawing::Size(53, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Employee";
 			// 
@@ -82,18 +94,20 @@ namespace GuestHouseManagement {
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(278, 103);
+			this->comboBox1->Location = System::Drawing::Point(208, 84);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(219, 24);
+			this->comboBox1->Size = System::Drawing::Size(165, 21);
 			this->comboBox1->TabIndex = 1;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Staff_Leave::comboBox1_SelectedIndexChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(137, 161);
+			this->label2->Location = System::Drawing::Point(103, 131);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(40, 17);
+			this->label2->Size = System::Drawing::Size(30, 13);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"From";
 			// 
@@ -101,9 +115,10 @@ namespace GuestHouseManagement {
 			// 
 			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(278, 161);
+			this->dateTimePicker1->Location = System::Drawing::Point(208, 131);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(219, 22);
+			this->dateTimePicker1->Size = System::Drawing::Size(165, 20);
 			this->dateTimePicker1->TabIndex = 3;
 			this->dateTimePicker1->Value = System::DateTime(2019, 3, 17, 0, 0, 0, 0);
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &UserControl_Staff_Leave::dateTimePicker1_ValueChanged);
@@ -111,9 +126,10 @@ namespace GuestHouseManagement {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(137, 217);
+			this->label3->Location = System::Drawing::Point(103, 176);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(25, 17);
+			this->label3->Size = System::Drawing::Size(20, 13);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"To";
 			// 
@@ -121,17 +137,19 @@ namespace GuestHouseManagement {
 			// 
 			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker2->Location = System::Drawing::Point(278, 212);
+			this->dateTimePicker2->Location = System::Drawing::Point(208, 172);
+			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(219, 22);
+			this->dateTimePicker2->Size = System::Drawing::Size(165, 20);
 			this->dateTimePicker2->TabIndex = 5;
 			this->dateTimePicker2->Value = System::DateTime(2019, 3, 17, 15, 46, 10, 0);
 			// 
 			// btn_submit
 			// 
-			this->btn_submit->Location = System::Drawing::Point(278, 286);
+			this->btn_submit->Location = System::Drawing::Point(208, 232);
+			this->btn_submit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_submit->Name = L"btn_submit";
-			this->btn_submit->Size = System::Drawing::Size(219, 39);
+			this->btn_submit->Size = System::Drawing::Size(164, 32);
 			this->btn_submit->TabIndex = 6;
 			this->btn_submit->Text = L"Submit";
 			this->btn_submit->UseVisualStyleBackColor = true;
@@ -139,7 +157,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff_Leave
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->btn_submit);
 			this->Controls->Add(this->dateTimePicker2);
@@ -148,9 +166,11 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Staff_Leave";
-			this->Size = System::Drawing::Size(719, 389);
+			this->Size = System::Drawing::Size(539, 316);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Leave::UserControl_Staff_Leave_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Leave::mymouseenter);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -182,8 +202,11 @@ namespace GuestHouseManagement {
 					 {
 						 String ^ newEntry = "ID: "+ user_data->GetInt32(0) + " - " + user_data->GetString(1); //Id - Name
 						 //MessageBox::Show(newEntry);
-						 comboBox1->Items->Add(newEntry);
+						 if(user_data->GetString(10) != "")
+							 continue;
+						comboBox1->Items->Add(newEntry);
 					 }
+
 					 //cmd->ExecuteNonQuery();
 					 DB_Connection->Close();
 				 }
@@ -253,6 +276,10 @@ namespace GuestHouseManagement {
 						 }
 						 //cmd->ExecuteNonQuery();
 						 DB_Connection->Close();
+						 if(employeeName=="default"||designation=="default")
+						 {
+							 MessageBox::Show("Employee Name or Designation not stored! Please try again or contact administrator");
+						 }
 					 }
 					 catch(Exception ^ ex)
 					 {
@@ -311,5 +338,12 @@ namespace GuestHouseManagement {
 				 this->dateTimePicker2->MinDate=this->dateTimePicker1->Value;
 
 			 }
-	};
+	private: System::Void mymouseenter(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+				 pn2->Size = System::Drawing::Size(168, 23);
+				 pn3->Size = System::Drawing::Size(168, 23);
+				 pn4->Size = System::Drawing::Size(168, 23);
+				 pn5->Size = System::Drawing::Size(168, 23);
+			 }
+};
 }

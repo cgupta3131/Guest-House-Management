@@ -29,12 +29,22 @@ namespace GuestHouseManagement {
 		
 		//MyDelegate ^ del = gcnew MyDelegate(this, &GuestHouseManagement::UserControl_Staff_Planner::datechanged);
 		DateTime thedate;
-		
-		UserControl_Staff_Planner(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Staff_Planner(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			
 			InitializeComponent();
 			this->Paint += gcnew PaintEventHandler(On_paint);
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//update_planner();
 			//
 			//TODO: Add the constructor code here
@@ -154,7 +164,7 @@ namespace GuestHouseManagement {
 			this->label1->Location = System::Drawing::Point(686, 76);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(83, 34);
+			this->label1->Size = System::Drawing::Size(65, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Date";
 			this->label1->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label1_Click);
@@ -164,7 +174,7 @@ namespace GuestHouseManagement {
 			this->PlannerDate->Location = System::Drawing::Point(840, 74);
 			this->PlannerDate->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 			this->PlannerDate->Name = L"PlannerDate";
-			this->PlannerDate->Size = System::Drawing::Size(236, 30);
+			this->PlannerDate->Size = System::Drawing::Size(236, 26);
 			this->PlannerDate->TabIndex = 1;
 			this->PlannerDate->ValueChanged += gcnew System::EventHandler(this, &UserControl_Staff_Planner::PlannerDate_ValueChanged);
 			// 
@@ -178,7 +188,7 @@ namespace GuestHouseManagement {
 			this->day_label->Location = System::Drawing::Point(542, 143);
 			this->day_label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->day_label->Name = L"day_label";
-			this->day_label->Size = System::Drawing::Size(75, 34);
+			this->day_label->Size = System::Drawing::Size(59, 25);
 			this->day_label->TabIndex = 2;
 			this->day_label->Text = L"DAY";
 			this->day_label->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label2_Click_1);
@@ -194,7 +204,7 @@ namespace GuestHouseManagement {
 			this->Night_Label->Location = System::Drawing::Point(1132, 143);
 			this->Night_Label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->Night_Label->Name = L"Night_Label";
-			this->Night_Label->Size = System::Drawing::Size(98, 36);
+			this->Night_Label->Size = System::Drawing::Size(81, 27);
 			this->Night_Label->TabIndex = 3;
 			this->Night_Label->Text = L"NIGHT";
 			this->Night_Label->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label3_Click);
@@ -243,7 +253,7 @@ namespace GuestHouseManagement {
 			this->count_lbl->Location = System::Drawing::Point(331, 201);
 			this->count_lbl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->count_lbl->Name = L"count_lbl";
-			this->count_lbl->Size = System::Drawing::Size(0, 36);
+			this->count_lbl->Size = System::Drawing::Size(0, 29);
 			this->count_lbl->TabIndex = 10;
 			// 
 			// category_lbl
@@ -256,7 +266,7 @@ namespace GuestHouseManagement {
 			this->category_lbl->Location = System::Drawing::Point(54, 30);
 			this->category_lbl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->category_lbl->Name = L"category_lbl";
-			this->category_lbl->Size = System::Drawing::Size(96, 40);
+			this->category_lbl->Size = System::Drawing::Size(81, 33);
 			this->category_lbl->TabIndex = 11;
 			this->category_lbl->Text = L"Date";
 			this->category_lbl->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::category_lbl_Click);
@@ -340,13 +350,13 @@ namespace GuestHouseManagement {
 			this->count_lbl_n->BackColor = System::Drawing::Color::Black;
 			this->count_lbl_n->Location = System::Drawing::Point(1014, 205);
 			this->count_lbl_n->Name = L"count_lbl_n";
-			this->count_lbl_n->Size = System::Drawing::Size(64, 25);
+			this->count_lbl_n->Size = System::Drawing::Size(51, 20);
 			this->count_lbl_n->TabIndex = 16;
 			this->count_lbl_n->Text = L"label6";
 			// 
 			// UserControl_Staff_Planner
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::Color::White;
@@ -372,6 +382,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Staff_Planner";
 			this->Size = System::Drawing::Size(1298, 468);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Planner::UserControl_Staff_Planner_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Planner::Mymouseenter);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -793,15 +804,13 @@ namespace GuestHouseManagement {
 		 
 
 		public: System::Void  static datechanged(System::Object^  sender, System::EventArgs^  e){
-					DateTimePicker ^ picker=(System::Windows::Forms::DateTimePicker^) sender;
-					//MessageBox::Show("date changed");
+					/*DateTimePicker ^ picker=(System::Windows::Forms::DateTimePicker^) sender;
 					UserControl_Staff_Planner ^ planner=gcnew UserControl_Staff_Planner;
 					planner->thedate=picker->Value;
-					//MessageBox::Show("in date changed updated thedate to " + planner->thedate);
 					planner->Controls->Clear();
 					planner->Show();
-					
-					planner->update_planner(0);
+
+					planner->update_planner(0);*/
 					
 
 				}
@@ -1096,6 +1105,13 @@ private: System::Void label5_LinkClicked_1(System::Object^  sender, System::Wind
 			 update_planner(3);
 		 }
 private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void Mymouseenter(System::Object^  sender, System::EventArgs^  e) {
+			 pnl->Size = System::Drawing::Size(168, 23);
+			 pn2->Size = System::Drawing::Size(168, 23);
+			 pn3->Size = System::Drawing::Size(168, 23);
+			 pn4->Size = System::Drawing::Size(168, 23);
+			 pn5->Size = System::Drawing::Size(168, 23);
 		 }
 };
 }

@@ -141,7 +141,8 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Details_Panel->Controls->Clear();
-				 Details_Panel->Controls->Add(gcnew UserControl_Staff_Record);
+				 //Panel ^pl;
+				 //Details_Panel->Controls->Add(gcnew UserControl_Staff_Record(pl,pl,pl,pl,pl));
 			 }
 	};
 }

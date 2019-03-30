@@ -19,9 +19,19 @@ namespace GuestHouseManagement {
 	public ref class UserControl_GuestHouseDetails : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_GuestHouseDetails(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+		UserControl_GuestHouseDetails(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -78,10 +88,10 @@ namespace GuestHouseManagement {
 			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Create->Location = System::Drawing::Point(31, 28);
-			this->Btn_Create->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Create->Location = System::Drawing::Point(23, 23);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Create->Name = L"Btn_Create";
-			this->Btn_Create->Size = System::Drawing::Size(126, 59);
+			this->Btn_Create->Size = System::Drawing::Size(94, 48);
 			this->Btn_Create->TabIndex = 68;
 			this->Btn_Create->Text = L"Add Cab Services";
 			this->Btn_Create->UseVisualStyleBackColor = false;
@@ -94,10 +104,10 @@ namespace GuestHouseManagement {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(191, 28);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Location = System::Drawing::Point(143, 23);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(130, 59);
+			this->button1->Size = System::Drawing::Size(98, 48);
 			this->button1->TabIndex = 69;
 			this->button1->Text = L"Add Restaurant";
 			this->button1->UseVisualStyleBackColor = false;
@@ -110,10 +120,10 @@ namespace GuestHouseManagement {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button2->Location = System::Drawing::Point(346, 28);
-			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Location = System::Drawing::Point(260, 23);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(133, 59);
+			this->button2->Size = System::Drawing::Size(100, 48);
 			this->button2->TabIndex = 70;
 			this->button2->Text = L"Add Tourist Places";
 			this->button2->UseVisualStyleBackColor = false;
@@ -121,9 +131,10 @@ namespace GuestHouseManagement {
 			// 
 			// panel1
 			// 
-			this->panel1->Location = System::Drawing::Point(31, 113);
+			this->panel1->Location = System::Drawing::Point(23, 92);
+			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(893, 400);
+			this->panel1->Size = System::Drawing::Size(670, 325);
 			this->panel1->TabIndex = 71;
 			// 
 			// button4
@@ -133,10 +144,10 @@ namespace GuestHouseManagement {
 			this->button4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button4->Location = System::Drawing::Point(511, 28);
-			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button4->Location = System::Drawing::Point(383, 23);
+			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(133, 59);
+			this->button4->Size = System::Drawing::Size(100, 48);
 			this->button4->TabIndex = 73;
 			this->button4->Text = L"Add Mess Details";
 			this->button4->UseVisualStyleBackColor = false;
@@ -144,7 +155,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_GuestHouseDetails
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->panel1);
@@ -152,9 +163,11 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Btn_Create);
 			this->Location = System::Drawing::Point(31, 111);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_GuestHouseDetails";
-			this->Size = System::Drawing::Size(994, 534);
+			this->Size = System::Drawing::Size(746, 434);
 			this->Load += gcnew System::EventHandler(this, &UserControl_GuestHouseDetails::UserControl_GuestHouseDetails_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_GuestHouseDetails::mymousenter);
 			this->ResumeLayout(false);
 
 		}
@@ -180,5 +193,13 @@ namespace GuestHouseManagement {
 				 /*Allow code for editing these details also*/
 				 /*Also don't allow multiple bookings*/
 			 }
-	};
+	private: System::Void mymousenter(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+				 pn2->Size = System::Drawing::Size(168, 23);
+				 pn3->Size = System::Drawing::Size(168, 23);
+				 pn4->Size = System::Drawing::Size(168, 23);
+				 pn5->Size = System::Drawing::Size(168, 23);
+
+			 }
+};
 }

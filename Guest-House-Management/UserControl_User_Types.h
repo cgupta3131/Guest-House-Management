@@ -29,9 +29,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_User_Types : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_User_Types(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_User_Types(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -114,6 +125,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_User_Types";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_User_Types::UserControl_User_Types_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_User_Types::mymouseenter);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -295,5 +307,12 @@ ErrExit:
 			 }
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void mymouseenter(System::Object^  sender, System::EventArgs^  e) {
+			 pnl->Size = System::Drawing::Size(168, 23);
+			 pn2->Size = System::Drawing::Size(168, 23);
+			 pn3->Size = System::Drawing::Size(168, 23);
+			 pn4->Size = System::Drawing::Size(168, 23);
+			 pn5->Size = System::Drawing::Size(168, 23);
+		 }
 };
 }

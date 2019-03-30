@@ -80,37 +80,39 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(269, 20);
+			this->label1->Location = System::Drawing::Point(202, 16);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(53, 17);
+			this->label1->Size = System::Drawing::Size(41, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Search";
 			// 
 			// Text_Search
 			// 
-			this->Text_Search->Location = System::Drawing::Point(53, 85);
-			this->Text_Search->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Text_Search->Location = System::Drawing::Point(40, 69);
+			this->Text_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Text_Search->Name = L"Text_Search";
-			this->Text_Search->Size = System::Drawing::Size(211, 22);
+			this->Text_Search->Size = System::Drawing::Size(159, 20);
 			this->Text_Search->TabIndex = 1;
 			// 
 			// combo_Search
 			// 
+			this->combo_Search->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->combo_Search->FormattingEnabled = true;
 			this->combo_Search->Items->AddRange(gcnew cli::array< System::Object^  >(2) {L"By Name", L"By ID"});
-			this->combo_Search->Location = System::Drawing::Point(365, 85);
-			this->combo_Search->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->combo_Search->Location = System::Drawing::Point(274, 69);
+			this->combo_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->combo_Search->Name = L"combo_Search";
-			this->combo_Search->Size = System::Drawing::Size(121, 24);
+			this->combo_Search->Size = System::Drawing::Size(92, 21);
 			this->combo_Search->TabIndex = 2;
 			this->combo_Search->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Staff_Edit::combo_Search_SelectedIndexChanged);
 			// 
 			// Button_Search
 			// 
-			this->Button_Search->Location = System::Drawing::Point(596, 85);
-			this->Button_Search->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Button_Search->Location = System::Drawing::Point(447, 69);
+			this->Button_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Button_Search->Name = L"Button_Search";
-			this->Button_Search->Size = System::Drawing::Size(80, 41);
+			this->Button_Search->Size = System::Drawing::Size(60, 33);
 			this->Button_Search->TabIndex = 3;
 			this->Button_Search->Text = L"GO!";
 			this->Button_Search->UseVisualStyleBackColor = true;
@@ -119,27 +121,25 @@ namespace GuestHouseManagement {
 			// List_Search
 			// 
 			this->List_Search->FormattingEnabled = true;
-			this->List_Search->ItemHeight = 16;
-			this->List_Search->Location = System::Drawing::Point(111, 217);
-			this->List_Search->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->List_Search->Location = System::Drawing::Point(83, 176);
+			this->List_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->List_Search->Name = L"List_Search";
-			this->List_Search->Size = System::Drawing::Size(453, 148);
+			this->List_Search->Size = System::Drawing::Size(341, 121);
 			this->List_Search->TabIndex = 4;
 			this->List_Search->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Staff_Edit::List_Search_SelectedIndexChanged);
 			// 
 			// ID_List
 			// 
 			this->ID_List->FormattingEnabled = true;
-			this->ID_List->ItemHeight = 16;
-			this->ID_List->Location = System::Drawing::Point(665, 230);
-			this->ID_List->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->ID_List->Location = System::Drawing::Point(499, 187);
+			this->ID_List->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->ID_List->Name = L"ID_List";
-			this->ID_List->Size = System::Drawing::Size(0, 4);
+			this->ID_List->Size = System::Drawing::Size(1, 4);
 			this->ID_List->TabIndex = 5;
 			// 
 			// UserControl_Staff_Edit
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->ID_List);
 			this->Controls->Add(this->List_Search);
@@ -147,9 +147,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->combo_Search);
 			this->Controls->Add(this->Text_Search);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Staff_Edit";
-			this->Size = System::Drawing::Size(719, 389);
+			this->Size = System::Drawing::Size(539, 316);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Edit::UserControl_Staff_Edit_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

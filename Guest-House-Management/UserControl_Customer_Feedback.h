@@ -19,10 +19,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Customer_Feedback : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Customer_Feedback(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Customer_Feedback(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
-			//
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//TODO: Add the constructor code here
 			//
 		}
@@ -68,7 +78,7 @@ namespace GuestHouseManagement {
 			// Btn_All_Feedback
 			// 
 			this->Btn_All_Feedback->Location = System::Drawing::Point(84, 34);
-			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_All_Feedback->Name = L"Btn_All_Feedback";
 			this->Btn_All_Feedback->Size = System::Drawing::Size(114, 52);
 			this->Btn_All_Feedback->TabIndex = 0;
@@ -79,7 +89,7 @@ namespace GuestHouseManagement {
 			// Btn_Unread_Feedback
 			// 
 			this->Btn_Unread_Feedback->Location = System::Drawing::Point(272, 34);
-			this->Btn_Unread_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Unread_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Unread_Feedback->Name = L"Btn_Unread_Feedback";
 			this->Btn_Unread_Feedback->Size = System::Drawing::Size(114, 52);
 			this->Btn_Unread_Feedback->TabIndex = 1;
@@ -90,7 +100,7 @@ namespace GuestHouseManagement {
 			// Btn_Read_Feedback
 			// 
 			this->Btn_Read_Feedback->Location = System::Drawing::Point(469, 34);
-			this->Btn_Read_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Read_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Read_Feedback->Name = L"Btn_Read_Feedback";
 			this->Btn_Read_Feedback->Size = System::Drawing::Size(114, 52);
 			this->Btn_Read_Feedback->TabIndex = 2;
@@ -106,10 +116,11 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Btn_Read_Feedback);
 			this->Controls->Add(this->Btn_Unread_Feedback);
 			this->Controls->Add(this->Btn_All_Feedback);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Customer_Feedback";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Customer_Feedback::UserControl_Customer_Feedback_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Customer_Feedback::eneterm);
 			this->ResumeLayout(false);
 
 		}
@@ -309,6 +320,13 @@ namespace GuestHouseManagement {
 			 }
 
 			 DB_Connection->Close();
+		 }
+private: System::Void eneterm(System::Object^  sender, System::EventArgs^  e) {
+			 pnl->Size = System::Drawing::Size(168, 23);
+			 pn2->Size = System::Drawing::Size(168, 23);
+			 pn3->Size = System::Drawing::Size(168, 23);
+			 pn4->Size = System::Drawing::Size(168, 23);
+			 pn5->Size = System::Drawing::Size(168, 23);
 		 }
 };
 }

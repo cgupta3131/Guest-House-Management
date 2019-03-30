@@ -12,7 +12,14 @@
 #include "UserControl_Staff_Booking_Display.h"
 #include "UserControl_User_Types.h"
 #include "UserControl_Staff_Leave_Approval.h"
-
+#include "UserControl_GuestHouseDetails.h"
+#include "UserControl_Room_Types2.h"
+#include "UserControl_User_Types.h"
+#include "UserControl_Staff_Register.h"
+#include "UserControl_Staff_Record.h"
+#include "UserControl_Staff_Planner.h"
+#include "UserControl_Staff_Edit.h"
+#include "UserControl_Staff_Leave.h"
 
 namespace GuestHouseManagement {
 
@@ -32,6 +39,28 @@ namespace GuestHouseManagement {
 		Form ^ gf;
 	private: System::Windows::Forms::Button^  Button_Logout;
 	private: System::Windows::Forms::Button^  button3;
+	private: System::Windows::Forms::Panel^  panel1;
+	private: System::Windows::Forms::Button^  Booking_Btn;
+	private: System::Windows::Forms::Panel^  panel2;
+	private: System::Windows::Forms::Button^  Booking_Staff;
+	private: System::Windows::Forms::Panel^  panel3;
+	private: System::Windows::Forms::Button^  Booking_GH_Info;
+	private: System::Windows::Forms::Panel^  panel4;
+	private: System::Windows::Forms::Button^  Booking_Room;
+
+	private: System::Windows::Forms::Panel^  panel5;
+	private: System::Windows::Forms::Button^  User_Button;
+	private: System::Windows::Forms::Button^  button4;
+	internal: System::Windows::Forms::Button^  Btn_Room_Types;
+	private: 
+	internal: System::Windows::Forms::Button^  Btn_User_Types;
+	private: System::Windows::Forms::Button^  Btn_Edit_Records;
+	internal: 
+
+	internal: 
+	private: System::Windows::Forms::Button^  Planner_Button;
+	private: System::Windows::Forms::Button^  Leave_Button;
+	private: System::Windows::Forms::Button^  Register_Button;
 	public: 
 		Form ^ gf2;
 		Form_Reception(){
@@ -58,7 +87,7 @@ namespace GuestHouseManagement {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  Btn_Booking_Info;
+
 	protected: 
 
 	private: System::Windows::Forms::Button^  Btn_Staff_Info;
@@ -94,7 +123,6 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->Btn_Booking_Info = (gcnew System::Windows::Forms::Button());
 			this->Btn_Staff_Info = (gcnew System::Windows::Forms::Button());
 			this->Btn_Guest_Info = (gcnew System::Windows::Forms::Button());
 			this->Btn_Users_Approval = (gcnew System::Windows::Forms::Button());
@@ -109,16 +137,29 @@ namespace GuestHouseManagement {
 			this->Btn_Housekeeping_App = (gcnew System::Windows::Forms::Button());
 			this->Button_Logout = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->Booking_Btn = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->Leave_Button = (gcnew System::Windows::Forms::Button());
+			this->Planner_Button = (gcnew System::Windows::Forms::Button());
+			this->Btn_Edit_Records = (gcnew System::Windows::Forms::Button());
+			this->Booking_Staff = (gcnew System::Windows::Forms::Button());
+			this->Register_Button = (gcnew System::Windows::Forms::Button());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->Btn_Room_Types = (gcnew System::Windows::Forms::Button());
+			this->Btn_User_Types = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->Booking_GH_Info = (gcnew System::Windows::Forms::Button());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->Booking_Room = (gcnew System::Windows::Forms::Button());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->User_Button = (gcnew System::Windows::Forms::Button());
+			this->panel1->SuspendLayout();
+			this->panel2->SuspendLayout();
+			this->panel3->SuspendLayout();
+			this->panel4->SuspendLayout();
+			this->panel5->SuspendLayout();
 			this->SuspendLayout();
-			// 
-			// Btn_Booking_Info
-			// 
-			this->Btn_Booking_Info->Location = System::Drawing::Point(43, 312);
-			this->Btn_Booking_Info->Name = L"Btn_Booking_Info";
-			this->Btn_Booking_Info->Size = System::Drawing::Size(166, 98);
-			this->Btn_Booking_Info->TabIndex = 1;
-			this->Btn_Booking_Info->Text = L"Booking Info";
-			this->Btn_Booking_Info->UseVisualStyleBackColor = true;
 			// 
 			// Btn_Staff_Info
 			// 
@@ -132,9 +173,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Guest_Info
 			// 
-			this->Btn_Guest_Info->Location = System::Drawing::Point(43, 71);
+			this->Btn_Guest_Info->Location = System::Drawing::Point(0, 46);
 			this->Btn_Guest_Info->Name = L"Btn_Guest_Info";
-			this->Btn_Guest_Info->Size = System::Drawing::Size(166, 98);
+			this->Btn_Guest_Info->Size = System::Drawing::Size(168, 23);
 			this->Btn_Guest_Info->TabIndex = 3;
 			this->Btn_Guest_Info->Text = L"Guest House Info";
 			this->Btn_Guest_Info->UseVisualStyleBackColor = true;
@@ -142,9 +183,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Users_Approval
 			// 
-			this->Btn_Users_Approval->Location = System::Drawing::Point(43, 486);
+			this->Btn_Users_Approval->Location = System::Drawing::Point(0, 23);
 			this->Btn_Users_Approval->Name = L"Btn_Users_Approval";
-			this->Btn_Users_Approval->Size = System::Drawing::Size(166, 98);
+			this->Btn_Users_Approval->Size = System::Drawing::Size(168, 23);
 			this->Btn_Users_Approval->TabIndex = 4;
 			this->Btn_Users_Approval->Text = L"Users Approval";
 			this->Btn_Users_Approval->UseVisualStyleBackColor = true;
@@ -159,12 +200,13 @@ namespace GuestHouseManagement {
 			this->Output_Panel->Name = L"Output_Panel";
 			this->Output_Panel->Size = System::Drawing::Size(682, 553);
 			this->Output_Panel->TabIndex = 16;
+			this->Output_Panel->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Output_Panel_MouseEnter);
 			// 
 			// Btn_Add_Room
 			// 
-			this->Btn_Add_Room->Location = System::Drawing::Point(43, 619);
+			this->Btn_Add_Room->Location = System::Drawing::Point(0, 23);
 			this->Btn_Add_Room->Name = L"Btn_Add_Room";
-			this->Btn_Add_Room->Size = System::Drawing::Size(166, 98);
+			this->Btn_Add_Room->Size = System::Drawing::Size(168, 23);
 			this->Btn_Add_Room->TabIndex = 17;
 			this->Btn_Add_Room->Text = L"Add Room";
 			this->Btn_Add_Room->UseVisualStyleBackColor = true;
@@ -172,9 +214,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Status_Room
 			// 
-			this->Btn_Status_Room->Location = System::Drawing::Point(279, 629);
+			this->Btn_Status_Room->Location = System::Drawing::Point(0, 46);
 			this->Btn_Status_Room->Name = L"Btn_Status_Room";
-			this->Btn_Status_Room->Size = System::Drawing::Size(166, 98);
+			this->Btn_Status_Room->Size = System::Drawing::Size(168, 23);
 			this->Btn_Status_Room->TabIndex = 18;
 			this->Btn_Status_Room->Text = L"Room Status";
 			this->Btn_Status_Room->UseVisualStyleBackColor = true;
@@ -182,9 +224,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Floor_Map
 			// 
-			this->Btn_Floor_Map->Location = System::Drawing::Point(509, 629);
+			this->Btn_Floor_Map->Location = System::Drawing::Point(0, 69);
 			this->Btn_Floor_Map->Name = L"Btn_Floor_Map";
-			this->Btn_Floor_Map->Size = System::Drawing::Size(166, 98);
+			this->Btn_Floor_Map->Size = System::Drawing::Size(168, 23);
 			this->Btn_Floor_Map->TabIndex = 20;
 			this->Btn_Floor_Map->Text = L"Floor Map";
 			this->Btn_Floor_Map->UseVisualStyleBackColor = true;
@@ -192,9 +234,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Booking_App
 			// 
-			this->Btn_Booking_App->Location = System::Drawing::Point(742, 629);
+			this->Btn_Booking_App->Location = System::Drawing::Point(0, 46);
 			this->Btn_Booking_App->Name = L"Btn_Booking_App";
-			this->Btn_Booking_App->Size = System::Drawing::Size(166, 98);
+			this->Btn_Booking_App->Size = System::Drawing::Size(168, 23);
 			this->Btn_Booking_App->TabIndex = 21;
 			this->Btn_Booking_App->Text = L"Booking Approval";
 			this->Btn_Booking_App->UseVisualStyleBackColor = true;
@@ -202,9 +244,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Customer_Feedback
 			// 
-			this->Btn_Customer_Feedback->Location = System::Drawing::Point(155, 22);
+			this->Btn_Customer_Feedback->Location = System::Drawing::Point(0, 69);
 			this->Btn_Customer_Feedback->Name = L"Btn_Customer_Feedback";
-			this->Btn_Customer_Feedback->Size = System::Drawing::Size(164, 43);
+			this->Btn_Customer_Feedback->Size = System::Drawing::Size(168, 23);
 			this->Btn_Customer_Feedback->TabIndex = 22;
 			this->Btn_Customer_Feedback->Text = L"Customer Feedback";
 			this->Btn_Customer_Feedback->UseVisualStyleBackColor = true;
@@ -212,9 +254,9 @@ namespace GuestHouseManagement {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(371, 12);
+			this->button1->Location = System::Drawing::Point(0, 69);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(164, 43);
+			this->button1->Size = System::Drawing::Size(173, 23);
 			this->button1->TabIndex = 23;
 			this->button1->Text = L"Generate Bill";
 			this->button1->UseVisualStyleBackColor = true;
@@ -222,9 +264,9 @@ namespace GuestHouseManagement {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(812, 6);
+			this->button2->Location = System::Drawing::Point(0, 23);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(149, 54);
+			this->button2->Size = System::Drawing::Size(168, 23);
 			this->button2->TabIndex = 26;
 			this->button2->Text = L"Display Bookings";
 			this->button2->UseVisualStyleBackColor = true;
@@ -232,9 +274,9 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Housekeeping_App
 			// 
-			this->Btn_Housekeeping_App->Location = System::Drawing::Point(594, 6);
+			this->Btn_Housekeeping_App->Location = System::Drawing::Point(0, 46);
 			this->Btn_Housekeeping_App->Name = L"Btn_Housekeeping_App";
-			this->Btn_Housekeeping_App->Size = System::Drawing::Size(166, 54);
+			this->Btn_Housekeeping_App->Size = System::Drawing::Size(168, 23);
 			this->Btn_Housekeeping_App->TabIndex = 25;
 			this->Btn_Housekeeping_App->Text = L"Housekeeping Approval";
 			this->Btn_Housekeeping_App->UseVisualStyleBackColor = true;
@@ -252,37 +294,235 @@ namespace GuestHouseManagement {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(43, 175);
+			this->button3->Location = System::Drawing::Point(0, 115);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(166, 50);
+			this->button3->Size = System::Drawing::Size(168, 23);
 			this->button3->TabIndex = 21;
 			this->button3->Text = L"Leave Approval";
 			this->button3->UseVisualStyleBackColor = true;
 			this->button3->Click += gcnew System::EventHandler(this, &Form_Reception::button3_Click_1);
+			// 
+			// panel1
+			// 
+			this->panel1->Controls->Add(this->Booking_Btn);
+			this->panel1->Controls->Add(this->button2);
+			this->panel1->Controls->Add(this->Btn_Booking_App);
+			this->panel1->Controls->Add(this->button1);
+			this->panel1->Location = System::Drawing::Point(43, 21);
+			this->panel1->Name = L"panel1";
+			this->panel1->Size = System::Drawing::Size(169, 94);
+			this->panel1->TabIndex = 28;
+			this->panel1->MouseLeave += gcnew System::EventHandler(this, &Form_Reception::panel1_MouseLeave);
+			// 
+			// Booking_Btn
+			// 
+			this->Booking_Btn->Location = System::Drawing::Point(1, 0);
+			this->Booking_Btn->Name = L"Booking_Btn";
+			this->Booking_Btn->Size = System::Drawing::Size(168, 23);
+			this->Booking_Btn->TabIndex = 2;
+			this->Booking_Btn->Text = L"Booking";
+			this->Booking_Btn->UseVisualStyleBackColor = true;
+			this->Booking_Btn->MouseHover += gcnew System::EventHandler(this, &Form_Reception::Booking_Btn_MouseHover);
+			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->Leave_Button);
+			this->panel2->Controls->Add(this->Planner_Button);
+			this->panel2->Controls->Add(this->Btn_Edit_Records);
+			this->panel2->Controls->Add(this->Booking_Staff);
+			this->panel2->Controls->Add(this->Register_Button);
+			this->panel2->Controls->Add(this->button3);
+			this->panel2->Location = System::Drawing::Point(248, 21);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(169, 140);
+			this->panel2->TabIndex = 29;
+			this->panel2->MouseLeave += gcnew System::EventHandler(this, &Form_Reception::panel2_MouseLeave);
+			// 
+			// Leave_Button
+			// 
+			this->Leave_Button->Location = System::Drawing::Point(0, 92);
+			this->Leave_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Leave_Button->Name = L"Leave_Button";
+			this->Leave_Button->Size = System::Drawing::Size(168, 23);
+			this->Leave_Button->TabIndex = 34;
+			this->Leave_Button->Text = L"Leave Request";
+			this->Leave_Button->UseVisualStyleBackColor = true;
+			this->Leave_Button->Click += gcnew System::EventHandler(this, &Form_Reception::Leave_Button_Click);
+			// 
+			// Planner_Button
+			// 
+			this->Planner_Button->Location = System::Drawing::Point(0, 69);
+			this->Planner_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Planner_Button->Name = L"Planner_Button";
+			this->Planner_Button->Size = System::Drawing::Size(168, 23);
+			this->Planner_Button->TabIndex = 35;
+			this->Planner_Button->Text = L"Planner";
+			this->Planner_Button->UseVisualStyleBackColor = true;
+			this->Planner_Button->Click += gcnew System::EventHandler(this, &Form_Reception::Planner_Button_Click);
+			// 
+			// Btn_Edit_Records
+			// 
+			this->Btn_Edit_Records->Location = System::Drawing::Point(0, 46);
+			this->Btn_Edit_Records->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Edit_Records->Name = L"Btn_Edit_Records";
+			this->Btn_Edit_Records->Size = System::Drawing::Size(168, 23);
+			this->Btn_Edit_Records->TabIndex = 36;
+			this->Btn_Edit_Records->Text = L"Edit Records";
+			this->Btn_Edit_Records->UseVisualStyleBackColor = true;
+			this->Btn_Edit_Records->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Edit_Records_Click);
+			// 
+			// Booking_Staff
+			// 
+			this->Booking_Staff->Location = System::Drawing::Point(0, 0);
+			this->Booking_Staff->Name = L"Booking_Staff";
+			this->Booking_Staff->Size = System::Drawing::Size(168, 23);
+			this->Booking_Staff->TabIndex = 27;
+			this->Booking_Staff->Text = L"Staff";
+			this->Booking_Staff->UseVisualStyleBackColor = true;
+			this->Booking_Staff->MouseHover += gcnew System::EventHandler(this, &Form_Reception::Booking_Staff_MouseHover);
+			// 
+			// Register_Button
+			// 
+			this->Register_Button->Location = System::Drawing::Point(0, 23);
+			this->Register_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Register_Button->Name = L"Register_Button";
+			this->Register_Button->Size = System::Drawing::Size(168, 23);
+			this->Register_Button->TabIndex = 33;
+			this->Register_Button->Text = L"Register";
+			this->Register_Button->UseVisualStyleBackColor = true;
+			this->Register_Button->Click += gcnew System::EventHandler(this, &Form_Reception::Register_Button_Click);
+			// 
+			// panel3
+			// 
+			this->panel3->Controls->Add(this->Btn_Room_Types);
+			this->panel3->Controls->Add(this->Btn_Guest_Info);
+			this->panel3->Controls->Add(this->Btn_User_Types);
+			this->panel3->Controls->Add(this->button4);
+			this->panel3->Controls->Add(this->Booking_GH_Info);
+			this->panel3->Location = System::Drawing::Point(443, 21);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(169, 118);
+			this->panel3->TabIndex = 30;
+			this->panel3->MouseLeave += gcnew System::EventHandler(this, &Form_Reception::panel3_MouseLeave);
+			// 
+			// Btn_Room_Types
+			// 
+			this->Btn_Room_Types->BackColor = System::Drawing::Color::OrangeRed;
+			this->Btn_Room_Types->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_Room_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Btn_Room_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Btn_Room_Types->Location = System::Drawing::Point(0, 92);
+			this->Btn_Room_Types->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Room_Types->Name = L"Btn_Room_Types";
+			this->Btn_Room_Types->Size = System::Drawing::Size(168, 23);
+			this->Btn_Room_Types->TabIndex = 72;
+			this->Btn_Room_Types->Text = L"Room Types";
+			this->Btn_Room_Types->UseVisualStyleBackColor = false;
+			this->Btn_Room_Types->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Room_Types_Click);
+			// 
+			// Btn_User_Types
+			// 
+			this->Btn_User_Types->BackColor = System::Drawing::Color::OrangeRed;
+			this->Btn_User_Types->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_User_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Btn_User_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Btn_User_Types->Location = System::Drawing::Point(0, 69);
+			this->Btn_User_Types->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_User_Types->Name = L"Btn_User_Types";
+			this->Btn_User_Types->Size = System::Drawing::Size(168, 23);
+			this->Btn_User_Types->TabIndex = 73;
+			this->Btn_User_Types->Text = L"User Types";
+			this->Btn_User_Types->UseVisualStyleBackColor = false;
+			this->Btn_User_Types->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_User_Types_Click);
+			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(0, 23);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(168, 23);
+			this->button4->TabIndex = 33;
+			this->button4->Text = L"Guest House Facilities";
+			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &Form_Reception::button4_Click);
+			// 
+			// Booking_GH_Info
+			// 
+			this->Booking_GH_Info->Location = System::Drawing::Point(0, 0);
+			this->Booking_GH_Info->Name = L"Booking_GH_Info";
+			this->Booking_GH_Info->Size = System::Drawing::Size(168, 23);
+			this->Booking_GH_Info->TabIndex = 28;
+			this->Booking_GH_Info->Text = L"Guest House Info";
+			this->Booking_GH_Info->UseVisualStyleBackColor = true;
+			this->Booking_GH_Info->MouseHover += gcnew System::EventHandler(this, &Form_Reception::Booking_GH_Info_MouseHover);
+			// 
+			// panel4
+			// 
+			this->panel4->Controls->Add(this->Booking_Room);
+			this->panel4->Controls->Add(this->Btn_Add_Room);
+			this->panel4->Controls->Add(this->Btn_Status_Room);
+			this->panel4->Controls->Add(this->Btn_Floor_Map);
+			this->panel4->Location = System::Drawing::Point(649, 21);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(169, 92);
+			this->panel4->TabIndex = 31;
+			this->panel4->MouseLeave += gcnew System::EventHandler(this, &Form_Reception::panel4_MouseLeave);
+			// 
+			// Booking_Room
+			// 
+			this->Booking_Room->Location = System::Drawing::Point(0, 0);
+			this->Booking_Room->Name = L"Booking_Room";
+			this->Booking_Room->Size = System::Drawing::Size(168, 23);
+			this->Booking_Room->TabIndex = 29;
+			this->Booking_Room->Text = L"Room Details";
+			this->Booking_Room->UseVisualStyleBackColor = true;
+			this->Booking_Room->MouseHover += gcnew System::EventHandler(this, &Form_Reception::Booking_Room_MouseHover);
+			// 
+			// panel5
+			// 
+			this->panel5->Controls->Add(this->User_Button);
+			this->panel5->Controls->Add(this->Btn_Users_Approval);
+			this->panel5->Controls->Add(this->Btn_Housekeeping_App);
+			this->panel5->Controls->Add(this->Btn_Customer_Feedback);
+			this->panel5->Location = System::Drawing::Point(827, 12);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(169, 118);
+			this->panel5->TabIndex = 31;
+			this->panel5->MouseLeave += gcnew System::EventHandler(this, &Form_Reception::panel5_MouseLeave);
+			// 
+			// User_Button
+			// 
+			this->User_Button->Location = System::Drawing::Point(0, 0);
+			this->User_Button->Name = L"User_Button";
+			this->User_Button->Size = System::Drawing::Size(168, 23);
+			this->User_Button->TabIndex = 28;
+			this->User_Button->Text = L"Users";
+			this->User_Button->UseVisualStyleBackColor = true;
+			this->User_Button->MouseHover += gcnew System::EventHandler(this, &Form_Reception::User_Button_MouseHover);
 			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
-			this->Controls->Add(this->button3);
+			this->Controls->Add(this->panel5);
+			this->Controls->Add(this->panel4);
+			this->Controls->Add(this->panel3);
+			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->Button_Logout);
-			this->Controls->Add(this->button2);
-			this->Controls->Add(this->Btn_Housekeeping_App);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->Btn_Customer_Feedback);
-			this->Controls->Add(this->Btn_Booking_App);
-			this->Controls->Add(this->Btn_Floor_Map);
-			this->Controls->Add(this->Btn_Status_Room);
-			this->Controls->Add(this->Btn_Add_Room);
 			this->Controls->Add(this->Output_Panel);
-			this->Controls->Add(this->Btn_Users_Approval);
-			this->Controls->Add(this->Btn_Guest_Info);
 			this->Controls->Add(this->Btn_Staff_Info);
-			this->Controls->Add(this->Btn_Booking_Info);
 			this->Name = L"Form_Reception";
 			this->Text = L"Form_Reception";
 			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_MouseEnter);
+			this->panel1->ResumeLayout(false);
+			this->panel2->ResumeLayout(false);
+			this->panel3->ResumeLayout(false);
+			this->panel4->ResumeLayout(false);
+			this->panel5->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -290,8 +530,8 @@ namespace GuestHouseManagement {
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 Output_Panel->Controls->Clear();
-				 Output_Panel->Controls->Add(gcnew UserControl_Guest_House_Info);
-		
+				 Output_Panel->Controls->Add(gcnew UserControl_Guest_House_Info(panel1,panel2,panel3,panel4,panel5));
+				 //Output_Panel->BringToFront();
 			 }
 private: System::Void Btn_Staff_Info_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
@@ -303,21 +543,21 @@ private: System::Void Form_Reception_Load(System::Object^  sender, System::Event
 		 }
 private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {
 			  Output_Panel->Controls->Clear();
-			  Output_Panel->Controls->Add(gcnew UserControl_Approve_Users);
+			  Output_Panel->Controls->Add(gcnew UserControl_Approve_Users(panel1,panel2,panel3,panel4,panel5));
 			  
 		 }
 private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Add_Room1);
+			 Output_Panel->Controls->Add(gcnew UserControl_Add_Room1(panel1,panel2,panel3,panel4,panel5));
 		 }
 private: System::Void Btn_Status_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Status_Room);
+			 Output_Panel->Controls->Add(gcnew UserControl_Status_Room(panel1,panel2,panel3,panel4,panel5));
 		 }
 private: System::Void Btn_Floor_Map_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Floor_Map);
+			 Output_Panel->Controls->Add(gcnew UserControl_Floor_Map(panel1,panel2,panel3,panel4,panel5));
 		 }
 public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
@@ -325,7 +565,7 @@ public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::Even
 		 }
 private: System::Void Btn_Customer_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback);
+			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5));
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
@@ -333,12 +573,25 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void Btn_Housekeeping_App_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Housekeeping_Approval);
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Housekeeping_Approval(panel1,panel2,panel3,panel4,panel5));
 		 }
 private: System::Void button2_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Booking_Display);
 		 }
+private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_GuestHouseDetails(panel1,panel2,panel3,panel4,panel5));
+		 }
+private: System::Void Btn_User_Types_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_User_Types(panel1,panel2,panel3,panel4,panel5));
+		 }
+private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
+			Output_Panel->Controls->Clear();
+			Output_Panel->Controls->Add(gcnew UserControl_Room_Types2(panel1,panel2,panel3,panel4,panel5));
+		 }
+
 private: System::Void button3_Click(System::Object^  sender, System::EventArgs^  e) {
 			 if(this->Owner == nullptr)
 				 return;
@@ -357,7 +610,88 @@ private: System::Void Button_Logout_Click(System::Object^  sender, System::Event
 		 }
 private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave_Approval);
+			 //Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave_Approval(panel1,panel2,panel3,panel4,panel5));
+		 }
+
+
+//UserControl_Guest_House_Info->UC_MouseEnter += gcnew System::EventHandler(this, &Form_Reception::UserControl_ButtonClick);
+private: System::Void UserControl_ButtonClick(System::Object^  sender, System::EventArgs^  e) {
+			 MessageBox::Show("3");
+		 }
+
+private: System::Void Form_Reception_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+				 this->panel1->Size = System::Drawing::Size(168, 23);
+				 this->panel2->Size = System::Drawing::Size(168, 23);
+				 this->panel3->Size = System::Drawing::Size(168, 23);
+				 this->panel4->Size = System::Drawing::Size(168, 23);
+				 this->panel5->Size = System::Drawing::Size(168, 23);
+			 }
+private: System::Void Output_Panel_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+				 this->panel1->Size = System::Drawing::Size(168, 23);
+				 this->panel2->Size = System::Drawing::Size(168, 23);
+				 this->panel3->Size = System::Drawing::Size(168, 23);
+				 this->panel4->Size = System::Drawing::Size(168, 23);
+				 this->panel5->Size = System::Drawing::Size(168, 23);
+			 }
+//Booking
+private: System::Void Booking_Btn_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel1->Size = System::Drawing::Size(169, 92);
+			 this->panel1->BringToFront();
+		 }
+private: System::Void panel1_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel1->Size = System::Drawing::Size(168, 23);
+		 }
+
+//Room Details 
+private: System::Void Booking_Room_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel4->Size = System::Drawing::Size(169, 92);
+			 this->panel4->BringToFront();
+		 }
+private: System::Void panel4_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel4->Size = System::Drawing::Size(168, 23);
+		 }
+
+//Users
+private: System::Void User_Button_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel5->Size = System::Drawing::Size(169, 92);
+			 this->panel5->BringToFront();
+		 }
+private: System::Void panel5_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel5->Size = System::Drawing::Size(168, 23);
+		 }
+// Guest House Info
+private: System::Void Booking_GH_Info_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel3->Size = System::Drawing::Size(169, 115);
+			 this->panel3->BringToFront();
+		 }
+private: System::Void panel3_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel3->Size = System::Drawing::Size(168, 23);
+		 }
+//Staff
+private: System::Void Booking_Staff_MouseHover(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel2->Size = System::Drawing::Size(169, 138);
+			 this->panel2->BringToFront();
+		 }
+private: System::Void panel2_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel2->Size = System::Drawing::Size(168, 23);
+		 }
+
+
+private: System::Void Planner_Button_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5));
+		 }
+private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 //Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave(panel1,panel2,panel3,panel4,panel5));
+		 }
+private: System::Void Btn_Edit_Records_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Record(panel1,panel2,panel3,panel4,panel5));
+		 }
+private: System::Void Register_Button_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Register(panel1,panel2,panel3,panel4,panel5));
 		 }
 };
 }

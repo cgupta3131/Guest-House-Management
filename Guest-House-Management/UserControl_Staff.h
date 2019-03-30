@@ -147,26 +147,26 @@ namespace GuestHouseManagement {
 			 }
 private: System::Void Register_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 				Staff_Panel->Controls->Clear();
-				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Register);
+				//Staff_Panel->Controls->Add(gcnew UserControl_Staff_Register(panel1,panel2,panel3,panel4,panel5));
 		 }
 private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				Staff_Panel->Controls->Clear();
-				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Leave);
+				//Staff_Panel->Controls->Add(gcnew UserControl_Staff_Leave);
 		 }
 private: System::Void Record_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				Staff_Panel->Controls->Clear();
-				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Record);
+				//Staff_Panel->Controls->Add(gcnew UserControl_Staff_Record);
 		 }
 private: System::Void Planner_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				Staff_Panel->Controls->Clear();
-				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Planner);
+				//Staff_Panel->Controls->Add(gcnew UserControl_Staff_Planner);
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				Staff_Panel->Controls->Clear();
-				Staff_Panel->Controls->Add(gcnew UserControl_Staff_Edit);
+				//Staff_Panel->Controls->Add(gcnew UserControl_Staff_Edit);
 		 }
 };
 }

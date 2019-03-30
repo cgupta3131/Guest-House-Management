@@ -20,12 +20,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Staff_Record : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Staff_Record(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Staff_Record(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 		}
 
 	protected:
@@ -57,11 +65,13 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff_Record
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Staff_Record";
-			this->Size = System::Drawing::Size(719, 389);
+			this->Size = System::Drawing::Size(539, 316);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Record::UserControl_Staff_Record_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Record::mymouseenter);
 			this->ResumeLayout(false);
 
 		}
@@ -131,5 +141,12 @@ namespace GuestHouseManagement {
 				 DB_Connection->Close();
 
 			 }
-	};
+	private: System::Void mymouseenter(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+				 pn2->Size = System::Drawing::Size(168, 23);
+				 pn3->Size = System::Drawing::Size(168, 23);
+				 pn4->Size = System::Drawing::Size(168, 23);
+				 pn5->Size = System::Drawing::Size(168, 23);
+			 }
+};
 }

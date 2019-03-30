@@ -28,13 +28,24 @@ namespace GuestHouseManagement {
 public ref class UserControl_Staff_Register : public System::Windows::Forms::UserControl
 {
 public:
- UserControl_Staff_Register(void)
- {
-  InitializeComponent();
-  //
-  //TODO: Add the constructor code here
-  //
- }
+	Panel ^pnl;
+	Panel ^pn2;
+	Panel ^pn3;
+	Panel ^pn4;
+	Panel ^pn5;
+
+	UserControl_Staff_Register(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
+	{
+		InitializeComponent();
+		pnl = testpanel1;
+		pn2 = testpanel2;
+		pn3 = testpanel3;
+		pn4 = testpanel4;
+		pn5 = testpanel5;
+		//
+		//TODO: Add the constructor code here
+		//
+	}
 
 protected:
  /// <summary>
@@ -136,7 +147,7 @@ private:
 	 // Text_Name
 	 // 
 	 this->Text_Name->Location = System::Drawing::Point(166, 9);
-	 this->Text_Name->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Name->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Name->Name = L"Text_Name";
 	 this->Text_Name->Size = System::Drawing::Size(183, 20);
 	 this->Text_Name->TabIndex = 1;
@@ -155,7 +166,7 @@ private:
 	 // Text_Add
 	 // 
 	 this->Text_Add->Location = System::Drawing::Point(166, 184);
-	 this->Text_Add->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Add->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Add->Name = L"Text_Add";
 	 this->Text_Add->Size = System::Drawing::Size(183, 20);
 	 this->Text_Add->TabIndex = 3;
@@ -173,7 +184,7 @@ private:
 	 // Text_Contact
 	 // 
 	 this->Text_Contact->Location = System::Drawing::Point(166, 219);
-	 this->Text_Contact->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Contact->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Contact->Name = L"Text_Contact";
 	 this->Text_Contact->Size = System::Drawing::Size(183, 20);
 	 this->Text_Contact->TabIndex = 5;
@@ -196,7 +207,7 @@ private:
 	 this->Text_Designation->Items->AddRange(gcnew cli::array< System::Object^  >(4) {L"Receptionist", L"Room Service", L"House Keeping", 
 		 L"Watchman"});
 	 this->Text_Designation->Location = System::Drawing::Point(166, 36);
-	 this->Text_Designation->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Designation->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Designation->Name = L"Text_Designation";
 	 this->Text_Designation->Size = System::Drawing::Size(183, 21);
 	 this->Text_Designation->TabIndex = 10;
@@ -217,7 +228,7 @@ private:
 	 this->Date_Join->Enabled = false;
 	 this->Date_Join->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 	 this->Date_Join->Location = System::Drawing::Point(166, 66);
-	 this->Date_Join->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Date_Join->Margin = System::Windows::Forms::Padding(2);
 	 this->Date_Join->Name = L"Date_Join";
 	 this->Date_Join->Size = System::Drawing::Size(183, 20);
 	 this->Date_Join->TabIndex = 12;
@@ -239,7 +250,7 @@ private:
 	 this->Text_Gender->FormattingEnabled = true;
 	 this->Text_Gender->Items->AddRange(gcnew cli::array< System::Object^  >(3) {L"Male", L"Female", L"Other"});
 	 this->Text_Gender->Location = System::Drawing::Point(166, 93);
-	 this->Text_Gender->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Gender->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Gender->Name = L"Text_Gender";
 	 this->Text_Gender->Size = System::Drawing::Size(183, 21);
 	 this->Text_Gender->TabIndex = 14;
@@ -259,7 +270,7 @@ private:
 	 this->Date_Birth->CustomFormat = L"dd-MM-yyyy";
 	 this->Date_Birth->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 	 this->Date_Birth->Location = System::Drawing::Point(166, 127);
-	 this->Date_Birth->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Date_Birth->Margin = System::Windows::Forms::Padding(2);
 	 this->Date_Birth->Name = L"Date_Birth";
 	 this->Date_Birth->Size = System::Drawing::Size(183, 20);
 	 this->Date_Birth->TabIndex = 0;
@@ -277,7 +288,7 @@ private:
 	 // Text_Id
 	 // 
 	 this->Text_Id->Location = System::Drawing::Point(166, 155);
-	 this->Text_Id->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Id->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Id->Name = L"Text_Id";
 	 this->Text_Id->Size = System::Drawing::Size(183, 20);
 	 this->Text_Id->TabIndex = 17;
@@ -295,7 +306,7 @@ private:
 	 // Text_Email
 	 // 
 	 this->Text_Email->Location = System::Drawing::Point(166, 252);
-	 this->Text_Email->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Text_Email->Margin = System::Windows::Forms::Padding(2);
 	 this->Text_Email->Name = L"Text_Email";
 	 this->Text_Email->Size = System::Drawing::Size(183, 20);
 	 this->Text_Email->TabIndex = 19;
@@ -303,7 +314,7 @@ private:
 	 // Button_Register
 	 // 
 	 this->Button_Register->Location = System::Drawing::Point(432, 184);
-	 this->Button_Register->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Button_Register->Margin = System::Windows::Forms::Padding(2);
 	 this->Button_Register->Name = L"Button_Register";
 	 this->Button_Register->Size = System::Drawing::Size(92, 26);
 	 this->Button_Register->TabIndex = 20;
@@ -368,10 +379,11 @@ private:
 	 this->Controls->Add(this->label2);
 	 this->Controls->Add(this->Text_Name);
 	 this->Controls->Add(this->label1);
-	 this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Margin = System::Windows::Forms::Padding(2);
 	 this->Name = L"UserControl_Staff_Register";
 	 this->Size = System::Drawing::Size(539, 316);
 	 this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Register::UserControl_Staff_Register_Load);
+	 this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Register::myMouseClick);
 	 this->ResumeLayout(false);
 	 this->PerformLayout();
 
@@ -527,5 +539,12 @@ private: System::Void UserControl_Staff_Register_Load(System::Object^  sender, S
 				 this->Date_Birth->MaxDate=System::DateTime().Now.AddYears(-18);
 				 this->Date_Birth->MinDate=System::DateTime().Now.AddYears(-125);
   }
+private: System::Void myMouseClick(System::Object^  sender, System::EventArgs^  e) {
+			 pnl->Size = System::Drawing::Size(168, 23);
+			 pn2->Size = System::Drawing::Size(168, 23);
+			 pn3->Size = System::Drawing::Size(168, 23);
+			 pn4->Size = System::Drawing::Size(168, 23);
+			 pn5->Size = System::Drawing::Size(168, 23);
+		 }
 };
 }

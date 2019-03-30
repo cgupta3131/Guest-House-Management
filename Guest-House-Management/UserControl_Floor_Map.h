@@ -21,10 +21,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Floor_Map : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Floor_Map(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Floor_Map(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
-			//
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//TODO: Add the constructor code here
 			//
 		}
@@ -99,6 +109,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Floor_Map";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Floor_Map::UserControl_Floor_Map_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Floor_Map::mouseentermy);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -261,5 +272,12 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void label2_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
+private: System::Void mouseentermy(System::Object^  sender, System::EventArgs^  e) {
+			 pnl->Size = System::Drawing::Size(168, 23);
+			 pn2->Size = System::Drawing::Size(168, 23);
+			 pn3->Size = System::Drawing::Size(168, 23);
+			 pn4->Size = System::Drawing::Size(168, 23);
+			 pn5->Size = System::Drawing::Size(168, 23);
+		 }
 };
 }

@@ -27,9 +27,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Guest_House_Info : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Guest_House_Info()
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Guest_House_Info(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -253,12 +264,20 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Guest_House_Info";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::UserControl_Guest_House_Info_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::myMouseEnter);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+	//public: ^EventHandler OnLoggedIn;
+	/*private: System::Void UC_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+
+			 }*/
 	private: System::Void UserControl_Guest_House_Info_Load(System::Object^  sender, System::EventArgs^  e) {
+				 //pnl->Size = System::Drawing::Size(168, 23);
+				 //pnl->BringToFront();
 				 Second_Panel->Visible = false;
 				 try{
 
@@ -336,14 +355,23 @@ ErrExit:
 			 }
 	private: System::Void Btn_User_Types_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Second_Panel->Controls->Clear();
-				 Second_Panel->Controls->Add(gcnew UserControl_User_Types);
+				 //Second_Panel->Controls->Add(gcnew UserControl_User_Types);
 				 Second_Panel->Visible = true;
 			 }
 
 	private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Second_Panel->Controls->Clear();
-				 Second_Panel->Controls->Add(gcnew UserControl_Room_Types2);
+				 //Second_Panel->Controls->Add(gcnew UserControl_Room_Types2);
 				 Second_Panel->Visible = true;
 			 }
-	};
+	public: System::Void myMouseEnter(System::Object^  sender, System::EventArgs^  e) {
+				pnl->Size = System::Drawing::Size(168, 23);
+				pn2->Size = System::Drawing::Size(168, 23);
+				pn3->Size = System::Drawing::Size(168, 23);
+				pn4->Size = System::Drawing::Size(168, 23);
+				pn5->Size = System::Drawing::Size(168, 23);
+				 //if (this->myMouseEnter!= nullptr)
+					// this->myMouseEnter(this, e); 
+			 }
+};
 }

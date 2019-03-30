@@ -27,11 +27,22 @@ namespace GuestHouseManagement {
 	/// </summary>
 	public ref class UserControl_Room_Types2 : public System::Windows::Forms::UserControl
 	{
+		
 	public:
-		UserControl_Room_Types2(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Room_Types2(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
-			//
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//TODO: Add the constructor code here
 			//
 		}
@@ -136,6 +147,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Room_Types2";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Room_Types2::UserControl_Room_Types_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Room_Types2::mymouseenter);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -375,8 +387,16 @@ ErrExit:
 				 if(Txt_Room_Type->Text == "Enter some text here")
 					 Txt_Room_Type->Text = "";
 			 }
+	private: System::Void mymouseenter(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+				 pn2->Size = System::Drawing::Size(168, 23);
+				 pn3->Size = System::Drawing::Size(168, 23);
+				 pn4->Size = System::Drawing::Size(168, 23);
+				 pn5->Size = System::Drawing::Size(168, 23);
+			 }
 
-	};
+
+};
 
 
 }
