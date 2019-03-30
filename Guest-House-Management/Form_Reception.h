@@ -20,6 +20,10 @@
 #include "UserControl_Staff_Planner.h"
 #include "UserControl_Staff_Edit.h"
 #include "UserControl_Staff_Leave.h"
+#include "UserControl_Add_Cab_Details.h"
+#include "UserControl_Add_Restaurant.h"
+#include "UserControl_Add_Places.h"
+#include "UserControl_Add_Mess.h"
 
 namespace GuestHouseManagement {
 
@@ -61,6 +65,17 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Planner_Button;
 	private: System::Windows::Forms::Button^  Leave_Button;
 	private: System::Windows::Forms::Button^  Register_Button;
+
+	private: System::Windows::Forms::Panel^  panel7;
+	internal: System::Windows::Forms::Button^  button5;
+	private: 
+	internal: System::Windows::Forms::Button^  button7;
+	internal: System::Windows::Forms::Button^  button6;
+	internal: System::Windows::Forms::Button^  Btn_Create;
+	private: System::Windows::Forms::Button^  Btn_Read_Feedback;
+	internal: 
+	private: System::Windows::Forms::Button^  Btn_Unread_Feedback;
+	private: System::Windows::Forms::Button^  Btn_All_Feedback;
 	public: 
 		Form ^ gf2;
 		Form_Reception(){
@@ -154,16 +169,25 @@ namespace GuestHouseManagement {
 			this->Booking_Room = (gcnew System::Windows::Forms::Button());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->User_Button = (gcnew System::Windows::Forms::Button());
+			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->Btn_Read_Feedback = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
+			this->Btn_Unread_Feedback = (gcnew System::Windows::Forms::Button());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->Btn_All_Feedback = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->Btn_Create = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
 			this->panel4->SuspendLayout();
 			this->panel5->SuspendLayout();
+			this->panel7->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Btn_Staff_Info
 			// 
-			this->Btn_Staff_Info->Location = System::Drawing::Point(43, 234);
+			this->Btn_Staff_Info->Location = System::Drawing::Point(744, 655);
 			this->Btn_Staff_Info->Name = L"Btn_Staff_Info";
 			this->Btn_Staff_Info->Size = System::Drawing::Size(166, 62);
 			this->Btn_Staff_Info->TabIndex = 2;
@@ -284,7 +308,7 @@ namespace GuestHouseManagement {
 			// 
 			// Button_Logout
 			// 
-			this->Button_Logout->Location = System::Drawing::Point(43, 430);
+			this->Button_Logout->Location = System::Drawing::Point(485, 655);
 			this->Button_Logout->Name = L"Button_Logout";
 			this->Button_Logout->Size = System::Drawing::Size(166, 50);
 			this->Button_Logout->TabIndex = 27;
@@ -501,11 +525,123 @@ namespace GuestHouseManagement {
 			this->User_Button->UseVisualStyleBackColor = true;
 			this->User_Button->MouseHover += gcnew System::EventHandler(this, &Form_Reception::User_Button_MouseHover);
 			// 
+			// panel7
+			// 
+			this->panel7->Controls->Add(this->Btn_Read_Feedback);
+			this->panel7->Controls->Add(this->button5);
+			this->panel7->Controls->Add(this->Btn_Unread_Feedback);
+			this->panel7->Controls->Add(this->button7);
+			this->panel7->Controls->Add(this->Btn_All_Feedback);
+			this->panel7->Controls->Add(this->button6);
+			this->panel7->Controls->Add(this->Btn_Create);
+			this->panel7->Location = System::Drawing::Point(12, 174);
+			this->panel7->Name = L"panel7";
+			this->panel7->Size = System::Drawing::Size(262, 531);
+			this->panel7->TabIndex = 0;
+			// 
+			// Btn_Read_Feedback
+			// 
+			this->Btn_Read_Feedback->Location = System::Drawing::Point(32, 456);
+			this->Btn_Read_Feedback->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Read_Feedback->Name = L"Btn_Read_Feedback";
+			this->Btn_Read_Feedback->Size = System::Drawing::Size(114, 52);
+			this->Btn_Read_Feedback->TabIndex = 34;
+			this->Btn_Read_Feedback->Text = L"Read";
+			this->Btn_Read_Feedback->UseVisualStyleBackColor = true;
+			this->Btn_Read_Feedback->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Read_Feedback_Click);
+			// 
+			// button5
+			// 
+			this->button5->BackColor = System::Drawing::Color::OrangeRed;
+			this->button5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button5->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button5->Location = System::Drawing::Point(2, 171);
+			this->button5->Margin = System::Windows::Forms::Padding(2);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(100, 48);
+			this->button5->TabIndex = 77;
+			this->button5->Text = L"Add Mess Details";
+			this->button5->UseVisualStyleBackColor = false;
+			this->button5->Click += gcnew System::EventHandler(this, &Form_Reception::button5_Click);
+			// 
+			// Btn_Unread_Feedback
+			// 
+			this->Btn_Unread_Feedback->Location = System::Drawing::Point(32, 389);
+			this->Btn_Unread_Feedback->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Unread_Feedback->Name = L"Btn_Unread_Feedback";
+			this->Btn_Unread_Feedback->Size = System::Drawing::Size(114, 52);
+			this->Btn_Unread_Feedback->TabIndex = 33;
+			this->Btn_Unread_Feedback->Text = L"Unread";
+			this->Btn_Unread_Feedback->UseVisualStyleBackColor = true;
+			this->Btn_Unread_Feedback->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Unread_Feedback_Click);
+			// 
+			// button7
+			// 
+			this->button7->BackColor = System::Drawing::Color::OrangeRed;
+			this->button7->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button7->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button7->Location = System::Drawing::Point(2, 96);
+			this->button7->Margin = System::Windows::Forms::Padding(2);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(98, 48);
+			this->button7->TabIndex = 75;
+			this->button7->Text = L"Add Restaurant";
+			this->button7->UseVisualStyleBackColor = false;
+			this->button7->Click += gcnew System::EventHandler(this, &Form_Reception::button7_Click);
+			// 
+			// Btn_All_Feedback
+			// 
+			this->Btn_All_Feedback->Location = System::Drawing::Point(31, 323);
+			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_All_Feedback->Name = L"Btn_All_Feedback";
+			this->Btn_All_Feedback->Size = System::Drawing::Size(114, 52);
+			this->Btn_All_Feedback->TabIndex = 32;
+			this->Btn_All_Feedback->Text = L"All";
+			this->Btn_All_Feedback->UseVisualStyleBackColor = true;
+			this->Btn_All_Feedback->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_All_Feedback_Click);
+			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::OrangeRed;
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button6->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button6->Location = System::Drawing::Point(2, 245);
+			this->button6->Margin = System::Windows::Forms::Padding(2);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(100, 48);
+			this->button6->TabIndex = 76;
+			this->button6->Text = L"Add Tourist Places";
+			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &Form_Reception::button6_Click);
+			// 
+			// Btn_Create
+			// 
+			this->Btn_Create->BackColor = System::Drawing::Color::OrangeRed;
+			this->Btn_Create->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Btn_Create->Location = System::Drawing::Point(1, 24);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Create->Name = L"Btn_Create";
+			this->Btn_Create->Size = System::Drawing::Size(94, 48);
+			this->Btn_Create->TabIndex = 74;
+			this->Btn_Create->Text = L"Add Cab Services";
+			this->Btn_Create->UseVisualStyleBackColor = false;
+			this->Btn_Create->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Create_Click);
+			// 
 			// Form_Reception
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1008, 729);
+			this->Controls->Add(this->panel7);
 			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel4);
 			this->Controls->Add(this->panel3);
@@ -523,6 +659,7 @@ namespace GuestHouseManagement {
 			this->panel3->ResumeLayout(false);
 			this->panel4->ResumeLayout(false);
 			this->panel5->ResumeLayout(false);
+			this->panel7->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -565,7 +702,7 @@ public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::Even
 		 }
 private: System::Void Btn_Customer_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
-			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5));
+			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5,0));
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
@@ -692,6 +829,36 @@ private: System::Void Btn_Edit_Records_Click(System::Object^  sender, System::Ev
 private: System::Void Register_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Output_Panel->Controls->Clear();
 			 Output_Panel->Controls->Add(gcnew UserControl_Staff_Register(panel1,panel2,panel3,panel4,panel5));
+		 }
+
+private: System::Void Btn_Create_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Add_Cab_Details(panel1,panel2,panel3,panel4,panel5));
+		 }
+private: System::Void button7_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Output_Panel->Controls->Clear();
+				 Output_Panel->Controls->Add(gcnew UserControl_Add_Restaurant(panel1,panel2,panel3,panel4,panel5));
+			 }
+private: System::Void button5_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Output_Panel->Controls->Clear();
+				 Output_Panel->Controls->Add(gcnew UserControl_Add_Mess(panel1,panel2,panel3,panel4,panel5));
+			 }
+
+private: System::Void button6_Click(System::Object^  sender, System::EventArgs^  e) {
+				 Output_Panel->Controls->Clear();
+				 Output_Panel->Controls->Add(gcnew UserControl_Add_Places(panel1,panel2,panel3,panel4,panel5));
+			 }
+private: System::Void Btn_All_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5,2));
+		 }
+private: System::Void Btn_Unread_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5,0));
+		 }
+private: System::Void Btn_Read_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Output_Panel->Controls->Clear();
+			 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5,1));
 		 }
 };
 }

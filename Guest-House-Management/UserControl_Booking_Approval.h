@@ -327,12 +327,12 @@ namespace GuestHouseManagement {
 
 				 cliext::vector<String^> vec;
 				 Txt_Room_Type->Items->Clear();
+				 Txt_Room_Type->Items->Add("All");
 				 while(room_type->Read() == true)
 				 {
 					 String ^temp = room_type->GetString(1);
 					 Txt_Room_Type->Items->Add(temp);
 				 }
-				 //Txt_Room_Type->Items->Add("All");
 				 DB_Connection->Close();
 
 				 DB_Connection2->Open();
@@ -358,7 +358,7 @@ namespace GuestHouseManagement {
 				 }
 
 				 DB_Connection->Close();
-				 Txt_Room_Type->Text = txt;
+				 Txt_Room_Type->Text = "All";
 				 Txt_Room_Type_SelectedIndexChanged(sender,e);
 
 			 }
@@ -377,16 +377,7 @@ namespace GuestHouseManagement {
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();
-				 String ^first = Txt_Room_Type->Text + ":1";
-				 String ^second = Txt_Room_Type->Text + ":2";
-				 String ^third = Txt_Room_Type->Text + ":3";
-				 String ^fourth = Txt_Room_Type->Text + ":4";
-				 String ^fifth = Txt_Room_Type->Text + ":5";
-				 String ^sixth = Txt_Room_Type->Text + ":6";
-				 String ^seveneth = Txt_Room_Type->Text + ":7";
-				 String ^eighth = Txt_Room_Type->Text + ":8";
-				 String ^ninth = Txt_Room_Type->Text + ":9";
-				 //String ^ getUsers = "Select * from Booking_Request where ( [Room_Type] = '" + first + "' OR [Room_Type] = '" + second + "' OR [Room_Type] = '" + third + "' OR [Room_Type] = '" +						fourth + "' OR [Room_Type] = '" + fifth + "' OR [Room_Type] = '" + sixth + "' OR [Room_Type] = '" + seveneth + "' OR [Room_Type] = '" + eighth + "' OR [Room_Type] = '" + ninth +					"' ) AND [Approved] = 'NO' ";
+				
 				 String ^getUsers = "Select * from Booking_Request where [Approved] = 'NO' ";
 				 txt = Txt_Room_Type->Text;
 				 //MessageBox::Show(getUsers);
@@ -425,7 +416,8 @@ namespace GuestHouseManagement {
 						 if(room_full_data[j] == Txt_Room_Type->Text)
 							 f=1;
 					 }
-
+					 if(Txt_Room_Type->Text == "All")
+						 f=1;
 					 if(f == 0)
 						continue;
 

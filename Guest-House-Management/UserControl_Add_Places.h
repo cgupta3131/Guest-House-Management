@@ -25,9 +25,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Add_Places : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Add_Places(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Add_Places(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -220,6 +231,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Add_Places";
 			this->Size = System::Drawing::Size(893, 400);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Places::UserControl_Add_Places_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Add_Places::myMouseClick);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -283,6 +295,13 @@ namespace GuestHouseManagement {
 					 pictureBox1->Image = Image::FromFile(dialog->FileName);
 				 }
 				 // Dispose not working, may create problem later
+			 }
+	private: System::Void myMouseClick(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+				 pn2->Size = System::Drawing::Size(168, 23);
+				 pn3->Size = System::Drawing::Size(168, 23);
+				 pn4->Size = System::Drawing::Size(168, 23);
+				 pn5->Size = System::Drawing::Size(168, 23);
 			 }
 	};
 }

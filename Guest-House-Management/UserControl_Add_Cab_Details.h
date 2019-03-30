@@ -25,9 +25,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Add_Cab_Details : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Add_Cab_Details(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Add_Cab_Details(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -239,6 +250,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Add_Cab_Details";
 			this->Size = System::Drawing::Size(670, 325);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Cab_Details::UserControl_Add_Cab_Details_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Add_Cab_Details::myMouseClick);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -295,6 +307,13 @@ namespace GuestHouseManagement {
 				 }
 			 }
 	private: System::Void UserControl_Add_Cab_Details_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void myMouseClick(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(168, 23);
+				 pn2->Size = System::Drawing::Size(168, 23);
+				 pn3->Size = System::Drawing::Size(168, 23);
+				 pn4->Size = System::Drawing::Size(168, 23);
+				 pn5->Size = System::Drawing::Size(168, 23);
 			 }
 	};
 }

@@ -24,8 +24,9 @@ namespace GuestHouseManagement {
 		Panel ^pn3;
 		Panel ^pn4;
 		Panel ^pn5;
+		int flaggi;
 
-		UserControl_Customer_Feedback(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
+		UserControl_Customer_Feedback(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5, int temp_flag)
 		{
 			InitializeComponent();
 			pnl = testpanel1;
@@ -33,6 +34,7 @@ namespace GuestHouseManagement {
 			pn3 = testpanel3;
 			pn4 = testpanel4;
 			pn5 = testpanel5;
+			flaggi = temp_flag;
 			//TODO: Add the constructor code here
 			//
 		}
@@ -84,7 +86,7 @@ namespace GuestHouseManagement {
 			this->Btn_All_Feedback->TabIndex = 0;
 			this->Btn_All_Feedback->Text = L"All";
 			this->Btn_All_Feedback->UseVisualStyleBackColor = true;
-			this->Btn_All_Feedback->Click += gcnew System::EventHandler(this, &UserControl_Customer_Feedback::Btn_All_Feedback_Click);
+			this->Btn_All_Feedback->Visible = false;
 			// 
 			// Btn_Unread_Feedback
 			// 
@@ -95,7 +97,7 @@ namespace GuestHouseManagement {
 			this->Btn_Unread_Feedback->TabIndex = 1;
 			this->Btn_Unread_Feedback->Text = L"Unread";
 			this->Btn_Unread_Feedback->UseVisualStyleBackColor = true;
-			this->Btn_Unread_Feedback->Click += gcnew System::EventHandler(this, &UserControl_Customer_Feedback::Btn_Unread_Feedback_Click);
+			this->Btn_Unread_Feedback->Visible = false;
 			// 
 			// Btn_Read_Feedback
 			// 
@@ -106,7 +108,7 @@ namespace GuestHouseManagement {
 			this->Btn_Read_Feedback->TabIndex = 2;
 			this->Btn_Read_Feedback->Text = L"Read";
 			this->Btn_Read_Feedback->UseVisualStyleBackColor = true;
-			this->Btn_Read_Feedback->Click += gcnew System::EventHandler(this, &UserControl_Customer_Feedback::Btn_Read_Feedback_Click);
+			this->Btn_Read_Feedback->Visible = false;
 			// 
 			// UserControl_Customer_Feedback
 			// 
@@ -146,33 +148,13 @@ namespace GuestHouseManagement {
 	}
 		
 	private: System::Void UserControl_Customer_Feedback_Load(System::Object^  sender, System::EventArgs^  e) {
-				 /*OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-				 DB_Connection->Open();
-				 String ^ getFeedbackData = "Select * from [Booking_Request] Where [Status_Feedback]='Unread'";
-
-				 OleDbCommand ^ cmd = gcnew OleDbCommand(getFeedbackData, DB_Connection);
-				 OleDbDataReader ^ feedback_data = cmd->ExecuteReader();
-
-				 int i=0;
-				 while(feedback_data->Read() == true)
-				 {
-					 String ^name = feedback_data->GetString(3);
-					 String ^room = feedback_data->GetString(10);
-					 String ^feed = feedback_data->GetString(11);
-					 String ^date_from = feedback_data->GetString(4);
-					 String ^date_to = feedback_data->GetString(5);
-					
-					 Label ^ lb = gcnew Label();
-					 lb->Text = name + "\n" + room + "\n" + date_from + "\n" + date_to + "\n" + feed;
-					 lb->Name = "Label" + i; 
-					 lb->Location = System::Drawing::Point(20,100*(i+1));
-					 i=i+1;
-					 this->Controls->Add(lb);
-				 }
-
-				 DB_Connection->Close();*/
-				 Btn_Unread_Feedback_Click(sender,e);
+				
+				 if(flaggi == 0)
+					Btn_Unread_Feedback_Click(sender,e);
+				 else if(flaggi == 1)
+					 Btn_Read_Feedback_Click(sender,e);
+				 else if(flaggi == 2)
+					 Btn_All_Feedback_Click(sender,e);
 				 
 			 }
 	private: System::Void Btn_Read_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -202,6 +184,7 @@ namespace GuestHouseManagement {
 						 "Room No. : " + room + "\r\n" + 
 						 "Check-in : " + date_from + "\r\n" + 
 						 "Check-out : " + date_to + "\r\n" + 
+						 "Mess : " + Convert::ToString(feedback_data->GetInt32(10)) + "/5 , " + "Cleanliness : " + Convert::ToString(feedback_data->GetInt32(11)) + "/5 , " + "Service : " + Convert::ToString(feedback_data->GetInt32(12)) + "/5" + "\r\n" +
 						 "Feedback : " + feed;
 					 tb->Location = System::Drawing::Point(20,140*(i+1));
 					 tb->Width = 250;
@@ -249,6 +232,7 @@ namespace GuestHouseManagement {
 							"Room No. : " + room + "\r\n" + 
 							"Check-in : " + date_from + "\r\n" + 
 							"Check-out : " + date_to + "\r\n" + 
+							"Mess : " + Convert::ToString(feedback_data->GetInt32(10)) + "/5 , " + "Cleanliness : " + Convert::ToString(feedback_data->GetInt32(11)) + "/5 , " + "Service : " + Convert::ToString(feedback_data->GetInt32(12)) + "/5" + "\r\n" +
 							"Feedback : " + feed;
 				 tb->Location = System::Drawing::Point(20,140*(i+1));
 				 tb->Width = 250;
@@ -305,6 +289,7 @@ namespace GuestHouseManagement {
 					 "Room No. : " + room + "\r\n" + 
 					 "Check-in : " + date_from + "\r\n" + 
 					 "Check-out : " + date_to + "\r\n" + 
+					 "Mess : " + Convert::ToString(feedback_data->GetInt32(10)) + "/5 , " + "Cleanliness : " + Convert::ToString(feedback_data->GetInt32(11)) + "/5 , " + "Service : " + Convert::ToString(feedback_data->GetInt32(12)) + "/5" + "\r\n" +
 					 "Feedback : " + feed;
 				 tb->Location = System::Drawing::Point(20,140*(i+1));
 				 tb->Width = 250;

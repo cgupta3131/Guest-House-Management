@@ -174,20 +174,20 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void Btn_Create_Click(System::Object^  sender, System::EventArgs^  e) {
 				 panel1->Controls->Clear();
-				 panel1->Controls->Add(gcnew UserControl_Add_Cab_Details);
+				 //panel1->Controls->Add(gcnew UserControl_Add_Cab_Details);
 			 }
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 				 panel1->Controls->Clear();
-				 panel1->Controls->Add(gcnew UserControl_Add_Places);
+				 //panel1->Controls->Add(gcnew UserControl_Add_Places);
 			 }
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 panel1->Controls->Clear();
-				 panel1->Controls->Add(gcnew UserControl_Add_Restaurant);
+				 //panel1->Controls->Add(gcnew UserControl_Add_Restaurant);
 			 }
 	
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 				 panel1->Controls->Clear();
-				 panel1->Controls->Add(gcnew UserControl_Add_Mess);
+				//panel1->Controls->Add(gcnew UserControl_Add_Mess);
 			 }
 	private: System::Void UserControl_GuestHouseDetails_Load(System::Object^  sender, System::EventArgs^  e) {
 				 /*Allow code for editing these details also*/
