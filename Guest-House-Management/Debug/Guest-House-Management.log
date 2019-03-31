@@ -1,4 +1,4 @@
-﻿Build started 3/31/2019 6:09:54 PM.
+﻿Build started 3/31/2019 7:10:07 PM.
      1>Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -6,19 +6,9 @@
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
          All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Form_Reception.cpp "Guest-House-Management.cpp" UserControl_Booking_Approval.cpp UserControl_Login.cpp UserControl_Staff_Booking_Display.cpp /clr:nostdlib 
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Form_Reception.cpp "Guest-House-Management.cpp" UserControl_Booking_Approval.cpp UserControl_Login.cpp /clr:nostdlib 
          Form_Reception.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(34): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
-                 with
-                 [
-                     _Value_t=System::String ^
-                 ]
          Guest-House-Management.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(34): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
-                 with
-                 [
-                     _Value_t=System::String ^
-                 ]
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
@@ -32,17 +22,7 @@
                      _Value_t=System::String ^
                  ]
          UserControl_Booking_Approval.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(34): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
-                 with
-                 [
-                     _Value_t=System::String ^
-                 ]
          UserControl_Login.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(34): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
-                 with
-                 [
-                     _Value_t=System::String ^
-                 ]
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
@@ -55,7 +35,6 @@
                  [
                      _Value_t=System::String ^
                  ]
-         UserControl_Staff_Booking_Display.cpp
          Generating Code...
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(198): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(198): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
@@ -130,4 +109,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:05.00
+Time Elapsed 00:00:04.89

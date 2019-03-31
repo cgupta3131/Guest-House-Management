@@ -272,11 +272,11 @@ namespace GuestHouseManagement {
 #pragma endregion
 	//public: ^EventHandler OnLoggedIn;
 	/*private: System::Void UC_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
-				 pnl->Size = System::Drawing::Size(168, 23);
+				 pnl->Size = System::Drawing::Size(173, 44);
 
 			 }*/
 	private: System::Void UserControl_Guest_House_Info_Load(System::Object^  sender, System::EventArgs^  e) {
-				 //pnl->Size = System::Drawing::Size(168, 23);
+				 //pnl->Size = System::Drawing::Size(173, 44);
 				 //pnl->BringToFront();
 				 Second_Panel->Visible = false;
 				 try{
@@ -365,11 +365,11 @@ ErrExit:
 				 Second_Panel->Visible = true;
 			 }
 	public: System::Void myMouseEnter(System::Object^  sender, System::EventArgs^  e) {
-				pnl->Size = System::Drawing::Size(168, 23);
-				pn2->Size = System::Drawing::Size(168, 23);
-				pn3->Size = System::Drawing::Size(168, 23);
-				pn4->Size = System::Drawing::Size(168, 23);
-				pn5->Size = System::Drawing::Size(168, 23);
+				pnl->Size = System::Drawing::Size(173, 44);
+				pn2->Size = System::Drawing::Size(173, 44);
+				pn3->Size = System::Drawing::Size(173, 44);
+				pn4->Size = System::Drawing::Size(173, 44);
+				pn5->Size = System::Drawing::Size(173, 44);
 				 //if (this->myMouseEnter!= nullptr)
 					// this->myMouseEnter(this, e); 
 			 }

@@ -28,12 +28,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Staff_Edit : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Staff_Edit(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Staff_Edit(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 		}
 
 	protected:
@@ -90,7 +98,7 @@ namespace GuestHouseManagement {
 			// Text_Search
 			// 
 			this->Text_Search->Location = System::Drawing::Point(40, 69);
-			this->Text_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Search->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Search->Name = L"Text_Search";
 			this->Text_Search->Size = System::Drawing::Size(159, 20);
 			this->Text_Search->TabIndex = 1;
@@ -101,7 +109,7 @@ namespace GuestHouseManagement {
 			this->combo_Search->FormattingEnabled = true;
 			this->combo_Search->Items->AddRange(gcnew cli::array< System::Object^  >(2) {L"By Name", L"By ID"});
 			this->combo_Search->Location = System::Drawing::Point(274, 69);
-			this->combo_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->combo_Search->Margin = System::Windows::Forms::Padding(2);
 			this->combo_Search->Name = L"combo_Search";
 			this->combo_Search->Size = System::Drawing::Size(92, 21);
 			this->combo_Search->TabIndex = 2;
@@ -110,7 +118,7 @@ namespace GuestHouseManagement {
 			// Button_Search
 			// 
 			this->Button_Search->Location = System::Drawing::Point(447, 69);
-			this->Button_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Button_Search->Margin = System::Windows::Forms::Padding(2);
 			this->Button_Search->Name = L"Button_Search";
 			this->Button_Search->Size = System::Drawing::Size(60, 33);
 			this->Button_Search->TabIndex = 3;
@@ -122,7 +130,7 @@ namespace GuestHouseManagement {
 			// 
 			this->List_Search->FormattingEnabled = true;
 			this->List_Search->Location = System::Drawing::Point(83, 176);
-			this->List_Search->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->List_Search->Margin = System::Windows::Forms::Padding(2);
 			this->List_Search->Name = L"List_Search";
 			this->List_Search->Size = System::Drawing::Size(341, 121);
 			this->List_Search->TabIndex = 4;
@@ -132,7 +140,7 @@ namespace GuestHouseManagement {
 			// 
 			this->ID_List->FormattingEnabled = true;
 			this->ID_List->Location = System::Drawing::Point(499, 187);
-			this->ID_List->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->ID_List->Margin = System::Windows::Forms::Padding(2);
 			this->ID_List->Name = L"ID_List";
 			this->ID_List->Size = System::Drawing::Size(1, 4);
 			this->ID_List->TabIndex = 5;
@@ -147,10 +155,11 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->combo_Search);
 			this->Controls->Add(this->Text_Search);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Staff_Edit";
 			this->Size = System::Drawing::Size(539, 316);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Edit::UserControl_Staff_Edit_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Edit::okkies);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -296,5 +305,12 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void combo_Search_SelectedIndexChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
-	};
+	private: System::Void okkies(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(173, 44);
+				 pn2->Size = System::Drawing::Size(173, 44);
+				 pn3->Size = System::Drawing::Size(173, 44);
+				 pn4->Size = System::Drawing::Size(173, 44);
+				 pn5->Size = System::Drawing::Size(173, 44);
+			 }
+};
 }

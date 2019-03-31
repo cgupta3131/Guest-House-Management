@@ -26,9 +26,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Booking_Approval : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Booking_Approval(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Booking_Approval(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -104,6 +115,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Booking_Approval";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Booking_Approval::UserControl_Booking_Approval_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Booking_Approval::ookk);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -499,5 +511,12 @@ namespace GuestHouseManagement {
 				 DB_Connection->Close();
 
 			 }
+private: System::Void ookk(System::Object^  sender, System::EventArgs^  e) {
+			 pnl->Size = System::Drawing::Size(173, 44);
+			 pn2->Size = System::Drawing::Size(173, 44);
+			 pn3->Size = System::Drawing::Size(173, 44);
+			 pn4->Size = System::Drawing::Size(173, 44);
+			 pn5->Size = System::Drawing::Size(173, 44);
+		 }
 };
 }

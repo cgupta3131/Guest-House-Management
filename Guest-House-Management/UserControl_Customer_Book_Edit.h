@@ -194,7 +194,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(629, 111);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(168, 23);
+			this->label6->Size = System::Drawing::Size(173, 44);
 			this->label6->TabIndex = 49;
 			this->label6->Text = L"Approval Status";
 			this->label6->Visible = false;

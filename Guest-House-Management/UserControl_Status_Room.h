@@ -292,11 +292,11 @@ ErrExit:
 		//		 this->InitializeComponent();
 			// }
 private: System::Void sdvsdv(System::Object^  sender, System::EventArgs^  e) {
-			 pnl->Size = System::Drawing::Size(168, 23);
-			 pn2->Size = System::Drawing::Size(168, 23);
-			 pn3->Size = System::Drawing::Size(168, 23);
-			 pn4->Size = System::Drawing::Size(168, 23);
-			 pn5->Size = System::Drawing::Size(168, 23);
+			 pnl->Size = System::Drawing::Size(173, 44);
+			 pn2->Size = System::Drawing::Size(173, 44);
+			 pn3->Size = System::Drawing::Size(173, 44);
+			 pn4->Size = System::Drawing::Size(173, 44);
+			 pn5->Size = System::Drawing::Size(173, 44);
 			 }
 };
 }

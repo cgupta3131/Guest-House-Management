@@ -24,9 +24,20 @@ namespace GuestHouseManagement {
 	public ref class UserControl_Staff_Booking_Display : public System::Windows::Forms::UserControl
 	{
 	public:
-		UserControl_Staff_Booking_Display(void)
+		Panel ^pnl;
+		Panel ^pn2;
+		Panel ^pn3;
+		Panel ^pn4;
+		Panel ^pn5;
+
+		UserControl_Staff_Booking_Display(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
 		{
 			InitializeComponent();
+			pnl = testpanel1;
+			pn2 = testpanel2;
+			pn3 = testpanel3;
+			pn4 = testpanel4;
+			pn5 = testpanel5;
 			//
 			//TODO: Add the constructor code here
 			//
@@ -67,6 +78,7 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Staff_Booking_Display";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Booking_Display::UserControl_Staff_Booking_Display_Load);
+			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Booking_Display::okkk);
 			this->ResumeLayout(false);
 
 		}
@@ -86,18 +98,34 @@ namespace GuestHouseManagement {
 					 i=i+1;
 					 //j=(j)%3 + 1;
 					 TextBox ^tb = gcnew TextBox();
-					 tb->Text = users_data->GetString(3) + "\r\n" + users_data->GetString(4) + "\r\n" + users_data->GetString(5) + "\r\n" + users_data->GetString(14) + "\r\n" + users_data->GetString(6) + "\r\n" + users_data->GetString(7);
+					 String ^str = users_data->GetString(14);
+					 int len = str->Length;
+					 tb->Text = "Name : " + users_data->GetString(3) + "\t\t Contact Number : " + users_data->GetString(7) + "\r\n" +
+								"Check-in : " + users_data->GetString(4) + "\t Check-out : " + users_data->GetString(5) + "\r\n" + 
+								"Room Nos. : " + str->Substring(0,len-1);
 					 //MessageBox::Show(tb->Text);
-					 tb->Location = System::Drawing::Point(25 , 100*(i-1)+10);
-					 tb->Width = 400;
+					 tb->Location = System::Drawing::Point(40 , 100*(i-1)+10);
+					 tb->Width = 580;
 					 tb->Height = 90;
 					 tb->Name = "TextBox" + i;
 					 tb->Multiline = true;
 					 tb->ReadOnly = true;
-					 tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+					 //tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+					 tb->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(96)), static_cast<System::Int32>(static_cast<System::Byte>(202)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(212)));
+					 tb->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+					 tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						 static_cast<System::Byte>(0)));
 					 this->Controls->Add(tb);
 				 }
 				 DB_Connection->Close();
+			 }
+	private: System::Void okkk(System::Object^  sender, System::EventArgs^  e) {
+				 pnl->Size = System::Drawing::Size(173, 44);
+				 pn2->Size = System::Drawing::Size(173, 44);
+				 pn3->Size = System::Drawing::Size(173, 44);
+				 pn4->Size = System::Drawing::Size(173, 44);
+				 pn5->Size = System::Drawing::Size(173, 44);
 			 }
 	};
 }
