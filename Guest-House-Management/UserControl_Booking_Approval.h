@@ -132,14 +132,13 @@ namespace GuestHouseManagement {
 			String ^ getdata = "Select * from [Booking_Request] where [ID] = " + x + ";";
 			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getdata, DB_Connection);
 			OleDbDataReader ^ room_data = cmd->ExecuteReader();
-
+			
 			while(room_data->Read() == true)
 			{
 				room_type = room_data->GetString(6);
 				datefrom = room_data->GetString(4);
 				dateto = room_data->GetString(5);
 			}
-			
 			cliext::vector<String^> room_full_data;
 			String ^temp;
 			for(int j=0;j<room_type->Length;j++)
@@ -157,6 +156,9 @@ namespace GuestHouseManagement {
 			
 			int f=1;
 			String ^room_numbers;
+
+
+
 			for(int i=0;i<room_full_data.size();i++)
 			{
 				int len = room_full_data[i]->Length;
@@ -166,38 +168,74 @@ namespace GuestHouseManagement {
 
 				int room_cnt = Convert::ToInt32(room_count3);
 				room_full_data[i] = room_full_data[i]->Substring(0,len-2);
-				//MessageBox::Show(room_type);
 				//Extracting Data of Room Available
+
 				DB_Connection->Open();
 				String ^ getroomNo2 = "Select * from [Room_No] where [Category] = '" + room_full_data[i] + "' AND [Status] = 'Available' ;";
 				cmd = gcnew OleDbCommand(getroomNo2, DB_Connection);
 				OleDbDataReader ^ room_data2 = cmd->ExecuteReader();
 				cliext::vector<String^> vec;
+
 				while(room_data2->Read() == true)
 				{
+					
 					String ^room_number = room_data2->GetString(1);
+					MessageBox::Show(room_number);
 					vec.push_back(room_number);
 				}
+
 				DB_Connection->Close();
 				int flag = 1;
+				if(vec.size()==0){
+					MessageBox::Show("No room for such room type available");
+					Txt_Room_Type_SelectedIndexChanged(sender,e);
+					return;
+				}
 				String ^room_to_be_booked = vec[0];
 				cliext::vector<String^> vec_can_be_booked;
-				
+				MessageBox::Show("3");
 				for(int i=0;i<vec.size();i++)
 				{
 					//vec[i] denotes the Potential Room No. Available
 					DB_Connection->Open();
-					String ^getUsers = "Select * from [Booking_Request] where [Approved] = 'YES' AND [Room_No] = '" + vec[i] + "' ;";
+					String ^getUsers = "Select * from [Booking_Request] where [Approved] = 'YES' ;";
 					cmd = gcnew OleDbCommand(getUsers,DB_Connection);
 					OleDbDataReader ^roomdata = cmd->ExecuteReader();
 					int flag = 0;
 					while(roomdata->Read() == true)
 					{
+						String ^temp_room_num = room_data->GetString(14);
+						//MessageBox::Show(temp_room_num);
+						cliext::vector<String^> vec2;
+						String ^store = "";
+						for(int k=0;k<temp_room_num->Length;k++)
+						{
+							if(temp_room_num[k] == ',')
+							{
+								vec2.push_back(store);
+								store = "";
+							}
+
+							else
+								store = store + temp_room_num[k];
+						}
+
+						int aux = 0;
+						for(int k=0;k<vec2.size();k++)
+						{
+							if(vec2[k] == vec[i])
+							{
+								aux=1;
+								break;
+							}
+						}
+						
+						if(aux == 0)
+							continue;
+
 						flag = 1;
 						String ^temp = roomdata->GetString(4);
-						//String ^datefrom2 = "20190401";
-						//String ^dateto2 = "20190408";
-						//MessageBox::Show(Convert::ToString(temp[4]));
+	
 						String ^datefrom2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
 						temp = roomdata->GetString(5);
 						String ^dateto2 =Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
@@ -217,22 +255,16 @@ namespace GuestHouseManagement {
 							if(mydateto_int <= datefrom_int)
 							{
 								vec_can_be_booked.push_back(vec[i]);
-								//room_to_be_booked = vec[i];
-								//I can book
-								//flag = 1;
-								//break;
-							}
+															}
 							else
 							{
-								//flag = 0;
-								//I can't book book
+								
 							}
 						}
 
 						else if(mydatefrom_int == datefrom_int)
 						{
-							//flag = 0;
-							//I can't book
+							
 						}
 
 						else if(mydatefrom_int > datefrom_int)
@@ -240,15 +272,11 @@ namespace GuestHouseManagement {
 							if(mydatefrom_int >= dateto_int)
 							{
 								vec_can_be_booked.push_back(vec[i]);
-								//room_to_be_booked = vec[i];
-								//I can book
-								//flag = 1;
-								//break;
+								
 							}
 							else
 							{
-								//flag = 0;
-								//I can't book
+								
 							}
 						}
 
@@ -260,8 +288,6 @@ namespace GuestHouseManagement {
 				
 				}
 
-				//MessageBox::Show(Convert::ToString(room_cnt));
-				//MessageBox::Show(Convert::ToString(vec_can_be_booked.size()));
 				if(vec_can_be_booked.size() < room_cnt )
 				{
 					f=0;

@@ -80,16 +80,16 @@ namespace GuestHouseManagement {
 				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUsers, DB_Connection);
 				 OleDbDataReader ^ users_data = cmd->ExecuteReader();
 
-				 int i=0, j=0;
+				 int i=0;
 				 while(users_data->Read() == true)
 				 {
 					 i=i+1;
-					 j=(j)%3 + 1;
+					 //j=(j)%3 + 1;
 					 TextBox ^tb = gcnew TextBox();
 					 tb->Text = users_data->GetString(3) + "\r\n" + users_data->GetString(4) + "\r\n" + users_data->GetString(5) + "\r\n" + users_data->GetString(14) + "\r\n" + users_data->GetString(6) + "\r\n" + users_data->GetString(7);
 					 //MessageBox::Show(tb->Text);
-					 tb->Location = System::Drawing::Point(25 + 200*(j-1),100*((i-1)/3)+100);
-					 tb->Width = 200;
+					 tb->Location = System::Drawing::Point(25 , 100*(i-1)+10);
+					 tb->Width = 400;
 					 tb->Height = 90;
 					 tb->Name = "TextBox" + i;
 					 tb->Multiline = true;

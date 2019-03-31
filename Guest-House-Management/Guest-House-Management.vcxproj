@@ -109,6 +109,7 @@
     <ClCompile Include="UserControl_Customer_Book_Edit.cpp" />
     <ClCompile Include="UserControl_Customer_Feedback.cpp" />
     <ClCompile Include="UserControl_Customer_Housekeeping.cpp" />
+    <ClCompile Include="UserControl_Extra_Charges.cpp" />
     <ClCompile Include="UserControl_Floor_Map.cpp" />
     <ClCompile Include="UserControl_Generate_Bill.cpp" />
     <ClCompile Include="UserControl_GuestHouseDetails.cpp" />
@@ -197,6 +198,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Customer_Housekeeping.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Extra_Charges.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Floor_Map.h">
@@ -342,6 +346,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Customer_Housekeeping.resx">
       <DependentUpon>UserControl_Customer_Housekeeping.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Extra_Charges.resx">
+      <DependentUpon>UserControl_Extra_Charges.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Floor_Map.resx">
       <DependentUpon>UserControl_Floor_Map.h</DependentUpon>
