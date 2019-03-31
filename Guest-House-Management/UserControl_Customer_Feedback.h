@@ -112,8 +112,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Customer_Feedback
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Controls->Add(this->Btn_Read_Feedback);
 			this->Controls->Add(this->Btn_Unread_Feedback);

@@ -404,8 +404,7 @@ private:
 	 // 
 	 // UserControl_Staff_Planner
 	 // 
-	 this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
-	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 	 this->AutoSize = true;
 	 this->BackColor = System::Drawing::Color::White;
 	 this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;

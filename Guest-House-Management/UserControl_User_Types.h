@@ -62,7 +62,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  Btn_Add;
 	protected: 
 	private: System::Windows::Forms::TextBox^  Txt_User_Type;
-	private: System::Windows::Forms::Button^  button1;
+
 
 
 	private:
@@ -80,7 +80,6 @@ namespace GuestHouseManagement {
 		{
 			this->Btn_Add = (gcnew System::Windows::Forms::Button());
 			this->Txt_User_Type = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// Btn_Add
@@ -102,24 +101,10 @@ namespace GuestHouseManagement {
 			this->Txt_User_Type->Size = System::Drawing::Size(113, 20);
 			this->Txt_User_Type->TabIndex = 2;
 			// 
-			// button1
-			// 
-			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button1->Location = System::Drawing::Point(405, 209);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(82, 32);
-			this->button1->TabIndex = 4;
-			this->button1->Text = L"Exit";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &UserControl_User_Types::button1_Click);
-			// 
 			// UserControl_User_Types
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
-			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Btn_Add);
 			this->Controls->Add(this->Txt_User_Type);
 			this->Name = L"UserControl_User_Types";

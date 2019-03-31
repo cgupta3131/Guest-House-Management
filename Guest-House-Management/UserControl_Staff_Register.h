@@ -355,8 +355,7 @@ private:
 	 // 
 	 // UserControl_Staff_Register
 	 // 
-	 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 	 this->Controls->Add(this->Text_DN);
 	 this->Controls->Add(this->label10);
 	 this->Controls->Add(this->label4);

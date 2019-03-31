@@ -170,8 +170,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Status_Room
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->Txt_Floor);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->Txt_Status);

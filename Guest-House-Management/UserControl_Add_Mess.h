@@ -90,10 +90,10 @@ namespace GuestHouseManagement {
 			this->button3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button3->Location = System::Drawing::Point(55, 40);
-			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button3->Location = System::Drawing::Point(41, 32);
+			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(133, 59);
+			this->button3->Size = System::Drawing::Size(100, 48);
 			this->button3->TabIndex = 73;
 			this->button3->Text = L"Mess Menu Pic Select";
 			this->button3->UseVisualStyleBackColor = false;
@@ -106,10 +106,10 @@ namespace GuestHouseManagement {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(55, 320);
-			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button1->Location = System::Drawing::Point(41, 260);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(133, 59);
+			this->button1->Size = System::Drawing::Size(100, 48);
 			this->button1->TabIndex = 74;
 			this->button1->Text = L"Save";
 			this->button1->UseVisualStyleBackColor = false;
@@ -118,8 +118,9 @@ namespace GuestHouseManagement {
 			// pictureBox1
 			// 
 			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(548, 339);
+			this->pictureBox1->Size = System::Drawing::Size(411, 275);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 75;
 			this->pictureBox1->TabStop = false;
@@ -131,10 +132,10 @@ namespace GuestHouseManagement {
 			this->button2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button2->Location = System::Drawing::Point(55, 168);
-			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->button2->Location = System::Drawing::Point(41, 136);
+			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(133, 59);
+			this->button2->Size = System::Drawing::Size(100, 48);
 			this->button2->TabIndex = 76;
 			this->button2->Text = L"Add Rates";
 			this->button2->UseVisualStyleBackColor = false;
@@ -143,24 +144,25 @@ namespace GuestHouseManagement {
 			// Mess_Panel
 			// 
 			this->Mess_Panel->Controls->Add(this->pictureBox1);
-			this->Mess_Panel->Location = System::Drawing::Point(202, 40);
+			this->Mess_Panel->Location = System::Drawing::Point(152, 32);
+			this->Mess_Panel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Mess_Panel->Name = L"Mess_Panel";
-			this->Mess_Panel->Size = System::Drawing::Size(548, 339);
+			this->Mess_Panel->Size = System::Drawing::Size(411, 275);
 			this->Mess_Panel->TabIndex = 77;
 			// 
 			// UserControl_Add_Mess
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->Mess_Panel);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->button3);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Add_Mess";
-			this->Size = System::Drawing::Size(893, 400);
+			this->Size = System::Drawing::Size(670, 325);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Mess::UserControl_Add_Mess_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Add_Mess::myMouseClick);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->Mess_Panel->ResumeLayout(false);
 			this->ResumeLayout(false);
 

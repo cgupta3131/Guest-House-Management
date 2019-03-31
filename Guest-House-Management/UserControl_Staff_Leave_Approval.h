@@ -194,7 +194,7 @@ namespace GuestHouseManagement {
 			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
 			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle4;
 			this->dataGridView1->Location = System::Drawing::Point(26, 86);
-			this->dataGridView1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersVisible = false;
@@ -271,7 +271,7 @@ namespace GuestHouseManagement {
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(603, 32);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(56, 29);
 			this->button1->TabIndex = 2;
@@ -281,13 +281,12 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff_Leave_Approval
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Staff_Leave_Approval";
 			this->Size = System::Drawing::Size(682, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Leave_Approval::UserControl_Staff_Leave_Approval_Load);

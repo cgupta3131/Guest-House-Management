@@ -88,222 +88,233 @@ private:
  /// </summary>
  void InitializeComponent(void)
  {
-  System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(UserControl_Generate_Bill::typeid));
-  this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
-  this->label_name = (gcnew System::Windows::Forms::Label());
-  this->label_address = (gcnew System::Windows::Forms::Label());
-  this->label_contact = (gcnew System::Windows::Forms::Label());
-  this->label_email = (gcnew System::Windows::Forms::Label());
-  this->label1 = (gcnew System::Windows::Forms::Label());
-  this->label2 = (gcnew System::Windows::Forms::Label());
-  this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-  this->label3 = (gcnew System::Windows::Forms::Label());
-  this->label4 = (gcnew System::Windows::Forms::Label());
-  this->label5 = (gcnew System::Windows::Forms::Label());
-  this->label6 = (gcnew System::Windows::Forms::Label());
-  this->label7 = (gcnew System::Windows::Forms::Label());
-  this->label8 = (gcnew System::Windows::Forms::Label());
-  this->label9 = (gcnew System::Windows::Forms::Label());
-  this->label10 = (gcnew System::Windows::Forms::Label());
-  (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
-  this->SuspendLayout();
-  // 
-  // pictureBox1
-  // 
-  this->pictureBox1->Location = System::Drawing::Point(31, 24);
-  this->pictureBox1->Name = L"pictureBox1";
-  this->pictureBox1->Size = System::Drawing::Size(156, 120);
-  this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-  this->pictureBox1->TabIndex = 0;
-  this->pictureBox1->TabStop = false;
-  // 
-  // label_name
-  // 
-  this->label_name->AutoSize = true;
-  this->label_name->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label_name->Location = System::Drawing::Point(272, 24);
-  this->label_name->Name = L"label_name";
-  this->label_name->Size = System::Drawing::Size(257, 39);
-  this->label_name->TabIndex = 44;
-  this->label_name->Text = L"XYZ Guest House";
-  // 
-  // label_address
-  // 
-  this->label_address->AutoSize = true;
-  this->label_address->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label_address->Location = System::Drawing::Point(273, 73);
-  this->label_address->Name = L"label_address";
-  this->label_address->Size = System::Drawing::Size(119, 29);
-  this->label_address->TabIndex = 45;
-  this->label_address->Text = L"First Name";
-  // 
-  // label_contact
-  // 
-  this->label_contact->AutoSize = true;
-  this->label_contact->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label_contact->Location = System::Drawing::Point(637, 24);
-  this->label_contact->Name = L"label_contact";
-  this->label_contact->Size = System::Drawing::Size(116, 28);
-  this->label_contact->TabIndex = 46;
-  this->label_contact->Text = L"First Name";
-  // 
-  // label_email
-  // 
-  this->label_email->AutoSize = true;
-  this->label_email->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label_email->Location = System::Drawing::Point(637, 73);
-  this->label_email->Name = L"label_email";
-  this->label_email->Size = System::Drawing::Size(116, 28);
-  this->label_email->TabIndex = 47;
-  this->label_email->Text = L"First Name";
-  // 
-  // label1
-  // 
-  this->label1->Location = System::Drawing::Point(0, 0);
-  this->label1->Name = L"label1";
-  this->label1->Size = System::Drawing::Size(100, 23);
-  this->label1->TabIndex = 0;
-  // 
-  // label2
-  // 
-  this->label2->AutoSize = true;
-  this->label2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label2->Location = System::Drawing::Point(26, 233);
-  this->label2->Name = L"label2";
-  this->label2->Size = System::Drawing::Size(116, 28);
-  this->label2->TabIndex = 48;
-  this->label2->Text = L"First Name";
-  // 
-  // textBox1
-  // 
-  this->textBox1->BackColor = System::Drawing::SystemColors::Control;
-  this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
-  this->textBox1->Location = System::Drawing::Point(31, 150);
-  this->textBox1->Name = L"textBox1";
-  this->textBox1->Size = System::Drawing::Size(853, 15);
-  this->textBox1->TabIndex = 49;
-  this->textBox1->Text = resources->GetString(L"textBox1.Text");
-  // 
-  // label3
-  // 
-  this->label3->AutoSize = true;
-  this->label3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label3->Location = System::Drawing::Point(195, 233);
-  this->label3->Name = L"label3";
-  this->label3->Size = System::Drawing::Size(116, 28);
-  this->label3->TabIndex = 50;
-  this->label3->Text = L"First Name";
-  // 
-  // label4
-  // 
-  this->label4->AutoSize = true;
-  this->label4->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label4->Location = System::Drawing::Point(375, 233);
-  this->label4->Name = L"label4";
-  this->label4->Size = System::Drawing::Size(116, 28);
-  this->label4->TabIndex = 51;
-  this->label4->Text = L"First Name";
-  // 
-  // label5
-  // 
-  this->label5->AutoSize = true;
-  this->label5->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label5->Location = System::Drawing::Point(560, 233);
-  this->label5->Name = L"label5";
-  this->label5->Size = System::Drawing::Size(116, 28);
-  this->label5->TabIndex = 52;
-  this->label5->Text = L"First Name";
-  // 
-  // label6
-  // 
-  this->label6->AutoSize = true;
-  this->label6->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)), 
-   System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-  this->label6->Location = System::Drawing::Point(313, 183);
-  this->label6->Name = L"label6";
-  this->label6->Size = System::Drawing::Size(147, 34);
-  this->label6->TabIndex = 53;
-  this->label6->Text = L"First Name";
-  // 
-  // label7
-  // 
-  this->label7->AutoSize = true;
-  this->label7->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label7->Location = System::Drawing::Point(26, 277);
-  this->label7->Name = L"label7";
-  this->label7->Size = System::Drawing::Size(116, 28);
-  this->label7->TabIndex = 54;
-  this->label7->Text = L"First Name";
-  // 
-  // label8
-  // 
-  this->label8->AutoSize = true;
-  this->label8->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label8->Location = System::Drawing::Point(195, 277);
-  this->label8->Name = L"label8";
-  this->label8->Size = System::Drawing::Size(116, 28);
-  this->label8->TabIndex = 55;
-  this->label8->Text = L"First Name";
-  // 
-  // label9
-  // 
-  this->label9->AutoSize = true;
-  this->label9->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label9->Location = System::Drawing::Point(375, 277);
-  this->label9->Name = L"label9";
-  this->label9->Size = System::Drawing::Size(116, 28);
-  this->label9->TabIndex = 56;
-  this->label9->Text = L"First Name";
-  // 
-  // label10
-  // 
-  this->label10->AutoSize = true;
-  this->label10->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-   static_cast<System::Byte>(0)));
-  this->label10->Location = System::Drawing::Point(560, 277);
-  this->label10->Name = L"label10";
-  this->label10->Size = System::Drawing::Size(116, 28);
-  this->label10->TabIndex = 57;
-  this->label10->Text = L"First Name";
-  // 
-  // UserControl_Generate_Bill
-  // 
-  this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-  this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-  this->AutoScroll = true;
-  this->Controls->Add(this->label10);
-  this->Controls->Add(this->label9);
-  this->Controls->Add(this->label8);
-  this->Controls->Add(this->label7);
-  this->Controls->Add(this->label6);
-  this->Controls->Add(this->label5);
-  this->Controls->Add(this->label4);
-  this->Controls->Add(this->label3);
-  this->Controls->Add(this->textBox1);
-  this->Controls->Add(this->label2);
-  this->Controls->Add(this->label_email);
-  this->Controls->Add(this->label_contact);
-  this->Controls->Add(this->label_address);
-  this->Controls->Add(this->label_name);
-  this->Controls->Add(this->pictureBox1);
-  this->Margin = System::Windows::Forms::Padding(4);
-  this->Name = L"UserControl_Generate_Bill";
-  this->Size = System::Drawing::Size(909, 681);
-  this->Load += gcnew System::EventHandler(this, &UserControl_Generate_Bill::UserControl_Generate_Bill_Load);
-  (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
-  this->ResumeLayout(false);
-  this->PerformLayout();
+	 this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+	 this->label_name = (gcnew System::Windows::Forms::Label());
+	 this->label_address = (gcnew System::Windows::Forms::Label());
+	 this->label_contact = (gcnew System::Windows::Forms::Label());
+	 this->label_email = (gcnew System::Windows::Forms::Label());
+	 this->label1 = (gcnew System::Windows::Forms::Label());
+	 this->label2 = (gcnew System::Windows::Forms::Label());
+	 this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+	 this->label3 = (gcnew System::Windows::Forms::Label());
+	 this->label4 = (gcnew System::Windows::Forms::Label());
+	 this->label5 = (gcnew System::Windows::Forms::Label());
+	 this->label6 = (gcnew System::Windows::Forms::Label());
+	 this->label7 = (gcnew System::Windows::Forms::Label());
+	 this->label8 = (gcnew System::Windows::Forms::Label());
+	 this->label9 = (gcnew System::Windows::Forms::Label());
+	 this->label10 = (gcnew System::Windows::Forms::Label());
+	 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
+	 this->SuspendLayout();
+	 // 
+	 // pictureBox1
+	 // 
+	 this->pictureBox1->Location = System::Drawing::Point(23, 20);
+	 this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->pictureBox1->Name = L"pictureBox1";
+	 this->pictureBox1->Size = System::Drawing::Size(117, 98);
+	 this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+	 this->pictureBox1->TabIndex = 0;
+	 this->pictureBox1->TabStop = false;
+	 // 
+	 // label_name
+	 // 
+	 this->label_name->AutoSize = true;
+	 this->label_name->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 16.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label_name->Location = System::Drawing::Point(204, 20);
+	 this->label_name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label_name->Name = L"label_name";
+	 this->label_name->Size = System::Drawing::Size(201, 31);
+	 this->label_name->TabIndex = 44;
+	 this->label_name->Text = L"XYZ Guest House";
+	 // 
+	 // label_address
+	 // 
+	 this->label_address->AutoSize = true;
+	 this->label_address->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label_address->Location = System::Drawing::Point(205, 59);
+	 this->label_address->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label_address->Name = L"label_address";
+	 this->label_address->Size = System::Drawing::Size(95, 23);
+	 this->label_address->TabIndex = 45;
+	 this->label_address->Text = L"First Name";
+	 // 
+	 // label_contact
+	 // 
+	 this->label_contact->AutoSize = true;
+	 this->label_contact->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label_contact->Location = System::Drawing::Point(478, 20);
+	 this->label_contact->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label_contact->Name = L"label_contact";
+	 this->label_contact->Size = System::Drawing::Size(92, 23);
+	 this->label_contact->TabIndex = 46;
+	 this->label_contact->Text = L"First Name";
+	 // 
+	 // label_email
+	 // 
+	 this->label_email->AutoSize = true;
+	 this->label_email->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label_email->Location = System::Drawing::Point(478, 59);
+	 this->label_email->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label_email->Name = L"label_email";
+	 this->label_email->Size = System::Drawing::Size(92, 23);
+	 this->label_email->TabIndex = 47;
+	 this->label_email->Text = L"First Name";
+	 // 
+	 // label1
+	 // 
+	 this->label1->Location = System::Drawing::Point(0, 0);
+	 this->label1->Name = L"label1";
+	 this->label1->Size = System::Drawing::Size(100, 23);
+	 this->label1->TabIndex = 0;
+	 // 
+	 // label2
+	 // 
+	 this->label2->AutoSize = true;
+	 this->label2->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label2->Location = System::Drawing::Point(20, 189);
+	 this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label2->Name = L"label2";
+	 this->label2->Size = System::Drawing::Size(92, 23);
+	 this->label2->TabIndex = 48;
+	 this->label2->Text = L"First Name";
+	 // 
+	 // textBox1
+	 // 
+	 this->textBox1->BackColor = System::Drawing::SystemColors::Control;
+	 this->textBox1->BorderStyle = System::Windows::Forms::BorderStyle::None;
+	 this->textBox1->Location = System::Drawing::Point(23, 122);
+	 this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->textBox1->Name = L"textBox1";
+	 this->textBox1->Size = System::Drawing::Size(640, 13);
+	 this->textBox1->TabIndex = 49;
+	 // 
+	 // label3
+	 // 
+	 this->label3->AutoSize = true;
+	 this->label3->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label3->Location = System::Drawing::Point(146, 189);
+	 this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label3->Name = L"label3";
+	 this->label3->Size = System::Drawing::Size(92, 23);
+	 this->label3->TabIndex = 50;
+	 this->label3->Text = L"First Name";
+	 // 
+	 // label4
+	 // 
+	 this->label4->AutoSize = true;
+	 this->label4->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label4->Location = System::Drawing::Point(281, 189);
+	 this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label4->Name = L"label4";
+	 this->label4->Size = System::Drawing::Size(92, 23);
+	 this->label4->TabIndex = 51;
+	 this->label4->Text = L"First Name";
+	 // 
+	 // label5
+	 // 
+	 this->label5->AutoSize = true;
+	 this->label5->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label5->Location = System::Drawing::Point(420, 189);
+	 this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label5->Name = L"label5";
+	 this->label5->Size = System::Drawing::Size(92, 23);
+	 this->label5->TabIndex = 52;
+	 this->label5->Text = L"First Name";
+	 // 
+	 // label6
+	 // 
+	 this->label6->AutoSize = true;
+	 this->label6->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 13.8F, static_cast<System::Drawing::FontStyle>((System::Drawing::FontStyle::Bold | System::Drawing::FontStyle::Italic)), 
+		 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+	 this->label6->Location = System::Drawing::Point(235, 149);
+	 this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label6->Name = L"label6";
+	 this->label6->Size = System::Drawing::Size(116, 27);
+	 this->label6->TabIndex = 53;
+	 this->label6->Text = L"First Name";
+	 // 
+	 // label7
+	 // 
+	 this->label7->AutoSize = true;
+	 this->label7->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label7->Location = System::Drawing::Point(20, 225);
+	 this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label7->Name = L"label7";
+	 this->label7->Size = System::Drawing::Size(92, 23);
+	 this->label7->TabIndex = 54;
+	 this->label7->Text = L"First Name";
+	 // 
+	 // label8
+	 // 
+	 this->label8->AutoSize = true;
+	 this->label8->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label8->Location = System::Drawing::Point(146, 225);
+	 this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label8->Name = L"label8";
+	 this->label8->Size = System::Drawing::Size(92, 23);
+	 this->label8->TabIndex = 55;
+	 this->label8->Text = L"First Name";
+	 // 
+	 // label9
+	 // 
+	 this->label9->AutoSize = true;
+	 this->label9->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label9->Location = System::Drawing::Point(281, 225);
+	 this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label9->Name = L"label9";
+	 this->label9->Size = System::Drawing::Size(92, 23);
+	 this->label9->TabIndex = 56;
+	 this->label9->Text = L"First Name";
+	 // 
+	 // label10
+	 // 
+	 this->label10->AutoSize = true;
+	 this->label10->Font = (gcnew System::Drawing::Font(L"Comic Sans MS", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+		 static_cast<System::Byte>(0)));
+	 this->label10->Location = System::Drawing::Point(420, 225);
+	 this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+	 this->label10->Name = L"label10";
+	 this->label10->Size = System::Drawing::Size(92, 23);
+	 this->label10->TabIndex = 57;
+	 this->label10->Text = L"First Name";
+	 // 
+	 // UserControl_Generate_Bill
+	 // 
+	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+	 this->AutoScroll = true;
+	 this->Controls->Add(this->label10);
+	 this->Controls->Add(this->label9);
+	 this->Controls->Add(this->label8);
+	 this->Controls->Add(this->label7);
+	 this->Controls->Add(this->label6);
+	 this->Controls->Add(this->label5);
+	 this->Controls->Add(this->label4);
+	 this->Controls->Add(this->label3);
+	 this->Controls->Add(this->textBox1);
+	 this->Controls->Add(this->label2);
+	 this->Controls->Add(this->label_email);
+	 this->Controls->Add(this->label_contact);
+	 this->Controls->Add(this->label_address);
+	 this->Controls->Add(this->label_name);
+	 this->Controls->Add(this->pictureBox1);
+	 this->Name = L"UserControl_Generate_Bill";
+	 this->Size = System::Drawing::Size(682, 553);
+	 this->Load += gcnew System::EventHandler(this, &UserControl_Generate_Bill::UserControl_Generate_Bill_Load);
+	 (cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
+	 this->ResumeLayout(false);
+	 this->PerformLayout();
 
  }
 #pragma endregion

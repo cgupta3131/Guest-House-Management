@@ -103,9 +103,10 @@ namespace GuestHouseManagement {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(33, 41);
+			this->label1->Location = System::Drawing::Point(25, 33);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(134, 23);
+			this->label1->Size = System::Drawing::Size(105, 21);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Place Name";
 			// 
@@ -114,9 +115,10 @@ namespace GuestHouseManagement {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(33, 110);
+			this->label2->Location = System::Drawing::Point(25, 89);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(117, 23);
+			this->label2->Size = System::Drawing::Size(97, 21);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Description";
 			// 
@@ -125,9 +127,10 @@ namespace GuestHouseManagement {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(33, 169);
+			this->label3->Location = System::Drawing::Point(25, 137);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(274, 23);
+			this->label3->Size = System::Drawing::Size(220, 21);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Distance from Guest House";
 			// 
@@ -136,40 +139,45 @@ namespace GuestHouseManagement {
 			this->label4->AutoSize = true;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(33, 209);
+			this->label4->Location = System::Drawing::Point(25, 170);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(248, 46);
+			this->label4->Size = System::Drawing::Size(202, 42);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Modes of transportation \r\navailable\r\n";
 			// 
 			// Text_Place
 			// 
-			this->Text_Place->Location = System::Drawing::Point(344, 44);
+			this->Text_Place->Location = System::Drawing::Point(258, 36);
+			this->Text_Place->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Text_Place->Name = L"Text_Place";
-			this->Text_Place->Size = System::Drawing::Size(344, 22);
+			this->Text_Place->Size = System::Drawing::Size(259, 20);
 			this->Text_Place->TabIndex = 4;
 			// 
 			// Text_Desc
 			// 
-			this->Text_Desc->Location = System::Drawing::Point(344, 89);
+			this->Text_Desc->Location = System::Drawing::Point(258, 72);
+			this->Text_Desc->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Text_Desc->Multiline = true;
 			this->Text_Desc->Name = L"Text_Desc";
-			this->Text_Desc->Size = System::Drawing::Size(344, 64);
+			this->Text_Desc->Size = System::Drawing::Size(259, 53);
 			this->Text_Desc->TabIndex = 5;
 			// 
 			// Text_Dist
 			// 
-			this->Text_Dist->Location = System::Drawing::Point(344, 172);
+			this->Text_Dist->Location = System::Drawing::Point(258, 140);
+			this->Text_Dist->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Text_Dist->Name = L"Text_Dist";
-			this->Text_Dist->Size = System::Drawing::Size(344, 22);
+			this->Text_Dist->Size = System::Drawing::Size(259, 20);
 			this->Text_Dist->TabIndex = 6;
 			// 
 			// Text_Trans
 			// 
-			this->Text_Trans->Location = System::Drawing::Point(344, 214);
+			this->Text_Trans->Location = System::Drawing::Point(258, 174);
+			this->Text_Trans->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Text_Trans->Multiline = true;
 			this->Text_Trans->Name = L"Text_Trans";
-			this->Text_Trans->Size = System::Drawing::Size(344, 41);
+			this->Text_Trans->Size = System::Drawing::Size(259, 34);
 			this->Text_Trans->TabIndex = 7;
 			// 
 			// Btn_Create
@@ -179,10 +187,10 @@ namespace GuestHouseManagement {
 			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Create->Location = System::Drawing::Point(328, 312);
-			this->Btn_Create->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Create->Location = System::Drawing::Point(246, 254);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Create->Name = L"Btn_Create";
-			this->Btn_Create->Size = System::Drawing::Size(189, 59);
+			this->Btn_Create->Size = System::Drawing::Size(142, 48);
 			this->Btn_Create->TabIndex = 69;
 			this->Btn_Create->Text = L"Add Place";
 			this->Btn_Create->UseVisualStyleBackColor = false;
@@ -195,10 +203,10 @@ namespace GuestHouseManagement {
 			this->Btn_Image->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Btn_Image->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Image->Location = System::Drawing::Point(37, 312);
-			this->Btn_Image->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->Btn_Image->Location = System::Drawing::Point(28, 254);
+			this->Btn_Image->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Image->Name = L"Btn_Image";
-			this->Btn_Image->Size = System::Drawing::Size(189, 59);
+			this->Btn_Image->Size = System::Drawing::Size(142, 48);
 			this->Btn_Image->TabIndex = 70;
 			this->Btn_Image->Text = L"Add Image";
 			this->Btn_Image->UseVisualStyleBackColor = false;
@@ -206,17 +214,17 @@ namespace GuestHouseManagement {
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(626, 278);
+			this->pictureBox1->Location = System::Drawing::Point(470, 226);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(181, 119);
+			this->pictureBox1->Size = System::Drawing::Size(136, 97);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 71;
 			this->pictureBox1->TabStop = false;
 			// 
 			// UserControl_Add_Places
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->Btn_Image);
 			this->Controls->Add(this->Btn_Create);
@@ -228,8 +236,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Add_Places";
-			this->Size = System::Drawing::Size(893, 400);
+			this->Size = System::Drawing::Size(670, 325);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Places::UserControl_Add_Places_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Add_Places::myMouseClick);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();

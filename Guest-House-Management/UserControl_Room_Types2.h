@@ -136,8 +136,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Room_Types2
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);

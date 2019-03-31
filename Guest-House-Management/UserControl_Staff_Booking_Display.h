@@ -72,8 +72,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff_Booking_Display
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Name = L"UserControl_Staff_Booking_Display";
 			this->Size = System::Drawing::Size(682, 553);

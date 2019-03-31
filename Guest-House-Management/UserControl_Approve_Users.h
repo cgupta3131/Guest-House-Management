@@ -81,8 +81,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Approve_Users
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->Controls->Add(this->label1);

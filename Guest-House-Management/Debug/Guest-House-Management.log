@@ -1,13 +1,35 @@
-﻿Build started 3/31/2019 7:10:07 PM.
+﻿Build started 3/31/2019 8:12:48 PM.
      1>Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
-         All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Form_Reception.cpp "Guest-House-Management.cpp" UserControl_Booking_Approval.cpp UserControl_Login.cpp /clr:nostdlib 
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
+         stdafx.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Staff_Planner.h(514): warning C4101: 'name' : unreferenced local variable
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt AssemblyInfo.cpp Form_Customer_Homepage.cpp Form_Edit_Booking.cpp Form_Edit_Staff_Details.cpp Form_Feedback.cpp Form_Reception.cpp Form_Show_Guest_House_Facilities.cpp "Guest-House-Management.cpp" UserControl_Add_Cab_Details.cpp UserControl_Add_Mess.cpp UserControl_Add_Places.cpp UserControl_Add_Restaurant.cpp UserControl_Add_Room.cpp UserControl_Approve_Users.cpp UserControl_Booking_Approval.cpp UserControl_Customer_Admin_Feedback.cpp UserControl_Customer_Book_Edit.cpp UserControl_Customer_Feedback.cpp UserControl_Customer_Housekeeping.cpp UserControl_Extra_Charges.cpp UserControl_Floor_Map.cpp UserControl_Generate_Bill.cpp UserControl_GuestHouseDetails.cpp UserControl_Guest_House_Info.cpp UserControl_In_Stay_Facilities.cpp UserControl_Login.cpp UserControl_Mess_Rates.cpp UserControl_Room_Types.cpp UserControl_Room_Types2.cpp UserControl_Signup.cpp UserControl_Staff.cpp UserControl_Staff_Booking_Display.cpp UserControl_Staff_Edit.cpp UserControl_Staff_Edit_Details.cpp UserControl_Staff_Housekeeping_Approval.cpp UserControl_Staff_Leave.cpp UserControl_Staff_Leave_Approval.cpp UserControl_Staff_Planner.cpp UserControl_Staff_Planner_Requirements.cpp UserControl_Staff_Record.cpp UserControl_Staff_Register.cpp UserControl_Staff_View_Details.cpp UserControl_Status_Room.cpp UserControl_User_Types.cpp UserControl_View_Cab.cpp UserControl_View_Mess.cpp UserControl_View_Restaurants.cpp UserControl_View_TouristPlaces.cpp /clr:nostdlib 
+         AssemblyInfo.cpp
+         Form_Customer_Homepage.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+         Form_Edit_Booking.cpp
+         Form_Edit_Staff_Details.cpp
+         Form_Feedback.cpp
          Form_Reception.cpp
+         Form_Show_Guest_House_Facilities.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
          Guest-House-Management.cpp
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
@@ -21,7 +43,47 @@
                  [
                      _Value_t=System::String ^
                  ]
+         UserControl_Add_Cab_Details.cpp
+         UserControl_Add_Mess.cpp
+         UserControl_Add_Places.cpp
+         UserControl_Add_Restaurant.cpp
+         UserControl_Add_Room.cpp
+         UserControl_Approve_Users.cpp
          UserControl_Booking_Approval.cpp
+         UserControl_Customer_Admin_Feedback.cpp
+         UserControl_Customer_Book_Edit.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+         UserControl_Customer_Feedback.cpp
+         UserControl_Customer_Housekeeping.cpp
+         UserControl_Extra_Charges.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(34): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+         Generating Code...
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(197): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(197): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(197): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+         Compiling...
+         UserControl_Floor_Map.cpp
+         UserControl_Generate_Bill.cpp
+         UserControl_GuestHouseDetails.cpp
+         UserControl_Guest_House_Info.cpp
+         UserControl_In_Stay_Facilities.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
          UserControl_Login.cpp
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
      1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
@@ -35,14 +97,60 @@
                  [
                      _Value_t=System::String ^
                  ]
+         UserControl_Mess_Rates.cpp
+         UserControl_Room_Types.cpp
+         UserControl_Room_Types2.cpp
+         UserControl_Signup.cpp
+         UserControl_Staff.cpp
+         UserControl_Staff_Booking_Display.cpp
+         UserControl_Staff_Edit.cpp
+         UserControl_Staff_Edit_Details.cpp
+         UserControl_Staff_Housekeeping_Approval.cpp
+         UserControl_Staff_Leave.cpp
+         UserControl_Staff_Leave_Approval.cpp
+         UserControl_Staff_Planner.cpp
+         UserControl_Staff_Planner_Requirements.cpp
+         UserControl_Staff_Record.cpp
          Generating Code...
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(198): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(198): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(198): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(198): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(197): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(197): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+         Compiling...
+         UserControl_Staff_Register.cpp
+         UserControl_Staff_View_Details.cpp
+         UserControl_Status_Room.cpp
+         UserControl_User_Types.cpp
+         UserControl_View_Cab.cpp
+         UserControl_View_Mess.cpp
+         UserControl_View_Restaurants.cpp
+         UserControl_View_TouristPlaces.cpp
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(149): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(181): warning C4101: 'ex' : unreferenced local variable
+         Generating Code...
          All outputs are up-to-date.
        CoreResGen:
-         No resources are out of date with respect to their source files. Skipping resource generation.
+         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile UserControl_Add_Cab_Details.resx,Debug\GuestHouseManagement.UserControl_Add_Cab_Details.resources UserControl_Add_Mess.resx,Debug\GuestHouseManagement.UserControl_Add_Mess.resources UserControl_Add_Places.resx,Debug\GuestHouseManagement.UserControl_Add_Places.resources UserControl_Add_Restaurant.resx,Debug\GuestHouseManagement.UserControl_Add_Restaurant.resources UserControl_Booking_Approval.resx,Debug\GuestHouseManagement.UserControl_Booking_Approval.resources Form_Reception.resx,Debug\GuestHouseManagement.Form_Reception.resources UserControl_Approve_Users.resx,Debug\GuestHouseManagement.UserControl_Approve_Users.resources UserControl_Customer_Feedback.resx,Debug\GuestHouseManagement.UserControl_Customer_Feedback.resources UserControl_Floor_Map.resx,Debug\GuestHouseManagement.UserControl_Floor_Map.resources UserControl_Generate_Bill.resx,Debug\GuestHouseManagement.UserControl_Generate_Bill.resources UserControl_GuestHouseDetails.resx,Debug\GuestHouseManagement.UserControl_GuestHouseDetails.resources UserControl_Guest_House_Info.resx,Debug\GuestHouseManagement.UserControl_Guest_House_Info.resources UserControl_Room_Types2.resx,Debug\GuestHouseManagement.UserControl_Room_Types2.resources UserControl_Staff_Booking_Display.resx,Debug\GuestHouseManagement.UserControl_Staff_Booking_Display.resources UserControl_Staff_Edit.resx,Debug\GuestHouseManagement.UserControl_Staff_Edit.resources UserControl_Staff_Housekeeping_Approval.resx,Debug\GuestHouseManagement.UserControl_Staff_Housekeeping_Approval.resources UserControl_Staff_Leave.resx,Debug\GuestHouseManagement.UserControl_Staff_Leave.resources UserControl_Staff_Leave_Approval.resx,Debug\GuestHouseManagement.UserControl_Staff_Leave_Approval.resources UserControl_Staff_Planner.resx,Debug\GuestHouseManagement.UserControl_Staff_Planner.resources UserControl_Staff_Register.resx,Debug\GuestHouseManagement.UserControl_Staff_Register.resources UserControl_Status_Room.resx,Debug\GuestHouseManagement.UserControl_Status_Room.resources UserControl_User_Types.resx,Debug\GuestHouseManagement.UserControl_User_Types.resources
+         Processing resource file "UserControl_Add_Cab_Details.resx" into "Debug\GuestHouseManagement.UserControl_Add_Cab_Details.resources".
+         Processing resource file "UserControl_Add_Mess.resx" into "Debug\GuestHouseManagement.UserControl_Add_Mess.resources".
+         Processing resource file "UserControl_Add_Places.resx" into "Debug\GuestHouseManagement.UserControl_Add_Places.resources".
+         Processing resource file "UserControl_Add_Restaurant.resx" into "Debug\GuestHouseManagement.UserControl_Add_Restaurant.resources".
+         Processing resource file "UserControl_Booking_Approval.resx" into "Debug\GuestHouseManagement.UserControl_Booking_Approval.resources".
+         Processing resource file "Form_Reception.resx" into "Debug\GuestHouseManagement.Form_Reception.resources".
+         Processing resource file "UserControl_Approve_Users.resx" into "Debug\GuestHouseManagement.UserControl_Approve_Users.resources".
+         Processing resource file "UserControl_Customer_Feedback.resx" into "Debug\GuestHouseManagement.UserControl_Customer_Feedback.resources".
+         Processing resource file "UserControl_Floor_Map.resx" into "Debug\GuestHouseManagement.UserControl_Floor_Map.resources".
+         Processing resource file "UserControl_Generate_Bill.resx" into "Debug\GuestHouseManagement.UserControl_Generate_Bill.resources".
+         Processing resource file "UserControl_GuestHouseDetails.resx" into "Debug\GuestHouseManagement.UserControl_GuestHouseDetails.resources".
+         Processing resource file "UserControl_Guest_House_Info.resx" into "Debug\GuestHouseManagement.UserControl_Guest_House_Info.resources".
+         Processing resource file "UserControl_Room_Types2.resx" into "Debug\GuestHouseManagement.UserControl_Room_Types2.resources".
+         Processing resource file "UserControl_Staff_Booking_Display.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Booking_Display.resources".
+         Processing resource file "UserControl_Staff_Edit.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Edit.resources".
+         Processing resource file "UserControl_Staff_Housekeeping_Approval.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Housekeeping_Approval.resources".
+         Processing resource file "UserControl_Staff_Leave.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Leave.resources".
+         Processing resource file "UserControl_Staff_Leave_Approval.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Leave_Approval.resources".
+         Processing resource file "UserControl_Staff_Planner.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Planner.resources".
+         Processing resource file "UserControl_Staff_Register.resx" into "Debug\GuestHouseManagement.UserControl_Staff_Register.resources".
+         Processing resource file "UserControl_Status_Room.resx" into "Debug\GuestHouseManagement.UserControl_Status_Room.resources".
+         Processing resource file "UserControl_User_Types.resx" into "Debug\GuestHouseManagement.UserControl_User_Types.resources".
        ResourceCompile:
          All outputs are up-to-date.
        Link:
@@ -109,4 +217,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:04.89
+Time Elapsed 00:00:17.50

@@ -89,7 +89,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->Btn_Create->Location = System::Drawing::Point(23, 23);
-			this->Btn_Create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Create->Name = L"Btn_Create";
 			this->Btn_Create->Size = System::Drawing::Size(94, 48);
 			this->Btn_Create->TabIndex = 68;
@@ -105,7 +105,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button1->Location = System::Drawing::Point(143, 23);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(98, 48);
 			this->button1->TabIndex = 69;
@@ -121,7 +121,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button2->Location = System::Drawing::Point(260, 23);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(100, 48);
 			this->button2->TabIndex = 70;
@@ -132,7 +132,7 @@ namespace GuestHouseManagement {
 			// panel1
 			// 
 			this->panel1->Location = System::Drawing::Point(23, 92);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(670, 325);
 			this->panel1->TabIndex = 71;
@@ -145,7 +145,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->button4->Location = System::Drawing::Point(383, 23);
-			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(100, 48);
 			this->button4->TabIndex = 73;
@@ -155,15 +155,14 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_GuestHouseDetails
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->button4);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Btn_Create);
 			this->Location = System::Drawing::Point(31, 111);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_GuestHouseDetails";
 			this->Size = System::Drawing::Size(746, 434);
 			this->Load += gcnew System::EventHandler(this, &UserControl_GuestHouseDetails::UserControl_GuestHouseDetails_Load);

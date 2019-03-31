@@ -95,7 +95,7 @@ namespace GuestHouseManagement {
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Location = System::Drawing::Point(208, 84);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(165, 21);
 			this->comboBox1->TabIndex = 1;
@@ -116,7 +116,7 @@ namespace GuestHouseManagement {
 			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy";
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker1->Location = System::Drawing::Point(208, 131);
-			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
 			this->dateTimePicker1->Size = System::Drawing::Size(165, 20);
 			this->dateTimePicker1->TabIndex = 3;
@@ -138,7 +138,7 @@ namespace GuestHouseManagement {
 			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy";
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->dateTimePicker2->Location = System::Drawing::Point(208, 172);
-			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
 			this->dateTimePicker2->Size = System::Drawing::Size(165, 20);
 			this->dateTimePicker2->TabIndex = 5;
@@ -147,7 +147,7 @@ namespace GuestHouseManagement {
 			// btn_submit
 			// 
 			this->btn_submit->Location = System::Drawing::Point(208, 232);
-			this->btn_submit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_submit->Margin = System::Windows::Forms::Padding(2);
 			this->btn_submit->Name = L"btn_submit";
 			this->btn_submit->Size = System::Drawing::Size(164, 32);
 			this->btn_submit->TabIndex = 6;
@@ -157,8 +157,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff_Leave
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->btn_submit);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->label3);
@@ -166,7 +165,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Staff_Leave";
 			this->Size = System::Drawing::Size(539, 316);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Leave::UserControl_Staff_Leave_Load);

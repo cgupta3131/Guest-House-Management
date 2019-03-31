@@ -183,13 +183,12 @@ namespace GuestHouseManagement {
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->button7 = (gcnew System::Windows::Forms::Button());
-			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->Btn_Create = (gcnew System::Windows::Forms::Button());
-			this->Output_Panel->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->panel3->SuspendLayout();
@@ -204,12 +203,13 @@ namespace GuestHouseManagement {
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->Btn_Staff_Info->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Btn_Staff_Info->Location = System::Drawing::Point(15, 305);
+			this->Btn_Staff_Info->Location = System::Drawing::Point(121, 430);
 			this->Btn_Staff_Info->Name = L"Btn_Staff_Info";
-			this->Btn_Staff_Info->Size = System::Drawing::Size(158, 71);
+			this->Btn_Staff_Info->Size = System::Drawing::Size(34, 29);
 			this->Btn_Staff_Info->TabIndex = 2;
 			this->Btn_Staff_Info->Text = L"Staff Info";
 			this->Btn_Staff_Info->UseVisualStyleBackColor = false;
+			this->Btn_Staff_Info->Visible = false;
 			this->Btn_Staff_Info->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Staff_Info_Click);
 			// 
 			// Btn_Guest_Info
@@ -248,29 +248,29 @@ namespace GuestHouseManagement {
 			// 
 			// Output_Panel
 			// 
+			this->Output_Panel->AutoScroll = true;
 			this->Output_Panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(209)));
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->Output_Panel->Controls->Add(this->Btn_Staff_Info);
-			this->Output_Panel->Controls->Add(this->Btn_Read_Feedback);
-			this->Output_Panel->Controls->Add(this->Btn_Unread_Feedback);
-			this->Output_Panel->Controls->Add(this->Btn_All_Feedback);
 			this->Output_Panel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Output_Panel->Location = System::Drawing::Point(162, 44);
 			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(855, 543);
+			this->Output_Panel->Size = System::Drawing::Size(868, 553);
 			this->Output_Panel->TabIndex = 16;
+			this->Output_Panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Reception::Output_Panel_Paint);
 			this->Output_Panel->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Output_Panel_MouseEnter);
 			// 
 			// Btn_Read_Feedback
 			// 
 			this->Btn_Read_Feedback->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)), static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_Read_Feedback->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_Read_Feedback->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->Btn_Read_Feedback->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Btn_Read_Feedback->Location = System::Drawing::Point(24, 220);
+			this->Btn_Read_Feedback->Location = System::Drawing::Point(0, 205);
 			this->Btn_Read_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Read_Feedback->Name = L"Btn_Read_Feedback";
 			this->Btn_Read_Feedback->Size = System::Drawing::Size(158, 71);
@@ -283,9 +283,11 @@ namespace GuestHouseManagement {
 			// 
 			this->Btn_Unread_Feedback->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(56)), static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_Unread_Feedback->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_Unread_Feedback->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->Btn_Unread_Feedback->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Btn_Unread_Feedback->Location = System::Drawing::Point(280, 306);
+			this->Btn_Unread_Feedback->Location = System::Drawing::Point(0, 134);
 			this->Btn_Unread_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Unread_Feedback->Name = L"Btn_Unread_Feedback";
 			this->Btn_Unread_Feedback->Size = System::Drawing::Size(158, 71);
@@ -293,14 +295,18 @@ namespace GuestHouseManagement {
 			this->Btn_Unread_Feedback->Text = L"Unread";
 			this->Btn_Unread_Feedback->UseVisualStyleBackColor = false;
 			this->Btn_Unread_Feedback->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Unread_Feedback_Click);
+			this->Btn_Unread_Feedback->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::okkie2);
 			// 
 			// Btn_All_Feedback
 			// 
 			this->Btn_All_Feedback->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_All_Feedback->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Btn_All_Feedback->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->Btn_All_Feedback->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Btn_All_Feedback->Location = System::Drawing::Point(206, 423);
+			this->Btn_All_Feedback->Location = System::Drawing::Point(0, 276);
 			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_All_Feedback->Name = L"Btn_All_Feedback";
 			this->Btn_All_Feedback->Size = System::Drawing::Size(158, 71);
@@ -454,7 +460,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Button_Logout->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Button_Logout->Location = System::Drawing::Point(1, 465);
+			this->Button_Logout->Location = System::Drawing::Point(0, 492);
 			this->Button_Logout->Name = L"Button_Logout";
 			this->Button_Logout->Size = System::Drawing::Size(158, 71);
 			this->Button_Logout->TabIndex = 27;
@@ -723,6 +729,7 @@ namespace GuestHouseManagement {
 			this->Booking_Room->TabIndex = 29;
 			this->Booking_Room->Text = L"Room Details";
 			this->Booking_Room->UseVisualStyleBackColor = false;
+			this->Booking_Room->Click += gcnew System::EventHandler(this, &Form_Reception::Booking_Room_Click);
 			this->Booking_Room->MouseHover += gcnew System::EventHandler(this, &Form_Reception::Booking_Room_MouseHover);
 			// 
 			// panel5
@@ -759,19 +766,25 @@ namespace GuestHouseManagement {
 			// 
 			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->panel7->Controls->Add(this->Btn_Staff_Info);
 			this->panel7->Controls->Add(this->Button_Logout);
+			this->panel7->Controls->Add(this->Btn_All_Feedback);
 			this->panel7->Controls->Add(this->button11);
+			this->panel7->Controls->Add(this->Btn_Unread_Feedback);
+			this->panel7->Controls->Add(this->Btn_Read_Feedback);
 			this->panel7->Controls->Add(this->button10);
+			this->panel7->Controls->Add(this->button6);
 			this->panel7->Controls->Add(this->button9);
 			this->panel7->Controls->Add(this->button8);
 			this->panel7->Controls->Add(this->button5);
 			this->panel7->Controls->Add(this->button7);
-			this->panel7->Controls->Add(this->button6);
 			this->panel7->Controls->Add(this->Btn_Create);
-			this->panel7->Location = System::Drawing::Point(2, 44);
+			this->panel7->Location = System::Drawing::Point(2, 0);
 			this->panel7->Name = L"panel7";
-			this->panel7->Size = System::Drawing::Size(159, 587);
+			this->panel7->Size = System::Drawing::Size(159, 593);
 			this->panel7->TabIndex = 0;
+			this->panel7->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Reception::panel7_Paint);
+			this->panel7->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::okkies);
 			// 
 			// button11
 			// 
@@ -792,6 +805,24 @@ namespace GuestHouseManagement {
 			this->button10->Text = L"Receptionist";
 			this->button10->UseVisualStyleBackColor = true;
 			this->button10->Click += gcnew System::EventHandler(this, &Form_Reception::button10_Click);
+			// 
+			// button6
+			// 
+			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button6->Location = System::Drawing::Point(0, 347);
+			this->button6->Margin = System::Windows::Forms::Padding(2);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(158, 71);
+			this->button6->TabIndex = 76;
+			this->button6->Text = L"Add Tourist Places";
+			this->button6->UseVisualStyleBackColor = false;
+			this->button6->Click += gcnew System::EventHandler(this, &Form_Reception::button6_Click);
 			// 
 			// button9
 			// 
@@ -822,7 +853,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button5->Location = System::Drawing::Point(0, 141);
+			this->button5->Location = System::Drawing::Point(0, 276);
 			this->button5->Margin = System::Windows::Forms::Padding(2);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(158, 71);
@@ -840,7 +871,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button7->Location = System::Drawing::Point(0, 71);
+			this->button7->Location = System::Drawing::Point(0, 205);
 			this->button7->Margin = System::Windows::Forms::Padding(2);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(158, 71);
@@ -848,24 +879,6 @@ namespace GuestHouseManagement {
 			this->button7->Text = L"Add Restaurant";
 			this->button7->UseVisualStyleBackColor = false;
 			this->button7->Click += gcnew System::EventHandler(this, &Form_Reception::button7_Click);
-			// 
-			// button6
-			// 
-			this->button6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->button6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->button6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button6->Location = System::Drawing::Point(0, 212);
-			this->button6->Margin = System::Windows::Forms::Padding(2);
-			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(158, 71);
-			this->button6->TabIndex = 76;
-			this->button6->Text = L"Add Tourist Places";
-			this->button6->UseVisualStyleBackColor = false;
-			this->button6->Click += gcnew System::EventHandler(this, &Form_Reception::button6_Click);
 			// 
 			// Btn_Create
 			// 
@@ -876,7 +889,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Btn_Create->Location = System::Drawing::Point(0, 0);
+			this->Btn_Create->Location = System::Drawing::Point(0, 134);
 			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Create->Name = L"Btn_Create";
 			this->Btn_Create->Size = System::Drawing::Size(158, 71);
@@ -891,7 +904,7 @@ namespace GuestHouseManagement {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->ClientSize = System::Drawing::Size(1017, 586);
+			this->ClientSize = System::Drawing::Size(1032, 598);
 			this->Controls->Add(this->panel7);
 			this->Controls->Add(this->panel5);
 			this->Controls->Add(this->panel4);
@@ -903,7 +916,6 @@ namespace GuestHouseManagement {
 			this->Text = L"Form_Reception";
 			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_MouseEnter);
-			this->Output_Panel->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel3->ResumeLayout(false);
@@ -914,9 +926,21 @@ namespace GuestHouseManagement {
 
 		}
 #pragma endregion
+
+  public: System::Void button_hides()
+		  {
+			  Btn_Create->Hide();
+			  button5->Hide();
+			  button6->Hide();
+			  button7->Hide();
+			  Btn_All_Feedback->Hide();
+			  Btn_Read_Feedback->Hide();
+			  Btn_Unread_Feedback->Hide();
+		  }
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Guest_House_Info(panel1,panel2,panel3,panel4,panel5));
 				 //Output_Panel->BringToFront();
 			 }
@@ -925,57 +949,88 @@ namespace GuestHouseManagement {
 				 Output_Panel->Controls->Add(gcnew UserControl_Staff);
 			 }
 	private: System::Void Form_Reception_Load(System::Object^  sender, System::EventArgs^  e) {
+				 panel1->Size = System::Drawing::Size(173, 44);
+				 panel2->Size = System::Drawing::Size(173, 44);
+				 panel3->Size = System::Drawing::Size(173, 44);
+				 panel4->Size = System::Drawing::Size(173, 44);
+				 panel5->Size = System::Drawing::Size(173, 44);
 				 this->ControlBox = false;
+				 button_hides();
 				 gf->Hide();
 			 }
 	private: System::Void Btn_Users_Approval_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Approve_Users(panel1,panel2,panel3,panel4,panel5));
+
 
 			 }
 	private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Add_Room1(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_Status_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Status_Room(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_Floor_Map_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Floor_Map(panel1,panel2,panel3,panel4,panel5));
 			 }
 	public: System::Void Btn_Booking_App_Click(System::Object^  sender, System::EventArgs^  e) {
 				Output_Panel->Controls->Clear();
+				button_hides();
 				Output_Panel->Controls->Add(gcnew UserControl_Booking_Approval(panel1,panel2,panel3,panel4,panel5));
 			}
 	private: System::Void Btn_Customer_Feedback_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 Btn_All_Feedback->Show();
+				 Btn_Read_Feedback->Show();
+				 Btn_Unread_Feedback->Show();
+				 Btn_Create->Hide();
+				 button5->Hide();
+				 button6->Hide();
+				 button7->Hide();
 				 Output_Panel->Controls->Add(gcnew UserControl_Customer_Feedback(panel1,panel2,panel3,panel4,panel5,0));
 			 }
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Generate_Bill);
 			 }
 	private: System::Void Btn_Housekeeping_App_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Housekeeping_Approval(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void button2_Click_1(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Booking_Display(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void button4_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 Btn_Create->Show();
+				 button5->Show();
+				 button6->Show();
+				 button7->Show();
+				 Btn_All_Feedback->Hide();
+				 Btn_Read_Feedback->Hide();
+				 Btn_Unread_Feedback->Hide();
 				 Output_Panel->Controls->Add(gcnew UserControl_GuestHouseDetails(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_User_Types_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_User_Types(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Room_Types2(panel1,panel2,panel3,panel4,panel5));
 			 }
 
@@ -997,6 +1052,7 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 //Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave_Approval(panel1,panel2,panel3,panel4,panel5));
 			 }
 
@@ -1090,18 +1146,22 @@ namespace GuestHouseManagement {
 
 	private: System::Void Planner_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Planner(panel1,panel2,panel3,panel4,panel5,0));
 			 }
 	private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 //Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_Edit_Records_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Edit(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Register_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
+				 button_hides();
 				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Register(panel1,panel2,panel3,panel4,panel5));
 			 }
 
@@ -1157,6 +1217,27 @@ namespace GuestHouseManagement {
 	private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 			 }
 private: System::Void User_Button_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void panel7_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+
+		 }
+private: System::Void okkies(System::Object^  sender, System::EventArgs^  e) {
+			 panel1->Size = System::Drawing::Size(173, 44);
+			 panel2->Size = System::Drawing::Size(173, 44);
+			 panel3->Size = System::Drawing::Size(173, 44);
+			 panel4->Size = System::Drawing::Size(173, 44);
+			 panel5->Size = System::Drawing::Size(173, 44);
+		 }
+private: System::Void okkie2(System::Object^  sender, System::EventArgs^  e) {
+			 panel1->Size = System::Drawing::Size(173, 44);
+			 panel2->Size = System::Drawing::Size(173, 44);
+			 panel3->Size = System::Drawing::Size(173, 44);
+			 panel4->Size = System::Drawing::Size(173, 44);
+			 panel5->Size = System::Drawing::Size(173, 44);
+		 }
+private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		 }
+private: System::Void Booking_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

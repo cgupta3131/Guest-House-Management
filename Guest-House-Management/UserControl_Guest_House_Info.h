@@ -247,8 +247,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Guest_House_Info
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->Second_Panel);
 			this->Controls->Add(this->Btn_Room_Types);
 			this->Controls->Add(this->Btn_User_Types);

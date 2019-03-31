@@ -165,7 +165,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Textbox_Driver_Name->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Textbox_Driver_Name->Location = System::Drawing::Point(199, 39);
-			this->Textbox_Driver_Name->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Driver_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Driver_Name->Name = L"Textbox_Driver_Name";
 			this->Textbox_Driver_Name->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Driver_Name->TabIndex = 51;
@@ -176,7 +176,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Textbox_Vehicle_Name->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Textbox_Vehicle_Name->Location = System::Drawing::Point(199, 81);
-			this->Textbox_Vehicle_Name->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Vehicle_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Vehicle_Name->Name = L"Textbox_Vehicle_Name";
 			this->Textbox_Vehicle_Name->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Vehicle_Name->TabIndex = 52;
@@ -187,7 +187,7 @@ namespace GuestHouseManagement {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Vehicle_Number->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Textbox_Vehicle_Number->Location = System::Drawing::Point(199, 122);
-			this->Textbox_Vehicle_Number->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Vehicle_Number->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Vehicle_Number->Name = L"Textbox_Vehicle_Number";
 			this->Textbox_Vehicle_Number->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Vehicle_Number->TabIndex = 53;
@@ -198,7 +198,7 @@ namespace GuestHouseManagement {
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Vehicle_Description->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Textbox_Vehicle_Description->Location = System::Drawing::Point(199, 166);
-			this->Textbox_Vehicle_Description->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Vehicle_Description->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Vehicle_Description->Multiline = true;
 			this->Textbox_Vehicle_Description->Name = L"Textbox_Vehicle_Description";
 			this->Textbox_Vehicle_Description->Size = System::Drawing::Size(267, 40);
@@ -210,7 +210,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Textbox_Contact->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Textbox_Contact->Location = System::Drawing::Point(199, 224);
-			this->Textbox_Contact->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Contact->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Contact->Name = L"Textbox_Contact";
 			this->Textbox_Contact->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Contact->TabIndex = 55;
@@ -223,7 +223,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->Btn_Create->Location = System::Drawing::Point(199, 266);
-			this->Btn_Create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Create->Name = L"Btn_Create";
 			this->Btn_Create->Size = System::Drawing::Size(142, 48);
 			this->Btn_Create->TabIndex = 68;
@@ -233,8 +233,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Add_Cab_Details
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->Btn_Create);
 			this->Controls->Add(this->Textbox_Contact);
 			this->Controls->Add(this->Textbox_Vehicle_Description);
@@ -246,7 +245,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Lbl_Register_Name);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Add_Cab_Details";
 			this->Size = System::Drawing::Size(670, 325);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Cab_Details::UserControl_Add_Cab_Details_Load);

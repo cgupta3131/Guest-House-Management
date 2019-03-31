@@ -107,8 +107,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Booking_Approval
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Controls->Add(this->Txt_Room_Type);
 			this->Controls->Add(this->label2);

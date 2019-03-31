@@ -147,8 +147,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Staff_Edit
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->ID_List);
 			this->Controls->Add(this->List_Search);
 			this->Controls->Add(this->Button_Search);

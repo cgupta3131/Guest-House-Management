@@ -228,8 +228,7 @@ namespace GuestHouseManagement {
 			// 
 			// UserControl_Add_Room1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->Txt_Room_End);
 			this->Controls->Add(this->Lbl_Room_Ending);
 			this->Controls->Add(this->Btn_Add_Room);
@@ -252,6 +251,7 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void UserControl_Add_Room1_Load(System::Object^  sender, System::EventArgs^  e) {
 				
+				//this->Dock = System::Windows::Forms::DockStyle::Fill;
 				this->Lbl_Room_Starting->Text = "Room No.";
 				this->Txt_Room_End->Visible = false;
 				this->Lbl_Room_Ending->Visible = false;
