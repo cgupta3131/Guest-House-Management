@@ -84,74 +84,100 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(65, 93);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(49, 76);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(68, 17);
+			this->label1->Size = System::Drawing::Size(85, 24);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Breakfast";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(268, 88);
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(201, 76);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(166, 22);
+			this->textBox1->Size = System::Drawing::Size(126, 22);
 			this->textBox1->TabIndex = 1;
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(65, 152);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(49, 124);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(47, 17);
+			this->label2->Size = System::Drawing::Size(63, 24);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Lunch";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(65, 214);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(49, 174);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(50, 17);
+			this->label3->Size = System::Drawing::Size(66, 24);
 			this->label3->TabIndex = 3;
 			this->label3->Text = L"Dinner";
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(268, 152);
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(201, 128);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(166, 22);
+			this->textBox2->Size = System::Drawing::Size(126, 22);
 			this->textBox2->TabIndex = 4;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(268, 214);
+			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->textBox3->Location = System::Drawing::Point(201, 179);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(166, 22);
+			this->textBox3->Size = System::Drawing::Size(126, 22);
 			this->textBox3->TabIndex = 5;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(176, 266);
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button1->Location = System::Drawing::Point(121, 238);
+			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(187, 44);
+			this->button1->Size = System::Drawing::Size(178, 50);
 			this->button1->TabIndex = 6;
-			this->button1->Text = L"Submit";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Text = L"SUBMIT";
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &UserControl_Mess_Rates::button1_Click);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(157, 24);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(33, 20);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(206, 17);
+			this->label4->Size = System::Drawing::Size(377, 29);
 			this->label4->TabIndex = 7;
 			this->label4->Text = L"Please enter all the rates in Rs.";
 			// 
 			// UserControl_Mess_Rates
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->textBox3);
@@ -160,8 +186,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Mess_Rates";
-			this->Size = System::Drawing::Size(548, 339);
+			this->Size = System::Drawing::Size(453, 311);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Mess_Rates::UserControl_Mess_Rates_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

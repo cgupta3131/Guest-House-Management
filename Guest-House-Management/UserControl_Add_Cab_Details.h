@@ -29,6 +29,8 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
+	private: System::Windows::Forms::Label^  label5;
+	public: 
 		Panel ^pn5;
 
 		UserControl_Add_Cab_Details(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
@@ -97,65 +99,66 @@ namespace GuestHouseManagement {
 			this->Textbox_Vehicle_Description = (gcnew System::Windows::Forms::TextBox());
 			this->Textbox_Contact = (gcnew System::Windows::Forms::TextBox());
 			this->Btn_Create = (gcnew System::Windows::Forms::Button());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Lbl_Register_Name
 			// 
 			this->Lbl_Register_Name->AutoSize = true;
-			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->Lbl_Register_Name->Location = System::Drawing::Point(24, 39);
+			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
+			this->Lbl_Register_Name->Location = System::Drawing::Point(125, 87);
 			this->Lbl_Register_Name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lbl_Register_Name->Name = L"Lbl_Register_Name";
-			this->Lbl_Register_Name->Size = System::Drawing::Size(107, 21);
+			this->Lbl_Register_Name->Size = System::Drawing::Size(115, 24);
 			this->Lbl_Register_Name->TabIndex = 44;
 			this->Lbl_Register_Name->Text = L"Driver Name";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(24, 81);
+			this->label1->Location = System::Drawing::Point(125, 145);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(119, 21);
+			this->label1->Size = System::Drawing::Size(130, 24);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Vehicle Name";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(24, 122);
+			this->label2->Location = System::Drawing::Point(125, 206);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(134, 21);
+			this->label2->Size = System::Drawing::Size(148, 24);
 			this->label2->TabIndex = 46;
 			this->label2->Text = L"Vehicle Number";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(24, 176);
+			this->label3->Location = System::Drawing::Point(125, 280);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(158, 21);
+			this->label3->Size = System::Drawing::Size(173, 24);
 			this->label3->TabIndex = 47;
 			this->label3->Text = L"Vehicle Description";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(24, 230);
+			this->label4->Location = System::Drawing::Point(125, 352);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(127, 21);
+			this->label4->Size = System::Drawing::Size(127, 24);
 			this->label4->TabIndex = 48;
 			this->label4->Text = L"Driver Contact";
 			// 
@@ -164,10 +167,10 @@ namespace GuestHouseManagement {
 			this->Textbox_Driver_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Textbox_Driver_Name->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Driver_Name->Location = System::Drawing::Point(199, 39);
+			this->Textbox_Driver_Name->Location = System::Drawing::Point(416, 82);
 			this->Textbox_Driver_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Driver_Name->Name = L"Textbox_Driver_Name";
-			this->Textbox_Driver_Name->Size = System::Drawing::Size(267, 26);
+			this->Textbox_Driver_Name->Size = System::Drawing::Size(292, 26);
 			this->Textbox_Driver_Name->TabIndex = 51;
 			// 
 			// Textbox_Vehicle_Name
@@ -175,10 +178,10 @@ namespace GuestHouseManagement {
 			this->Textbox_Vehicle_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Textbox_Vehicle_Name->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Vehicle_Name->Location = System::Drawing::Point(199, 81);
+			this->Textbox_Vehicle_Name->Location = System::Drawing::Point(416, 140);
 			this->Textbox_Vehicle_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Vehicle_Name->Name = L"Textbox_Vehicle_Name";
-			this->Textbox_Vehicle_Name->Size = System::Drawing::Size(267, 26);
+			this->Textbox_Vehicle_Name->Size = System::Drawing::Size(292, 26);
 			this->Textbox_Vehicle_Name->TabIndex = 52;
 			// 
 			// Textbox_Vehicle_Number
@@ -186,10 +189,10 @@ namespace GuestHouseManagement {
 			this->Textbox_Vehicle_Number->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Vehicle_Number->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Vehicle_Number->Location = System::Drawing::Point(199, 122);
+			this->Textbox_Vehicle_Number->Location = System::Drawing::Point(416, 201);
 			this->Textbox_Vehicle_Number->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Vehicle_Number->Name = L"Textbox_Vehicle_Number";
-			this->Textbox_Vehicle_Number->Size = System::Drawing::Size(267, 26);
+			this->Textbox_Vehicle_Number->Size = System::Drawing::Size(292, 26);
 			this->Textbox_Vehicle_Number->TabIndex = 53;
 			// 
 			// Textbox_Vehicle_Description
@@ -197,11 +200,11 @@ namespace GuestHouseManagement {
 			this->Textbox_Vehicle_Description->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Vehicle_Description->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Vehicle_Description->Location = System::Drawing::Point(199, 166);
+			this->Textbox_Vehicle_Description->Location = System::Drawing::Point(416, 264);
 			this->Textbox_Vehicle_Description->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Vehicle_Description->Multiline = true;
 			this->Textbox_Vehicle_Description->Name = L"Textbox_Vehicle_Description";
-			this->Textbox_Vehicle_Description->Size = System::Drawing::Size(267, 40);
+			this->Textbox_Vehicle_Description->Size = System::Drawing::Size(292, 40);
 			this->Textbox_Vehicle_Description->TabIndex = 54;
 			// 
 			// Textbox_Contact
@@ -209,31 +212,45 @@ namespace GuestHouseManagement {
 			this->Textbox_Contact->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Textbox_Contact->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Contact->Location = System::Drawing::Point(199, 224);
+			this->Textbox_Contact->Location = System::Drawing::Point(416, 350);
 			this->Textbox_Contact->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Contact->Name = L"Textbox_Contact";
-			this->Textbox_Contact->Size = System::Drawing::Size(267, 26);
+			this->Textbox_Contact->Size = System::Drawing::Size(292, 26);
 			this->Textbox_Contact->TabIndex = 55;
 			// 
 			// Btn_Create
 			// 
-			this->Btn_Create->BackColor = System::Drawing::Color::OrangeRed;
-			this->Btn_Create->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Btn_Create->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Create->Location = System::Drawing::Point(199, 266);
+			this->Btn_Create->Location = System::Drawing::Point(245, 418);
 			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Create->Name = L"Btn_Create";
-			this->Btn_Create->Size = System::Drawing::Size(142, 48);
+			this->Btn_Create->Size = System::Drawing::Size(203, 64);
 			this->Btn_Create->TabIndex = 68;
 			this->Btn_Create->Text = L"Add Cab Service";
 			this->Btn_Create->UseVisualStyleBackColor = false;
 			this->Btn_Create->Click += gcnew System::EventHandler(this, &UserControl_Add_Cab_Details::Btn_Create_Click);
 			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(288, 23);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(201, 29);
+			this->label5->TabIndex = 73;
+			this->label5->Text = L"Add Cab Details";
+			// 
 			// UserControl_Add_Cab_Details
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->Btn_Create);
 			this->Controls->Add(this->Textbox_Contact);
 			this->Controls->Add(this->Textbox_Vehicle_Description);
@@ -247,7 +264,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Lbl_Register_Name);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Add_Cab_Details";
-			this->Size = System::Drawing::Size(670, 325);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Cab_Details::UserControl_Add_Cab_Details_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Add_Cab_Details::myMouseClick);
 			this->ResumeLayout(false);

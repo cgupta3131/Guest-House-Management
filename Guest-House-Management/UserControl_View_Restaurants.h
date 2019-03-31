@@ -67,13 +67,14 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Lavender;
 			this->label1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::Info;
+			this->label1->ForeColor = System::Drawing::Color::Black;
 			this->label1->Location = System::Drawing::Point(31, 28);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(50, 25);
+			this->label1->Size = System::Drawing::Size(56, 27);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Text";
 			// 
@@ -128,9 +129,10 @@ namespace GuestHouseManagement {
 							 lb1->Name = "label"+Convert::ToString(count);
 							 lb1->Text = res_string;
 							 lb1->AutoSize=true;
-							 lb1->ForeColor = System::Drawing::SystemColors::Info;
+							 lb1->ForeColor = System::Drawing::Color::Black;
+							 lb1->BackColor = System::Drawing::Color::Lavender;
 							 lb1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-							 lb1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+							 lb1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 								 static_cast<System::Byte>(0)));
 							 this->Controls->Add(lb1);
 							 lb1->Location = System::Drawing::Point(this->label1->Location.X, this->label1->Location.Y+120*(count-1));

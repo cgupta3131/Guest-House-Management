@@ -33,6 +33,8 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
+
+	public: 
 		Panel ^pn5;
 
 		UserControl_User_Types(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
@@ -84,21 +86,23 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Add
 			// 
-			this->Btn_Add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->Btn_Add->Location = System::Drawing::Point(337, 108);
+			this->Btn_Add->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_Add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F));
+			this->Btn_Add->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Btn_Add->Location = System::Drawing::Point(530, 117);
 			this->Btn_Add->Name = L"Btn_Add";
-			this->Btn_Add->Size = System::Drawing::Size(82, 32);
+			this->Btn_Add->Size = System::Drawing::Size(89, 40);
 			this->Btn_Add->TabIndex = 3;
 			this->Btn_Add->Text = L"Add";
-			this->Btn_Add->UseVisualStyleBackColor = true;
+			this->Btn_Add->UseVisualStyleBackColor = false;
 			this->Btn_Add->Click += gcnew System::EventHandler(this, &UserControl_User_Types::Btn_Add_Click);
 			// 
 			// Txt_User_Type
 			// 
-			this->Txt_User_Type->Location = System::Drawing::Point(163, 117);
+			this->Txt_User_Type->Location = System::Drawing::Point(249, 131);
 			this->Txt_User_Type->Name = L"Txt_User_Type";
-			this->Txt_User_Type->Size = System::Drawing::Size(113, 20);
+			this->Txt_User_Type->Size = System::Drawing::Size(156, 20);
 			this->Txt_User_Type->TabIndex = 2;
 			// 
 			// UserControl_User_Types
@@ -108,7 +112,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Btn_Add);
 			this->Controls->Add(this->Txt_User_Type);
 			this->Name = L"UserControl_User_Types";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_User_Types::UserControl_User_Types_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_User_Types::mymouseenter);
 			this->ResumeLayout(false);
@@ -250,15 +254,16 @@ ErrExit:
 								 int j = i%2;
 								 Label ^lb = gcnew Label();
 								 lb->Text = vec[i];
-								 lb->Location = System::Drawing::Point(20 + 300*j,70*((i/2)+1));
+								 lb->Location = System::Drawing::Point(150 + 300*j,70*((i/2)+1));
 								 lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 									 static_cast<System::Byte>(0)));
 								 this->Controls->Add(lb);
+
 							
 								 TextBox ^tb = gcnew TextBox();
 								 //tb->Text = Convert::ToString(i);
-								 tb->Location = System::Drawing::Point(125 + 300*j,70*((i/2)+1));
-								 tb->Width = 70;
+								 tb->Location = System::Drawing::Point(250 + 300*j,70*((i/2)+1));
+								 tb->Width = 120;
 								 tb->Height = 10;
 								 tb->Name = "TextBox" + i;
 								 //tb->Multiline = true;

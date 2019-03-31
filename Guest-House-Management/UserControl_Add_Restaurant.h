@@ -29,6 +29,8 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
+	private: System::Windows::Forms::Label^  label5;
+	public: 
 		Panel ^pn5;
 
 		UserControl_Add_Restaurant(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
@@ -103,97 +105,94 @@ namespace GuestHouseManagement {
 			this->Textbox_Description = (gcnew System::Windows::Forms::TextBox());
 			this->Btn_Create = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Lbl_Register_Name
 			// 
 			this->Lbl_Register_Name->AutoSize = true;
-			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->Lbl_Register_Name->Location = System::Drawing::Point(38, 37);
+			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->Lbl_Register_Name->Location = System::Drawing::Point(110, 80);
 			this->Lbl_Register_Name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lbl_Register_Name->Name = L"Lbl_Register_Name";
-			this->Lbl_Register_Name->Size = System::Drawing::Size(149, 21);
+			this->Lbl_Register_Name->Size = System::Drawing::Size(155, 24);
 			this->Lbl_Register_Name->TabIndex = 45;
 			this->Lbl_Register_Name->Text = L"Restaurant Name";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(38, 86);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label1->Location = System::Drawing::Point(110, 139);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(163, 21);
+			this->label1->Size = System::Drawing::Size(174, 24);
 			this->label1->TabIndex = 46;
 			this->label1->Text = L"Restaurant Address";
+			this->label1->Click += gcnew System::EventHandler(this, &UserControl_Add_Restaurant::label1_Click);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(38, 132);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label2->Location = System::Drawing::Point(110, 207);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(169, 21);
+			this->label2->Size = System::Drawing::Size(167, 24);
 			this->label2->TabIndex = 47;
 			this->label2->Text = L"Restaurant Contact";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(38, 176);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label3->Location = System::Drawing::Point(109, 268);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(188, 21);
+			this->label3->Size = System::Drawing::Size(198, 24);
 			this->label3->TabIndex = 48;
 			this->label3->Text = L"Restaurant Description";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(38, 218);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->label4->Location = System::Drawing::Point(109, 325);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(173, 21);
+			this->label4->Size = System::Drawing::Size(192, 24);
 			this->label4->TabIndex = 49;
 			this->label4->Text = L"Guest House Delivery";
 			// 
 			// Textbox_Restaurant_Name
 			// 
-			this->Textbox_Restaurant_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, 
+			this->Textbox_Restaurant_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Restaurant_Name->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Restaurant_Name->Location = System::Drawing::Point(245, 37);
-			this->Textbox_Restaurant_Name->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Restaurant_Name->Location = System::Drawing::Point(436, 80);
+			this->Textbox_Restaurant_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Restaurant_Name->Name = L"Textbox_Restaurant_Name";
 			this->Textbox_Restaurant_Name->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Restaurant_Name->TabIndex = 52;
 			// 
 			// Textbox_Restaurant_Address
 			// 
-			this->Textbox_Restaurant_Address->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, 
+			this->Textbox_Restaurant_Address->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Restaurant_Address->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Restaurant_Address->Location = System::Drawing::Point(245, 86);
-			this->Textbox_Restaurant_Address->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Restaurant_Address->Location = System::Drawing::Point(436, 137);
+			this->Textbox_Restaurant_Address->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Restaurant_Address->Name = L"Textbox_Restaurant_Address";
 			this->Textbox_Restaurant_Address->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Restaurant_Address->TabIndex = 53;
 			// 
 			// Textbox_Contact
 			// 
-			this->Textbox_Contact->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Textbox_Contact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Textbox_Contact->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Contact->Location = System::Drawing::Point(245, 132);
-			this->Textbox_Contact->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Contact->Location = System::Drawing::Point(436, 205);
+			this->Textbox_Contact->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Contact->Name = L"Textbox_Contact";
 			this->Textbox_Contact->Size = System::Drawing::Size(267, 26);
 			this->Textbox_Contact->TabIndex = 54;
@@ -201,11 +200,11 @@ namespace GuestHouseManagement {
 			// 
 			// Textbox_Description
 			// 
-			this->Textbox_Description->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->Textbox_Description->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, 
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
 			this->Textbox_Description->ForeColor = System::Drawing::SystemColors::MenuText;
-			this->Textbox_Description->Location = System::Drawing::Point(245, 176);
-			this->Textbox_Description->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Textbox_Description->Location = System::Drawing::Point(436, 266);
+			this->Textbox_Description->Margin = System::Windows::Forms::Padding(2);
 			this->Textbox_Description->Name = L"Textbox_Description";
 			this->Textbox_Description->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 			this->Textbox_Description->Size = System::Drawing::Size(267, 26);
@@ -213,15 +212,14 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Create
 			// 
-			this->Btn_Create->BackColor = System::Drawing::Color::OrangeRed;
-			this->Btn_Create->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->Btn_Create->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_Create->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->Btn_Create->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Create->Location = System::Drawing::Point(245, 260);
-			this->Btn_Create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Btn_Create->Location = System::Drawing::Point(272, 405);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Create->Name = L"Btn_Create";
-			this->Btn_Create->Size = System::Drawing::Size(142, 48);
+			this->Btn_Create->Size = System::Drawing::Size(223, 65);
 			this->Btn_Create->TabIndex = 69;
 			this->Btn_Create->Text = L"Add Restaurant";
 			this->Btn_Create->UseVisualStyleBackColor = false;
@@ -230,17 +228,33 @@ namespace GuestHouseManagement {
 			// comboBox1
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(2) {L"YES", L"NO"});
-			this->comboBox1->Location = System::Drawing::Point(245, 215);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->comboBox1->Location = System::Drawing::Point(436, 321);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(267, 21);
+			this->comboBox1->Size = System::Drawing::Size(267, 28);
 			this->comboBox1->TabIndex = 70;
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(272, 23);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(279, 29);
+			this->label5->TabIndex = 79;
+			this->label5->Text = L"Add Restuarnat Details";
 			// 
 			// UserControl_Add_Restaurant
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->Controls->Add(this->label5);
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->Btn_Create);
 			this->Controls->Add(this->Textbox_Description);
@@ -252,9 +266,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Lbl_Register_Name);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Add_Restaurant";
-			this->Size = System::Drawing::Size(670, 325);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Add_Restaurant::UserControl_Add_Restaurant_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Add_Restaurant::myMouseClick);
 			this->ResumeLayout(false);
@@ -311,6 +325,9 @@ namespace GuestHouseManagement {
 					 cmd->ExecuteNonQuery();
 					 DB_Connection->Close();
 					 MessageBox::Show("Restaurant added successfully","Notification");
+					 this->Controls->Clear();
+					 this->InitializeComponent();
+					 UserControl_Add_Restaurant_Load(sender,e);
 				 }
 				 catch(Exception ^ ex)
 				 {
@@ -328,5 +345,7 @@ namespace GuestHouseManagement {
 				 pn4->Size = System::Drawing::Size(173, 44);
 				 pn5->Size = System::Drawing::Size(173, 44);
 			 }
+private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
 };
 }

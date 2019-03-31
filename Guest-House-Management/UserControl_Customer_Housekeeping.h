@@ -87,101 +87,163 @@ namespace GuestHouseManagement {
 			// 
 			// checkBox1
 			// 
+			this->checkBox1->AutoEllipsis = true;
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(57, 145);
+			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
+			this->checkBox1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->checkBox1->Location = System::Drawing::Point(114, 119);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(76, 17);
+			this->checkBox1->Size = System::Drawing::Size(134, 29);
 			this->checkBox1->TabIndex = 0;
 			this->checkBox1->Text = L"Bedsheets";
-			this->checkBox1->UseVisualStyleBackColor = true;
+			this->checkBox1->UseVisualStyleBackColor = false;
 			// 
 			// checkBox2
 			// 
+			this->checkBox2->AutoEllipsis = true;
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(57, 168);
+			this->checkBox2->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
+			this->checkBox2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->checkBox2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->checkBox2->Location = System::Drawing::Point(322, 119);
+			this->checkBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(98, 17);
+			this->checkBox2->Size = System::Drawing::Size(183, 29);
 			this->checkBox2->TabIndex = 1;
 			this->checkBox2->Text = L"Room Cleaning";
-			this->checkBox2->UseVisualStyleBackColor = true;
+			this->checkBox2->UseVisualStyleBackColor = false;
 			// 
 			// checkBox3
 			// 
+			this->checkBox3->AutoEllipsis = true;
 			this->checkBox3->AutoSize = true;
-			this->checkBox3->Location = System::Drawing::Point(57, 191);
+			this->checkBox3->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
+			this->checkBox3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->checkBox3->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->checkBox3->Location = System::Drawing::Point(582, 119);
+			this->checkBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(134, 17);
+			this->checkBox3->Size = System::Drawing::Size(263, 29);
 			this->checkBox3->TabIndex = 2;
 			this->checkBox3->Text = L"Water Issues-Plumbing";
-			this->checkBox3->UseVisualStyleBackColor = true;
+			this->checkBox3->UseVisualStyleBackColor = false;
 			// 
 			// checkBox4
 			// 
+			this->checkBox4->AutoEllipsis = true;
 			this->checkBox4->AutoSize = true;
-			this->checkBox4->Location = System::Drawing::Point(57, 214);
+			this->checkBox4->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
+			this->checkBox4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->checkBox4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->checkBox4->Location = System::Drawing::Point(114, 189);
+			this->checkBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(64, 17);
+			this->checkBox4->Size = System::Drawing::Size(113, 29);
 			this->checkBox4->TabIndex = 3;
 			this->checkBox4->Text = L"Laundry";
-			this->checkBox4->UseVisualStyleBackColor = true;
+			this->checkBox4->UseVisualStyleBackColor = false;
 			// 
 			// checkBox5
 			// 
+			this->checkBox5->AutoEllipsis = true;
 			this->checkBox5->AutoSize = true;
-			this->checkBox5->Location = System::Drawing::Point(57, 238);
+			this->checkBox5->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox5->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
+			this->checkBox5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->checkBox5->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->checkBox5->Location = System::Drawing::Point(322, 189);
+			this->checkBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkBox5->Name = L"checkBox5";
-			this->checkBox5->Size = System::Drawing::Size(102, 17);
+			this->checkBox5->Size = System::Drawing::Size(193, 29);
 			this->checkBox5->TabIndex = 4;
 			this->checkBox5->Text = L"Electrical Issues";
-			this->checkBox5->UseVisualStyleBackColor = true;
+			this->checkBox5->UseVisualStyleBackColor = false;
 			// 
 			// checkBox6
 			// 
+			this->checkBox6->AutoEllipsis = true;
 			this->checkBox6->AutoSize = true;
-			this->checkBox6->Location = System::Drawing::Point(57, 261);
+			this->checkBox6->BackColor = System::Drawing::Color::Transparent;
+			this->checkBox6->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
+			this->checkBox6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->checkBox6->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->checkBox6->Location = System::Drawing::Point(582, 189);
+			this->checkBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->checkBox6->Name = L"checkBox6";
-			this->checkBox6->Size = System::Drawing::Size(103, 17);
+			this->checkBox6->Size = System::Drawing::Size(196, 29);
 			this->checkBox6->TabIndex = 5;
 			this->checkBox6->Text = L"Other Requests:";
-			this->checkBox6->UseVisualStyleBackColor = true;
+			this->checkBox6->UseVisualStyleBackColor = false;
 			this->checkBox6->CheckedChanged += gcnew System::EventHandler(this, &UserControl_Customer_Housekeeping::checkBox6_CheckedChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(64, 85);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(262, 45);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(75, 13);
+			this->label2->Size = System::Drawing::Size(173, 25);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Room Number";
 			// 
 			// Textbox_room
 			// 
-			this->Textbox_room->Location = System::Drawing::Point(146, 78);
+			this->Textbox_room->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Textbox_room->Location = System::Drawing::Point(448, 45);
+			this->Textbox_room->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Textbox_room->Name = L"Textbox_room";
-			this->Textbox_room->Size = System::Drawing::Size(100, 20);
+			this->Textbox_room->Size = System::Drawing::Size(173, 32);
 			this->Textbox_room->TabIndex = 9;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(319, 159);
+			this->button1->BackColor = System::Drawing::Color::OrangeRed;
+			this->button1->FlatAppearance->BorderSize = 0;
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button1->ForeColor = System::Drawing::Color::White;
+			this->button1->Location = System::Drawing::Point(311, 334);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(126, 61);
+			this->button1->Size = System::Drawing::Size(168, 54);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Submit";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &UserControl_Customer_Housekeeping::button1_Click);
 			// 
 			// Textbox_Issues
 			// 
-			this->Textbox_Issues->Location = System::Drawing::Point(156, 259);
+			this->Textbox_Issues->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->Textbox_Issues->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Textbox_Issues->Location = System::Drawing::Point(582, 237);
+			this->Textbox_Issues->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Textbox_Issues->Multiline = true;
 			this->Textbox_Issues->Name = L"Textbox_Issues";
-			this->Textbox_Issues->Size = System::Drawing::Size(131, 20);
+			this->Textbox_Issues->Size = System::Drawing::Size(262, 65);
 			this->Textbox_Issues->TabIndex = 11;
 			// 
 			// UserControl_Customer_Housekeeping
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->Textbox_Issues);
 			this->Controls->Add(this->button1);
@@ -193,8 +255,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->checkBox3);
 			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"UserControl_Customer_Housekeeping";
-			this->Size = System::Drawing::Size(649, 339);
+			this->Size = System::Drawing::Size(865, 417);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Customer_Housekeeping::UserControl_Customer_Housekeeping_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

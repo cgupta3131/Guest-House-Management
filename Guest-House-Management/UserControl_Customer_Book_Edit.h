@@ -194,7 +194,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(629, 111);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(173, 44);
+			this->label6->Size = System::Drawing::Size(168, 23);
 			this->label6->TabIndex = 49;
 			this->label6->Text = L"Approval Status";
 			this->label6->Visible = false;
@@ -349,6 +349,12 @@ namespace GuestHouseManagement {
 					bt5->Location = System::Drawing::Point(470,140 + 30*i);
 					bt6->Size = System::Drawing::Size(100,30);
 					bt6->Location = System::Drawing::Point(610,140 + 30*i);
+					bt6->BackColor = System::Drawing::Color::OrangeRed;
+					bt6->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						static_cast<System::Byte>(0)));
+					bt6->ForeColor = System::Drawing::Color::White;
+					bt6->FlatAppearance->BorderSize = 0;
+					bt6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 
 					this->Controls->Add(bt1);
 					bt1->Click+=gcnew EventHandler(this,&UserControl_Customer_Book_Edit::bt1_Click);
@@ -490,6 +496,7 @@ namespace GuestHouseManagement {
 			int scr=this->AutoScrollPosition.Y;
 			//MessageBox::Show("scr=" + Convert::ToString(scr));
 			int pos=(loc-140-scr)/30;
+			
 			//MessageBox::Show(Convert::ToString(loc));
 			String ^today_date = System::DateTime().Now.ToString("yyyyMMdd");
 

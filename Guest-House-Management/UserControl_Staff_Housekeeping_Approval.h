@@ -106,27 +106,26 @@ namespace GuestHouseManagement {
 			Button^ btn = gcnew Button();
 			btn = static_cast<Button^>(sender);
 			int x = static_cast<int>(btn->Tag);
-			String ^room_number;
 
 			OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 
-			DB_Connection->Open();
+			/*DB_Connection->Open();
 			String ^ getroomNo = "Select * from [House_Keeping_Request] where [Request_Status] = 'NO';";
 			OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getroomNo, DB_Connection);
 			OleDbDataReader ^ room_data = cmd->ExecuteReader();
 			cliext::vector<String^> vec;
 			while(room_data->Read() == true)
 			{
-				room_number = room_data->GetString(2);
-				vec.push_back(room_number);
+			room_number = room_data->GetString(2);
+			vec.push_back(room_number);
 			}
-			DB_Connection->Close();
+			DB_Connection->Close();*/
 
 			//---------UPDATING ROOM STATUS---------------//
 			DB_Connection->Open();
-			String ^ updateRoomStatus = "UPDATE [House_Keeping_Request] SET [Request_Status] = 'YES' Where [Room_No] = '"+ room_number +"' ;";
-			cmd = gcnew OleDbCommand(updateRoomStatus, DB_Connection);
+			String ^ updateRoomStatus = "UPDATE [House_Keeping_Request] SET [Request_Status] = 'YES' Where [ID] = "+ x +" ;";
+			OleDb::OleDbCommand ^cmd = gcnew OleDbCommand(updateRoomStatus, DB_Connection);
 			cmd->ExecuteNonQuery();
 			DB_Connection->Close();
 
@@ -155,7 +154,7 @@ namespace GuestHouseManagement {
 				 OleDbDataReader ^ users_data = cmd->ExecuteReader();
 
 				 int i=0;
-				 //n=0;
+				 n=0;
 				 while(users_data->Read() == true)
 				 {
 					 n=n+1;

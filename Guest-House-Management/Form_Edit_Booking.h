@@ -238,7 +238,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(41, 103);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(173, 44);
+			this->label7->Size = System::Drawing::Size(168, 23);
 			this->label7->TabIndex = 75;
 			this->label7->Text = L"Approval Status";
 			// 
@@ -362,7 +362,7 @@ namespace GuestHouseManagement {
 				 {
 					 int temp_number = user_data->GetInt32(0);
 					 Textbox_id->Text = Convert::ToString(temp_number);
-					 MessageBox::Show(Textbox_id->Text);
+					 /*MessageBox::Show(Textbox_id->Text);*/
 					 TextBox_Username->Text = user_data->GetString(1);
 					 Textbox_name->Text = user_data->GetString(3);
 					 Textbox_Email->Text = user_data->GetString(8);
@@ -388,8 +388,8 @@ namespace GuestHouseManagement {
 								 temp = temp + rooms_nums[j];
 						 }
 
-						 for(int j=0;j<room_num_data.size();j++)
-							 MessageBox::Show(room_num_data[j]);
+						 /*for(int j=0;j<room_num_data.size();j++)
+							 MessageBox::Show(room_num_data[j]);*/
 
 						 
 						 String^ full_rooms = user_data->GetString(6);

@@ -69,21 +69,22 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Lavender;
 			this->label1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->ForeColor = System::Drawing::SystemColors::Info;
+			this->label1->ForeColor = System::Drawing::Color::Black;
 			this->label1->Location = System::Drawing::Point(25, 26);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(50, 25);
+			this->label1->Size = System::Drawing::Size(56, 27);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Text";
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(400, 26);
+			this->pictureBox1->Location = System::Drawing::Point(436, 26);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(241, 141);
+			this->pictureBox1->Size = System::Drawing::Size(150, 102);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 46;
 			this->pictureBox1->TabStop = false;
@@ -158,9 +159,10 @@ namespace GuestHouseManagement {
 							 lb1->Name = "label"+Convert::ToString(count);
 							 lb1->Text = tou_string;
 							 lb1->AutoSize=true;
-							 lb1->ForeColor = System::Drawing::SystemColors::Info;
+							 lb1->ForeColor = System::Drawing::Color::Black;
+							 lb1->BackColor = System::Drawing::Color::Lavender;
 							 lb1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
-							 lb1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+							 lb1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 								 static_cast<System::Byte>(0)));
 							 this->Controls->Add(lb1);
 							 lb1->Location = System::Drawing::Point(this->label1->Location.X, this->label1->Location.Y+150*(count-1));
@@ -187,7 +189,7 @@ namespace GuestHouseManagement {
 							 pb1->TabIndex = 46;
 							 pb1->TabStop = false;
 							 pb1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
-							 pb1->Size = System::Drawing::Size(266, 141);
+							 pb1->Size = System::Drawing::Size(150, 102);
 							 this->Controls->Add(pb1);
 						 }
 					 }

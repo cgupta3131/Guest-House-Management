@@ -68,60 +68,84 @@ namespace GuestHouseManagement {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(38, 40);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->button1->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button1->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button1->Location = System::Drawing::Point(30, 108);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(125, 40);
+			this->button1->Size = System::Drawing::Size(223, 49);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Cab Details";
-			this->button1->UseVisualStyleBackColor = true;
+			this->button1->UseVisualStyleBackColor = false;
 			this->button1->Click += gcnew System::EventHandler(this, &UserControl_In_Stay_Facilities::button1_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(38, 109);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->button2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button2->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button2->Location = System::Drawing::Point(30, 193);
+			this->button2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(125, 40);
+			this->button2->Size = System::Drawing::Size(223, 49);
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Mess Details";
-			this->button2->UseVisualStyleBackColor = true;
+			this->button2->UseVisualStyleBackColor = false;
 			this->button2->Click += gcnew System::EventHandler(this, &UserControl_In_Stay_Facilities::button2_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(38, 181);
-			this->button3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button3->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->button3->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button3->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button3->Location = System::Drawing::Point(30, 282);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(125, 40);
+			this->button3->Size = System::Drawing::Size(223, 49);
 			this->button3->TabIndex = 3;
 			this->button3->Text = L"Tourist HotSpots ";
-			this->button3->UseVisualStyleBackColor = true;
+			this->button3->UseVisualStyleBackColor = false;
 			this->button3->Click += gcnew System::EventHandler(this, &UserControl_In_Stay_Facilities::button3_Click);
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(38, 257);
-			this->button4->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button4->BackColor = System::Drawing::Color::PaleTurquoise;
+			this->button4->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(128)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(128)));
+			this->button4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button4->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button4->Location = System::Drawing::Point(30, 375);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(125, 40);
+			this->button4->Size = System::Drawing::Size(223, 49);
 			this->button4->TabIndex = 4;
 			this->button4->Text = L"Restaurants";
-			this->button4->UseVisualStyleBackColor = true;
+			this->button4->UseVisualStyleBackColor = false;
 			this->button4->Click += gcnew System::EventHandler(this, &UserControl_In_Stay_Facilities::button4_Click);
 			// 
 			// Output_Panel
 			// 
 			this->Output_Panel->AutoScroll = true;
-			this->Output_Panel->Location = System::Drawing::Point(206, 18);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Output_Panel->Location = System::Drawing::Point(275, 22);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(524, 396);
+			this->Output_Panel->Size = System::Drawing::Size(699, 487);
 			this->Output_Panel->TabIndex = 6;
 			// 
 			// UserControl_In_Stay_Facilities
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->Controls->Add(this->Output_Panel);
@@ -129,9 +153,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->button3);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"UserControl_In_Stay_Facilities";
-			this->Size = System::Drawing::Size(746, 434);
+			this->Size = System::Drawing::Size(995, 534);
 			this->Load += gcnew System::EventHandler(this, &UserControl_In_Stay_Facilities::UserControl_In_Stay_Facilities_Load);
 			this->ResumeLayout(false);
 

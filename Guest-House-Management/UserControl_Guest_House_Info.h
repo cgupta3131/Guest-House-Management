@@ -31,6 +31,8 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
+	private: System::Windows::Forms::Label^  label4;
+	public: 
 		Panel ^pn5;
 
 		UserControl_Guest_House_Info(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
@@ -70,9 +72,9 @@ namespace GuestHouseManagement {
 
 
 
-	internal: System::Windows::Forms::Button^  Btn_User_Types;
-	internal: System::Windows::Forms::Button^  Btn_Room_Types;
-	internal: System::Windows::Forms::Panel^  Second_Panel;
+
+
+
 
 
 	private:
@@ -97,64 +99,62 @@ namespace GuestHouseManagement {
 			this->Txt_Address = (gcnew System::Windows::Forms::TextBox());
 			this->Txt_Name = (gcnew System::Windows::Forms::TextBox());
 			this->Btn_Submit = (gcnew System::Windows::Forms::Button());
-			this->Btn_User_Types = (gcnew System::Windows::Forms::Button());
-			this->Btn_Room_Types = (gcnew System::Windows::Forms::Button());
-			this->Second_Panel = (gcnew System::Windows::Forms::Panel());
+			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Lbl_Register_Name
 			// 
 			this->Lbl_Register_Name->AutoSize = true;
-			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Lbl_Register_Name->Location = System::Drawing::Point(89, 194);
+			this->Lbl_Register_Name->Location = System::Drawing::Point(155, 321);
 			this->Lbl_Register_Name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lbl_Register_Name->Name = L"Lbl_Register_Name";
-			this->Lbl_Register_Name->Size = System::Drawing::Size(51, 21);
+			this->Lbl_Register_Name->Size = System::Drawing::Size(74, 29);
 			this->Lbl_Register_Name->TabIndex = 44;
 			this->Lbl_Register_Name->Text = L"Email";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(89, 150);
+			this->label1->Location = System::Drawing::Point(155, 244);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(78, 21);
+			this->label1->Size = System::Drawing::Size(187, 29);
 			this->label1->TabIndex = 45;
-			this->label1->Text = L"Contact";
+			this->label1->Text = L"Contact Number";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(89, 111);
+			this->label2->Location = System::Drawing::Point(155, 159);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(72, 21);
+			this->label2->Size = System::Drawing::Size(102, 29);
 			this->label2->TabIndex = 46;
 			this->label2->Text = L"Address";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(89, 73);
+			this->label3->Location = System::Drawing::Point(155, 101);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(58, 21);
+			this->label3->Size = System::Drawing::Size(78, 29);
 			this->label3->TabIndex = 47;
 			this->label3->Text = L"Name";
 			// 
 			// Txt_Email
 			// 
-			this->Txt_Email->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Txt_Email->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Email->Location = System::Drawing::Point(190, 192);
+			this->Txt_Email->Location = System::Drawing::Point(437, 324);
 			this->Txt_Email->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Email->Name = L"Txt_Email";
 			this->Txt_Email->Size = System::Drawing::Size(267, 26);
@@ -162,9 +162,9 @@ namespace GuestHouseManagement {
 			// 
 			// Txt_Contact
 			// 
-			this->Txt_Contact->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Txt_Contact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Contact->Location = System::Drawing::Point(190, 148);
+			this->Txt_Contact->Location = System::Drawing::Point(437, 247);
 			this->Txt_Contact->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Contact->Name = L"Txt_Contact";
 			this->Txt_Contact->Size = System::Drawing::Size(267, 26);
@@ -172,19 +172,20 @@ namespace GuestHouseManagement {
 			// 
 			// Txt_Address
 			// 
-			this->Txt_Address->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Txt_Address->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Address->Location = System::Drawing::Point(190, 111);
+			this->Txt_Address->Location = System::Drawing::Point(437, 161);
 			this->Txt_Address->Margin = System::Windows::Forms::Padding(2);
+			this->Txt_Address->Multiline = true;
 			this->Txt_Address->Name = L"Txt_Address";
-			this->Txt_Address->Size = System::Drawing::Size(267, 26);
+			this->Txt_Address->Size = System::Drawing::Size(267, 53);
 			this->Txt_Address->TabIndex = 53;
 			// 
 			// Txt_Name
 			// 
-			this->Txt_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Txt_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Name->Location = System::Drawing::Point(190, 73);
+			this->Txt_Name->Location = System::Drawing::Point(437, 105);
 			this->Txt_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Name->Name = L"Txt_Name";
 			this->Txt_Name->Size = System::Drawing::Size(267, 26);
@@ -192,65 +193,36 @@ namespace GuestHouseManagement {
 			// 
 			// Btn_Submit
 			// 
-			this->Btn_Submit->BackColor = System::Drawing::Color::OrangeRed;
-			this->Btn_Submit->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Btn_Submit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
+			this->Btn_Submit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->Btn_Submit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->Btn_Submit->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Submit->Location = System::Drawing::Point(227, 255);
+			this->Btn_Submit->Location = System::Drawing::Point(307, 398);
 			this->Btn_Submit->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Submit->Name = L"Btn_Submit";
-			this->Btn_Submit->Size = System::Drawing::Size(142, 48);
+			this->Btn_Submit->Size = System::Drawing::Size(225, 86);
 			this->Btn_Submit->TabIndex = 68;
 			this->Btn_Submit->Text = L"Submit Changes";
 			this->Btn_Submit->UseVisualStyleBackColor = false;
 			this->Btn_Submit->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_Submit_Click);
 			// 
-			// Btn_User_Types
+			// label4
 			// 
-			this->Btn_User_Types->BackColor = System::Drawing::Color::OrangeRed;
-			this->Btn_User_Types->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Btn_User_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label4->AutoSize = true;
+			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Btn_User_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_User_Types->Location = System::Drawing::Point(93, 436);
-			this->Btn_User_Types->Margin = System::Windows::Forms::Padding(2);
-			this->Btn_User_Types->Name = L"Btn_User_Types";
-			this->Btn_User_Types->Size = System::Drawing::Size(142, 48);
-			this->Btn_User_Types->TabIndex = 71;
-			this->Btn_User_Types->Text = L"User Types";
-			this->Btn_User_Types->UseVisualStyleBackColor = false;
-			this->Btn_User_Types->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_User_Types_Click);
-			// 
-			// Btn_Room_Types
-			// 
-			this->Btn_Room_Types->BackColor = System::Drawing::Color::OrangeRed;
-			this->Btn_Room_Types->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Btn_Room_Types->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->Btn_Room_Types->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Room_Types->Location = System::Drawing::Point(315, 436);
-			this->Btn_Room_Types->Margin = System::Windows::Forms::Padding(2);
-			this->Btn_Room_Types->Name = L"Btn_Room_Types";
-			this->Btn_Room_Types->Size = System::Drawing::Size(142, 48);
-			this->Btn_Room_Types->TabIndex = 70;
-			this->Btn_Room_Types->Text = L"Room Types";
-			this->Btn_Room_Types->UseVisualStyleBackColor = false;
-			this->Btn_Room_Types->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::Btn_Room_Types_Click);
-			// 
-			// Second_Panel
-			// 
-			this->Second_Panel->Location = System::Drawing::Point(3, 3);
-			this->Second_Panel->Name = L"Second_Panel";
-			this->Second_Panel->Size = System::Drawing::Size(599, 498);
-			this->Second_Panel->TabIndex = 72;
+			this->label4->Location = System::Drawing::Point(281, 28);
+			this->label4->Name = L"label4";
+			this->label4->Size = System::Drawing::Size(251, 29);
+			this->label4->TabIndex = 73;
+			this->label4->Text = L"Guest House Details";
 			// 
 			// UserControl_Guest_House_Info
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
-			this->Controls->Add(this->Second_Panel);
-			this->Controls->Add(this->Btn_Room_Types);
-			this->Controls->Add(this->Btn_User_Types);
+			this->Controls->Add(this->label4);
 			this->Controls->Add(this->Btn_Submit);
 			this->Controls->Add(this->Txt_Name);
 			this->Controls->Add(this->Txt_Address);
@@ -261,7 +233,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Lbl_Register_Name);
 			this->Name = L"UserControl_Guest_House_Info";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::UserControl_Guest_House_Info_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::myMouseEnter);
 			this->ResumeLayout(false);
@@ -277,7 +249,7 @@ namespace GuestHouseManagement {
 	private: System::Void UserControl_Guest_House_Info_Load(System::Object^  sender, System::EventArgs^  e) {
 				 //pnl->Size = System::Drawing::Size(173, 44);
 				 //pnl->BringToFront();
-				 Second_Panel->Visible = false;
+				 //Second_Panel->Visible = false;
 				 try{
 
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
@@ -322,12 +294,7 @@ namespace GuestHouseManagement {
 						 goto ErrExit;
 					 }
 
-					 rx = "^[0-9]{10}$";
-					 if(!regex_match(scontact.cbegin(), scontact.cend(), rx)){
-						 MessageBox::Show("Enter 10 digit Contact Number [use digits from 0-9]");
-						 goto ErrExit;
-					 }
-
+					
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
@@ -342,6 +309,7 @@ namespace GuestHouseManagement {
 					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getGHData, DB_Connection);
 					 cmd->ExecuteNonQuery();
 					 DB_Connection->Close();
+					 MessageBox::Show("Successfully updated Guest House Details", "Notification");
 
 				 }
 
@@ -352,17 +320,7 @@ namespace GuestHouseManagement {
 ErrExit:
 				 ;
 			 }
-	private: System::Void Btn_User_Types_Click(System::Object^  sender, System::EventArgs^  e) {
-				 Second_Panel->Controls->Clear();
-				 //Second_Panel->Controls->Add(gcnew UserControl_User_Types);
-				 Second_Panel->Visible = true;
-			 }
 
-	private: System::Void Btn_Room_Types_Click(System::Object^  sender, System::EventArgs^  e) {
-				 Second_Panel->Controls->Clear();
-				 //Second_Panel->Controls->Add(gcnew UserControl_Room_Types2);
-				 Second_Panel->Visible = true;
-			 }
 	public: System::Void myMouseEnter(System::Object^  sender, System::EventArgs^  e) {
 				pnl->Size = System::Drawing::Size(173, 44);
 				pn2->Size = System::Drawing::Size(173, 44);

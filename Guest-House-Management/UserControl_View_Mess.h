@@ -85,94 +85,94 @@ namespace GuestHouseManagement {
 			// Lbl_Register_Name
 			// 
 			this->Lbl_Register_Name->AutoSize = true;
-			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Lbl_Register_Name->Location = System::Drawing::Point(200, 20);
+			this->Lbl_Register_Name->Location = System::Drawing::Point(218, 22);
 			this->Lbl_Register_Name->Name = L"Lbl_Register_Name";
-			this->Lbl_Register_Name->Size = System::Drawing::Size(233, 23);
+			this->Lbl_Register_Name->Size = System::Drawing::Size(258, 25);
 			this->Lbl_Register_Name->TabIndex = 44;
 			this->Lbl_Register_Name->Text = L"Current Mess Rates(Rs.)";
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(41, 80);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(99, 23);
+			this->label1->Size = System::Drawing::Size(108, 25);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Breakfast";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(41, 120);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(68, 23);
+			this->label2->Size = System::Drawing::Size(72, 25);
 			this->label2->TabIndex = 46;
 			this->label2->Text = L"Lunch";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(41, 161);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(71, 23);
+			this->label3->Size = System::Drawing::Size(80, 25);
 			this->label3->TabIndex = 47;
 			this->label3->Text = L"Dinner";
 			// 
 			// Register_First_Name
 			// 
 			this->Register_First_Name->Cursor = System::Windows::Forms::Cursors::No;
-			this->Register_First_Name->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->Register_First_Name->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Register_First_Name->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->Register_First_Name->Location = System::Drawing::Point(173, 80);
 			this->Register_First_Name->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Register_First_Name->Name = L"Register_First_Name";
 			this->Register_First_Name->ReadOnly = true;
-			this->Register_First_Name->Size = System::Drawing::Size(275, 30);
+			this->Register_First_Name->Size = System::Drawing::Size(275, 32);
 			this->Register_First_Name->TabIndex = 51;
 			// 
 			// textBox1
 			// 
 			this->textBox1->Cursor = System::Windows::Forms::Cursors::No;
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->textBox1->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->textBox1->Location = System::Drawing::Point(173, 120);
 			this->textBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->ReadOnly = true;
-			this->textBox1->Size = System::Drawing::Size(275, 30);
+			this->textBox1->Size = System::Drawing::Size(275, 32);
 			this->textBox1->TabIndex = 52;
 			// 
 			// textBox2
 			// 
 			this->textBox2->Cursor = System::Windows::Forms::Cursors::No;
-			this->textBox2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->textBox2->ForeColor = System::Drawing::SystemColors::MenuText;
 			this->textBox2->Location = System::Drawing::Point(173, 161);
 			this->textBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->ReadOnly = true;
-			this->textBox2->Size = System::Drawing::Size(275, 30);
+			this->textBox2->Size = System::Drawing::Size(275, 32);
 			this->textBox2->TabIndex = 53;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(41, 261);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(358, 23);
+			this->label4->Size = System::Drawing::Size(364, 25);
 			this->label4->TabIndex = 55;
 			this->label4->Text = L"Click here to download mess menu";
 			// 
