@@ -472,7 +472,7 @@ private: System::Void Btn_Forget_Click(System::Object^  sender, System::EventArg
 			 
 			 String ^token=genToken(10);
 			 token_temp = token;
-			 MessageBox::Show(token);
+			 //MessageBox::Show(token);
 			 DB_Connection->Close();
 
 			 

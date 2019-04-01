@@ -1,91 +1,171 @@
-﻿Build started 4/1/2019 6:14:54 PM.
-     1>Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
+﻿Build started 4/1/2019 10:16:23 PM.
+     1>Project "C:\Users\Priyanshu Singh\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Guest-House-Management.unsuccessfulbuild" because "AlwaysCreate" was specified.
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
-         All outputs are up-to-date.
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Form_Customer_Homepage.cpp "Guest-House-Management.cpp" UserControl_Customer_Book_Edit.cpp UserControl_Login.cpp /clr:nostdlib 
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
+         stdafx.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Staff_Planner.h(425): warning C4101: 'name' : unreferenced local variable
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Guest-House-Management.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt AssemblyInfo.cpp Form_Customer_Homepage.cpp Form_Edit_Booking.cpp Form_Edit_Staff_Details.cpp Form_Feedback.cpp Form_Reception.cpp Form_Show_Guest_House_Facilities.cpp "Guest-House-Management.cpp" UserControl_Add_Cab_Details.cpp UserControl_Add_Mess.cpp UserControl_Add_Places.cpp UserControl_Add_Restaurant.cpp UserControl_Add_Room.cpp UserControl_Approve_Users.cpp UserControl_Booking_Approval.cpp UserControl_Customer_Admin_Feedback.cpp UserControl_Customer_Book_Edit.cpp UserControl_Customer_Feedback.cpp UserControl_Customer_Housekeeping.cpp UserControl_Extra_Charges.cpp UserControl_Floor_Map.cpp UserControl_Generate_Bill.cpp UserControl_GuestHouseDetails.cpp UserControl_Guest_House_Info.cpp UserControl_In_Stay_Facilities.cpp UserControl_Login.cpp UserControl_Mess_Rates.cpp UserControl_Password_Change.cpp UserControl_Room_Types.cpp UserControl_Room_Types2.cpp UserControl_Signup.cpp UserControl_Staff.cpp UserControl_Staff_Booking_Display.cpp UserControl_Staff_Edit.cpp UserControl_Staff_Edit_Details.cpp UserControl_Staff_Housekeeping_Approval.cpp UserControl_Staff_Leave.cpp UserControl_Staff_Leave_Approval.cpp UserControl_Staff_Planner.cpp UserControl_Staff_Planner_Requirements.cpp UserControl_Staff_Record.cpp UserControl_Staff_Register.cpp UserControl_Staff_View_Details.cpp UserControl_Status_Room.cpp UserControl_User_Types.cpp UserControl_View_Cab.cpp UserControl_View_Mess.cpp UserControl_View_Restaurants.cpp UserControl_View_TouristPlaces.cpp /clr:nostdlib 
+         AssemblyInfo.cpp
          Form_Customer_Homepage.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
+         Form_Edit_Booking.cpp
+         Form_Edit_Staff_Details.cpp
+         Form_Feedback.cpp
+         Form_Reception.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(330): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+         Form_Show_Guest_House_Facilities.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
          Guest-House-Management.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(328): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(330): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Login.h(490): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Login.h(490): warning C4101: 'ex' : unreferenced local variable
+         UserControl_Add_Cab_Details.cpp
+         UserControl_Add_Mess.cpp
+         UserControl_Add_Places.cpp
+         UserControl_Add_Restaurant.cpp
+         UserControl_Add_Room.cpp
+         UserControl_Approve_Users.cpp
+         UserControl_Booking_Approval.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(330): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+         UserControl_Customer_Admin_Feedback.cpp
          UserControl_Customer_Book_Edit.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-         UserControl_Login.cpp
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+         UserControl_Customer_Feedback.cpp
+         UserControl_Customer_Housekeeping.cpp
+         UserControl_Extra_Charges.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
                  with
                  [
                      _Value_t=System::String ^
                  ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(328): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
-                 with
-                 [
-                     _Value_t=System::String ^
-                 ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
-                 with
-                 [
-                     _Value_t=System::String ^
-                 ]
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\UserControl_Login.h(490): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(330): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
          Generating Code...
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
-     1>c:\users\cgupta3131\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+         Compiling...
+         UserControl_Floor_Map.cpp
+         UserControl_Generate_Bill.cpp
+         UserControl_GuestHouseDetails.cpp
+         UserControl_Guest_House_Info.cpp
+         UserControl_In_Stay_Facilities.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
+         UserControl_Login.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(36): warning C4677: 'vec': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(329): warning C4244: 'initializing' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Extra_Charges.h(330): warning C4244: '+=' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(33): warning C4677: 'vec_id': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Customer_Book_Edit.h(34): warning C4677: 'v1': signature of non-private member contains assembly private type 'cliext::vector<_Value_t>'
+                 with
+                 [
+                     _Value_t=System::String ^
+                 ]
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_Login.h(490): warning C4101: 'ex' : unreferenced local variable
+         UserControl_Mess_Rates.cpp
+         UserControl_Password_Change.cpp
+         UserControl_Room_Types.cpp
+         UserControl_Room_Types2.cpp
+         UserControl_Signup.cpp
+         UserControl_Staff.cpp
+         UserControl_Staff_Booking_Display.cpp
+         UserControl_Staff_Edit.cpp
+         UserControl_Staff_Edit_Details.cpp
+         UserControl_Staff_Housekeeping_Approval.cpp
+         UserControl_Staff_Leave.cpp
+         UserControl_Staff_Leave_Approval.cpp
+         UserControl_Staff_Planner.cpp
+         UserControl_Staff_Planner_Requirements.cpp
+         Generating Code...
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\usercontrol_floor_map.h(213): warning C4715: 'GuestHouseManagement::UserControl_Floor_Map::bookingDetailsOfRoom' : not all control paths return a value
+         Compiling...
+         UserControl_Staff_Record.cpp
+         UserControl_Staff_Register.cpp
+         UserControl_Staff_View_Details.cpp
+         UserControl_Status_Room.cpp
+         UserControl_User_Types.cpp
+         UserControl_View_Cab.cpp
+         UserControl_View_Mess.cpp
+         UserControl_View_Restaurants.cpp
+         UserControl_View_TouristPlaces.cpp
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(152): warning C4101: 'ex' : unreferenced local variable
+     1>c:\users\priyanshu singh\desktop\guest-house-management\guest-house-management\UserControl_View_TouristPlaces.h(185): warning C4101: 'ex' : unreferenced local variable
+         Generating Code...
          All outputs are up-to-date.
        CoreResGen:
-         "C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\NETFX 4.0 Tools\resgen.exe" /useSourcePath /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /r:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /compile UserControl_Customer_Book_Edit.resx,Debug\GuestHouseManagement.UserControl_Customer_Book_Edit.resources
-         Processing resource file "UserControl_Customer_Book_Edit.resx" into "Debug\GuestHouseManagement.UserControl_Customer_Book_Edit.resources".
+         No resources are out of date with respect to their source files. Skipping resource generation.
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\cgupta3131\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Customer_Homepage.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Edit_Booking.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Feedback.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Show_Guest_House_Facilities.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Cab_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Mess.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Places.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Restaurant.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Booking_Approval.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Admin_Feedback.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Booking.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form1.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Edit_Staff_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Reception.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Room.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Approve_Users.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Book_Edit.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Feedback.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Housekeeping.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Extra_Charges.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Floor_Map.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Generate_Bill.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_GuestHouseDetails.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Guest_House_Info.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_In_Stay_Facilities.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Login.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Mess_Rates.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Password_Change.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Room_Types.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Room_Types2.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Signup.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Booking_Display.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Edit.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Edit_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Housekeeping_Approval.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Leave.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Leave_Approval.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Planner.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Planner_Requirements.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Record.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Register.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_View_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Status_Room.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_User_Types.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_Cab.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_Mess.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_Restaurants.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_TouristPlaces.resources /MANIFEST /ManifestFile:"Debug\Guest-House-Management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\cgupta3131\Desktop\Guest-House-Management\Debug\Guest-House-Management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         c:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Priyanshu Singh\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Customer_Homepage.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Edit_Booking.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Feedback.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Show_Guest_House_Facilities.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Cab_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Mess.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Places.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Restaurant.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Booking_Approval.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Admin_Feedback.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Booking.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form1.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Edit_Staff_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.Form_Reception.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Add_Room.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Approve_Users.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Book_Edit.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Feedback.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Customer_Housekeeping.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Extra_Charges.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Floor_Map.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Generate_Bill.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_GuestHouseDetails.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Guest_House_Info.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_In_Stay_Facilities.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Login.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Mess_Rates.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Password_Change.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Room_Types.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Room_Types2.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Signup.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Booking_Display.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Edit.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Edit_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Housekeeping_Approval.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Leave.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Leave_Approval.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Planner.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Planner_Requirements.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Record.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_Register.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Staff_View_Details.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_Status_Room.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_User_Types.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_Cab.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_Mess.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_Restaurants.resources /ASSEMBLYRESOURCE:Debug\GuestHouseManagement.UserControl_View_TouristPlaces.resources /MANIFEST /ManifestFile:"Debug\Guest-House-Management.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Priyanshu Singh\Desktop\Guest-House-Management\Debug\Guest-House-Management.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
          Debug\Form_Customer_Homepage.obj
          Debug\Form_Edit_Booking.obj
@@ -139,14 +219,14 @@
          "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
          Debug\UserControl_Room_Types.obj
      1>Debug\UserControl_Room_Types.obj : warning LNK4042: object specified more than once; extras ignored
-         Guest-House-Management.vcxproj -> C:\Users\cgupta3131\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe
+         Guest-House-Management.vcxproj -> C:\Users\Priyanshu Singh\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe
        Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\cgupta3131\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe;#1" /manifest "Debug\Guest-House-Management.exe.intermediate.manifest"
+         c:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Priyanshu Singh\Desktop\Guest-House-Management\Debug\Guest-House-Management.exe;#1" /manifest "Debug\Guest-House-Management.exe.intermediate.manifest"
        FinalizeBuildStatus:
          Deleting file "Debug\Guest-House-Management.unsuccessfulbuild".
          Touching "Debug\Guest-House-Management.lastbuildstate".
-     1>Done Building Project "C:\Users\cgupta3131\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Users\Priyanshu Singh\Desktop\Guest-House-Management\Guest-House-Management\Guest-House-Management.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:05.48
+Time Elapsed 00:00:21.78

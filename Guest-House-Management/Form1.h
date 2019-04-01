@@ -86,9 +86,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Btn_Login->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->Btn_Login->ImageAlign = System::Drawing::ContentAlignment::BottomLeft;
-			this->Btn_Login->Location = System::Drawing::Point(310, 126);
+			this->Btn_Login->Location = System::Drawing::Point(413, 155);
+			this->Btn_Login->Margin = System::Windows::Forms::Padding(4);
 			this->Btn_Login->Name = L"Btn_Login";
-			this->Btn_Login->Size = System::Drawing::Size(244, 90);
+			this->Btn_Login->Size = System::Drawing::Size(325, 111);
 			this->Btn_Login->TabIndex = 0;
 			this->Btn_Login->Text = L"Login";
 			this->Btn_Login->UseVisualStyleBackColor = false;
@@ -99,10 +100,10 @@ namespace GuestHouseManagement {
 			this->Output_Panel->AutoSize = true;
 			this->Output_Panel->BackColor = System::Drawing::Color::Transparent;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->Output_Panel->Location = System::Drawing::Point(59, 47);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Output_Panel->Location = System::Drawing::Point(79, 58);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(656, 50);
+			this->Output_Panel->Size = System::Drawing::Size(875, 62);
 			this->Output_Panel->TabIndex = 15;
 			this->Output_Panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::Output_Panel_Paint);
 			// 
@@ -115,10 +116,9 @@ namespace GuestHouseManagement {
 			this->backlabel->ForeColor = System::Drawing::SystemColors::ControlText;
 			this->backlabel->LinkColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(224)));
-			this->backlabel->Location = System::Drawing::Point(32, 14);
-			this->backlabel->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->backlabel->Location = System::Drawing::Point(43, 17);
 			this->backlabel->Name = L"backlabel";
-			this->backlabel->Size = System::Drawing::Size(52, 18);
+			this->backlabel->Size = System::Drawing::Size(64, 24);
 			this->backlabel->TabIndex = 16;
 			this->backlabel->TabStop = true;
 			this->backlabel->Text = L"BACK";
@@ -134,9 +134,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->btn_signup->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 			this->btn_signup->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
-			this->btn_signup->Location = System::Drawing::Point(310, 272);
+			this->btn_signup->Location = System::Drawing::Point(413, 335);
+			this->btn_signup->Margin = System::Windows::Forms::Padding(4);
 			this->btn_signup->Name = L"btn_signup";
-			this->btn_signup->Size = System::Drawing::Size(244, 90);
+			this->btn_signup->Size = System::Drawing::Size(325, 111);
 			this->btn_signup->TabIndex = 17;
 			this->btn_signup->Text = L"Sign up";
 			this->btn_signup->UseVisualStyleBackColor = false;
@@ -144,21 +145,23 @@ namespace GuestHouseManagement {
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->AutoSize = true;
 			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
-			this->ClientSize = System::Drawing::Size(1000, 596);
+			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->ClientSize = System::Drawing::Size(1333, 734);
 			this->Controls->Add(this->btn_signup);
 			this->Controls->Add(this->backlabel);
 			this->Controls->Add(this->Output_Panel);
 			this->Controls->Add(this->Btn_Login);
-			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedDialog;
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::Fixed3D;
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->MaximizeBox = false;
 			this->Name = L"Form1";
-			this->Text = L"Form1";
+			this->Text = L"Home";
 			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

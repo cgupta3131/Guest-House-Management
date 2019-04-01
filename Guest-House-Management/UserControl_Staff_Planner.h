@@ -168,7 +168,7 @@ private:
 	 this->label1->Location = System::Drawing::Point(265, 16);
 	 this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->label1->Name = L"label1";
-	 this->label1->Size = System::Drawing::Size(65, 25);
+	 this->label1->Size = System::Drawing::Size(83, 34);
 	 this->label1->TabIndex = 0;
 	 this->label1->Text = L"Date";
 	 this->label1->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label1_Click);
@@ -179,7 +179,7 @@ private:
 	 this->PlannerDate->Location = System::Drawing::Point(364, 16);
 	 this->PlannerDate->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 	 this->PlannerDate->Name = L"PlannerDate";
-	 this->PlannerDate->Size = System::Drawing::Size(258, 26);
+	 this->PlannerDate->Size = System::Drawing::Size(258, 30);
 	 this->PlannerDate->TabIndex = 1;
 	 this->PlannerDate->ValueChanged += gcnew System::EventHandler(this, &UserControl_Staff_Planner::PlannerDate_ValueChanged);
 	 // 
@@ -194,7 +194,7 @@ private:
 	 this->Night_Label->Location = System::Drawing::Point(619, 125);
 	 this->Night_Label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->Night_Label->Name = L"Night_Label";
-	 this->Night_Label->Size = System::Drawing::Size(81, 27);
+	 this->Night_Label->Size = System::Drawing::Size(98, 36);
 	 this->Night_Label->TabIndex = 3;
 	 this->Night_Label->Text = L"NIGHT";
 	 this->Night_Label->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label3_Click);
@@ -222,7 +222,7 @@ private:
 	 this->count_lbl->Location = System::Drawing::Point(107, 218);
 	 this->count_lbl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->count_lbl->Name = L"count_lbl";
-	 this->count_lbl->Size = System::Drawing::Size(71, 29);
+	 this->count_lbl->Size = System::Drawing::Size(89, 36);
 	 this->count_lbl->TabIndex = 10;
 	 this->count_lbl->Text = L"count";
 	 // 
@@ -236,7 +236,7 @@ private:
 	 this->category_lbl->Location = System::Drawing::Point(5, 54);
 	 this->category_lbl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->category_lbl->Name = L"category_lbl";
-	 this->category_lbl->Size = System::Drawing::Size(81, 33);
+	 this->category_lbl->Size = System::Drawing::Size(96, 40);
 	 this->category_lbl->TabIndex = 11;
 	 this->category_lbl->Text = L"Date";
 	 this->category_lbl->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::category_lbl_Click);
@@ -260,7 +260,7 @@ private:
 	 this->count_lbl_n->BackColor = System::Drawing::Color::Black;
 	 this->count_lbl_n->Location = System::Drawing::Point(634, 222);
 	 this->count_lbl_n->Name = L"count_lbl_n";
-	 this->count_lbl_n->Size = System::Drawing::Size(51, 20);
+	 this->count_lbl_n->Size = System::Drawing::Size(64, 25);
 	 this->count_lbl_n->TabIndex = 16;
 	 this->count_lbl_n->Text = L"label6";
 	 // 
@@ -271,7 +271,7 @@ private:
 	 this->hover_lbl->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
 	 this->hover_lbl->Location = System::Drawing::Point(380, 269);
 	 this->hover_lbl->Name = L"hover_lbl";
-	 this->hover_lbl->Size = System::Drawing::Size(0, 20);
+	 this->hover_lbl->Size = System::Drawing::Size(0, 25);
 	 this->hover_lbl->TabIndex = 17;
 	 this->hover_lbl->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label6_Click_1);
 	 // 
@@ -295,7 +295,7 @@ private:
 	 this->day_label->Location = System::Drawing::Point(107, 121);
 	 this->day_label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->day_label->Name = L"day_label";
-	 this->day_label->Size = System::Drawing::Size(59, 25);
+	 this->day_label->Size = System::Drawing::Size(75, 34);
 	 this->day_label->TabIndex = 2;
 	 this->day_label->Text = L"DAY";
 	 this->day_label->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label2_Click_1);
@@ -313,7 +313,7 @@ private:
 	 this->exit_label->AutoSize = true;
 	 this->exit_label->Location = System::Drawing::Point(229, 101);
 	 this->exit_label->Name = L"exit_label";
-	 this->exit_label->Size = System::Drawing::Size(35, 20);
+	 this->exit_label->Size = System::Drawing::Size(44, 25);
 	 this->exit_label->TabIndex = 19;
 	 this->exit_label->TabStop = true;
 	 this->exit_label->Text = L"Exit";
@@ -322,6 +322,7 @@ private:
 	 // UserControl_Staff_Planner
 	 // 
 	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+	 this->AutoScroll = true;
 	 this->BackColor = System::Drawing::Color::Transparent;
 	 this->Controls->Add(this->exit_label);
 	 this->Controls->Add(this->staff_req_panel);

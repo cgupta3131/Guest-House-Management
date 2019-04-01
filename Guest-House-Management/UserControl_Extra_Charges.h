@@ -79,12 +79,13 @@ private:
 	 // 
 	 // UserControl_Extra_Charges
 	 // 
-	 this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+	 this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+	 this->AutoScroll = true;
 	 this->BackColor = System::Drawing::Color::Transparent;
-	 this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+	 this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 	 this->Name = L"UserControl_Extra_Charges";
-	 this->Size = System::Drawing::Size(682, 553);
+	 this->Size = System::Drawing::Size(909, 681);
 	 this->Load += gcnew System::EventHandler(this, &UserControl_Extra_Charges::UserControl_Extra_Charges_Load);
 	 this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Extra_Charges::myMouseClick);
 	 this->ResumeLayout(false);
@@ -353,7 +354,7 @@ ErrExit:
      try
      {
   System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
-  opt = MessageBox::Show("Add 1 breakfast","Confirm", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
+  opt = MessageBox::Show("Add 1 breakfast?","Confirm", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
 
   if(Convert::ToString(opt)=="Yes")
   {
@@ -392,7 +393,7 @@ ErrExit:
      try
      {
   System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
-  opt = MessageBox::Show("Add 1 lunch","Confirm", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
+  opt = MessageBox::Show("Add 1 lunch?","Confirm", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
 
   if(Convert::ToString(opt)=="Yes")
   {
@@ -429,7 +430,7 @@ ErrExit:
      try
      {
   System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
-  opt = MessageBox::Show("Add 1 dinner","Confirm", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
+  opt = MessageBox::Show("Add 1 dinner?","Confirm", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
 
   if(Convert::ToString(opt)=="Yes")
   {

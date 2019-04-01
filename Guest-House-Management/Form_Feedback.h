@@ -380,6 +380,7 @@ namespace GuestHouseManagement {
 			// 
 			// Form_Feedback
 			// 
+			this->AcceptButton = this->Btn_Create;
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(976, 487);
@@ -405,7 +406,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Lbl_Register_Name);
 			this->Controls->Add(this->pictureBox1);
 			this->Name = L"Form_Feedback";
-			this->Text = L"Form_Feedback";
+			this->Text = L"Submit Feedback";
 			this->Load += gcnew System::EventHandler(this, &Form_Feedback::Form_Feedback_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox2))->EndInit();

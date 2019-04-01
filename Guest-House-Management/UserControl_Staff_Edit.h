@@ -273,22 +273,26 @@ namespace GuestHouseManagement {
 						 }
 					 }
 					 int ^ input = Convert::ToInt32(Text_Search->Text);
+					 //MessageBox::Show(Convert::ToString(input));
 					 String ^ query = "Select * From Staff_Register where Employee_ID = " + input + ";";
 					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
 					 OleDbDataReader ^ user_data = cmd->ExecuteReader();
 					 int i = 0;
 					 m=0;
+					 j=0;
 					 while(user_data->Read() == true)
 					 {
 						 count++;
 						 List_Search->Items->Add(user_data->GetString(1));
-						 joke[j]=Convert::ToInt32(input);
+						 //joke[j++]=Convert::ToInt32(input);
+						 joke[j++]=user_data->GetInt32(0);
+						 //MessageBox::Show(Convert::ToString(joke[0]));
 						 Button ^ bt1 = gcnew Button;
 						 bt1->Text = user_data->GetString(1);
 						 bt1->Size = System::Drawing::Size(170,30);
 						 bt1->Name = "btnnn1" + (i);
 						 m++;
-						 bt1->Location = System::Drawing::Point(30,200 + 30*i);
+						 bt1->Location = System::Drawing::Point(300,200 + 30*i);
 						 i++;
 						 this->Controls->Add(bt1);
 						 bt1->Click+=gcnew EventHandler(this,&UserControl_Staff_Edit::bt1_Click);
@@ -311,7 +315,7 @@ namespace GuestHouseManagement {
 				// The error occurs when we scroll, because when we scroll, the location Y changes due to the scroll
 				int scr=this->AutoScrollPosition.Y;
 				//MessageBox::Show("scr=" + Convert::ToString(scr));
-				int pos=(loc-140-scr)/30;
+				int pos=(loc-200-scr)/30;
 				extern int joke[];
 				extern int S_ID;
 				S_ID = joke[pos];

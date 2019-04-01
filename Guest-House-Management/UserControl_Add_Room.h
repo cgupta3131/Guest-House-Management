@@ -501,7 +501,7 @@ private: System::Void Btn_Add_Room_Click(System::Object^  sender, System::EventA
    {
     String ^room =  Convert::ToString(i);
     room = Prefix + room + Suffix;//
-    MessageBox::Show(room);
+    //MessageBox::Show(room);
     String ^ insertString = "insert into Room_No([Floor],[Room_No],[Category],[Status]) VALUES('" +floor+ "', '" +room+ "', '" +category+ "', '" +status+ "');";
     DB_Connection->Open();
     OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection); 

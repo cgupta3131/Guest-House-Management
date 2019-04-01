@@ -93,7 +93,6 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			//MessageBox::Show("123");
 			this->Lbl_Register_Name = (gcnew System::Windows::Forms::Label());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -337,7 +336,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Lbl_Register_Name);
 			this->Name = L"Form_Edit_Booking";
-			this->Text = L"Form_Edit_Booking";
+			this->Text = L"Booking Details";
 			this->Load += gcnew System::EventHandler(this, &Form_Edit_Booking::Form_Edit_Booking_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

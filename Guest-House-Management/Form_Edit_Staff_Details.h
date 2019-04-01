@@ -81,10 +81,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Button_Edit->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Button_Edit->Location = System::Drawing::Point(268, -1);
-			this->Button_Edit->Margin = System::Windows::Forms::Padding(2);
+			this->Button_Edit->Location = System::Drawing::Point(357, -1);
+			this->Button_Edit->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Button_Edit->Name = L"Button_Edit";
-			this->Button_Edit->Size = System::Drawing::Size(122, 61);
+			this->Button_Edit->Size = System::Drawing::Size(163, 75);
 			this->Button_Edit->TabIndex = 0;
 			this->Button_Edit->Text = L"Edit";
 			this->Button_Edit->UseVisualStyleBackColor = false;
@@ -99,10 +99,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Button_View->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Button_View->Location = System::Drawing::Point(142, -1);
-			this->Button_View->Margin = System::Windows::Forms::Padding(2);
+			this->Button_View->Location = System::Drawing::Point(189, -1);
+			this->Button_View->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Button_View->Name = L"Button_View";
-			this->Button_View->Size = System::Drawing::Size(122, 61);
+			this->Button_View->Size = System::Drawing::Size(163, 75);
 			this->Button_View->TabIndex = 1;
 			this->Button_View->Text = L"View";
 			this->Button_View->UseVisualStyleBackColor = false;
@@ -111,10 +111,10 @@ namespace GuestHouseManagement {
 			// Details_Panel
 			// 
 			this->Details_Panel->BackColor = System::Drawing::Color::Transparent;
-			this->Details_Panel->Location = System::Drawing::Point(8, 64);
-			this->Details_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Details_Panel->Location = System::Drawing::Point(11, 79);
+			this->Details_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Details_Panel->Name = L"Details_Panel";
-			this->Details_Panel->Size = System::Drawing::Size(687, 435);
+			this->Details_Panel->Size = System::Drawing::Size(916, 535);
 			this->Details_Panel->TabIndex = 2;
 			this->Details_Panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Edit_Staff_Details::Details_Panel_Paint);
 			// 
@@ -127,10 +127,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Leave_Button->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Leave_Button->Location = System::Drawing::Point(394, -1);
-			this->Leave_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Leave_Button->Location = System::Drawing::Point(525, -1);
+			this->Leave_Button->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Leave_Button->Name = L"Leave_Button";
-			this->Leave_Button->Size = System::Drawing::Size(122, 61);
+			this->Leave_Button->Size = System::Drawing::Size(163, 75);
 			this->Leave_Button->TabIndex = 3;
 			this->Leave_Button->Text = L"Leave Record";
 			this->Leave_Button->UseVisualStyleBackColor = false;
@@ -138,20 +138,20 @@ namespace GuestHouseManagement {
 			// 
 			// Form_Edit_Staff_Details
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(209)));
-			this->ClientSize = System::Drawing::Size(706, 500);
+			this->ClientSize = System::Drawing::Size(939, 606);
 			this->Controls->Add(this->Leave_Button);
 			this->Controls->Add(this->Details_Panel);
 			this->Controls->Add(this->Button_View);
 			this->Controls->Add(this->Button_Edit);
-			this->Margin = System::Windows::Forms::Padding(2);
-			this->MaximumSize = System::Drawing::Size(722, 539);
-			this->MinimumSize = System::Drawing::Size(722, 539);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->MaximumSize = System::Drawing::Size(957, 653);
+			this->MinimumSize = System::Drawing::Size(957, 653);
 			this->Name = L"Form_Edit_Staff_Details";
-			this->Text = L"Form_Edit_Staff_Details";
+			this->Text = L"`";
 			this->Load += gcnew System::EventHandler(this, &Form_Edit_Staff_Details::Form_Edit_Staff_Details_Load);
 			this->ResumeLayout(false);
 

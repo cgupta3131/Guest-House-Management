@@ -102,10 +102,10 @@ namespace GuestHouseManagement {
 			this->Button_Book->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Button_Book->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Button_Book->Location = System::Drawing::Point(178, 13);
-			this->Button_Book->Margin = System::Windows::Forms::Padding(2);
+			this->Button_Book->Location = System::Drawing::Point(237, 16);
+			this->Button_Book->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Button_Book->Name = L"Button_Book";
-			this->Button_Book->Size = System::Drawing::Size(170, 64);
+			this->Button_Book->Size = System::Drawing::Size(227, 79);
 			this->Button_Book->TabIndex = 0;
 			this->Button_Book->Text = L"New Booking";
 			this->Button_Book->UseVisualStyleBackColor = false;
@@ -120,10 +120,10 @@ namespace GuestHouseManagement {
 			this->Button_Guest_House_Facilities->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Button_Guest_House_Facilities->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, 
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-			this->Button_Guest_House_Facilities->Location = System::Drawing::Point(350, 13);
-			this->Button_Guest_House_Facilities->Margin = System::Windows::Forms::Padding(2);
+			this->Button_Guest_House_Facilities->Location = System::Drawing::Point(467, 16);
+			this->Button_Guest_House_Facilities->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Button_Guest_House_Facilities->Name = L"Button_Guest_House_Facilities";
-			this->Button_Guest_House_Facilities->Size = System::Drawing::Size(170, 64);
+			this->Button_Guest_House_Facilities->Size = System::Drawing::Size(227, 79);
 			this->Button_Guest_House_Facilities->TabIndex = 2;
 			this->Button_Guest_House_Facilities->Text = L"Guest House Facilities";
 			this->Button_Guest_House_Facilities->UseVisualStyleBackColor = false;
@@ -133,10 +133,10 @@ namespace GuestHouseManagement {
 			// 
 			this->Output_Panel->BackColor = System::Drawing::Color::WhiteSmoke;
 			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->Output_Panel->Location = System::Drawing::Point(178, 77);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Output_Panel->Location = System::Drawing::Point(237, 95);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(746, 434);
+			this->Output_Panel->Size = System::Drawing::Size(995, 534);
 			this->Output_Panel->TabIndex = 16;
 			this->Output_Panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Customer_Homepage::Output_Panel_Paint);
 			// 
@@ -147,10 +147,9 @@ namespace GuestHouseManagement {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::WhiteSmoke;
-			this->label1->Location = System::Drawing::Point(19, 24);
-			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label1->Location = System::Drawing::Point(25, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(68, 23);
+			this->label1->Size = System::Drawing::Size(83, 29);
 			this->label1->TabIndex = 17;
 			this->label1->Text = L"label1";
 			// 
@@ -163,10 +162,10 @@ namespace GuestHouseManagement {
 			this->Button_My_Bookings->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Button_My_Bookings->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Button_My_Bookings->Location = System::Drawing::Point(522, 13);
-			this->Button_My_Bookings->Margin = System::Windows::Forms::Padding(2);
+			this->Button_My_Bookings->Location = System::Drawing::Point(696, 16);
+			this->Button_My_Bookings->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Button_My_Bookings->Name = L"Button_My_Bookings";
-			this->Button_My_Bookings->Size = System::Drawing::Size(170, 64);
+			this->Button_My_Bookings->Size = System::Drawing::Size(227, 79);
 			this->Button_My_Bookings->TabIndex = 18;
 			this->Button_My_Bookings->Text = L"My Bookings";
 			this->Button_My_Bookings->UseVisualStyleBackColor = false;
@@ -181,9 +180,10 @@ namespace GuestHouseManagement {
 			this->Button_House_Keeping->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Button_House_Keeping->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Button_House_Keeping->Location = System::Drawing::Point(694, 13);
+			this->Button_House_Keeping->Location = System::Drawing::Point(925, 16);
+			this->Button_House_Keeping->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Button_House_Keeping->Name = L"Button_House_Keeping";
-			this->Button_House_Keeping->Size = System::Drawing::Size(170, 64);
+			this->Button_House_Keeping->Size = System::Drawing::Size(227, 79);
 			this->Button_House_Keeping->TabIndex = 19;
 			this->Button_House_Keeping->Text = L"House Keeping";
 			this->Button_House_Keeping->UseVisualStyleBackColor = false;
@@ -197,10 +197,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Int32>(static_cast<System::Byte>(128)), static_cast<System::Int32>(static_cast<System::Byte>(0)));
 			this->Button_Logout->FlatAppearance->MouseOverBackColor = System::Drawing::Color::Red;
 			this->Button_Logout->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Button_Logout->Location = System::Drawing::Point(865, 14);
-			this->Button_Logout->Margin = System::Windows::Forms::Padding(2);
+			this->Button_Logout->Location = System::Drawing::Point(1153, 17);
+			this->Button_Logout->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Button_Logout->Name = L"Button_Logout";
-			this->Button_Logout->Size = System::Drawing::Size(59, 64);
+			this->Button_Logout->Size = System::Drawing::Size(79, 79);
 			this->Button_Logout->TabIndex = 21;
 			this->Button_Logout->UseVisualStyleBackColor = false;
 			this->Button_Logout->Click += gcnew System::EventHandler(this, &Form_Customer_Homepage::Button_Logout_Click);
@@ -215,10 +215,10 @@ namespace GuestHouseManagement {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->button1->Location = System::Drawing::Point(11, 447);
-			this->button1->Margin = System::Windows::Forms::Padding(2);
+			this->button1->Location = System::Drawing::Point(15, 550);
+			this->button1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(135, 64);
+			this->button1->Size = System::Drawing::Size(180, 79);
 			this->button1->TabIndex = 22;
 			this->button1->Text = L"Change Password";
 			this->button1->UseVisualStyleBackColor = false;
@@ -226,12 +226,12 @@ namespace GuestHouseManagement {
 			// 
 			// Form_Customer_Homepage
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackColor = System::Drawing::Color::Gray;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
-			this->ClientSize = System::Drawing::Size(941, 531);
+			this->ClientSize = System::Drawing::Size(1255, 654);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Button_Logout);
 			this->Controls->Add(this->Button_House_Keeping);
@@ -241,9 +241,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->Button_Guest_House_Facilities);
 			this->Controls->Add(this->Button_Book);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::None;
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Form_Customer_Homepage";
-			this->Text = L"Form_Customer_Homepage";
+			this->Text = L"Customer Homepage";
 			this->Load += gcnew System::EventHandler(this, &Form_Customer_Homepage::Form_Customer_Homepage_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
