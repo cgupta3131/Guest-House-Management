@@ -172,6 +172,7 @@ namespace GuestHouseManagement {
 			// UserControl_Staff_Leave
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->btn_submit);
 			this->Controls->Add(this->dateTimePicker2);
 			this->Controls->Add(this->label3);

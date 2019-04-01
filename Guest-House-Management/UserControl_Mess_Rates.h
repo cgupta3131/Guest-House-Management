@@ -1,8 +1,9 @@
 #pragma once
 
-# include <ctype.h>
-# include <iomanip>
-
+#include <ctype.h>
+#include <iomanip>
+#include <regex>
+#include "tosstring.h"
 #using <System.dll>
 #using <System.data.dll>
 
@@ -58,6 +59,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Label^  label4;
 
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -98,7 +100,7 @@ namespace GuestHouseManagement {
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(201, 76);
-			this->textBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(126, 22);
 			this->textBox1->TabIndex = 1;
@@ -132,7 +134,7 @@ namespace GuestHouseManagement {
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(201, 128);
-			this->textBox2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox2->Margin = System::Windows::Forms::Padding(2);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(126, 22);
 			this->textBox2->TabIndex = 4;
@@ -142,7 +144,7 @@ namespace GuestHouseManagement {
 			this->textBox3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->textBox3->Location = System::Drawing::Point(201, 179);
-			this->textBox3->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->textBox3->Margin = System::Windows::Forms::Padding(2);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(126, 22);
 			this->textBox3->TabIndex = 5;
@@ -155,7 +157,7 @@ namespace GuestHouseManagement {
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->button1->Location = System::Drawing::Point(121, 238);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(178, 50);
 			this->button1->TabIndex = 6;
@@ -186,7 +188,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Mess_Rates";
 			this->Size = System::Drawing::Size(453, 311);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Mess_Rates::UserControl_Mess_Rates_Load);
@@ -223,6 +225,14 @@ namespace GuestHouseManagement {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 String ^ str = textBox1->Text;
+				 string sstr = tosstring(str);
+
+				 regex rx("^[0-9]+[.]{0,1}[0-9]*$");
+				 if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
+					 MessageBox::Show("Enter string as decimal number[in form [0-9].[0-9]");
+					 goto ErrExit;
+				 }
+
 				 for(int i=0;i<str->Length;i++)
 				 {
 					 if(isdigit(str[i])||str[i]=='.')
@@ -233,6 +243,14 @@ namespace GuestHouseManagement {
 					 return; 
 				 }
 				 str = textBox2->Text;
+				 sstr = tosstring(str);
+
+				 rx = "^[0-9]+[.]{0,1}[0-9]*$";
+				 if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
+					 MessageBox::Show("Enter string as decimal number[in form [0-9].[0-9]");
+					 goto ErrExit;
+				 }
+
 				 for(int i=0;i<str->Length;i++)
 				 {
 					 if(isdigit(str[i])||str[i]=='.')
@@ -243,6 +261,14 @@ namespace GuestHouseManagement {
 					 return; 
 				 }
 				 str = textBox3->Text;
+				 sstr = tosstring(str);
+
+				 rx = "^[0-9]+[.]{0,1}[0-9]*$";
+				 if(!regex_match(sstr.cbegin(), sstr.cend(), rx)){
+					 MessageBox::Show("Enter string as decimal number[in form [0-9].[0-9]");
+					 goto ErrExit;
+				 }
+
 				 for(int i=0;i<str->Length;i++)
 				 {
 					 if(isdigit(str[i])||str[i]=='.')
@@ -262,6 +288,7 @@ namespace GuestHouseManagement {
 					 MessageBox::Show("All fields must be filled out","Warning");
 					 return;
 				 }
+
 				 try
 				 {
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
@@ -270,7 +297,7 @@ namespace GuestHouseManagement {
 
 					 String ^ getUserData = "Select * From Mess_Rates where ID like 1";
 					 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
-					 cmdUpdate->CommandText = "UPDATE Mess_Rates SET Breakfast = " + Convert::ToInt32(textBox1->Text) + " , Lunch = " + Convert::ToInt32(textBox2->Text) + " , Dinner = " + Convert::ToInt32(textBox3->Text) + " WHERE ID = 1;";
+					 cmdUpdate->CommandText = "UPDATE Mess_Rates SET Breakfast = " + Convert::ToDouble(textBox1->Text) + " , Lunch = " + Convert::ToDouble(textBox2->Text) + " , Dinner = " + Convert::ToDouble(textBox3->Text) + " WHERE ID = 1;";
 					 cmdUpdate->ExecuteNonQuery();
 					 MessageBox::Show("Changes Saved");
 					 DB_Connection->Close();
@@ -279,6 +306,8 @@ namespace GuestHouseManagement {
 				 {
 					 MessageBox::Show(ex->Message,"Warning");
 				 }
+ErrExit:
+				 ;
 			 }
 	};
 }

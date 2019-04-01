@@ -28,6 +28,8 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
+	private: System::Windows::Forms::Label^  label1;
+	public: 
 		Panel ^pn5;
 
 		UserControl_Staff_Booking_Display(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
@@ -68,17 +70,33 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(274, 28);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(347, 29);
+			this->label1->TabIndex = 0;
+			this->label1->Text = L"Currently Booked Customers";
+			this->label1->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
 			// 
 			// UserControl_Staff_Booking_Display
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::Transparent;
+			this->Controls->Add(this->label1);
 			this->Name = L"UserControl_Staff_Booking_Display";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Booking_Display::UserControl_Staff_Booking_Display_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Booking_Display::okkk);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
@@ -99,19 +117,18 @@ namespace GuestHouseManagement {
 					 TextBox ^tb = gcnew TextBox();
 					 String ^str = users_data->GetString(14);
 					 int len = str->Length;
-					 tb->Text = "Name : " + users_data->GetString(3) + "\t\t Contact Number : " + users_data->GetString(7) + "\r\n" +
-								"Check-in : " + users_data->GetString(4) + "\t Check-out : " + users_data->GetString(5) + "\r\n" + 
-								"Room Nos. : " + str->Substring(0,len-1);
+					 tb->Text = "  Name : " + users_data->GetString(3) + "\t\t Contact Number : " + users_data->GetString(7) + "\r\n" +
+						 "  Check-in : " + users_data->GetString(4) + "\t Check-out : " + users_data->GetString(5) + "\r\n" + 
+						 "  Room Nos. : " + str->Substring(0,len-1);
 					 //MessageBox::Show(tb->Text);
-					 tb->Location = System::Drawing::Point(40 , 100*(i-1)+10);
+					 tb->Location = System::Drawing::Point(40 , 100*(i-1)+80);
 					 tb->Width = 580;
 					 tb->Height = 90;
 					 tb->Name = "TextBox" + i;
 					 tb->Multiline = true;
 					 tb->ReadOnly = true;
+					 tb->TextAlign = System::Windows::Forms::HorizontalAlignment::Left;
 					 //tb->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
-					 tb->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(96)), static_cast<System::Int32>(static_cast<System::Byte>(202)), 
-						 static_cast<System::Int32>(static_cast<System::Byte>(212)));
 					 tb->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
 					 tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 						 static_cast<System::Byte>(0)));

@@ -30,6 +30,8 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
+	private: System::Windows::Forms::Label^  label1;
+	public: 
 		Panel ^pn5;
 
 		UserControl_Booking_Approval(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5)
@@ -77,6 +79,7 @@ namespace GuestHouseManagement {
 		{
 			this->Txt_Room_Type = (gcnew System::Windows::Forms::ComboBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// Txt_Room_Type
@@ -85,7 +88,7 @@ namespace GuestHouseManagement {
 			this->Txt_Room_Type->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Txt_Room_Type->FormattingEnabled = true;
-			this->Txt_Room_Type->Location = System::Drawing::Point(256, 71);
+			this->Txt_Room_Type->Location = System::Drawing::Point(401, 85);
 			this->Txt_Room_Type->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Room_Type->Name = L"Txt_Room_Type";
 			this->Txt_Room_Type->Size = System::Drawing::Size(238, 25);
@@ -95,24 +98,38 @@ namespace GuestHouseManagement {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->BackColor = System::Drawing::Color::White;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(71, 67);
+			this->label2->BackColor = System::Drawing::Color::Transparent;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F));
+			this->label2->Location = System::Drawing::Point(213, 85);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(125, 24);
+			this->label2->Size = System::Drawing::Size(122, 25);
 			this->label2->TabIndex = 71;
 			this->label2->Text = L"Room Type";
+			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::Color::Transparent;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->ForeColor = System::Drawing::Color::Black;
+			this->label1->Location = System::Drawing::Point(279, 26);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(228, 29);
+			this->label1->TabIndex = 74;
+			this->label1->Text = L"Booking Approval";
 			// 
 			// UserControl_Booking_Approval
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::Transparent;
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Txt_Room_Type);
 			this->Controls->Add(this->label2);
 			this->Name = L"UserControl_Booking_Approval";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Booking_Approval::UserControl_Booking_Approval_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Booking_Approval::ookk);
 			this->ResumeLayout(false);
@@ -206,7 +223,6 @@ namespace GuestHouseManagement {
 				}
 				String ^room_to_be_booked = vec[0];
 				cliext::vector<String^> vec_can_be_booked;
-				//MessageBox::Show("3");
 				for(int p=0;p<vec.size();p++)
 				{
 					//vec[p] denotes the Potential Room No. Available
@@ -217,6 +233,7 @@ namespace GuestHouseManagement {
 					cmd = gcnew OleDbCommand(getUsers,DB_Connection);
 					OleDbDataReader ^roomdata = cmd->ExecuteReader();
 					int flag = 0;
+
 
 					while(roomdata->Read() == true)
 					{
@@ -253,13 +270,13 @@ namespace GuestHouseManagement {
 						flag = 1;
 						String ^temp = roomdata->GetString(4);
 	
-						String ^datefrom2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
+						String ^datefrom2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString							(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
 						temp = roomdata->GetString(5);
-						String ^dateto2 =Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
+						String ^dateto2 =Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp						[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
 						temp = datefrom;
-						datefrom = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
+						datefrom = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) +						Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
 						temp = dateto;
-						dateto =Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
+						dateto =Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) +							Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy
 					
 					
 						int datefrom_int = System::Convert::ToInt32(datefrom2);
@@ -268,7 +285,6 @@ namespace GuestHouseManagement {
 						int mydateto_int = System::Convert::ToInt32(dateto);
 						datefrom = aux_datefrom;
 						dateto = aux_dateto;
-						//MessageBox::Show(Convert::ToString(temp[4]));
 						if(mydatefrom_int < datefrom_int)
 						{
 							if(mydateto_int <= datefrom_int)
@@ -297,14 +313,20 @@ namespace GuestHouseManagement {
 
 					}
 
-					
+					if(flag == 0)
+						vec_can_be_booked.push_back(vec[p]);
+
 					DB_Connection->Close();
-					
+					//MessageBox::Show(Convert::ToString(vec_can_be_booked.size()));
 					//this line is added at last if issue remove it
-					if(vec_can_be_booked.size() == room_cnt )break;
+					if(vec_can_be_booked.size() == room_cnt )
+						break;
 
 				}
 
+				
+
+				//MessageBox::Show(Convert::ToString(vec_can_be_booked.size()));
 				if(vec_can_be_booked.size() < room_cnt )
 				{
 					f=0;
@@ -495,25 +517,35 @@ namespace GuestHouseManagement {
 
 					 Button ^ btnApprove = gcnew Button();
 					 btnApprove->Width = 120;
-					 btnApprove->Height = 30;
+					 btnApprove->Height = 40;
 					 btnApprove->Name = "btnApp" + i;
 					 btnApprove->Tag = users_data->GetInt32(0);
 					 btnApprove->Text = "Approve";
 					 btnApprove->Location = System::Drawing::Point(500,140*i);
-					 btnApprove->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+					 btnApprove->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(87)));
+					 btnApprove->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+					 btnApprove->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 						 static_cast<System::Byte>(0)));
+					 btnApprove->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(247)));
 					 btnApprove->Click += gcnew System::EventHandler(this,&UserControl_Booking_Approval::approve_button_click);
 					 this->Controls->Add(btnApprove);
 
 					 Button ^ btnCancel = gcnew Button();
 					 btnCancel->Width = 120;
-					 btnCancel->Height = 30;
+					 btnCancel->Height = 40;
 					 btnCancel->Name = "btnDiss" + i;
 					 btnCancel->Tag = users_data->GetInt32(0);
 					 btnCancel->Text = "Cancel";
-					 btnCancel->Location = System::Drawing::Point(500,140*i+40);
-					 btnCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+					 btnCancel->Location = System::Drawing::Point(500,140*i+60);
+					 btnCancel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(87)));
+					 btnCancel->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+					 btnCancel->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 						 static_cast<System::Byte>(0)));
+					 btnCancel->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(247)));
 					 btnCancel->Click += gcnew System::EventHandler(this,&UserControl_Booking_Approval::cancel_button_click);
 					 this->Controls->Add(btnCancel);
 				 }

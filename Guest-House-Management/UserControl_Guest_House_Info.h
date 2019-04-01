@@ -32,6 +32,12 @@ namespace GuestHouseManagement {
 		Panel ^pn3;
 		Panel ^pn4;
 	private: System::Windows::Forms::Label^  label4;
+
+	private: System::Windows::Forms::PictureBox^  pictureBox1;
+	private: System::Windows::Forms::Panel^  Mess_Panel;
+	private: System::Windows::Forms::Button^  button1;
+	internal: 
+	private: 
 	public: 
 		Panel ^pn5;
 
@@ -100,6 +106,11 @@ namespace GuestHouseManagement {
 			this->Txt_Name = (gcnew System::Windows::Forms::TextBox());
 			this->Btn_Submit = (gcnew System::Windows::Forms::Button());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
+			this->Mess_Panel = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
+			this->Mess_Panel->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// Lbl_Register_Name
@@ -107,7 +118,7 @@ namespace GuestHouseManagement {
 			this->Lbl_Register_Name->AutoSize = true;
 			this->Lbl_Register_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Lbl_Register_Name->Location = System::Drawing::Point(155, 321);
+			this->Lbl_Register_Name->Location = System::Drawing::Point(114, 321);
 			this->Lbl_Register_Name->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->Lbl_Register_Name->Name = L"Lbl_Register_Name";
 			this->Lbl_Register_Name->Size = System::Drawing::Size(74, 29);
@@ -119,7 +130,7 @@ namespace GuestHouseManagement {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(155, 244);
+			this->label1->Location = System::Drawing::Point(114, 244);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(187, 29);
@@ -131,7 +142,7 @@ namespace GuestHouseManagement {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(155, 159);
+			this->label2->Location = System::Drawing::Point(114, 159);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(102, 29);
@@ -143,7 +154,7 @@ namespace GuestHouseManagement {
 			this->label3->AutoSize = true;
 			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(155, 101);
+			this->label3->Location = System::Drawing::Point(114, 101);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(78, 29);
@@ -154,7 +165,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Txt_Email->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Email->Location = System::Drawing::Point(437, 324);
+			this->Txt_Email->Location = System::Drawing::Point(396, 324);
 			this->Txt_Email->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Email->Name = L"Txt_Email";
 			this->Txt_Email->Size = System::Drawing::Size(267, 26);
@@ -164,7 +175,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Txt_Contact->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Contact->Location = System::Drawing::Point(437, 247);
+			this->Txt_Contact->Location = System::Drawing::Point(396, 247);
 			this->Txt_Contact->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Contact->Name = L"Txt_Contact";
 			this->Txt_Contact->Size = System::Drawing::Size(267, 26);
@@ -174,7 +185,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Txt_Address->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Address->Location = System::Drawing::Point(437, 161);
+			this->Txt_Address->Location = System::Drawing::Point(396, 161);
 			this->Txt_Address->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Address->Multiline = true;
 			this->Txt_Address->Name = L"Txt_Address";
@@ -185,7 +196,7 @@ namespace GuestHouseManagement {
 			// 
 			this->Txt_Name->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Txt_Name->Location = System::Drawing::Point(437, 105);
+			this->Txt_Name->Location = System::Drawing::Point(396, 105);
 			this->Txt_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Txt_Name->Name = L"Txt_Name";
 			this->Txt_Name->Size = System::Drawing::Size(267, 26);
@@ -197,7 +208,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->Btn_Submit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
 			this->Btn_Submit->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->Btn_Submit->Location = System::Drawing::Point(307, 398);
+			this->Btn_Submit->Location = System::Drawing::Point(119, 401);
 			this->Btn_Submit->Margin = System::Windows::Forms::Padding(2);
 			this->Btn_Submit->Name = L"Btn_Submit";
 			this->Btn_Submit->Size = System::Drawing::Size(225, 86);
@@ -209,8 +220,7 @@ namespace GuestHouseManagement {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->label4->BackColor = System::Drawing::Color::Transparent;
 			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(281, 28);
@@ -219,9 +229,45 @@ namespace GuestHouseManagement {
 			this->label4->TabIndex = 73;
 			this->label4->Text = L"Guest House Details";
 			// 
+			// pictureBox1
+			// 
+			this->pictureBox1->Location = System::Drawing::Point(0, 0);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2);
+			this->pictureBox1->Name = L"pictureBox1";
+			this->pictureBox1->Size = System::Drawing::Size(184, 126);
+			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
+			this->pictureBox1->TabIndex = 76;
+			this->pictureBox1->TabStop = false;
+			// 
+			// Mess_Panel
+			// 
+			this->Mess_Panel->Controls->Add(this->pictureBox1);
+			this->Mess_Panel->Location = System::Drawing::Point(635, 379);
+			this->Mess_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Mess_Panel->Name = L"Mess_Panel";
+			this->Mess_Panel->Size = System::Drawing::Size(184, 126);
+			this->Mess_Panel->TabIndex = 78;
+			// 
+			// button1
+			// 
+			this->button1->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->button1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->button1->Location = System::Drawing::Point(459, 415);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(140, 72);
+			this->button1->TabIndex = 79;
+			this->button1->Text = L"Add Image";
+			this->button1->UseVisualStyleBackColor = false;
+			this->button1->Click += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::button1_Click_1);
+			// 
 			// UserControl_Guest_House_Info
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->BackColor = System::Drawing::Color::Transparent;
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->Mess_Panel);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->Btn_Submit);
 			this->Controls->Add(this->Txt_Name);
@@ -236,6 +282,8 @@ namespace GuestHouseManagement {
 			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::UserControl_Guest_House_Info_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Guest_House_Info::myMouseEnter);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
+			this->Mess_Panel->ResumeLayout(false);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -245,7 +293,9 @@ namespace GuestHouseManagement {
 	/*private: System::Void UC_MouseEnter(System::Object^  sender, System::EventArgs^  e) {
 				 pnl->Size = System::Drawing::Size(173, 44);
 
-			 }*/
+			 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+					  }
+}*/
 	private: System::Void UserControl_Guest_House_Info_Load(System::Object^  sender, System::EventArgs^  e) {
 				 //pnl->Size = System::Drawing::Size(173, 44);
 				 //pnl->BringToFront();
@@ -309,6 +359,21 @@ namespace GuestHouseManagement {
 					 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getGHData, DB_Connection);
 					 cmd->ExecuteNonQuery();
 					 DB_Connection->Close();
+
+					 String ^ name2 = "guest_house";
+					 if(pictureBox1->Image)
+					 {
+						 try
+						 {
+							 Image ^ img = pictureBox1->Image;
+							 img->Save(System::Windows::Forms::Application::StartupPath + "\\..\\Guest-House-Management\\image\\" + name2 + ".jpg");
+						 }
+						 catch(Exception ^ ex)
+						 {
+							 MessageBox::Show(ex->Message,"Warning");
+						 }
+					 }
+
 					 MessageBox::Show("Successfully updated Guest House Details", "Notification");
 
 				 }
@@ -330,5 +395,20 @@ ErrExit:
 				 //if (this->myMouseEnter!= nullptr)
 					// this->myMouseEnter(this, e); 
 			 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button1_Click_1(System::Object^  sender, System::EventArgs^  e) {
+			 this->Mess_Panel->Controls->Clear();
+			 this->Mess_Panel->Controls->Add(this->pictureBox1);
+			 OpenFileDialog ^ dialog=gcnew OpenFileDialog;
+			 dialog->Title = "Browse Picture";
+			 dialog->Filter = "Image Files(*.BMP;*.JPEG,*.JPG;*.GIF;*.PNG)|*.BMP;*.JPEG;*.JPG;*.GIF;*.PNG";
+			 if(dialog->ShowDialog() == System::Windows::Forms::DialogResult::OK)
+			 {
+				 this->pictureBox1->Image = Image::FromFile(dialog->FileName);
+			 }
+		 }
 };
+
+
 }

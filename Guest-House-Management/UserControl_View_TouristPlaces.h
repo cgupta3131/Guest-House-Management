@@ -74,30 +74,32 @@ namespace GuestHouseManagement {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(25, 26);
+			this->label1->Location = System::Drawing::Point(19, 21);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(56, 27);
+			this->label1->Size = System::Drawing::Size(44, 20);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Text";
 			// 
 			// pictureBox1
 			// 
-			this->pictureBox1->Location = System::Drawing::Point(436, 26);
+			this->pictureBox1->Location = System::Drawing::Point(327, 21);
+			this->pictureBox1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->pictureBox1->Name = L"pictureBox1";
-			this->pictureBox1->Size = System::Drawing::Size(150, 102);
+			this->pictureBox1->Size = System::Drawing::Size(112, 83);
 			this->pictureBox1->SizeMode = System::Windows::Forms::PictureBoxSizeMode::StretchImage;
 			this->pictureBox1->TabIndex = 46;
 			this->pictureBox1->TabStop = false;
 			// 
 			// UserControl_View_TouristPlaces
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Controls->Add(this->pictureBox1);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_View_TouristPlaces";
-			this->Size = System::Drawing::Size(698, 488);
+			this->Size = System::Drawing::Size(524, 396);
 			this->Load += gcnew System::EventHandler(this, &UserControl_View_TouristPlaces::UserControl_View_TouristPlaces_Load);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
@@ -143,7 +145,7 @@ namespace GuestHouseManagement {
 								}
 								else
 								{
-									pictureBox1->Image = Image::FromFile(System::Windows::Forms::Application::StartupPath + "\\..\\Guest-House-Management\\image\\not_found.jpeg");
+									pictureBox1->Image = Image::FromFile(System::Windows::Forms::Application::StartupPath + "\\..\\Guest-House-Management\\image\\not_found.png");
 								}
 
 							}
@@ -176,7 +178,7 @@ namespace GuestHouseManagement {
 								 }
 								 else
 								 {
-									 pb1->Image = Image::FromFile(System::Windows::Forms::Application::StartupPath + "\\..\\Guest-House-Management\\image\\not_found.jpeg");
+									 pb1->Image = Image::FromFile(System::Windows::Forms::Application::StartupPath + "\\..\\Guest-House-Management\\image\\not_found.png");
 								 }
 
 							 }
@@ -195,6 +197,7 @@ namespace GuestHouseManagement {
 					 }
 					 if(count==0)
 					 {
+						 label1->Visible = false;
 						 MessageBox::Show("No tourist services has been added till now!","Sorry!");
 						 return ;
 					 }

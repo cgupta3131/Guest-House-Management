@@ -188,6 +188,7 @@ namespace GuestHouseManagement {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->label_email);
 			this->Controls->Add(this->label_contact);
 			this->Controls->Add(this->label_address);
@@ -196,8 +197,8 @@ namespace GuestHouseManagement {
 			this->Name = L"UserControl_Generate_Bill";
 			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Generate_Bill::UserControl_Generate_Bill_Load);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Generate_Bill::entermou);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -744,10 +745,17 @@ namespace GuestHouseManagement {
 
 						 Button ^ btnCheckout = gcnew Button();
 						 btnCheckout->Width = 120;
-						 btnCheckout->Height = 30;
+						 btnCheckout->Height = 40;
 						 btnCheckout->Tag = users_data->GetInt32(0);
 						 btnCheckout->Text = "Checkout";
-						 btnCheckout->Location = System::Drawing::Point(350,140*i+50);
+						 btnCheckout->Location = System::Drawing::Point(350,140*i+75);
+						 btnCheckout->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+							 static_cast<System::Int32>(static_cast<System::Byte>(87)));
+						 btnCheckout->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+						 btnCheckout->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+							 static_cast<System::Byte>(0)));
+						 btnCheckout->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+							 static_cast<System::Int32>(static_cast<System::Byte>(247)));
 						 btnCheckout->Click += gcnew System::EventHandler(this,&UserControl_Generate_Bill::approve_button_click);
 						 this->Controls->Add(btnCheckout);
 					 }

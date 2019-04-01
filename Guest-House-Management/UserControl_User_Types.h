@@ -123,8 +123,7 @@ private:
 	 // 
 	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 	 this->AutoScroll = true;
-	 this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
-		 static_cast<System::Int32>(static_cast<System::Byte>(209)));
+	 this->BackColor = System::Drawing::Color::Transparent;
 	 this->Controls->Add(this->label1);
 	 this->Controls->Add(this->Btn_Add);
 	 this->Controls->Add(this->Txt_User_Type);

@@ -157,8 +157,7 @@ namespace GuestHouseManagement {
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->label11->BackColor = System::Drawing::Color::Transparent;
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label11->Location = System::Drawing::Point(335, 29);
@@ -170,6 +169,7 @@ namespace GuestHouseManagement {
 			// UserControl_Add_Mess
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->label11);
 			this->Controls->Add(this->Mess_Panel);
 			this->Controls->Add(this->button2);

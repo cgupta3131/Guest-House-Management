@@ -237,8 +237,7 @@ namespace GuestHouseManagement {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->label5->BackColor = System::Drawing::Color::Transparent;
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(288, 23);
@@ -250,6 +249,7 @@ namespace GuestHouseManagement {
 			// UserControl_Add_Cab_Details
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->label5);
 			this->Controls->Add(this->Btn_Create);
 			this->Controls->Add(this->Textbox_Contact);

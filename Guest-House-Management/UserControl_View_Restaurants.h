@@ -72,20 +72,21 @@ namespace GuestHouseManagement {
 			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::Color::Black;
-			this->label1->Location = System::Drawing::Point(31, 28);
+			this->label1->Location = System::Drawing::Point(23, 23);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(56, 27);
+			this->label1->Size = System::Drawing::Size(44, 20);
 			this->label1->TabIndex = 45;
 			this->label1->Text = L"Text";
 			// 
 			// UserControl_View_Restaurants
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_View_Restaurants";
-			this->Size = System::Drawing::Size(698, 488);
+			this->Size = System::Drawing::Size(524, 396);
 			this->Load += gcnew System::EventHandler(this, &UserControl_View_Restaurants::UserControl_View_Restaurants_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -140,6 +141,7 @@ namespace GuestHouseManagement {
 					 }
 					 if(count==0)
 					 {
+						 label1->Visible = false;
 						 MessageBox::Show("No restaurants has been added till now!");
 						 return ;
 					 }

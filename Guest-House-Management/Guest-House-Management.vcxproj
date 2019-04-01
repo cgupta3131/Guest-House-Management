@@ -118,6 +118,7 @@
     <ClCompile Include="UserControl_In_Stay_Facilities.cpp" />
     <ClCompile Include="UserControl_Login.cpp" />
     <ClCompile Include="UserControl_Mess_Rates.cpp" />
+    <ClCompile Include="UserControl_Password_Change.cpp" />
     <ClCompile Include="UserControl_Room_Types.cpp" />
     <ClCompile Include="UserControl_Room_Types2.cpp" />
     <ClCompile Include="UserControl_Signup.cpp" />
@@ -223,6 +224,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Mess_Rates.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="UserControl_Password_Change.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="UserControl_Room_Types2.h">
@@ -371,6 +375,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Mess_Rates.resx">
       <DependentUpon>UserControl_Mess_Rates.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl_Password_Change.resx">
+      <DependentUpon>UserControl_Password_Change.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControl_Room_Types.resx" />
     <EmbeddedResource Include="UserControl_Room_Types2.resx">

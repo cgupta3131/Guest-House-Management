@@ -129,10 +129,10 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle1 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle2 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle4 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
-			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle3 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle5 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle6 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle8 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
+			System::Windows::Forms::DataGridViewCellStyle^  dataGridViewCellStyle7 = (gcnew System::Windows::Forms::DataGridViewCellStyle());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -151,7 +151,7 @@ namespace GuestHouseManagement {
 			this->label1->AutoSize = true;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Verdana", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(219, 32);
+			this->label1->Location = System::Drawing::Point(310, 32);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(223, 29);
@@ -162,38 +162,41 @@ namespace GuestHouseManagement {
 			// 
 			this->dataGridView1->AllowUserToAddRows = false;
 			this->dataGridView1->AllowUserToDeleteRows = false;
-			dataGridViewCellStyle1->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle1->BackColor = System::Drawing::Color::Moccasin;
-			dataGridViewCellStyle1->Font = (gcnew System::Drawing::Font(L"Verdana", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle5->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle5->BackColor = System::Drawing::Color::Moccasin;
+			dataGridViewCellStyle5->Font = (gcnew System::Drawing::Font(L"Verdana", 7.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle1->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+			dataGridViewCellStyle5->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->dataGridView1->AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
 			this->dataGridView1->AutoSizeColumnsMode = System::Windows::Forms::DataGridViewAutoSizeColumnsMode::Fill;
-			this->dataGridView1->BackgroundColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::Fixed3D;
+			this->dataGridView1->BackgroundColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(184)), static_cast<System::Int32>(static_cast<System::Byte>(209)));
+			this->dataGridView1->BorderStyle = System::Windows::Forms::BorderStyle::None;
 			this->dataGridView1->CellBorderStyle = System::Windows::Forms::DataGridViewCellBorderStyle::Raised;
-			dataGridViewCellStyle2->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle2->BackColor = System::Drawing::Color::Moccasin;
-			dataGridViewCellStyle2->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle6->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle6->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			dataGridViewCellStyle6->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle2->ForeColor = System::Drawing::SystemColors::WindowText;
-			dataGridViewCellStyle2->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle2->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle2->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle6->ForeColor = System::Drawing::SystemColors::Window;
+			dataGridViewCellStyle6->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle6->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle6->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
 			this->dataGridView1->ColumnHeadersHeight = 60;
 			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(7) {this->Column1, 
 				this->Column0, this->Column2, this->Column3, this->Column4, this->Column7, this->Column5});
-			dataGridViewCellStyle4->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle4->BackColor = System::Drawing::Color::SandyBrown;
-			dataGridViewCellStyle4->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle8->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle8->BackColor = System::Drawing::Color::SandyBrown;
+			dataGridViewCellStyle8->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle4->ForeColor = System::Drawing::SystemColors::ControlText;
-			dataGridViewCellStyle4->SelectionBackColor = System::Drawing::SystemColors::Highlight;
-			dataGridViewCellStyle4->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
-			dataGridViewCellStyle4->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle4;
-			this->dataGridView1->Location = System::Drawing::Point(26, 86);
+			dataGridViewCellStyle8->ForeColor = System::Drawing::SystemColors::ControlText;
+			dataGridViewCellStyle8->SelectionBackColor = System::Drawing::SystemColors::Highlight;
+			dataGridViewCellStyle8->SelectionForeColor = System::Drawing::SystemColors::HighlightText;
+			dataGridViewCellStyle8->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->dataGridView1->DefaultCellStyle = dataGridViewCellStyle8;
+			this->dataGridView1->EnableHeadersVisualStyles = false;
+			this->dataGridView1->Location = System::Drawing::Point(48, 86);
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->ReadOnly = true;
@@ -201,7 +204,7 @@ namespace GuestHouseManagement {
 			this->dataGridView1->RowTemplate->Height = 24;
 			this->dataGridView1->SelectionMode = System::Windows::Forms::DataGridViewSelectionMode::FullRowSelect;
 			this->dataGridView1->ShowEditingIcon = false;
-			this->dataGridView1->Size = System::Drawing::Size(633, 437);
+			this->dataGridView1->Size = System::Drawing::Size(768, 437);
 			this->dataGridView1->TabIndex = 1;
 			this->dataGridView1->CellContentClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &UserControl_Staff_Leave_Approval::dataGridView1_CellClick);
 			// 
@@ -249,16 +252,16 @@ namespace GuestHouseManagement {
 			// 
 			// Column5
 			// 
-			dataGridViewCellStyle3->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
-			dataGridViewCellStyle3->BackColor = System::Drawing::Color::Moccasin;
-			dataGridViewCellStyle3->Font = (gcnew System::Drawing::Font(L"Verdana", 7.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
+			dataGridViewCellStyle7->Alignment = System::Windows::Forms::DataGridViewContentAlignment::MiddleCenter;
+			dataGridViewCellStyle7->BackColor = System::Drawing::Color::Moccasin;
+			dataGridViewCellStyle7->Font = (gcnew System::Drawing::Font(L"Verdana", 7.2F, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			dataGridViewCellStyle3->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-			dataGridViewCellStyle3->NullValue = nullptr;
-			dataGridViewCellStyle3->SelectionBackColor = System::Drawing::Color::CornflowerBlue;
-			dataGridViewCellStyle3->SelectionForeColor = System::Drawing::Color::White;
-			dataGridViewCellStyle3->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
-			this->Column5->DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle7->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
+			dataGridViewCellStyle7->NullValue = nullptr;
+			dataGridViewCellStyle7->SelectionBackColor = System::Drawing::Color::CornflowerBlue;
+			dataGridViewCellStyle7->SelectionForeColor = System::Drawing::Color::White;
+			dataGridViewCellStyle7->WrapMode = System::Windows::Forms::DataGridViewTriState::True;
+			this->Column5->DefaultCellStyle = dataGridViewCellStyle7;
 			this->Column5->FillWeight = 56.06498F;
 			this->Column5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->Column5->HeaderText = L"Options";
@@ -270,25 +273,27 @@ namespace GuestHouseManagement {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(603, 32);
+			this->button1->Location = System::Drawing::Point(706, 37);
 			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(56, 29);
 			this->button1->TabIndex = 2;
 			this->button1->Text = L"Reload";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Visible = false;
 			this->button1->Click += gcnew System::EventHandler(this, &UserControl_Staff_Leave_Approval::button1_Click);
 			// 
 			// UserControl_Staff_Leave_Approval
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->label1);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Staff_Leave_Approval";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Leave_Approval::UserControl_Staff_Leave_Approval_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Leave_Approval::mymouseclick);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->dataGridView1))->EndInit();
@@ -350,17 +355,17 @@ namespace GuestHouseManagement {
 				 String ^ name = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
 				 System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
 				 opt = MessageBox::Show("Approve "+ name + "'s leave?", "Approval", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
-
-				 if(opt == System::Windows::Forms::DialogResult::Yes)
+				 String ^str_choice = Convert::ToString(opt);
+				 if(str_choice == "Yes")
 				 {
-					 MessageBox::Show("ok");
+					 
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
 					 int ser_num = Convert::ToInt32(dataGridView1->CurrentRow->Cells[0]->Value);
 					 String ^ getUserData = "Select * From Staff_Leave where [ID] = "+ ser_num + ";";
 					 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
-					 MessageBox::Show(Convert::ToString(ser_num));
+					 //MessageBox::Show(Convert::ToString(ser_num));
 					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Approved' WHERE ID = " + ser_num + ";";
 					 cmdUpdate->ExecuteNonQuery();
 
@@ -369,7 +374,7 @@ namespace GuestHouseManagement {
 					 loadDataGrid();
 
 				 }
-				 else if(opt== System::Windows::Forms::DialogResult::No)
+				 else if(str_choice == "No")
 				 {
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
@@ -380,12 +385,11 @@ namespace GuestHouseManagement {
 					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Not Approved' WHERE [ID] = " + ser_num + ";";
 					 cmdUpdate->ExecuteNonQuery();
 
-
 					 DB_Connection->Close();
 					 MessageBox::Show("Leave Not Approved");
 					 loadDataGrid();
 				 }
-				 MessageBox::Show("1");
+				 //MessageBox::Show("1");
 
 			 }
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {

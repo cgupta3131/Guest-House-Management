@@ -245,6 +245,7 @@ namespace GuestHouseManagement {
 #pragma endregion
 	private: System::Void UserControl_Customer_Book_Edit_Load(System::Object^  sender, System::EventArgs^  e) {
 				
+				this->Controls->Clear();
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();

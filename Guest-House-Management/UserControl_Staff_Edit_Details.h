@@ -105,8 +105,8 @@ namespace GuestHouseManagement {
 			// 
 			// Text_Email
 			// 
-			this->Text_Email->Location = System::Drawing::Point(218, 314);
-			this->Text_Email->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Email->Location = System::Drawing::Point(282, 317);
+			this->Text_Email->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Email->Multiline = true;
 			this->Text_Email->Name = L"Text_Email";
 			this->Text_Email->Size = System::Drawing::Size(188, 19);
@@ -115,19 +115,18 @@ namespace GuestHouseManagement {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label10->Location = System::Drawing::Point(89, 312);
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label10->Location = System::Drawing::Point(136, 315);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(45, 18);
+			this->label10->Size = System::Drawing::Size(48, 20);
 			this->label10->TabIndex = 40;
 			this->label10->Text = L"Email";
 			// 
 			// Text_Contact
 			// 
-			this->Text_Contact->Location = System::Drawing::Point(218, 280);
-			this->Text_Contact->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Contact->Location = System::Drawing::Point(282, 283);
+			this->Text_Contact->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Contact->Multiline = true;
 			this->Text_Contact->Name = L"Text_Contact";
 			this->Text_Contact->Size = System::Drawing::Size(188, 19);
@@ -137,19 +136,18 @@ namespace GuestHouseManagement {
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label9->Location = System::Drawing::Point(89, 279);
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label9->Location = System::Drawing::Point(136, 282);
 			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(117, 18);
+			this->label9->Size = System::Drawing::Size(125, 20);
 			this->label9->TabIndex = 38;
 			this->label9->Text = L"Contact Number";
 			// 
 			// Text_Address
 			// 
-			this->Text_Address->Location = System::Drawing::Point(218, 245);
-			this->Text_Address->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Address->Location = System::Drawing::Point(282, 248);
+			this->Text_Address->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Address->Multiline = true;
 			this->Text_Address->Name = L"Text_Address";
 			this->Text_Address->Size = System::Drawing::Size(188, 19);
@@ -158,19 +156,18 @@ namespace GuestHouseManagement {
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(89, 245);
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label8->Location = System::Drawing::Point(136, 248);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(62, 18);
+			this->label8->Size = System::Drawing::Size(68, 20);
 			this->label8->TabIndex = 36;
 			this->label8->Text = L"Address";
 			// 
 			// Text_ID_Proof
 			// 
-			this->Text_ID_Proof->Location = System::Drawing::Point(218, 214);
-			this->Text_ID_Proof->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_ID_Proof->Location = System::Drawing::Point(282, 217);
+			this->Text_ID_Proof->Margin = System::Windows::Forms::Padding(2);
 			this->Text_ID_Proof->Name = L"Text_ID_Proof";
 			this->Text_ID_Proof->Size = System::Drawing::Size(188, 20);
 			this->Text_ID_Proof->TabIndex = 35;
@@ -178,20 +175,19 @@ namespace GuestHouseManagement {
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(89, 212);
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label7->Location = System::Drawing::Point(136, 215);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(94, 18);
+			this->label7->Size = System::Drawing::Size(103, 20);
 			this->label7->TabIndex = 34;
 			this->label7->Text = L"Identity Proof";
 			// 
 			// Text_Birth
 			// 
 			this->Text_Birth->Enabled = false;
-			this->Text_Birth->Location = System::Drawing::Point(218, 180);
-			this->Text_Birth->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Birth->Location = System::Drawing::Point(282, 183);
+			this->Text_Birth->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Birth->Name = L"Text_Birth";
 			this->Text_Birth->Size = System::Drawing::Size(188, 20);
 			this->Text_Birth->TabIndex = 33;
@@ -200,20 +196,19 @@ namespace GuestHouseManagement {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(89, 179);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label6->Location = System::Drawing::Point(136, 182);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(90, 18);
+			this->label6->Size = System::Drawing::Size(99, 20);
 			this->label6->TabIndex = 32;
 			this->label6->Text = L"Date of Birth";
 			// 
 			// Text_Gender
 			// 
 			this->Text_Gender->Enabled = false;
-			this->Text_Gender->Location = System::Drawing::Point(218, 143);
-			this->Text_Gender->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Gender->Location = System::Drawing::Point(282, 146);
+			this->Text_Gender->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Gender->Name = L"Text_Gender";
 			this->Text_Gender->Size = System::Drawing::Size(188, 20);
 			this->Text_Gender->TabIndex = 31;
@@ -221,20 +216,19 @@ namespace GuestHouseManagement {
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(89, 146);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label5->Location = System::Drawing::Point(136, 149);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(57, 18);
+			this->label5->Size = System::Drawing::Size(63, 20);
 			this->label5->TabIndex = 30;
 			this->label5->Text = L"Gender";
 			// 
 			// Text_Join
 			// 
 			this->Text_Join->Enabled = false;
-			this->Text_Join->Location = System::Drawing::Point(218, 109);
-			this->Text_Join->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Join->Location = System::Drawing::Point(282, 112);
+			this->Text_Join->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Join->Name = L"Text_Join";
 			this->Text_Join->Size = System::Drawing::Size(188, 20);
 			this->Text_Join->TabIndex = 29;
@@ -242,19 +236,18 @@ namespace GuestHouseManagement {
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(89, 112);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label4->Location = System::Drawing::Point(136, 115);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(88, 18);
+			this->label4->Size = System::Drawing::Size(95, 20);
 			this->label4->TabIndex = 28;
 			this->label4->Text = L"Date of Join";
 			// 
 			// Text_Desig
 			// 
-			this->Text_Desig->Location = System::Drawing::Point(218, 79);
-			this->Text_Desig->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Desig->Location = System::Drawing::Point(282, 82);
+			this->Text_Desig->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Desig->Name = L"Text_Desig";
 			this->Text_Desig->Size = System::Drawing::Size(188, 20);
 			this->Text_Desig->TabIndex = 27;
@@ -263,20 +256,19 @@ namespace GuestHouseManagement {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(89, 79);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label3->Location = System::Drawing::Point(136, 82);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(86, 18);
+			this->label3->Size = System::Drawing::Size(94, 20);
 			this->label3->TabIndex = 26;
 			this->label3->Text = L"Designation";
 			// 
 			// Text_Name
 			// 
 			this->Text_Name->Enabled = false;
-			this->Text_Name->Location = System::Drawing::Point(218, 12);
-			this->Text_Name->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_Name->Location = System::Drawing::Point(282, 15);
+			this->Text_Name->Margin = System::Windows::Forms::Padding(2);
 			this->Text_Name->Name = L"Text_Name";
 			this->Text_Name->Size = System::Drawing::Size(188, 20);
 			this->Text_Name->TabIndex = 25;
@@ -284,20 +276,19 @@ namespace GuestHouseManagement {
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(89, 12);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label2->Location = System::Drawing::Point(136, 15);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(48, 18);
+			this->label2->Size = System::Drawing::Size(51, 20);
 			this->label2->TabIndex = 24;
 			this->label2->Text = L"Name";
 			// 
 			// Text_ID
 			// 
 			this->Text_ID->Enabled = false;
-			this->Text_ID->Location = System::Drawing::Point(218, 46);
-			this->Text_ID->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Text_ID->Location = System::Drawing::Point(282, 49);
+			this->Text_ID->Margin = System::Windows::Forms::Padding(2);
 			this->Text_ID->Name = L"Text_ID";
 			this->Text_ID->Size = System::Drawing::Size(188, 20);
 			this->Text_ID->TabIndex = 23;
@@ -306,12 +297,11 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(89, 46);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
+			this->label1->Location = System::Drawing::Point(136, 49);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(92, 18);
+			this->label1->Size = System::Drawing::Size(100, 20);
 			this->label1->TabIndex = 22;
 			this->label1->Text = L"Employee ID";
 			// 
@@ -323,8 +313,8 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button1->Location = System::Drawing::Point(250, 358);
-			this->button1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button1->Location = System::Drawing::Point(359, 368);
+			this->button1->Margin = System::Windows::Forms::Padding(2);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(158, 40);
 			this->button1->TabIndex = 44;
@@ -340,8 +330,8 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button2->Location = System::Drawing::Point(71, 358);
-			this->button2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->button2->Location = System::Drawing::Point(81, 368);
+			this->button2->Margin = System::Windows::Forms::Padding(2);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(158, 40);
 			this->button2->TabIndex = 45;
@@ -375,9 +365,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->Text_ID);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Staff_Edit_Details";
-			this->Size = System::Drawing::Size(494, 408);
+			this->Size = System::Drawing::Size(687, 435);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Edit_Details::UserControl_Staff_Edit_Details_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

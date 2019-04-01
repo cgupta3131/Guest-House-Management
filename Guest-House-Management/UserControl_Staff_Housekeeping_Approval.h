@@ -77,11 +77,10 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Modern No. 20", 20.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(100, 14);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.75F, System::Drawing::FontStyle::Bold));
+			this->label1->Location = System::Drawing::Point(210, 30);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(441, 29);
+			this->label1->Size = System::Drawing::Size(460, 29);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"House Keeping Requests Resolution";
 			// 
@@ -89,9 +88,10 @@ namespace GuestHouseManagement {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->label1);
 			this->Name = L"UserControl_Staff_Housekeeping_Approval";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Housekeeping_Approval::UserControl_Staff_Housekeeping_Approval_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Housekeeping_Approval::eneterm);
 			this->ResumeLayout(false);
@@ -160,10 +160,10 @@ namespace GuestHouseManagement {
 					 n=n+1;
 					 i=i+1;
 					 TextBox ^tb = gcnew TextBox();
-					 tb->Text = users_data->GetString(1) + "\r\n" + users_data->GetString(2) + "\r\n" + users_data->GetString(3);
+					 tb->Text = "Username: " + users_data->GetString(1) + "\r\n" + "Room No: " + users_data->GetString(2) + "\r\n" + "Look into: " + users_data->GetString(3);
 					 //MessageBox::Show(tb->Text);
 					 tb->Location = System::Drawing::Point(20,140*i);
-					 tb->Width = 200;
+					 tb->Width = 450;
 					 tb->Height = 100;
 					 tb->Name = "TextBox" + i;
 					 tb->Multiline = true;
@@ -177,7 +177,14 @@ namespace GuestHouseManagement {
 					 btnFinish->Name = "btnFin" + i;
 					 btnFinish->Tag = users_data->GetInt32(0);
 					 btnFinish->Text = "Finished";
-					 btnFinish->Location = System::Drawing::Point(320,140*i);
+					 btnFinish->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(87)));
+					 btnFinish->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+					 btnFinish->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+						 static_cast<System::Byte>(0)));
+					 btnFinish->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+						 static_cast<System::Int32>(static_cast<System::Byte>(247)));
+					 btnFinish->Location = System::Drawing::Point(500,140*i);
 					 btnFinish->Click += gcnew System::EventHandler(this,&UserControl_Staff_Housekeeping_Approval::finish_button_click);
 					 this->Controls->Add(btnFinish);
 				 }

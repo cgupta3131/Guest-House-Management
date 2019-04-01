@@ -326,9 +326,9 @@ namespace GuestHouseManagement {
 			this->label9->Location = System::Drawing::Point(195, 389);
 			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(50, 18);
+			this->label9->Size = System::Drawing::Size(57, 18);
 			this->label9->TabIndex = 18;
-			this->label9->Text = L"Email";
+			this->label9->Text = L"Email*";
 			// 
 			// Text_Email
 			// 
@@ -393,6 +393,7 @@ namespace GuestHouseManagement {
 			// UserControl_Staff_Register
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->BackColor = System::Drawing::Color::Transparent;
 			this->Controls->Add(this->Text_DN);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label4);

@@ -294,7 +294,7 @@ namespace GuestHouseManagement {
 						 goto ErrExit;
 					 }
 
-					 String ^housekeep_info="Look into: ";
+					 String ^housekeep_info="";
 					 if(checkBox1->Checked==true)
 						 housekeep_info += checkBox1->Text + "  ";
 					 if(checkBox2->Checked==true)
@@ -318,8 +318,36 @@ namespace GuestHouseManagement {
 					 cmdInsert->Parameters->Add(gcnew OleDbParameter("@Request_Status",Convert::ToString("NO")));
 
 					 cmdInsert->ExecuteNonQuery();
-
 					 DB_Connection->Close();
+
+					 DB_Connection->Open();
+
+					/* String ^ getUserData = "Select * from Booking_Request where [Customer_Username] = " + customer_username + ";" ;
+
+					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
+					OleDbDataReader ^ user_data = cmd->ExecuteReader();
+					cliext::vector<String^> room_full_data;
+					String ^temp = "";
+					while(user_data->Read()==true)
+					{
+						String^ full_rooms = user_data->GetString(14);
+						cliext::vector<String^> room_full_data;
+
+						for(int j=0;j<full_rooms->Length;j++)
+						{
+							if(full_rooms[j] == ',')
+							{
+								room_full_data.push_back(temp);
+								temp = "";
+							}
+							else
+								temp = temp + full_rooms[j];
+						}
+					}
+
+					DB_Connection->Close();*/
+
+
 					 MessageBox::Show("Request has been made to the Admin","Notification");
 				 }
 				 catch(Exception ^ ex)

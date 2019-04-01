@@ -42,7 +42,7 @@ namespace GuestHouseManagement {
 	{
 	public:
 		Form ^ gf;
-	private: System::Windows::Forms::Button^  Button_Logout;
+
 	private: System::Windows::Forms::Button^  button3;
 	private: System::Windows::Forms::Panel^  panel1;
 	private: System::Windows::Forms::Button^  Booking_Btn;
@@ -86,6 +86,8 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  button9;
 	private: System::Windows::Forms::Button^  button8;
 	private: System::Windows::Forms::Button^  button12;
+	private: System::Windows::Forms::Label^  sub_lbl;
+	private: System::Windows::Forms::Button^  Button_Logout;
 	public: 
 		Form ^ gf2;
 		Form_Reception(){
@@ -148,6 +150,8 @@ namespace GuestHouseManagement {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			System::ComponentModel::ComponentResourceManager^  resources = (gcnew System::ComponentModel::ComponentResourceManager(Form_Reception::typeid));
+			this->Button_Logout = (gcnew System::Windows::Forms::Button());
 			this->Btn_Guest_Info = (gcnew System::Windows::Forms::Button());
 			this->Btn_Users_Approval = (gcnew System::Windows::Forms::Button());
 			this->Output_Panel = (gcnew System::Windows::Forms::Panel());
@@ -162,7 +166,6 @@ namespace GuestHouseManagement {
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->Btn_Housekeeping_App = (gcnew System::Windows::Forms::Button());
-			this->Button_Logout = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->button12 = (gcnew System::Windows::Forms::Button());
@@ -183,6 +186,7 @@ namespace GuestHouseManagement {
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->User_Button = (gcnew System::Windows::Forms::Button());
 			this->panel7 = (gcnew System::Windows::Forms::Panel());
+			this->sub_lbl = (gcnew System::Windows::Forms::Label());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
@@ -198,6 +202,24 @@ namespace GuestHouseManagement {
 			this->panel5->SuspendLayout();
 			this->panel7->SuspendLayout();
 			this->SuspendLayout();
+			// 
+			// Button_Logout
+			// 
+			this->Button_Logout->BackColor = System::Drawing::Color::Transparent;
+			this->Button_Logout->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->Button_Logout->FlatAppearance->BorderSize = 0;
+			this->Button_Logout->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Button_Logout->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Button_Logout->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Button_Logout->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Button_Logout.Image")));
+			this->Button_Logout->Location = System::Drawing::Point(-1, 525);
+			this->Button_Logout->Name = L"Button_Logout";
+			this->Button_Logout->Size = System::Drawing::Size(158, 51);
+			this->Button_Logout->TabIndex = 27;
+			this->Button_Logout->UseVisualStyleBackColor = false;
+			this->Button_Logout->Click += gcnew System::EventHandler(this, &Form_Reception::Button_Logout_Click);
 			// 
 			// Btn_Guest_Info
 			// 
@@ -236,15 +258,18 @@ namespace GuestHouseManagement {
 			// Output_Panel
 			// 
 			this->Output_Panel->AutoScroll = true;
-			this->Output_Panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(209)));
-			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->Output_Panel->AutoSize = true;
+			this->Output_Panel->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(236)), static_cast<System::Int32>(static_cast<System::Byte>(229)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(221)));
+			this->Output_Panel->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Output_Panel.BackgroundImage")));
+			this->Output_Panel->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+			this->Output_Panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->Output_Panel->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Output_Panel->Location = System::Drawing::Point(162, 44);
-			this->Output_Panel->Margin = System::Windows::Forms::Padding(2);
+			this->Output_Panel->Margin = System::Windows::Forms::Padding(0);
 			this->Output_Panel->Name = L"Output_Panel";
-			this->Output_Panel->Size = System::Drawing::Size(868, 553);
+			this->Output_Panel->Size = System::Drawing::Size(869, 554);
 			this->Output_Panel->TabIndex = 16;
 			this->Output_Panel->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Reception::Output_Panel_Paint);
 			this->Output_Panel->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::Output_Panel_MouseEnter);
@@ -257,8 +282,10 @@ namespace GuestHouseManagement {
 			this->Btn_Read_Feedback->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->Btn_Read_Feedback->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Btn_Read_Feedback->Location = System::Drawing::Point(0, 205);
-			this->Btn_Read_Feedback->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Read_Feedback->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Btn_Read_Feedback.Image")));
+			this->Btn_Read_Feedback->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->Btn_Read_Feedback->Location = System::Drawing::Point(-1, 205);
+			this->Btn_Read_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Read_Feedback->Name = L"Btn_Read_Feedback";
 			this->Btn_Read_Feedback->Size = System::Drawing::Size(158, 71);
 			this->Btn_Read_Feedback->TabIndex = 34;
@@ -274,8 +301,10 @@ namespace GuestHouseManagement {
 			this->Btn_Unread_Feedback->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->Btn_Unread_Feedback->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Btn_Unread_Feedback->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Btn_Unread_Feedback.Image")));
+			this->Btn_Unread_Feedback->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Btn_Unread_Feedback->Location = System::Drawing::Point(0, 134);
-			this->Btn_Unread_Feedback->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Unread_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Unread_Feedback->Name = L"Btn_Unread_Feedback";
 			this->Btn_Unread_Feedback->Size = System::Drawing::Size(158, 71);
 			this->Btn_Unread_Feedback->TabIndex = 33;
@@ -293,8 +322,10 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Btn_All_Feedback->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Btn_All_Feedback->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Btn_All_Feedback.Image")));
+			this->Btn_All_Feedback->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Btn_All_Feedback->Location = System::Drawing::Point(0, 276);
-			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_All_Feedback->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_All_Feedback->Name = L"Btn_All_Feedback";
 			this->Btn_All_Feedback->Size = System::Drawing::Size(158, 71);
 			this->Btn_All_Feedback->TabIndex = 32;
@@ -438,23 +469,6 @@ namespace GuestHouseManagement {
 			this->Btn_Housekeeping_App->UseVisualStyleBackColor = false;
 			this->Btn_Housekeeping_App->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Housekeeping_App_Click);
 			// 
-			// Button_Logout
-			// 
-			this->Button_Logout->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->Button_Logout->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
-			this->Button_Logout->Font = (gcnew System::Drawing::Font(L"Century Gothic", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-				static_cast<System::Byte>(0)));
-			this->Button_Logout->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->Button_Logout->Location = System::Drawing::Point(0, 492);
-			this->Button_Logout->Name = L"Button_Logout";
-			this->Button_Logout->Size = System::Drawing::Size(158, 71);
-			this->Button_Logout->TabIndex = 27;
-			this->Button_Logout->Text = L"Logout";
-			this->Button_Logout->UseVisualStyleBackColor = false;
-			this->Button_Logout->Click += gcnew System::EventHandler(this, &Form_Reception::Button_Logout_Click);
-			// 
 			// button3
 			// 
 			this->button3->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
@@ -507,12 +521,16 @@ namespace GuestHouseManagement {
 			// 
 			this->Booking_Btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->Booking_Btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Booking_Btn->FlatAppearance->BorderSize = 0;
+			this->Booking_Btn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Booking_Btn->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Booking_Btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Booking_Btn->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Booking_Btn.Image")));
+			this->Booking_Btn->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Booking_Btn->Location = System::Drawing::Point(0, 0);
+			this->Booking_Btn->Margin = System::Windows::Forms::Padding(0);
 			this->Booking_Btn->Name = L"Booking_Btn";
 			this->Booking_Btn->Size = System::Drawing::Size(173, 44);
 			this->Booking_Btn->TabIndex = 2;
@@ -544,7 +562,7 @@ namespace GuestHouseManagement {
 			this->Leave_Button->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->Leave_Button->Location = System::Drawing::Point(0, 176);
-			this->Leave_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Leave_Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Leave_Button->Name = L"Leave_Button";
 			this->Leave_Button->Size = System::Drawing::Size(173, 44);
 			this->Leave_Button->TabIndex = 34;
@@ -556,12 +574,16 @@ namespace GuestHouseManagement {
 			// 
 			this->Booking_Staff->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->Booking_Staff->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Booking_Staff->FlatAppearance->BorderSize = 0;
+			this->Booking_Staff->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Booking_Staff->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Booking_Staff->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Booking_Staff->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Booking_Staff.Image")));
+			this->Booking_Staff->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Booking_Staff->Location = System::Drawing::Point(0, 0);
+			this->Booking_Staff->Margin = System::Windows::Forms::Padding(0);
 			this->Booking_Staff->Name = L"Booking_Staff";
 			this->Booking_Staff->Size = System::Drawing::Size(173, 44);
 			this->Booking_Staff->TabIndex = 27;
@@ -580,7 +602,7 @@ namespace GuestHouseManagement {
 			this->Planner_Button->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->Planner_Button->Location = System::Drawing::Point(0, 132);
-			this->Planner_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Planner_Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Planner_Button->Name = L"Planner_Button";
 			this->Planner_Button->Size = System::Drawing::Size(173, 44);
 			this->Planner_Button->TabIndex = 35;
@@ -598,7 +620,7 @@ namespace GuestHouseManagement {
 			this->Btn_Edit_Records->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(253)), static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->Btn_Edit_Records->Location = System::Drawing::Point(0, 88);
-			this->Btn_Edit_Records->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Edit_Records->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Edit_Records->Name = L"Btn_Edit_Records";
 			this->Btn_Edit_Records->Size = System::Drawing::Size(173, 44);
 			this->Btn_Edit_Records->TabIndex = 36;
@@ -616,7 +638,7 @@ namespace GuestHouseManagement {
 			this->Register_Button->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->Register_Button->Location = System::Drawing::Point(0, 44);
-			this->Register_Button->Margin = System::Windows::Forms::Padding(2);
+			this->Register_Button->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Register_Button->Name = L"Register_Button";
 			this->Register_Button->Size = System::Drawing::Size(173, 47);
 			this->Register_Button->TabIndex = 33;
@@ -647,7 +669,7 @@ namespace GuestHouseManagement {
 			this->Btn_Room_Types->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->Btn_Room_Types->Location = System::Drawing::Point(0, 176);
-			this->Btn_Room_Types->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Room_Types->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Room_Types->Name = L"Btn_Room_Types";
 			this->Btn_Room_Types->Size = System::Drawing::Size(173, 44);
 			this->Btn_Room_Types->TabIndex = 72;
@@ -659,16 +681,20 @@ namespace GuestHouseManagement {
 			// 
 			this->Booking_GH_Info->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->Booking_GH_Info->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Booking_GH_Info->FlatAppearance->BorderSize = 0;
+			this->Booking_GH_Info->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Booking_GH_Info->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Booking_GH_Info->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Booking_GH_Info->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Booking_GH_Info.Image")));
+			this->Booking_GH_Info->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Booking_GH_Info->Location = System::Drawing::Point(0, 0);
+			this->Booking_GH_Info->Margin = System::Windows::Forms::Padding(0);
 			this->Booking_GH_Info->Name = L"Booking_GH_Info";
 			this->Booking_GH_Info->Size = System::Drawing::Size(173, 44);
 			this->Booking_GH_Info->TabIndex = 28;
-			this->Booking_GH_Info->Text = L"Guest House Info";
+			this->Booking_GH_Info->Text = L"GuestHouse Info";
 			this->Booking_GH_Info->UseVisualStyleBackColor = false;
 			this->Booking_GH_Info->MouseHover += gcnew System::EventHandler(this, &Form_Reception::Booking_GH_Info_MouseHover);
 			// 
@@ -682,7 +708,7 @@ namespace GuestHouseManagement {
 			this->Btn_User_Types->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
 			this->Btn_User_Types->Location = System::Drawing::Point(0, 132);
-			this->Btn_User_Types->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_User_Types->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_User_Types->Name = L"Btn_User_Types";
 			this->Btn_User_Types->Size = System::Drawing::Size(173, 44);
 			this->Btn_User_Types->TabIndex = 73;
@@ -723,12 +749,16 @@ namespace GuestHouseManagement {
 			// 
 			this->Booking_Room->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->Booking_Room->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->Booking_Room->FlatAppearance->BorderSize = 0;
+			this->Booking_Room->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->Booking_Room->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Booking_Room->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Booking_Room->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Booking_Room.Image")));
+			this->Booking_Room->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Booking_Room->Location = System::Drawing::Point(0, 0);
+			this->Booking_Room->Margin = System::Windows::Forms::Padding(0);
 			this->Booking_Room->Name = L"Booking_Room";
 			this->Booking_Room->Size = System::Drawing::Size(173, 44);
 			this->Booking_Room->TabIndex = 29;
@@ -753,12 +783,17 @@ namespace GuestHouseManagement {
 			// 
 			this->User_Button->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
-			this->User_Button->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->User_Button->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
+			this->User_Button->FlatAppearance->BorderSize = 0;
+			this->User_Button->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
 			this->User_Button->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->User_Button->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->User_Button->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"User_Button.Image")));
+			this->User_Button->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->User_Button->Location = System::Drawing::Point(0, 0);
+			this->User_Button->Margin = System::Windows::Forms::Padding(0);
 			this->User_Button->Name = L"User_Button";
 			this->User_Button->Size = System::Drawing::Size(173, 44);
 			this->User_Button->TabIndex = 28;
@@ -771,18 +806,20 @@ namespace GuestHouseManagement {
 			// 
 			this->panel7->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->panel7->BackgroundImage = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"panel7.BackgroundImage")));
 			this->panel7->Controls->Add(this->button11);
-			this->panel7->Controls->Add(this->button10);
 			this->panel7->Controls->Add(this->button9);
+			this->panel7->Controls->Add(this->button10);
 			this->panel7->Controls->Add(this->button8);
+			this->panel7->Controls->Add(this->sub_lbl);
 			this->panel7->Controls->Add(this->Button_Logout);
 			this->panel7->Controls->Add(this->Btn_All_Feedback);
-			this->panel7->Controls->Add(this->Btn_Unread_Feedback);
-			this->panel7->Controls->Add(this->Btn_Read_Feedback);
-			this->panel7->Controls->Add(this->button6);
 			this->panel7->Controls->Add(this->button5);
+			this->panel7->Controls->Add(this->Btn_Unread_Feedback);
 			this->panel7->Controls->Add(this->button7);
+			this->panel7->Controls->Add(this->Btn_Read_Feedback);
 			this->panel7->Controls->Add(this->Btn_Create);
+			this->panel7->Controls->Add(this->button6);
 			this->panel7->Location = System::Drawing::Point(2, 0);
 			this->panel7->Name = L"panel7";
 			this->panel7->Size = System::Drawing::Size(159, 596);
@@ -790,14 +827,34 @@ namespace GuestHouseManagement {
 			this->panel7->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Reception::panel7_Paint);
 			this->panel7->MouseEnter += gcnew System::EventHandler(this, &Form_Reception::okkies);
 			// 
+			// sub_lbl
+			// 
+			this->sub_lbl->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(3)), static_cast<System::Int32>(static_cast<System::Byte>(39)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(89)));
+			this->sub_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 13.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->sub_lbl->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(244)));
+			this->sub_lbl->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"sub_lbl.Image")));
+			this->sub_lbl->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->sub_lbl->Location = System::Drawing::Point(-2, 3);
+			this->sub_lbl->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->sub_lbl->Name = L"sub_lbl";
+			this->sub_lbl->Size = System::Drawing::Size(159, 44);
+			this->sub_lbl->TabIndex = 81;
+			this->sub_lbl->Text = L"      Admin";
+			this->sub_lbl->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			// 
 			// button11
 			// 
-			this->button11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button11->BackColor = System::Drawing::Color::Transparent;
+			this->button11->FlatAppearance->BorderSize = 0;
 			this->button11->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button11->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->button11->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button11->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button11.Image")));
+			this->button11->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button11->Location = System::Drawing::Point(0, 347);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(158, 71);
@@ -808,12 +865,14 @@ namespace GuestHouseManagement {
 			// 
 			// button10
 			// 
-			this->button10->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button10->BackColor = System::Drawing::Color::Transparent;
+			this->button10->FlatAppearance->BorderSize = 0;
 			this->button10->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button10->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->button10->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button10->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button10.Image")));
+			this->button10->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button10->Location = System::Drawing::Point(0, 276);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(158, 71);
@@ -824,13 +883,15 @@ namespace GuestHouseManagement {
 			// 
 			// button9
 			// 
-			this->button9->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button9->BackColor = System::Drawing::Color::Transparent;
+			this->button9->FlatAppearance->BorderSize = 0;
 			this->button9->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button9->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->button9->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button9->Location = System::Drawing::Point(-2, 205);
+			this->button9->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button9.Image")));
+			this->button9->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
+			this->button9->Location = System::Drawing::Point(0, 205);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(158, 71);
 			this->button9->TabIndex = 78;
@@ -840,12 +901,14 @@ namespace GuestHouseManagement {
 			// 
 			// button8
 			// 
-			this->button8->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
-				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button8->BackColor = System::Drawing::Color::Transparent;
+			this->button8->FlatAppearance->BorderSize = 0;
 			this->button8->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->button8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 11.25F));
 			this->button8->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button8->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button8.Image")));
+			this->button8->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button8->Location = System::Drawing::Point(0, 134);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(158, 71);
@@ -863,12 +926,14 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button6->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button6->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button6.Image")));
+			this->button6->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button6->Location = System::Drawing::Point(0, 347);
-			this->button6->Margin = System::Windows::Forms::Padding(2);
+			this->button6->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(158, 71);
 			this->button6->TabIndex = 76;
-			this->button6->Text = L"Add Tourist Places";
+			this->button6->Text = L"Tourist Places";
 			this->button6->UseVisualStyleBackColor = false;
 			this->button6->Click += gcnew System::EventHandler(this, &Form_Reception::button6_Click);
 			// 
@@ -881,12 +946,14 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button5->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button5->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button5.Image")));
+			this->button5->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button5->Location = System::Drawing::Point(0, 276);
-			this->button5->Margin = System::Windows::Forms::Padding(2);
+			this->button5->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(158, 71);
 			this->button5->TabIndex = 77;
-			this->button5->Text = L"Add Mess Details";
+			this->button5->Text = L"Mess Details";
 			this->button5->UseVisualStyleBackColor = false;
 			this->button5->Click += gcnew System::EventHandler(this, &Form_Reception::button5_Click);
 			// 
@@ -899,12 +966,14 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button7->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button7->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"button7.Image")));
+			this->button7->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->button7->Location = System::Drawing::Point(0, 205);
-			this->button7->Margin = System::Windows::Forms::Padding(2);
+			this->button7->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(158, 71);
 			this->button7->TabIndex = 75;
-			this->button7->Text = L"Add Restaurant";
+			this->button7->Text = L"Restaurant";
 			this->button7->UseVisualStyleBackColor = false;
 			this->button7->Click += gcnew System::EventHandler(this, &Form_Reception::button7_Click);
 			// 
@@ -917,12 +986,14 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->Btn_Create->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Btn_Create->Image = (cli::safe_cast<System::Drawing::Image^  >(resources->GetObject(L"Btn_Create.Image")));
+			this->Btn_Create->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
 			this->Btn_Create->Location = System::Drawing::Point(0, 134);
-			this->Btn_Create->Margin = System::Windows::Forms::Padding(2);
+			this->Btn_Create->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Btn_Create->Name = L"Btn_Create";
 			this->Btn_Create->Size = System::Drawing::Size(158, 71);
 			this->Btn_Create->TabIndex = 74;
-			this->Btn_Create->Text = L"Add Cab Services";
+			this->Btn_Create->Text = L"Cab Services";
 			this->Btn_Create->UseVisualStyleBackColor = false;
 			this->Btn_Create->Click += gcnew System::EventHandler(this, &Form_Reception::Btn_Create_Click);
 			// 
@@ -930,6 +1001,7 @@ namespace GuestHouseManagement {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->AutoScroll = true;
 			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->ClientSize = System::Drawing::Size(1032, 598);
@@ -940,6 +1012,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->Output_Panel);
+			this->DoubleBuffered = true;
+			this->MaximumSize = System::Drawing::Size(1048, 637);
+			this->MinimumSize = System::Drawing::Size(1048, 637);
 			this->Name = L"Form_Reception";
 			this->Text = L"Form_Reception";
 			this->Load += gcnew System::EventHandler(this, &Form_Reception::Form_Reception_Load);
@@ -951,24 +1026,25 @@ namespace GuestHouseManagement {
 			this->panel5->ResumeLayout(false);
 			this->panel7->ResumeLayout(false);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
 #pragma endregion
 
-  public: System::Void button_hides()
-		  {
-			  Btn_Create->Hide();
-			  button5->Hide();
-			  button6->Hide();
-			  button7->Hide();
-			  Btn_All_Feedback->Hide();
-			  Btn_Read_Feedback->Hide();
-			  Btn_Unread_Feedback->Hide();
-			  button8->Hide();
-			  button9->Hide();
-			  button10->Hide();
-			  button11->Hide();
-		  }
+	public: System::Void button_hides()
+			{
+				Btn_Create->Hide();
+				button5->Hide();
+				button6->Hide();
+				button7->Hide();
+				Btn_All_Feedback->Hide();
+				Btn_Read_Feedback->Hide();
+				Btn_Unread_Feedback->Hide();
+				button8->Hide();
+				button9->Hide();
+				button10->Hide();
+				button11->Hide();
+			}
 	private: System::Void button2_Click(System::Object^  sender, System::EventArgs^  e) {
 
 				 Output_Panel->Controls->Clear();
@@ -1121,7 +1197,7 @@ namespace GuestHouseManagement {
 	private: System::Void Booking_Btn_MouseHover(System::Object^  sender, System::EventArgs^  e) {
 				 this->panel1->Size = System::Drawing::Size(173, 220);
 				 this->panel1->BringToFront();
-				 
+
 				 panel2->Size = System::Drawing::Size(173, 44);
 				 panel3->Size = System::Drawing::Size(173, 44);
 				 panel4->Size = System::Drawing::Size(173, 44);
@@ -1138,7 +1214,7 @@ namespace GuestHouseManagement {
 				 panel1->Size = System::Drawing::Size(173, 44);
 				 panel2->Size = System::Drawing::Size(173, 44);
 				 panel3->Size = System::Drawing::Size(173, 44);
-	
+
 				 panel5->Size = System::Drawing::Size(173, 44);
 			 }
 	private: System::Void panel4_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
@@ -1153,7 +1229,7 @@ namespace GuestHouseManagement {
 				 panel2->Size = System::Drawing::Size(173, 44);
 				 panel3->Size = System::Drawing::Size(173, 44);
 				 panel4->Size = System::Drawing::Size(173, 44);
-				 
+
 			 }
 	private: System::Void panel5_MouseLeave(System::Object^  sender, System::EventArgs^  e) {
 				 this->panel5->Size = System::Drawing::Size(173, 44);
@@ -1164,7 +1240,7 @@ namespace GuestHouseManagement {
 				 this->panel3->BringToFront();
 				 panel1->Size = System::Drawing::Size(173, 44);
 				 panel2->Size = System::Drawing::Size(173, 44);
-				
+
 				 panel4->Size = System::Drawing::Size(173, 44);
 				 panel5->Size = System::Drawing::Size(173, 44);
 			 }
@@ -1261,35 +1337,35 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 			 }
-private: System::Void User_Button_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void panel7_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+	private: System::Void User_Button_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void panel7_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 
-		 }
-private: System::Void okkies(System::Object^  sender, System::EventArgs^  e) {
-			 panel1->Size = System::Drawing::Size(173, 44);
-			 panel2->Size = System::Drawing::Size(173, 44);
-			 panel3->Size = System::Drawing::Size(173, 44);
-			 panel4->Size = System::Drawing::Size(173, 44);
-			 panel5->Size = System::Drawing::Size(173, 44);
-		 }
-private: System::Void okkie2(System::Object^  sender, System::EventArgs^  e) {
-			 panel1->Size = System::Drawing::Size(173, 44);
-			 panel2->Size = System::Drawing::Size(173, 44);
-			 panel3->Size = System::Drawing::Size(173, 44);
-			 panel4->Size = System::Drawing::Size(173, 44);
-			 panel5->Size = System::Drawing::Size(173, 44);
-		 }
-private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-		 }
-private: System::Void Booking_Room_Click(System::Object^  sender, System::EventArgs^  e) {
-		 }
-private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) 
-{
-			 Output_Panel->Controls->Clear();
-			 button_hides();
-			 Output_Panel->Controls->Add(gcnew UserControl_Extra_Charges(panel1,panel2,panel3,panel4,panel5));
-}
+			 }
+	private: System::Void okkies(System::Object^  sender, System::EventArgs^  e) {
+				 panel1->Size = System::Drawing::Size(173, 44);
+				 panel2->Size = System::Drawing::Size(173, 44);
+				 panel3->Size = System::Drawing::Size(173, 44);
+				 panel4->Size = System::Drawing::Size(173, 44);
+				 panel5->Size = System::Drawing::Size(173, 44);
+			 }
+	private: System::Void okkie2(System::Object^  sender, System::EventArgs^  e) {
+				 panel1->Size = System::Drawing::Size(173, 44);
+				 panel2->Size = System::Drawing::Size(173, 44);
+				 panel3->Size = System::Drawing::Size(173, 44);
+				 panel4->Size = System::Drawing::Size(173, 44);
+				 panel5->Size = System::Drawing::Size(173, 44);
+			 }
+	private: System::Void Output_Panel_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+			 }
+	private: System::Void Booking_Room_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) 
+			 {
+				 Output_Panel->Controls->Clear();
+				 button_hides();
+				 Output_Panel->Controls->Add(gcnew UserControl_Extra_Charges(panel1,panel2,panel3,panel4,panel5));
+			 }
 
-};
+	};
 }
