@@ -1,6 +1,7 @@
 #pragma once
 #include <regex>
 #include "tosstring.h"
+#include <cliext/vector>
 //#include <msclr/marshal_cppstd.h>
 
 using namespace std;
@@ -57,6 +58,7 @@ namespace GuestHouseManagement {
 
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::TextBox^  Textbox_Issues;
+	private: System::Windows::Forms::ComboBox^  comboBox1;
 
 
 
@@ -83,106 +85,95 @@ namespace GuestHouseManagement {
 			this->Textbox_room = (gcnew System::Windows::Forms::TextBox());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->Textbox_Issues = (gcnew System::Windows::Forms::TextBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->SuspendLayout();
 			// 
 			// checkBox1
 			// 
-			this->checkBox1->AutoEllipsis = true;
 			this->checkBox1->AutoSize = true;
 			this->checkBox1->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox1->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 			this->checkBox1->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->checkBox1->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->checkBox1->Location = System::Drawing::Point(114, 119);
-			this->checkBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkBox1->Location = System::Drawing::Point(86, 97);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(134, 29);
+			this->checkBox1->Size = System::Drawing::Size(111, 22);
 			this->checkBox1->TabIndex = 0;
 			this->checkBox1->Text = L"Bedsheets";
 			this->checkBox1->UseVisualStyleBackColor = false;
 			// 
 			// checkBox2
 			// 
-			this->checkBox2->AutoEllipsis = true;
 			this->checkBox2->AutoSize = true;
 			this->checkBox2->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox2->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 			this->checkBox2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->checkBox2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->checkBox2->Location = System::Drawing::Point(322, 119);
-			this->checkBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkBox2->Location = System::Drawing::Point(242, 97);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(183, 29);
+			this->checkBox2->Size = System::Drawing::Size(148, 22);
 			this->checkBox2->TabIndex = 1;
 			this->checkBox2->Text = L"Room Cleaning";
 			this->checkBox2->UseVisualStyleBackColor = false;
 			// 
 			// checkBox3
 			// 
-			this->checkBox3->AutoEllipsis = true;
 			this->checkBox3->AutoSize = true;
 			this->checkBox3->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox3->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 			this->checkBox3->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->checkBox3->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->checkBox3->Location = System::Drawing::Point(582, 119);
-			this->checkBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkBox3->Location = System::Drawing::Point(436, 97);
 			this->checkBox3->Name = L"checkBox3";
-			this->checkBox3->Size = System::Drawing::Size(263, 29);
+			this->checkBox3->Size = System::Drawing::Size(216, 22);
 			this->checkBox3->TabIndex = 2;
 			this->checkBox3->Text = L"Water Issues-Plumbing";
 			this->checkBox3->UseVisualStyleBackColor = false;
 			// 
 			// checkBox4
 			// 
-			this->checkBox4->AutoEllipsis = true;
 			this->checkBox4->AutoSize = true;
 			this->checkBox4->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox4->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 			this->checkBox4->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->checkBox4->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->checkBox4->Location = System::Drawing::Point(114, 189);
-			this->checkBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkBox4->Location = System::Drawing::Point(86, 154);
 			this->checkBox4->Name = L"checkBox4";
-			this->checkBox4->Size = System::Drawing::Size(113, 29);
+			this->checkBox4->Size = System::Drawing::Size(89, 22);
 			this->checkBox4->TabIndex = 3;
 			this->checkBox4->Text = L"Laundry";
 			this->checkBox4->UseVisualStyleBackColor = false;
 			// 
 			// checkBox5
 			// 
-			this->checkBox5->AutoEllipsis = true;
 			this->checkBox5->AutoSize = true;
 			this->checkBox5->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox5->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 			this->checkBox5->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->checkBox5->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->checkBox5->Location = System::Drawing::Point(322, 189);
-			this->checkBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkBox5->Location = System::Drawing::Point(242, 154);
 			this->checkBox5->Name = L"checkBox5";
-			this->checkBox5->Size = System::Drawing::Size(193, 29);
+			this->checkBox5->Size = System::Drawing::Size(159, 22);
 			this->checkBox5->TabIndex = 4;
 			this->checkBox5->Text = L"Electrical Issues";
 			this->checkBox5->UseVisualStyleBackColor = false;
 			// 
 			// checkBox6
 			// 
-			this->checkBox6->AutoEllipsis = true;
 			this->checkBox6->AutoSize = true;
 			this->checkBox6->BackColor = System::Drawing::Color::Transparent;
 			this->checkBox6->FlatAppearance->CheckedBackColor = System::Drawing::Color::Lime;
 			this->checkBox6->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
 			this->checkBox6->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->checkBox6->Location = System::Drawing::Point(582, 189);
-			this->checkBox6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->checkBox6->Location = System::Drawing::Point(436, 154);
 			this->checkBox6->Name = L"checkBox6";
-			this->checkBox6->Size = System::Drawing::Size(196, 29);
+			this->checkBox6->Size = System::Drawing::Size(160, 22);
 			this->checkBox6->TabIndex = 5;
 			this->checkBox6->Text = L"Other Requests:";
 			this->checkBox6->UseVisualStyleBackColor = false;
@@ -193,10 +184,9 @@ namespace GuestHouseManagement {
 			this->label2->AutoSize = true;
 			this->label2->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(262, 45);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(169, 46);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(173, 25);
+			this->label2->Size = System::Drawing::Size(134, 18);
 			this->label2->TabIndex = 7;
 			this->label2->Text = L"Room Number";
 			// 
@@ -204,11 +194,11 @@ namespace GuestHouseManagement {
 			// 
 			this->Textbox_room->Font = (gcnew System::Drawing::Font(L"Verdana", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Textbox_room->Location = System::Drawing::Point(448, 45);
-			this->Textbox_room->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Textbox_room->Location = System::Drawing::Point(30, 271);
 			this->Textbox_room->Name = L"Textbox_room";
-			this->Textbox_room->Size = System::Drawing::Size(173, 32);
+			this->Textbox_room->Size = System::Drawing::Size(131, 27);
 			this->Textbox_room->TabIndex = 9;
+			this->Textbox_room->Visible = false;
 			// 
 			// button1
 			// 
@@ -220,10 +210,9 @@ namespace GuestHouseManagement {
 			this->button1->Font = (gcnew System::Drawing::Font(L"Verdana", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::White;
-			this->button1->Location = System::Drawing::Point(311, 334);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Location = System::Drawing::Point(233, 271);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(168, 54);
+			this->button1->Size = System::Drawing::Size(126, 44);
 			this->button1->TabIndex = 10;
 			this->button1->Text = L"Submit";
 			this->button1->UseVisualStyleBackColor = false;
@@ -234,17 +223,27 @@ namespace GuestHouseManagement {
 			this->Textbox_Issues->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->Textbox_Issues->Font = (gcnew System::Drawing::Font(L"Verdana", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Textbox_Issues->Location = System::Drawing::Point(582, 237);
-			this->Textbox_Issues->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Textbox_Issues->Location = System::Drawing::Point(436, 193);
 			this->Textbox_Issues->Multiline = true;
 			this->Textbox_Issues->Name = L"Textbox_Issues";
-			this->Textbox_Issues->Size = System::Drawing::Size(262, 65);
+			this->Textbox_Issues->Size = System::Drawing::Size(197, 53);
 			this->Textbox_Issues->TabIndex = 11;
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Verdana", 12));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Location = System::Drawing::Point(337, 43);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(131, 26);
+			this->comboBox1->TabIndex = 12;
 			// 
 			// UserControl_Customer_Housekeeping
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->Textbox_Issues);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->Textbox_room);
@@ -255,9 +254,8 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->checkBox3);
 			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"UserControl_Customer_Housekeeping";
-			this->Size = System::Drawing::Size(865, 417);
+			this->Size = System::Drawing::Size(649, 339);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Customer_Housekeeping::UserControl_Customer_Housekeeping_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
@@ -265,11 +263,44 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 
-	private: System::Void UserControl_Customer_Housekeeping_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void UserControl_Customer_Housekeeping_Load(System::Object^  sender, System::EventArgs^  e) 
+			 {
 				 Textbox_Issues->Visible=false;
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
+
+				 DB_Connection->Open();
+
+				 String ^ getroomData = "Select * from Booking_Request where [Customer_Username] = '" + username_info + "' AND [Checked_Out] = 'NO'; " ;
+				 OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getroomData, DB_Connection);
+				 OleDbDataReader ^ user_data = cmd->ExecuteReader();
+				 String ^temp_room_num;
+				 cliext::vector<String^> vec2;
+				 while(user_data->Read() == true)
+				 {
+					 temp_room_num = user_data->GetString(14);
+					 
+					 String ^store = "";
+					 for(int k=0;k<temp_room_num->Length;k++)
+					 {
+						 if(temp_room_num[k] == ',')
+						 {
+							 vec2.push_back(store);
+							 store = "";
+						 }
+
+						 else
+							 store = store + temp_room_num[k];
+					 }
+				 }
+
+				 for(int k=0;k<vec2.size();k++)
+					comboBox1->Items->Add(vec2[k]);
+
+				 DB_Connection->Close();
 			 }
+
+
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 try
 				 {
@@ -278,16 +309,16 @@ namespace GuestHouseManagement {
 					 DB_Connection->Open();
 
 					 string susername = tosstring(username_info);
-					 string sroom = tosstring(Textbox_room->Text);
-
-					 regex rx("^[A-Z|a-z]{0,1}[0-9]+[A-Z|a-z]{0,1}$");
-					 if(!regex_match(sroom.cbegin(), sroom.cend(), rx)){
-						 MessageBox::Show("Enter Room in format: A(number using digits[0-9])A");
+					 //string sroom = tosstring(Textbox_room->Text);
+					 //string sroom = tosstring(comboBox1->Text);
+					 
+					 if(comboBox1->Text == ""){
+						 MessageBox::Show("Please Select a room");
 						 goto ErrExit;
 					 }
 
 					 String ^customer_username = username_info;
-					 String ^room_no = Textbox_room->Text;
+					 String ^room_no = comboBox1->Text;
 
 					 if(checkBox1->Checked==false && checkBox2->Checked==false && checkBox3->Checked==false && checkBox4->Checked==false && checkBox5->Checked==false && checkBox6->Checked==false){
 						 MessageBox::Show("Select a housekeeping task");
@@ -321,31 +352,6 @@ namespace GuestHouseManagement {
 					 DB_Connection->Close();
 
 					 DB_Connection->Open();
-
-					/* String ^ getUserData = "Select * from Booking_Request where [Customer_Username] = " + customer_username + ";" ;
-
-					OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getUserData, DB_Connection);
-					OleDbDataReader ^ user_data = cmd->ExecuteReader();
-					cliext::vector<String^> room_full_data;
-					String ^temp = "";
-					while(user_data->Read()==true)
-					{
-						String^ full_rooms = user_data->GetString(14);
-						cliext::vector<String^> room_full_data;
-
-						for(int j=0;j<full_rooms->Length;j++)
-						{
-							if(full_rooms[j] == ',')
-							{
-								room_full_data.push_back(temp);
-								temp = "";
-							}
-							else
-								temp = temp + full_rooms[j];
-						}
-					}
-
-					DB_Connection->Close();*/
 
 
 					 MessageBox::Show("Request has been made to the Admin","Notification");

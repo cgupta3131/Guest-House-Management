@@ -131,100 +131,102 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(420, 46);
+			this->label1->Location = System::Drawing::Point(251, 38);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(153, 23);
+			this->label1->Size = System::Drawing::Size(190, 28);
 			this->label1->TabIndex = 44;
 			this->label1->Text = L"Booking History";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label2->Location = System::Drawing::Point(52, 111);
+			this->label2->Location = System::Drawing::Point(39, 90);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(30, 23);
+			this->label2->Size = System::Drawing::Size(24, 19);
 			this->label2->TabIndex = 45;
 			this->label2->Text = L"ID";
-			this->label2->Visible = false;
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label3->Location = System::Drawing::Point(156, 111);
+			this->label3->Location = System::Drawing::Point(117, 90);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(116, 23);
+			this->label3->Size = System::Drawing::Size(95, 19);
 			this->label3->TabIndex = 46;
 			this->label3->Text = L"Booking for";
-			this->label3->Visible = false;
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label4->Location = System::Drawing::Point(356, 111);
+			this->label4->Location = System::Drawing::Point(267, 90);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(109, 23);
+			this->label4->Size = System::Drawing::Size(81, 19);
 			this->label4->TabIndex = 47;
 			this->label4->Text = L"Start Date";
-			this->label4->Visible = false;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(503, 111);
+			this->label5->Location = System::Drawing::Point(377, 90);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(102, 23);
+			this->label5->Size = System::Drawing::Size(78, 19);
 			this->label5->TabIndex = 48;
 			this->label5->Text = L"End Date";
-			this->label5->Visible = false;
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label6->Location = System::Drawing::Point(629, 111);
+			this->label6->Location = System::Drawing::Point(472, 90);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(168, 23);
+			this->label6->Size = System::Drawing::Size(129, 19);
 			this->label6->TabIndex = 49;
 			this->label6->Text = L"Approval Status";
-			this->label6->Visible = false;
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(836, 111);
+			this->label7->Location = System::Drawing::Point(627, 90);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(84, 23);
+			this->label7->Size = System::Drawing::Size(67, 19);
 			this->label7->TabIndex = 50;
 			this->label7->Text = L"Options";
-			this->label7->Visible = false;
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+			this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label8->Location = System::Drawing::Point(3, 0);
+			this->label8->Location = System::Drawing::Point(2, 0);
+			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(374, 23);
+			this->label8->Size = System::Drawing::Size(253, 17);
 			this->label8->TabIndex = 51;
 			this->label8->Text = L"* Click on the booking to view details";
 			// 
 			// UserControl_Customer_Book_Edit
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->AutoScroll = true;
 			this->Controls->Add(this->label8);
@@ -235,17 +237,25 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Customer_Book_Edit";
-			this->Size = System::Drawing::Size(994, 534);
+			this->Size = System::Drawing::Size(746, 434);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Customer_Book_Edit::UserControl_Customer_Book_Edit_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
+
+		public: System::Void clear_form(System::Object^  sender, System::EventArgs^  e)
+		{
+			this->Controls->Clear();
+			this->InitializeComponent();
+			UserControl_Customer_Book_Edit_Load(sender,e);
+		}
 	private: System::Void UserControl_Customer_Book_Edit_Load(System::Object^  sender, System::EventArgs^  e) {
 				
-				this->Controls->Clear();
+				 //this->Controls->Clear();
 				 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 				 DB_Connection->Open();
@@ -379,14 +389,15 @@ namespace GuestHouseManagement {
 					
 					//dataGridView1->Rows->Add(book_id,book_name,book_date,book_upto);
 				 }
-				 if(i!=0)
+
+				 if(i==0)
 				 {
-					 label2->Visible=true;
-					 label3->Visible=true;
-					 label4->Visible=true;
-					 label5->Visible=true;
-					 label6->Visible=true;
-					 label7->Visible=true;
+					 label2->Visible=false;
+					 label3->Visible=false;
+					 label4->Visible=false;
+					 label5->Visible=false;
+					 label6->Visible=false;
+					 label7->Visible=false;
 				 }
 			
 				 DB_Connection->Close();
@@ -413,79 +424,7 @@ namespace GuestHouseManagement {
 			String ^str_id=vec_id[pos];
 			Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
 			f2->ShowDialog();
-
-			//String ^temp=v1[pos];
-			//String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
-
-			//temp=v2[pos];
-			//String ^str2 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
-
-			//int str1_int = System::Convert::ToInt32(str1);
-			//int str2_int = System::Convert::ToInt32(str2);
-			//int datetoday_int = System::Convert::ToInt32(today_date);
-
-			////MessageBox::Show(str_id + " " + str1 + " " + str2);
-			///*DateTime dt1=Convert::ToDateTime(str1);
-			//DateTime dt2=Convert::ToDateTime(str2);
-			//TimeSpan span1=dt1-System::DateTime().Now.Date;
-			//TimeSpan span2=dt2-System::DateTime().Now.Date;*/
-
-			//int diff1 = str1_int - datetoday_int;
-			//int diff2 = str2_int - datetoday_int;
-			////MessageBox::Show("1");
-			//if(diff1 > 0)
-			//{
-			//	//MessageBox::Show("2");
-			//	Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
-			//	f2->ShowDialog();
-			//}
-			//else if(diff1 <=0 && diff2 >=0)
-			//{
-			//		/*Add code to go to in stay facilities*/
-			//		 //MessageBox::Show("3");
-			//		if(diff2==0)
-			//		{
-			//			Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
-			//			form3->ShowDialog();
-			//		}
-			//		Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
-			//		f1->ShowDialog();
-			//}
-			//else
-			//{
-			//	//MessageBox::Show("4");
-			//	/* Add code to check if feedback already submitted 
-			//		Also see that feedback is asked for on the last day of stay
-			//		Also allow to remove from history */ 
-			//		OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
-			//		DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
-			//		DB_Connection->Open();
-
-			//		int str_temp = Convert::ToInt32(str_id);
-			//		String ^ getPastBookings = "Select * From Booking_Request where [ID] = " + str_temp + ";";
-			//		OleDb::OleDbCommand ^ cmd = gcnew OleDbCommand(getPastBookings, DB_Connection);
-			//		OleDbDataReader ^ user_booking = cmd->ExecuteReader();
-			//	 
-			//		/*while(user_booking->Read()==true)
-			//		{
-			//		List_Search->Items->Add("Booking ID: " + user_booking->GetValue(0) + "/ " + "Booking Date: " + user_booking->GetString(4) + " in the name of " + user_booking->GetString(3));
-			//		}*/
-
-			//		if(user_booking->Read()==true)
-			//		{
-			//			if(user_booking->GetInt32(10) == 0)
-			//			{
-			//				Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
-			//				form3->ShowDialog();
-			//			}
-			//			//MessageBox::Show("7");
-			//			// add code to close this form
-			//			Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
-			//			f2->ShowDialog();
-			//		}
-			//		DB_Connection->Close();
-			//}
-
+			clear_form(sender,e);
 		}
 
 		public: System::Void bt2_Click(System::Object^  sender, System::EventArgs^  e)
@@ -504,6 +443,7 @@ namespace GuestHouseManagement {
 			String ^str_id=vec_id[pos];
 			Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
 			f2->ShowDialog();
+			clear_form(sender,e);
 
 			//String ^temp=v1[pos];
 			//String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
@@ -589,6 +529,7 @@ namespace GuestHouseManagement {
 			String ^str_id=vec_id[pos];
 			Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
 			f2->ShowDialog();
+			clear_form(sender,e);
 
 			//String ^temp=v1[pos];
 			//String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
@@ -673,6 +614,7 @@ namespace GuestHouseManagement {
 			String ^str_id=vec_id[pos];
 			Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
 			f2->ShowDialog();
+			clear_form(sender,e);
 
 			//String ^temp=v1[pos];
 			//String ^str1 = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
@@ -880,7 +822,7 @@ namespace GuestHouseManagement {
 			{
 				Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,0);
 				f2->ShowDialog();
-				UserControl_Customer_Book_Edit_Load(sender,e);
+				clear_form(sender,e);
 				
 			}
 
@@ -910,6 +852,7 @@ namespace GuestHouseManagement {
 					//bt6->Text="View Booking";
 					Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
 					f2->ShowDialog();
+					clear_form(sender,e);
 
 					return;
 				}
@@ -922,6 +865,7 @@ namespace GuestHouseManagement {
 				}
 				Form_Show_Guest_House_Facilities ^f1 = gcnew Form_Show_Guest_House_Facilities;
 				f1->ShowDialog();
+				clear_form(sender,e);
 			}
 			else
 			{
@@ -949,7 +893,7 @@ namespace GuestHouseManagement {
 								//bt6->Text="View Booking";
 								Form_Edit_Booking ^ f2 = gcnew Form_Edit_Booking(str_id,1);
 								f2->ShowDialog();
-								 UserControl_Customer_Book_Edit_Load(sender,e);
+								 clear_form(sender,e);
 								return;
 							}
 						//bt6->Text="Give Feedback";
@@ -957,6 +901,7 @@ namespace GuestHouseManagement {
 						{
 						Form_Feedback ^form3 = gcnew Form_Feedback(str_id);
 						form3->ShowDialog();
+						clear_form(sender,e);
 						}
 						
 						
