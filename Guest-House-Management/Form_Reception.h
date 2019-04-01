@@ -24,6 +24,7 @@
 #include "UserControl_Add_Restaurant.h"
 #include "UserControl_Add_Places.h"
 #include "UserControl_Add_Mess.h"
+#include "UserControl_Extra_Charges.h"
 
 namespace GuestHouseManagement {
 
@@ -84,6 +85,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::Button^  button10;
 	private: System::Windows::Forms::Button^  button9;
 	private: System::Windows::Forms::Button^  button8;
+	private: System::Windows::Forms::Button^  button12;
 	public: 
 		Form ^ gf2;
 		Form_Reception(){
@@ -163,6 +165,7 @@ namespace GuestHouseManagement {
 			this->Button_Logout = (gcnew System::Windows::Forms::Button());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->Booking_Btn = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->Leave_Button = (gcnew System::Windows::Forms::Button());
@@ -393,7 +396,7 @@ namespace GuestHouseManagement {
 				static_cast<System::Byte>(0)));
 			this->button1->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(247)));
-			this->button1->Location = System::Drawing::Point(0, 132);
+			this->button1->Location = System::Drawing::Point(0, 176);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(173, 44);
 			this->button1->TabIndex = 23;
@@ -471,16 +474,34 @@ namespace GuestHouseManagement {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->button12);
+			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->Booking_Btn);
 			this->panel1->Controls->Add(this->button2);
 			this->panel1->Controls->Add(this->Btn_Booking_App);
-			this->panel1->Controls->Add(this->button1);
 			this->panel1->Location = System::Drawing::Point(336, 0);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(173, 176);
+			this->panel1->Size = System::Drawing::Size(173, 220);
 			this->panel1->TabIndex = 28;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Reception::panel1_Paint);
 			this->panel1->MouseLeave += gcnew System::EventHandler(this, &Form_Reception::panel1_MouseLeave);
+			// 
+			// button12
+			// 
+			this->button12->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->button12->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+			this->button12->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->button12->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->button12->Location = System::Drawing::Point(0, 132);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(173, 44);
+			this->button12->TabIndex = 27;
+			this->button12->Text = L"Extra Charges";
+			this->button12->UseVisualStyleBackColor = false;
+			this->button12->Click += gcnew System::EventHandler(this, &Form_Reception::button12_Click);
 			// 
 			// Booking_Btn
 			// 
@@ -1098,7 +1119,7 @@ namespace GuestHouseManagement {
 			 }
 			 //Booking
 	private: System::Void Booking_Btn_MouseHover(System::Object^  sender, System::EventArgs^  e) {
-				 this->panel1->Size = System::Drawing::Size(173, 176);
+				 this->panel1->Size = System::Drawing::Size(173, 220);
 				 this->panel1->BringToFront();
 				 
 				 panel2->Size = System::Drawing::Size(173, 44);
@@ -1263,5 +1284,12 @@ private: System::Void Output_Panel_Paint(System::Object^  sender, System::Window
 		 }
 private: System::Void Booking_Room_Click(System::Object^  sender, System::EventArgs^  e) {
 		 }
+private: System::Void button12_Click(System::Object^  sender, System::EventArgs^  e) 
+{
+			 Output_Panel->Controls->Clear();
+			 button_hides();
+			 Output_Panel->Controls->Add(gcnew UserControl_Extra_Charges(panel1,panel2,panel3,panel4,panel5));
+}
+
 };
 }

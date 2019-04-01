@@ -298,18 +298,7 @@ namespace GuestHouseManagement {
 		}
 #pragma endregion
 
-		//bool validDates(String ^ leaveFrom)
-		//{
-		//	DateTime oDate = new DateTime();
-		//	oDate = DateTime.ParseExact(leaveFrom, "dd-MM-yyyy", NULL);
-		//	//DateTime oDate = Convert::ToDateTime(leaveFrom);
-		//	//MessageBox::Show(Convert::ToString(oDate));
-		//	TimeSpan span = oDate - System::DateTime().Now.Date;
-		//	if(span.TotalDays<0) return false;
-
-		//	return true;
-		//}
-
+		
 
 		void loadDataGrid()
 		{
@@ -356,22 +345,24 @@ namespace GuestHouseManagement {
 				 loadDataGrid();
 
 			 }
-	private: System::Void dataGridView1_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) {
+	private: System::Void dataGridView1_CellClick(System::Object^  sender, System::Windows::Forms::DataGridViewCellEventArgs^  e) 
+			 {
 				 String ^ name = dataGridView1->CurrentRow->Cells[1]->Value->ToString();
 				 System::Windows::Forms::DialogResult ^ opt = gcnew System::Windows::Forms::DialogResult;
-				 opt=MessageBox::Show("Approve "+ name + "'s leave?", "Approval", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
+				 opt = MessageBox::Show("Approve "+ name + "'s leave?", "Approval", MessageBoxButtons::YesNoCancel,MessageBoxIcon::Question);
 
-				 if(opt== System::Windows::Forms::DialogResult::Yes)
+				 if(opt == System::Windows::Forms::DialogResult::Yes)
 				 {
+					 MessageBox::Show("ok");
 					 OleDb::OleDbConnection ^ DB_Connection = gcnew OleDb::OleDbConnection();
 					 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=GuestHouse.accdb";
 					 DB_Connection->Open();
 					 int ser_num = Convert::ToInt32(dataGridView1->CurrentRow->Cells[0]->Value);
-					 String ^ getUserData = "Select * From Staff_Leave where ID like " + ser_num ;
+					 String ^ getUserData = "Select * From Staff_Leave where [ID] = "+ ser_num + ";";
 					 OleDb::OleDbCommand ^ cmdUpdate = gcnew OleDbCommand(getUserData, DB_Connection);
+					 MessageBox::Show(Convert::ToString(ser_num));
 					 cmdUpdate->CommandText = "UPDATE Staff_Leave SET Approved = 'Approved' WHERE ID = " + ser_num + ";";
 					 cmdUpdate->ExecuteNonQuery();
-
 
 					 DB_Connection->Close();
 					 MessageBox::Show("Leave Approved");
@@ -394,6 +385,7 @@ namespace GuestHouseManagement {
 					 MessageBox::Show("Leave Not Approved");
 					 loadDataGrid();
 				 }
+				 MessageBox::Show("1");
 
 			 }
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
