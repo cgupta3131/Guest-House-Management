@@ -27,27 +27,27 @@ namespace GuestHouseManagement {
 public ref class UserControl_Staff_Planner : public System::Windows::Forms::UserControl
 {
 public:
-	Panel ^pnl;
-	Panel ^pn2;
-	Panel ^pn3;
-	Panel ^pn4;
-	Panel ^pn5;
-	int flag;
-	DateTime thedate;
+Panel ^pnl;
+Panel ^pn2;
+Panel ^pn3;
+Panel ^pn4;
+Panel ^pn5;
+int flag;
+DateTime thedate;
 
-	UserControl_Staff_Planner(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5, int temp_flag)
-	{
-		InitializeComponent();
-		pnl = testpanel1;
-		pn2 = testpanel2;
-		pn3 = testpanel3;
-		pn4 = testpanel4;
-		pn5 = testpanel5;
-		flag = temp_flag;
-		//
-		//TODO: Add the constructor code here
-		//
-	}
+UserControl_Staff_Planner(Panel ^testpanel1, Panel ^testpanel2, Panel ^testpanel3, Panel ^testpanel4, Panel ^testpanel5, int temp_flag)
+{
+ InitializeComponent();
+ pnl = testpanel1;
+ pn2 = testpanel2;
+ pn3 = testpanel3;
+ pn4 = testpanel4;
+ pn5 = testpanel5;
+ flag = temp_flag;
+ //
+ //TODO: Add the constructor code here
+ //
+}
 protected:
  /// <summary>
  /// Clean up any resources being used.
@@ -64,7 +64,7 @@ protected:
 private: System::Windows::Forms::DateTimePicker^  PlannerDate;
 
 private: System::Windows::Forms::Label^  Night_Label;
-private: System::Windows::Forms::LinkLabel^  label2;
+
 
 
 
@@ -73,11 +73,11 @@ private: System::Windows::Forms::ProgressBar^  daybar;
 private: System::Windows::Forms::Label^  count_lbl;
 private: System::Windows::Forms::Label^  category_lbl;
 private: System::Windows::Forms::ProgressBar^  nightbar;
-private: System::Windows::Forms::LinkLabel^  label5;
 
-private: System::Windows::Forms::LinkLabel^  label4;
 
-private: System::Windows::Forms::LinkLabel^  label3;
+
+
+
 private: System::Windows::Forms::Label^  count_lbl_n;
 private: System::Windows::Forms::Label^  hover_lbl;
 private: System::Windows::Forms::LinkLabel^  linkLabel1;
@@ -147,14 +147,10 @@ private:
 	 this->label1 = (gcnew System::Windows::Forms::Label());
 	 this->PlannerDate = (gcnew System::Windows::Forms::DateTimePicker());
 	 this->Night_Label = (gcnew System::Windows::Forms::Label());
-	 this->label2 = (gcnew System::Windows::Forms::LinkLabel());
 	 this->daybar = (gcnew System::Windows::Forms::ProgressBar());
 	 this->count_lbl = (gcnew System::Windows::Forms::Label());
 	 this->category_lbl = (gcnew System::Windows::Forms::Label());
 	 this->nightbar = (gcnew System::Windows::Forms::ProgressBar());
-	 this->label5 = (gcnew System::Windows::Forms::LinkLabel());
-	 this->label4 = (gcnew System::Windows::Forms::LinkLabel());
-	 this->label3 = (gcnew System::Windows::Forms::LinkLabel());
 	 this->count_lbl_n = (gcnew System::Windows::Forms::Label());
 	 this->hover_lbl = (gcnew System::Windows::Forms::Label());
 	 this->linkLabel1 = (gcnew System::Windows::Forms::LinkLabel());
@@ -169,7 +165,7 @@ private:
 	 this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 		 static_cast<System::Byte>(0)));
 	 this->label1->ForeColor = System::Drawing::Color::Black;
-	 this->label1->Location = System::Drawing::Point(686, 76);
+	 this->label1->Location = System::Drawing::Point(265, 16);
 	 this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->label1->Name = L"label1";
 	 this->label1->Size = System::Drawing::Size(65, 25);
@@ -180,10 +176,10 @@ private:
 	 // PlannerDate
 	 // 
 	 this->PlannerDate->Enabled = false;
-	 this->PlannerDate->Location = System::Drawing::Point(840, 74);
+	 this->PlannerDate->Location = System::Drawing::Point(364, 16);
 	 this->PlannerDate->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 	 this->PlannerDate->Name = L"PlannerDate";
-	 this->PlannerDate->Size = System::Drawing::Size(236, 26);
+	 this->PlannerDate->Size = System::Drawing::Size(258, 26);
 	 this->PlannerDate->TabIndex = 1;
 	 this->PlannerDate->ValueChanged += gcnew System::EventHandler(this, &UserControl_Staff_Planner::PlannerDate_ValueChanged);
 	 // 
@@ -195,7 +191,7 @@ private:
 	 this->Night_Label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 		 static_cast<System::Byte>(0)));
 	 this->Night_Label->ForeColor = System::Drawing::Color::White;
-	 this->Night_Label->Location = System::Drawing::Point(1132, 143);
+	 this->Night_Label->Location = System::Drawing::Point(619, 125);
 	 this->Night_Label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->Night_Label->Name = L"Night_Label";
 	 this->Night_Label->Size = System::Drawing::Size(81, 27);
@@ -203,33 +199,12 @@ private:
 	 this->Night_Label->Text = L"NIGHT";
 	 this->Night_Label->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::label3_Click);
 	 // 
-	 // label2
-	 // 
-	 this->label2->ActiveLinkColor = System::Drawing::Color::Silver;
-	 this->label2->BackColor = System::Drawing::Color::Linen;
-	 this->label2->Cursor = System::Windows::Forms::Cursors::Hand;
-	 this->label2->DisabledLinkColor = System::Drawing::Color::White;
-	 this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-		 static_cast<System::Byte>(0)));
-	 this->label2->ForeColor = System::Drawing::SystemColors::Desktop;
-	 this->label2->ImageAlign = System::Drawing::ContentAlignment::MiddleRight;
-	 this->label2->LinkColor = System::Drawing::Color::Black;
-	 this->label2->Location = System::Drawing::Point(4, 109);
-	 this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-	 this->label2->Name = L"label2";
-	 this->label2->Size = System::Drawing::Size(243, 79);
-	 this->label2->TabIndex = 4;
-	 this->label2->TabStop = true;
-	 this->label2->Text = L"HouseKeeping";
-	 this->label2->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-	 this->label2->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &UserControl_Staff_Planner::label2_LinkClicked);
-	 // 
 	 // daybar
 	 // 
 	 this->daybar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
 		 static_cast<System::Int32>(static_cast<System::Byte>(192)));
 	 this->daybar->ForeColor = System::Drawing::Color::Red;
-	 this->daybar->Location = System::Drawing::Point(284, 143);
+	 this->daybar->Location = System::Drawing::Point(43, 160);
 	 this->daybar->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 	 this->daybar->Name = L"daybar";
 	 this->daybar->Size = System::Drawing::Size(222, 51);
@@ -244,11 +219,12 @@ private:
 	 this->count_lbl->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 		 static_cast<System::Byte>(0)));
 	 this->count_lbl->ForeColor = System::Drawing::Color::White;
-	 this->count_lbl->Location = System::Drawing::Point(331, 201);
+	 this->count_lbl->Location = System::Drawing::Point(107, 218);
 	 this->count_lbl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->count_lbl->Name = L"count_lbl";
-	 this->count_lbl->Size = System::Drawing::Size(0, 29);
+	 this->count_lbl->Size = System::Drawing::Size(71, 29);
 	 this->count_lbl->TabIndex = 10;
+	 this->count_lbl->Text = L"count";
 	 // 
 	 // category_lbl
 	 // 
@@ -257,7 +233,7 @@ private:
 	 this->category_lbl->Font = (gcnew System::Drawing::Font(L"Century Gothic", 19.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 		 static_cast<System::Byte>(0)));
 	 this->category_lbl->ForeColor = System::Drawing::Color::Black;
-	 this->category_lbl->Location = System::Drawing::Point(54, 30);
+	 this->category_lbl->Location = System::Drawing::Point(5, 54);
 	 this->category_lbl->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->category_lbl->Name = L"category_lbl";
 	 this->category_lbl->Size = System::Drawing::Size(81, 33);
@@ -270,7 +246,7 @@ private:
 	 this->nightbar->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(255)), static_cast<System::Int32>(static_cast<System::Byte>(255)), 
 		 static_cast<System::Int32>(static_cast<System::Byte>(192)));
 	 this->nightbar->ForeColor = System::Drawing::Color::Red;
-	 this->nightbar->Location = System::Drawing::Point(901, 143);
+	 this->nightbar->Location = System::Drawing::Point(558, 166);
 	 this->nightbar->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 	 this->nightbar->Name = L"nightbar";
 	 this->nightbar->Size = System::Drawing::Size(222, 51);
@@ -278,71 +254,11 @@ private:
 	 this->nightbar->TabIndex = 12;
 	 this->nightbar->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner::progressBar1_Click);
 	 // 
-	 // label5
-	 // 
-	 this->label5->ActiveLinkColor = System::Drawing::Color::Silver;
-	 this->label5->BackColor = System::Drawing::Color::Linen;
-	 this->label5->Cursor = System::Windows::Forms::Cursors::Hand;
-	 this->label5->DisabledLinkColor = System::Drawing::Color::White;
-	 this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-		 static_cast<System::Byte>(0)));
-	 this->label5->ForeColor = System::Drawing::SystemColors::Desktop;
-	 this->label5->LinkColor = System::Drawing::Color::Black;
-	 this->label5->Location = System::Drawing::Point(4, 367);
-	 this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-	 this->label5->Name = L"label5";
-	 this->label5->Size = System::Drawing::Size(243, 79);
-	 this->label5->TabIndex = 13;
-	 this->label5->TabStop = true;
-	 this->label5->Text = L"Security";
-	 this->label5->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-	 this->label5->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &UserControl_Staff_Planner::label5_LinkClicked_1);
-	 // 
-	 // label4
-	 // 
-	 this->label4->ActiveLinkColor = System::Drawing::Color::Silver;
-	 this->label4->BackColor = System::Drawing::Color::Linen;
-	 this->label4->Cursor = System::Windows::Forms::Cursors::Hand;
-	 this->label4->DisabledLinkColor = System::Drawing::Color::White;
-	 this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-		 static_cast<System::Byte>(0)));
-	 this->label4->ForeColor = System::Drawing::SystemColors::Desktop;
-	 this->label4->LinkColor = System::Drawing::Color::Black;
-	 this->label4->Location = System::Drawing::Point(4, 281);
-	 this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-	 this->label4->Name = L"label4";
-	 this->label4->Size = System::Drawing::Size(243, 79);
-	 this->label4->TabIndex = 14;
-	 this->label4->TabStop = true;
-	 this->label4->Text = L"Receptionist";
-	 this->label4->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-	 this->label4->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &UserControl_Staff_Planner::label4_LinkClicked_1);
-	 // 
-	 // label3
-	 // 
-	 this->label3->ActiveLinkColor = System::Drawing::Color::Silver;
-	 this->label3->BackColor = System::Drawing::Color::Linen;
-	 this->label3->Cursor = System::Windows::Forms::Cursors::Hand;
-	 this->label3->DisabledLinkColor = System::Drawing::Color::White;
-	 this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
-		 static_cast<System::Byte>(0)));
-	 this->label3->ForeColor = System::Drawing::SystemColors::Desktop;
-	 this->label3->LinkColor = System::Drawing::Color::Black;
-	 this->label3->Location = System::Drawing::Point(4, 194);
-	 this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-	 this->label3->Name = L"label3";
-	 this->label3->Size = System::Drawing::Size(243, 79);
-	 this->label3->TabIndex = 15;
-	 this->label3->TabStop = true;
-	 this->label3->Text = L"Room Service";
-	 this->label3->TextAlign = System::Drawing::ContentAlignment::MiddleCenter;
-	 this->label3->LinkClicked += gcnew System::Windows::Forms::LinkLabelLinkClickedEventHandler(this, &UserControl_Staff_Planner::label3_LinkClicked_1);
-	 // 
 	 // count_lbl_n
 	 // 
 	 this->count_lbl_n->AutoSize = true;
 	 this->count_lbl_n->BackColor = System::Drawing::Color::Black;
-	 this->count_lbl_n->Location = System::Drawing::Point(1014, 205);
+	 this->count_lbl_n->Location = System::Drawing::Point(634, 222);
 	 this->count_lbl_n->Name = L"count_lbl_n";
 	 this->count_lbl_n->Size = System::Drawing::Size(51, 20);
 	 this->count_lbl_n->TabIndex = 16;
@@ -353,7 +269,7 @@ private:
 	 this->hover_lbl->AutoSize = true;
 	 this->hover_lbl->BackColor = System::Drawing::Color::Transparent;
 	 this->hover_lbl->ForeColor = System::Drawing::SystemColors::ActiveCaptionText;
-	 this->hover_lbl->Location = System::Drawing::Point(304, 45);
+	 this->hover_lbl->Location = System::Drawing::Point(380, 269);
 	 this->hover_lbl->Name = L"hover_lbl";
 	 this->hover_lbl->Size = System::Drawing::Size(0, 20);
 	 this->hover_lbl->TabIndex = 17;
@@ -361,9 +277,9 @@ private:
 	 // 
 	 // linkLabel1
 	 // 
-	 this->linkLabel1->Location = System::Drawing::Point(814, 19);
+	 this->linkLabel1->Location = System::Drawing::Point(651, 16);
 	 this->linkLabel1->Name = L"linkLabel1";
-	 this->linkLabel1->Size = System::Drawing::Size(264, 23);
+	 this->linkLabel1->Size = System::Drawing::Size(196, 23);
 	 this->linkLabel1->TabIndex = 0;
 	 this->linkLabel1->TabStop = true;
 	 this->linkLabel1->Text = L"Edit Staff Requirements";
@@ -376,7 +292,7 @@ private:
 	 this->day_label->Font = (gcnew System::Drawing::Font(L"Century Gothic", 16.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 		 static_cast<System::Byte>(0)));
 	 this->day_label->ForeColor = System::Drawing::Color::White;
-	 this->day_label->Location = System::Drawing::Point(542, 143);
+	 this->day_label->Location = System::Drawing::Point(107, 121);
 	 this->day_label->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 	 this->day_label->Name = L"day_label";
 	 this->day_label->Size = System::Drawing::Size(59, 25);
@@ -386,7 +302,8 @@ private:
 	 // 
 	 // staff_req_panel
 	 // 
-	 this->staff_req_panel->Location = System::Drawing::Point(508, 309);
+	 this->staff_req_panel->AutoSize = true;
+	 this->staff_req_panel->Location = System::Drawing::Point(222, 343);
 	 this->staff_req_panel->Name = L"staff_req_panel";
 	 this->staff_req_panel->Size = System::Drawing::Size(391, 137);
 	 this->staff_req_panel->TabIndex = 18;
@@ -394,7 +311,7 @@ private:
 	 // exit_label
 	 // 
 	 this->exit_label->AutoSize = true;
-	 this->exit_label->Location = System::Drawing::Point(431, 88);
+	 this->exit_label->Location = System::Drawing::Point(229, 101);
 	 this->exit_label->Name = L"exit_label";
 	 this->exit_label->Size = System::Drawing::Size(35, 20);
 	 this->exit_label->TabIndex = 19;
@@ -405,33 +322,26 @@ private:
 	 // UserControl_Staff_Planner
 	 // 
 	 this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
-	 this->AutoSize = true;
-	 this->BackColor = System::Drawing::Color::White;
-	 this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::Stretch;
+	 this->BackColor = System::Drawing::Color::Transparent;
 	 this->Controls->Add(this->exit_label);
 	 this->Controls->Add(this->staff_req_panel);
 	 this->Controls->Add(this->linkLabel1);
 	 this->Controls->Add(this->hover_lbl);
 	 this->Controls->Add(this->count_lbl_n);
-	 this->Controls->Add(this->label3);
-	 this->Controls->Add(this->label4);
-	 this->Controls->Add(this->label5);
 	 this->Controls->Add(this->nightbar);
 	 this->Controls->Add(this->category_lbl);
 	 this->Controls->Add(this->count_lbl);
 	 this->Controls->Add(this->daybar);
-	 this->Controls->Add(this->label2);
 	 this->Controls->Add(this->Night_Label);
 	 this->Controls->Add(this->day_label);
 	 this->Controls->Add(this->PlannerDate);
 	 this->Controls->Add(this->label1);
-	 this->DoubleBuffered = true;
 	 this->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 		 static_cast<System::Byte>(0)));
 	 this->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
 	 this->Margin = System::Windows::Forms::Padding(4, 5, 4, 5);
 	 this->Name = L"UserControl_Staff_Planner";
-	 this->Size = System::Drawing::Size(1234, 507);
+	 this->Size = System::Drawing::Size(868, 553);
 	 this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Planner::UserControl_Staff_Planner_Load);
 	 this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Planner::myouseneter);
 	 this->ResumeLayout(false);
@@ -460,14 +370,14 @@ private:
    OleDbDataReader ^ e_data = cmd->ExecuteReader();
    while(e_data->Read()==true)
    {
-		dhk=Convert::ToString(e_data->GetValue(4));
-		drs=Convert::ToString(e_data->GetValue(5));
-		dr=Convert::ToString(e_data->GetValue(6));
-		ds=Convert::ToString(e_data->GetValue(7));
-	    nhk=Convert::ToString(e_data->GetValue(8));
-	    nrs=Convert::ToString(e_data->GetValue(9));
-	    nr=Convert::ToString(e_data->GetValue(10));
-	    ns=Convert::ToString(e_data->GetValue(11));
+ dhk=Convert::ToString(e_data->GetValue(4));
+ drs=Convert::ToString(e_data->GetValue(5));
+ dr=Convert::ToString(e_data->GetValue(6));
+ ds=Convert::ToString(e_data->GetValue(7));
+    nhk=Convert::ToString(e_data->GetValue(8));
+    nrs=Convert::ToString(e_data->GetValue(9));
+    nr=Convert::ToString(e_data->GetValue(10));
+    ns=Convert::ToString(e_data->GetValue(11));
    }
 
 
@@ -594,17 +504,17 @@ private:
       while(e_data1->Read() == true)
       {
        //MessageBox::Show("Reading");
-		  String ^next_day_date = System::DateTime().Now.AddDays(1).ToString("yyyyMMdd");
+   String ^next_day_date = System::DateTime().Now.AddDays(1).ToString("yyyyMMdd");
 
-		  String ^temp=e_data1->GetString(4);
-		  String ^leave_start = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+   String ^temp=e_data1->GetString(4);
+   String ^leave_start = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
 
-		  temp=e_data1->GetString(4);
-		  String ^leave_end = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
+   temp=e_data1->GetString(4);
+   String ^leave_end = Convert::ToString(temp[6]) + Convert::ToString(temp[7]) + Convert::ToString(temp[8]) + Convert::ToString(temp[9]) + Convert::ToString(temp[3]) + Convert::ToString(temp[4]) + Convert::ToString(temp[0]) + Convert::ToString(temp[1]); //dd-mm-yyyy converted to yyyyMMdd
 
-		  int str1_int = System::Convert::ToInt32(leave_start);
-		  int str2_int = System::Convert::ToInt32(leave_end);
-		  int next_day_date_int = System::Convert::ToInt32(next_day_date);
+   int str1_int = System::Convert::ToInt32(leave_start);
+   int str2_int = System::Convert::ToInt32(leave_end);
+   int next_day_date_int = System::Convert::ToInt32(next_day_date);
 
 
        //leave_start=Convert::ToDateTime(e_data1->GetString(4));
@@ -612,8 +522,8 @@ private:
        String ^ approval= e_data1->GetString(7);
        DateTime subjectdate=PlannerDate->Value;
 
-		int diff1= next_day_date_int - str1_int;
-		int diff2 = str2_int - next_day_date_int;
+ int diff1= next_day_date_int - str1_int;
+ int diff2 = str2_int - next_day_date_int;
 
        if( diff1 > 0 && diff2 >0 ){
         is_working=false;
@@ -651,12 +561,12 @@ private:
       this->Controls->Add(lb);
       //housekeepingnumber++;
       if(employee_shift=="D"){
-       lb->Location = System::Drawing::Point(542,350+50*dhousekeepingnumber);
+       lb->Location = System::Drawing::Point(107,350+50*dhousekeepingnumber);
        dhousekeepingnumber++;
        daybar->ForeColor=Color::Red;
        
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        //lb->Font->Size=16;
        if(dhousekeepingnumber<=Convert::ToInt32(dhk)){
         this->daybar->Value=dhousekeepingnumber;
@@ -675,12 +585,12 @@ private:
        this->count_lbl_n->Text=Convert::ToString(nhousekeepingnumber);
       }
       else{
-       lb->Location = System::Drawing::Point(1131,350+50*nhousekeepingnumber);
+       lb->Location = System::Drawing::Point(619,350+50*nhousekeepingnumber);
        nhousekeepingnumber++;
        daybar->ForeColor=Color::Red;
        
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        if(dhousekeepingnumber<=Convert::ToInt32(dhk)){
         this->daybar->Value=dhousekeepingnumber;
        }
@@ -729,11 +639,11 @@ private:
       lb->DoubleClick+=gcnew EventHandler(this,&UserControl_Staff_Planner::eventcombo);
       this->Controls->Add(lb);
       if(employee_shift=="D"){
-       lb->Location = System::Drawing::Point(542,350+50*(droomservicenumber));
+       lb->Location = System::Drawing::Point(107,350+50*(droomservicenumber));
        droomservicenumber++;
        
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        if(droomservicenumber<=Convert::ToInt32(drs)){
         this->daybar->Value=droomservicenumber;
        }
@@ -751,10 +661,10 @@ private:
        this->count_lbl_n->Text=Convert::ToString(nroomservicenumber);
       }
       else{
-       lb->Location = System::Drawing::Point(1131,350+50*(nroomservicenumber));
+       lb->Location = System::Drawing::Point(619,350+50*(nroomservicenumber));
        nroomservicenumber++;
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        
        if(droomservicenumber<=Convert::ToInt32(drs)){
         this->daybar->Value=droomservicenumber;
@@ -799,11 +709,11 @@ private:
       this->Controls->Add(lb);
       //recieptionistnumber++;
       if(employee_shift=="D"){
-       lb->Location = System::Drawing::Point(542,350+50*(drecieptionistnumber));
+       lb->Location = System::Drawing::Point(107,350+50*(drecieptionistnumber));
        drecieptionistnumber++;
        
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        if(drecieptionistnumber<=Convert::ToInt32(dr)){
         this->daybar->Value=drecieptionistnumber;
        }
@@ -821,10 +731,10 @@ private:
        this->count_lbl_n->Text=Convert::ToString(nrecieptionistnumber);
       }
       else{
-       lb->Location = System::Drawing::Point(1131,350+50*(nrecieptionistnumber));
+       lb->Location = System::Drawing::Point(619,350+50*(nrecieptionistnumber));
        nrecieptionistnumber++;
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        
        if(drecieptionistnumber<=Convert::ToInt32(dr)){
         this->daybar->Value=drecieptionistnumber;
@@ -877,10 +787,10 @@ private:
 
       //securitynumber++;
       if(employee_shift=="D"){
-       lb->Location = System::Drawing::Point(542,350+50*(dsecuritynumber));
+       lb->Location = System::Drawing::Point(107,350+50*(dsecuritynumber));
        dsecuritynumber++;
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        
        if(dsecuritynumber<=Convert::ToInt32(ds)){
         this->daybar->Value=dsecuritynumber;
@@ -899,10 +809,10 @@ private:
        this->count_lbl_n->Text=Convert::ToString(nsecuritynumber);
       }
       else{
-       lb->Location = System::Drawing::Point(1131,350+50*(nsecuritynumber));
+       lb->Location = System::Drawing::Point(619,350+50*(nsecuritynumber));
        nsecuritynumber++;
-       lb->BackColor=Color::Salmon;
-       lb->ForeColor=Color::FromArgb(5, 56, 107);
+       lb->BackColor=Color::FromArgb(96,202,212);
+       lb->ForeColor=Color::FromArgb(0,0,0);
        
        if(dsecuritynumber<=Convert::ToInt32(ds)){
         this->daybar->Value=dsecuritynumber;
@@ -997,9 +907,9 @@ private:
        cmdUpdate->CommandText ="UPDATE Staff_Register SET [Day_Night0]= 'N' WHERE Employee_ID = " +employee_id + ";";
        if(designation=="Watchman"){
         dsecuritynumber--;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
-        lbl->Location=System::Drawing::Point(1131,350+50*(nsecuritynumber));
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
+        lbl->Location=System::Drawing::Point(619,350+50*(nsecuritynumber));
         nsecuritynumber++;
         this->daybar->Value=droomservicenumber;
         this->nightbar->Value=nroomservicenumber;
@@ -1015,9 +925,9 @@ private:
        else if(designation=="House Keeping"){
         MessageBox::Show("before decrement"+dhousekeepingnumber);
         dhousekeepingnumber--;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
-        lbl->Location=System::Drawing::Point(1131,350+50*(nhousekeepingnumber));
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
+        lbl->Location=System::Drawing::Point(619,350+50*(nhousekeepingnumber));
         nhousekeepingnumber++;
 
         this->daybar->Value=droomservicenumber;
@@ -1033,10 +943,10 @@ private:
        else if(designation=="Receptionist"){
         drecieptionistnumber--;
 
-        lbl->Location=System::Drawing::Point(1131,350+50*(nrecieptionistnumber));
+        lbl->Location=System::Drawing::Point(619,350+50*(nrecieptionistnumber));
         nrecieptionistnumber++;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
         this->daybar->Value=droomservicenumber;
         this->nightbar->Value=nroomservicenumber;
         this->count_lbl->Text=Convert::ToString(droomservicenumber);
@@ -1049,10 +959,10 @@ private:
        else{
         droomservicenumber--;
 
-        lbl->Location=System::Drawing::Point(1131,350+50*(nroomservicenumber));
+        lbl->Location=System::Drawing::Point(619,350+50*(nroomservicenumber));
         nroomservicenumber++;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
         this->daybar->Value=droomservicenumber;
         this->nightbar->Value=nroomservicenumber;
         this->count_lbl->Text=Convert::ToString(droomservicenumber);
@@ -1070,10 +980,10 @@ private:
        if(designation=="Watchman"){
         nsecuritynumber--;
 
-        lbl->Location=System::Drawing::Point(542,350+50*(dsecuritynumber));
+        lbl->Location=System::Drawing::Point(107,350+50*(dsecuritynumber));
         dsecuritynumber++;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
         this->daybar->Value=droomservicenumber;
         this->nightbar->Value=nroomservicenumber;
         this->count_lbl->Text=Convert::ToString(droomservicenumber);
@@ -1088,10 +998,10 @@ private:
        else if(designation=="House Keeping"){
         nhousekeepingnumber--;
 
-        lbl->Location=System::Drawing::Point(542,350+50*(dhousekeepingnumber));
+        lbl->Location=System::Drawing::Point(107,350+50*(dhousekeepingnumber));
         dhousekeepingnumber++;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
         this->daybar->Value=droomservicenumber;
         this->nightbar->Value=nroomservicenumber;
         this->count_lbl->Text=Convert::ToString(droomservicenumber);
@@ -1104,10 +1014,10 @@ private:
        else if(designation=="Receptionist"){
         nrecieptionistnumber--;
 
-        lbl->Location=System::Drawing::Point(542,350+50*(drecieptionistnumber));
+        lbl->Location=System::Drawing::Point(107,350+50*(drecieptionistnumber));
         drecieptionistnumber++;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
         this->daybar->Value=droomservicenumber;
         this->nightbar->Value=nroomservicenumber;
         this->count_lbl->Text=Convert::ToString(droomservicenumber);
@@ -1120,10 +1030,10 @@ private:
        else{
         nroomservicenumber--;
 
-        lbl->Location=System::Drawing::Point(542,350+50*(droomservicenumber));
+        lbl->Location=System::Drawing::Point(107,350+50*(droomservicenumber));
         droomservicenumber++;
-        lbl->BackColor=Color::Salmon;
-        lbl->ForeColor=Color::FromArgb(5, 56, 107);
+        lbl->BackColor=Color::FromArgb(96,202,212);
+        lbl->ForeColor=Color::FromArgb(0,0,0);
         /*if(droomservicenumber<=Convert::ToInt32(drs)){
          this->daybar->Value=droomservicenumber;
         }
@@ -1220,7 +1130,7 @@ private: System::Void PlannerDate_ValueChanged(System::Object^  sender, System::
 private: System::Void static On_paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  pe) {
 
    Graphics^ g = pe->Graphics;
-   Pen^ redPen = gcnew Pen(Color::Salmon);
+   Pen^ redPen = gcnew Pen(Color::FromArgb(96,202,212));
 
    redPen->Width = 4;
 
@@ -1274,7 +1184,7 @@ private: System::Void button2_Click(System::Object^  sender, System::EventArgs^ 
 private: System::Void label6_Click_1(System::Object^  sender, System::EventArgs^  e) {
   }
 private: System::Void linkLabel1_LinkClicked(System::Object^  sender, System::Windows::Forms::LinkLabelLinkClickedEventArgs^  e) {
-   staff_req_panel->Location=System::Drawing::Point(416, 109);
+   staff_req_panel->Location=System::Drawing::Point(234, 129);
    staff_req_panel->Size=System::Drawing::Size(540, 395);
    staff_req_panel->Controls->Clear();
    staff_req_panel->Controls->Add(gcnew UserControl_Staff_Planner_Requirements);
@@ -1288,12 +1198,12 @@ private: System::Void linkLabel2_LinkClicked(System::Object^  sender, System::Wi
    update_planner(0);
   }
 private: System::Void myouseneter(System::Object^  sender, System::EventArgs^  e) {
-			 pnl->Size = System::Drawing::Size(173, 44);
-			 pn2->Size = System::Drawing::Size(173, 44);
-			 pn3->Size = System::Drawing::Size(173, 44);
-			 pn4->Size = System::Drawing::Size(173, 44);
-			 pn5->Size = System::Drawing::Size(173, 44);
-		 }
+   pnl->Size = System::Drawing::Size(168, 23);
+   pn2->Size = System::Drawing::Size(168, 23);
+   pn3->Size = System::Drawing::Size(168, 23);
+   pn4->Size = System::Drawing::Size(168, 23);
+   pn5->Size = System::Drawing::Size(168, 23);
+  }
 };
 }
 

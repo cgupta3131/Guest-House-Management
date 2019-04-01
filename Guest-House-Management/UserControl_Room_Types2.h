@@ -27,7 +27,7 @@ namespace GuestHouseManagement {
 	/// </summary>
 	public ref class UserControl_Room_Types2 : public System::Windows::Forms::UserControl
 	{
-		
+
 	public:
 		Panel ^pnl;
 		Panel ^pn2;
@@ -93,44 +93,52 @@ namespace GuestHouseManagement {
 			this->Txt_Room_Type->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
 			this->Txt_Room_Type->ForeColor = System::Drawing::Color::Black;
-			this->Txt_Room_Type->Location = System::Drawing::Point(123, 106);
+			this->Txt_Room_Type->Location = System::Drawing::Point(277, 106);
 			this->Txt_Room_Type->Name = L"Txt_Room_Type";
-			this->Txt_Room_Type->Size = System::Drawing::Size(113, 20);
+			this->Txt_Room_Type->Size = System::Drawing::Size(130, 20);
 			this->Txt_Room_Type->TabIndex = 0;
 			this->Txt_Room_Type->TextChanged += gcnew System::EventHandler(this, &UserControl_Room_Types2::Txt_Room_Type_TextChanged);
 			// 
 			// Btn_Add
 			// 
+			this->Btn_Add->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->Btn_Add->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->Btn_Add->Location = System::Drawing::Point(285, 118);
+			this->Btn_Add->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(247)));
+			this->Btn_Add->Location = System::Drawing::Point(441, 118);
 			this->Btn_Add->Name = L"Btn_Add";
-			this->Btn_Add->Size = System::Drawing::Size(75, 30);
+			this->Btn_Add->Size = System::Drawing::Size(87, 43);
 			this->Btn_Add->TabIndex = 1;
 			this->Btn_Add->Text = L"Add";
-			this->Btn_Add->UseVisualStyleBackColor = true;
+			this->Btn_Add->UseVisualStyleBackColor = false;
 			this->Btn_Add->Click += gcnew System::EventHandler(this, &UserControl_Room_Types2::Btn_Add_Click);
 			// 
 			// Txt_Occupancy
 			// 
-			this->Txt_Occupancy->Location = System::Drawing::Point(123, 142);
+			this->Txt_Occupancy->Location = System::Drawing::Point(277, 155);
 			this->Txt_Occupancy->Name = L"Txt_Occupancy";
-			this->Txt_Occupancy->Size = System::Drawing::Size(113, 20);
+			this->Txt_Occupancy->Size = System::Drawing::Size(130, 20);
 			this->Txt_Occupancy->TabIndex = 2;
 			// 
 			// label1
 			// 
-			this->label1->Location = System::Drawing::Point(3, 106);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(54, 106);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(100, 23);
+			this->label1->Size = System::Drawing::Size(204, 23);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"Enter Room Type";
 			// 
 			// label2
 			// 
-			this->label2->Location = System::Drawing::Point(3, 142);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(54, 149);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(110, 36);
+			this->label2->Size = System::Drawing::Size(204, 31);
 			this->label2->TabIndex = 4;
 			this->label2->Text = L"Enter Occupancy";
 			// 
@@ -138,13 +146,15 @@ namespace GuestHouseManagement {
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
 			this->AutoScroll = true;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(209)));
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->Controls->Add(this->Txt_Occupancy);
 			this->Controls->Add(this->Btn_Add);
 			this->Controls->Add(this->Txt_Room_Type);
 			this->Name = L"UserControl_Room_Types2";
-			this->Size = System::Drawing::Size(682, 553);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Room_Types2::UserControl_Room_Types_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Room_Types2::mymouseenter);
 			this->ResumeLayout(false);
@@ -179,7 +189,7 @@ namespace GuestHouseManagement {
 					goto ErrExit;
 				}
 
-				
+
 
 			}
 
@@ -252,9 +262,9 @@ ErrExit:
 						 goto ErrExit;
 					 }
 
-					 rx = "^[0-9|A-Z|a-z|.|']+$";
+					 rx = "^[0-9]+$";
 					 if(!regex_match(soccy.cbegin(), soccy.cend(), rx)){
-						 MessageBox::Show("Enter Room Type in alphanumeric characters");
+						 MessageBox::Show("Enter Occupancy in digits[0-9]");
 						 goto ErrExit;
 					 }
 
@@ -317,7 +327,7 @@ ErrExit:
 
 								 Label ^ lb = gcnew Label();
 								 lb->Text = vec[i];
-								 lb->Location = System::Drawing::Point(20,50*(i+1));
+								 lb->Location = System::Drawing::Point(20,50+50*(i+1));
 								 lb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 									 static_cast<System::Byte>(0)));
 
@@ -325,17 +335,19 @@ ErrExit:
 
 								 Label ^ lb2 = gcnew Label();
 								 lb2->Text = "Enter Price for the User Type specified";
-								 lb2->Location = System::Drawing::Point(200,20);
-								 lb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+								 lb2->AutoSize = true;
+								 lb2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 									 static_cast<System::Byte>(0)));
+								 lb2->Location = System::Drawing::Point(200, 17);
+								 lb2->Size = System::Drawing::Size(273, 29);
 
 								 this->Controls->Add(lb2);
 
 								 TextBox ^ tb = gcnew TextBox();
 								 tb->Name = "TextBox" + i;
-								 tb->Width = 100;
+								 tb->Width = 175;
 								 tb->Height = 50;
-								 tb->Location = System::Drawing::Point(200,50*(i+1));
+								 tb->Location = System::Drawing::Point(200,50+50*(i+1));
 								 tb->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 									 static_cast<System::Byte>(0)));
 								 this->Controls->Add(tb);
@@ -347,19 +359,31 @@ ErrExit:
 							 btn->Text = "Submit";
 							 btn->Name = "Btn_Submit";
 
-							 btn->ForeColor = System::Drawing::SystemColors::WindowText;
-							 btn->Location = System::Drawing::Point(473, 104);
+							 btn->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+								 static_cast<System::Int32>(static_cast<System::Byte>(87)));
+							 btn->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+							 btn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+								 static_cast<System::Byte>(0)));
+							 btn->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+								 static_cast<System::Int32>(static_cast<System::Byte>(247)));
+							 btn->Location = System::Drawing::Point(400, 100);
 							 btn->Click += gcnew System::EventHandler(this,&UserControl_Room_Types2::button_click);
 							 this->Controls->Add(btn);
 
 							 Button ^ btn2 = gcnew Button();
-							 btn->Height = 50;
-							 btn->Width = 100;
+							 btn2->Height = 50;
+							 btn2->Width = 100;
 							 btn2->Text = "Go Back";
 							 btn2->Name = "Btn_Back";
 
-							 btn2->ForeColor = System::Drawing::SystemColors::WindowText;
-							 btn2->Location = System::Drawing::Point(473, 204);
+							 btn2->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+								 static_cast<System::Int32>(static_cast<System::Byte>(87)));
+							 btn2->FlatStyle = System::Windows::Forms::FlatStyle::Popup;
+							 btn2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+								 static_cast<System::Byte>(0)));
+							 btn2->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(252)), static_cast<System::Int32>(static_cast<System::Byte>(253)), 
+								 static_cast<System::Int32>(static_cast<System::Byte>(247)));
+							 btn2->Location = System::Drawing::Point(400, 170);
 							 btn2->Click += gcnew System::EventHandler(this,&UserControl_Room_Types2::back_button_click);
 							 this->Controls->Add(btn2);
 
@@ -395,7 +419,7 @@ ErrExit:
 			 }
 
 
-};
+	};
 
 
 }

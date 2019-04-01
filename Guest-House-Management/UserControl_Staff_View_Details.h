@@ -105,26 +105,31 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(94, 54);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(87, 17);
+			this->label1->Size = System::Drawing::Size(118, 24);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Employee ID";
 			// 
 			// Text_ID
 			// 
-			this->Text_ID->Location = System::Drawing::Point(265, 54);
+			this->Text_ID->Location = System::Drawing::Point(265, 56);
 			this->Text_ID->Name = L"Text_ID";
 			this->Text_ID->ReadOnly = true;
 			this->Text_ID->Size = System::Drawing::Size(249, 22);
 			this->Text_ID->TabIndex = 1;
+			this->Text_ID->TextChanged += gcnew System::EventHandler(this, &UserControl_Staff_View_Details::Text_ID_TextChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(94, 21);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(45, 17);
+			this->label2->Size = System::Drawing::Size(61, 24);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"Name";
 			// 
@@ -139,15 +144,17 @@ namespace GuestHouseManagement {
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(94, 94);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(83, 17);
+			this->label3->Size = System::Drawing::Size(109, 24);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"Designation";
 			// 
 			// Text_Desig
 			// 
-			this->Text_Desig->Location = System::Drawing::Point(265, 94);
+			this->Text_Desig->Location = System::Drawing::Point(265, 96);
 			this->Text_Desig->Name = L"Text_Desig";
 			this->Text_Desig->ReadOnly = true;
 			this->Text_Desig->Size = System::Drawing::Size(249, 22);
@@ -156,15 +163,17 @@ namespace GuestHouseManagement {
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label4->Location = System::Drawing::Point(94, 136);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(84, 17);
+			this->label4->Size = System::Drawing::Size(108, 24);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"Date of Join";
 			// 
 			// Text_Join
 			// 
-			this->Text_Join->Location = System::Drawing::Point(265, 136);
+			this->Text_Join->Location = System::Drawing::Point(265, 137);
 			this->Text_Join->Name = L"Text_Join";
 			this->Text_Join->ReadOnly = true;
 			this->Text_Join->Size = System::Drawing::Size(249, 22);
@@ -173,15 +182,17 @@ namespace GuestHouseManagement {
 			// label5
 			// 
 			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(94, 174);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(56, 17);
+			this->label5->Size = System::Drawing::Size(74, 24);
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Gender";
 			// 
 			// Text_Gender
 			// 
-			this->Text_Gender->Location = System::Drawing::Point(265, 174);
+			this->Text_Gender->Location = System::Drawing::Point(265, 175);
 			this->Text_Gender->Name = L"Text_Gender";
 			this->Text_Gender->ReadOnly = true;
 			this->Text_Gender->Size = System::Drawing::Size(249, 22);
@@ -191,9 +202,11 @@ namespace GuestHouseManagement {
 			// label6
 			// 
 			this->label6->AutoSize = true;
+			this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label6->Location = System::Drawing::Point(94, 224);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(87, 17);
+			this->label6->Size = System::Drawing::Size(110, 24);
 			this->label6->TabIndex = 10;
 			this->label6->Text = L"Date of Birth";
 			// 
@@ -208,9 +221,11 @@ namespace GuestHouseManagement {
 			// label7
 			// 
 			this->label7->AutoSize = true;
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(94, 276);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(91, 17);
+			this->label7->Size = System::Drawing::Size(117, 24);
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"Identity Proof";
 			// 
@@ -225,9 +240,11 @@ namespace GuestHouseManagement {
 			// label8
 			// 
 			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label8->Location = System::Drawing::Point(94, 330);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(60, 17);
+			this->label8->Size = System::Drawing::Size(80, 24);
 			this->label8->TabIndex = 14;
 			this->label8->Text = L"Address";
 			// 
@@ -244,9 +261,11 @@ namespace GuestHouseManagement {
 			// label9
 			// 
 			this->label9->AutoSize = true;
+			this->label9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label9->Location = System::Drawing::Point(94, 386);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(110, 17);
+			this->label9->Size = System::Drawing::Size(147, 24);
 			this->label9->TabIndex = 16;
 			this->label9->Text = L"Contact Number";
 			// 
@@ -262,11 +281,14 @@ namespace GuestHouseManagement {
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(94, 434);
+			this->label10->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label10->Location = System::Drawing::Point(94, 433);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(42, 17);
+			this->label10->Size = System::Drawing::Size(57, 24);
 			this->label10->TabIndex = 18;
 			this->label10->Text = L"Email";
+			this->label10->Click += gcnew System::EventHandler(this, &UserControl_Staff_View_Details::label10_Click);
 			// 
 			// Text_Email
 			// 
@@ -283,15 +305,17 @@ namespace GuestHouseManagement {
 			this->Text_Resignation->Multiline = true;
 			this->Text_Resignation->Name = L"Text_Resignation";
 			this->Text_Resignation->ReadOnly = true;
-			this->Text_Resignation->Size = System::Drawing::Size(249, 22);
+			this->Text_Resignation->Size = System::Drawing::Size(249, 24);
 			this->Text_Resignation->TabIndex = 21;
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label11->Location = System::Drawing::Point(94, 471);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(128, 17);
+			this->label11->Size = System::Drawing::Size(165, 24);
 			this->label11->TabIndex = 20;
 			this->label11->Text = L"Date of resignation";
 			// 
@@ -367,6 +391,10 @@ namespace GuestHouseManagement {
 	private: System::Void textBox1_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void Text_Address_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void Text_ID_TextChanged(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void label10_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	};
 }

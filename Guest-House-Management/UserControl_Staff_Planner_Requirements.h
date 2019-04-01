@@ -112,10 +112,13 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label1->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label1->Location = System::Drawing::Point(62, 37);
+			this->label1->Location = System::Drawing::Point(46, 30);
+			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(99, 17);
+			this->label1->Size = System::Drawing::Size(103, 18);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Housekeeping";
 			this->label1->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner_Requirements::label1_Click);
@@ -123,96 +126,116 @@ namespace GuestHouseManagement {
 			// label2
 			// 
 			this->label2->AutoSize = true;
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label2->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label2->Location = System::Drawing::Point(62, 179);
+			this->label2->Location = System::Drawing::Point(55, 135);
+			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(59, 17);
+			this->label2->Size = System::Drawing::Size(61, 18);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Security";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label3->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label3->Location = System::Drawing::Point(62, 86);
+			this->label3->Location = System::Drawing::Point(46, 65);
+			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(96, 17);
+			this->label3->Size = System::Drawing::Size(103, 18);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Room Service";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
+			this->label4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.8F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label4->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
-			this->label4->Location = System::Drawing::Point(62, 124);
+			this->label4->Location = System::Drawing::Point(46, 100);
+			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(86, 17);
+			this->label4->Size = System::Drawing::Size(90, 18);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Receptionist";
 			// 
 			// hk_tb1
 			// 
-			this->hk_tb1->Location = System::Drawing::Point(232, 43);
+			this->hk_tb1->Location = System::Drawing::Point(174, 35);
+			this->hk_tb1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->hk_tb1->Name = L"hk_tb1";
-			this->hk_tb1->Size = System::Drawing::Size(107, 22);
+			this->hk_tb1->Size = System::Drawing::Size(81, 20);
 			this->hk_tb1->TabIndex = 4;
 			this->hk_tb1->TextChanged += gcnew System::EventHandler(this, &UserControl_Staff_Planner_Requirements::hk_tb1_TextChanged);
 			// 
 			// s_tb1
 			// 
-			this->s_tb1->Location = System::Drawing::Point(232, 179);
+			this->s_tb1->Location = System::Drawing::Point(174, 145);
+			this->s_tb1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->s_tb1->Name = L"s_tb1";
-			this->s_tb1->Size = System::Drawing::Size(107, 22);
+			this->s_tb1->Size = System::Drawing::Size(81, 20);
 			this->s_tb1->TabIndex = 5;
 			// 
 			// r_tb1
 			// 
-			this->r_tb1->Location = System::Drawing::Point(232, 124);
+			this->r_tb1->Location = System::Drawing::Point(174, 108);
+			this->r_tb1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->r_tb1->Name = L"r_tb1";
-			this->r_tb1->Size = System::Drawing::Size(107, 22);
+			this->r_tb1->Size = System::Drawing::Size(81, 20);
 			this->r_tb1->TabIndex = 6;
 			// 
 			// rs_tb1
 			// 
-			this->rs_tb1->Location = System::Drawing::Point(232, 86);
+			this->rs_tb1->Location = System::Drawing::Point(174, 72);
+			this->rs_tb1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->rs_tb1->Name = L"rs_tb1";
-			this->rs_tb1->Size = System::Drawing::Size(107, 22);
+			this->rs_tb1->Size = System::Drawing::Size(81, 20);
 			this->rs_tb1->TabIndex = 7;
 			// 
 			// hk_tb2
 			// 
-			this->hk_tb2->Location = System::Drawing::Point(399, 43);
+			this->hk_tb2->Location = System::Drawing::Point(281, 35);
+			this->hk_tb2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->hk_tb2->Name = L"hk_tb2";
-			this->hk_tb2->Size = System::Drawing::Size(107, 22);
+			this->hk_tb2->Size = System::Drawing::Size(81, 20);
 			this->hk_tb2->TabIndex = 8;
 			// 
 			// rs_tb2
 			// 
-			this->rs_tb2->Location = System::Drawing::Point(399, 86);
+			this->rs_tb2->Location = System::Drawing::Point(281, 72);
+			this->rs_tb2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->rs_tb2->Name = L"rs_tb2";
-			this->rs_tb2->Size = System::Drawing::Size(107, 22);
+			this->rs_tb2->Size = System::Drawing::Size(81, 20);
 			this->rs_tb2->TabIndex = 9;
 			// 
 			// r_tb2
 			// 
-			this->r_tb2->Location = System::Drawing::Point(399, 124);
+			this->r_tb2->Location = System::Drawing::Point(281, 110);
+			this->r_tb2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->r_tb2->Name = L"r_tb2";
-			this->r_tb2->Size = System::Drawing::Size(107, 22);
+			this->r_tb2->Size = System::Drawing::Size(81, 20);
 			this->r_tb2->TabIndex = 10;
 			// 
 			// s_tb2
 			// 
-			this->s_tb2->Location = System::Drawing::Point(402, 176);
+			this->s_tb2->Location = System::Drawing::Point(281, 147);
+			this->s_tb2->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->s_tb2->Name = L"s_tb2";
-			this->s_tb2->Size = System::Drawing::Size(107, 22);
+			this->s_tb2->Size = System::Drawing::Size(81, 20);
 			this->s_tb2->TabIndex = 11;
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(247, 18);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(194, 15);
+			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(33, 17);
+			this->label5->Size = System::Drawing::Size(31, 17);
 			this->label5->TabIndex = 12;
 			this->label5->Text = L"Day";
 			this->label5->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner_Requirements::label5_Click);
@@ -220,40 +243,47 @@ namespace GuestHouseManagement {
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(436, 18);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(312, 15);
+			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(41, 17);
+			this->label6->Size = System::Drawing::Size(40, 17);
 			this->label6->TabIndex = 13;
 			this->label6->Text = L"Night";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Italic, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(14, 296);
+			this->label7->Location = System::Drawing::Point(28, 248);
+			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(510, 20);
+			this->label7->Size = System::Drawing::Size(334, 15);
 			this->label7->TabIndex = 14;
 			this->label7->Text = L"Edit your maxinum employee requirements in each category";
 			// 
 			// update
 			// 
+			this->update->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->update->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.2F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->update->Location = System::Drawing::Point(242, 225);
+			this->update->Location = System::Drawing::Point(158, 183);
+			this->update->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->update->Name = L"update";
-			this->update->Size = System::Drawing::Size(141, 51);
+			this->update->Size = System::Drawing::Size(106, 41);
 			this->update->TabIndex = 15;
 			this->update->Text = L"Update ";
-			this->update->UseVisualStyleBackColor = true;
+			this->update->UseVisualStyleBackColor = false;
 			this->update->Click += gcnew System::EventHandler(this, &UserControl_Staff_Planner_Requirements::update_Click);
 			// 
 			// UserControl_Staff_Planner_Requirements
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->BackColor = System::Drawing::SystemColors::ActiveCaptionText;
+			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
+			this->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
 			this->Controls->Add(this->update);
 			this->Controls->Add(this->label7);
 			this->Controls->Add(this->label6);
@@ -271,8 +301,9 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
 			this->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"UserControl_Staff_Planner_Requirements";
-			this->Size = System::Drawing::Size(540, 395);
+			this->Size = System::Drawing::Size(405, 321);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Planner_Requirements::UserControl_Staff_Planner_Requirements_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

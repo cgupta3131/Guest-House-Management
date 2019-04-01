@@ -21,7 +21,7 @@ namespace GuestHouseManagement {
 		Panel ^pn2;
 		Panel ^pn3;
 		Panel ^pn4;
-	private: System::Windows::Forms::Label^  label5;
+	private: System::Windows::Forms::Label^  label11;
 	public: 
 		Panel ^pn5;
 
@@ -55,6 +55,7 @@ namespace GuestHouseManagement {
 	private: System::Windows::Forms::PictureBox^  pictureBox1;
 	internal: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Panel^  Mess_Panel;
+
 	internal: 
 
 	internal: 
@@ -81,7 +82,7 @@ namespace GuestHouseManagement {
 			this->pictureBox1 = (gcnew System::Windows::Forms::PictureBox());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->Mess_Panel = (gcnew System::Windows::Forms::Panel());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^  >(this->pictureBox1))->BeginInit();
 			this->Mess_Panel->SuspendLayout();
 			this->SuspendLayout();
@@ -153,23 +154,23 @@ namespace GuestHouseManagement {
 			this->Mess_Panel->Size = System::Drawing::Size(453, 311);
 			this->Mess_Panel->TabIndex = 77;
 			// 
-			// label5
+			// label11
 			// 
-			this->label5->AutoSize = true;
-			this->label5->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
+			this->label11->AutoSize = true;
+			this->label11->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(159)), static_cast<System::Int32>(static_cast<System::Byte>(184)), 
 				static_cast<System::Int32>(static_cast<System::Byte>(209)));
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 18, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point, 
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(369, 28);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(216, 29);
-			this->label5->TabIndex = 78;
-			this->label5->Text = L"Add Mess Details";
+			this->label11->Location = System::Drawing::Point(335, 29);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(216, 29);
+			this->label11->TabIndex = 80;
+			this->label11->Text = L"Add Mess Details";
 			// 
 			// UserControl_Add_Mess
 			// 
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Inherit;
-			this->Controls->Add(this->label5);
+			this->Controls->Add(this->label11);
 			this->Controls->Add(this->Mess_Panel);
 			this->Controls->Add(this->button2);
 			this->Controls->Add(this->button1);

@@ -83,42 +83,48 @@ namespace GuestHouseManagement {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(100, 84);
+			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label1->Location = System::Drawing::Point(201, 112);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(53, 13);
+			this->label1->Size = System::Drawing::Size(107, 25);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"Employee";
 			// 
 			// comboBox1
 			// 
 			this->comboBox1->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Location = System::Drawing::Point(208, 84);
+			this->comboBox1->Location = System::Drawing::Point(371, 109);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
-			this->comboBox1->Size = System::Drawing::Size(165, 21);
+			this->comboBox1->Size = System::Drawing::Size(165, 28);
 			this->comboBox1->TabIndex = 1;
 			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &UserControl_Staff_Leave::comboBox1_SelectedIndexChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(103, 131);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(201, 187);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(30, 13);
+			this->label2->Size = System::Drawing::Size(61, 25);
 			this->label2->TabIndex = 2;
 			this->label2->Text = L"From";
 			// 
 			// dateTimePicker1
 			// 
 			this->dateTimePicker1->CustomFormat = L"dd-MM-yyyy";
+			this->dateTimePicker1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->dateTimePicker1->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker1->Location = System::Drawing::Point(208, 131);
+			this->dateTimePicker1->Location = System::Drawing::Point(371, 191);
 			this->dateTimePicker1->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker1->Name = L"dateTimePicker1";
-			this->dateTimePicker1->Size = System::Drawing::Size(165, 20);
+			this->dateTimePicker1->Size = System::Drawing::Size(165, 26);
 			this->dateTimePicker1->TabIndex = 3;
 			this->dateTimePicker1->Value = System::DateTime(2019, 3, 17, 0, 0, 0, 0);
 			this->dateTimePicker1->ValueChanged += gcnew System::EventHandler(this, &UserControl_Staff_Leave::dateTimePicker1_ValueChanged);
@@ -126,33 +132,41 @@ namespace GuestHouseManagement {
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(103, 176);
+			this->label3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label3->Location = System::Drawing::Point(201, 269);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(20, 13);
+			this->label3->Size = System::Drawing::Size(37, 25);
 			this->label3->TabIndex = 4;
 			this->label3->Text = L"To";
 			// 
 			// dateTimePicker2
 			// 
 			this->dateTimePicker2->CustomFormat = L"dd-MM-yyyy";
+			this->dateTimePicker2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12));
 			this->dateTimePicker2->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
-			this->dateTimePicker2->Location = System::Drawing::Point(208, 172);
+			this->dateTimePicker2->Location = System::Drawing::Point(371, 273);
 			this->dateTimePicker2->Margin = System::Windows::Forms::Padding(2);
 			this->dateTimePicker2->Name = L"dateTimePicker2";
-			this->dateTimePicker2->Size = System::Drawing::Size(165, 20);
+			this->dateTimePicker2->Size = System::Drawing::Size(165, 26);
 			this->dateTimePicker2->TabIndex = 5;
 			this->dateTimePicker2->Value = System::DateTime(2019, 3, 17, 15, 46, 10, 0);
+			this->dateTimePicker2->ValueChanged += gcnew System::EventHandler(this, &UserControl_Staff_Leave::dateTimePicker2_ValueChanged);
 			// 
 			// btn_submit
 			// 
-			this->btn_submit->Location = System::Drawing::Point(208, 232);
+			this->btn_submit->BackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(35)), static_cast<System::Int32>(static_cast<System::Byte>(56)), 
+				static_cast<System::Int32>(static_cast<System::Byte>(87)));
+			this->btn_submit->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F));
+			this->btn_submit->ForeColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->btn_submit->Location = System::Drawing::Point(264, 367);
 			this->btn_submit->Margin = System::Windows::Forms::Padding(2);
 			this->btn_submit->Name = L"btn_submit";
-			this->btn_submit->Size = System::Drawing::Size(164, 32);
+			this->btn_submit->Size = System::Drawing::Size(153, 67);
 			this->btn_submit->TabIndex = 6;
 			this->btn_submit->Text = L"Submit";
-			this->btn_submit->UseVisualStyleBackColor = true;
+			this->btn_submit->UseVisualStyleBackColor = false;
 			this->btn_submit->Click += gcnew System::EventHandler(this, &UserControl_Staff_Leave::btn_submit_Click);
 			// 
 			// UserControl_Staff_Leave
@@ -167,7 +181,7 @@ namespace GuestHouseManagement {
 			this->Controls->Add(this->label1);
 			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"UserControl_Staff_Leave";
-			this->Size = System::Drawing::Size(539, 316);
+			this->Size = System::Drawing::Size(868, 553);
 			this->Load += gcnew System::EventHandler(this, &UserControl_Staff_Leave::UserControl_Staff_Leave_Load);
 			this->MouseEnter += gcnew System::EventHandler(this, &UserControl_Staff_Leave::mymouseenter);
 			this->ResumeLayout(false);
@@ -178,7 +192,7 @@ namespace GuestHouseManagement {
 	private: System::Void UserControl_Staff_Leave_Load(System::Object^  sender, System::EventArgs^  e) {
 				 Fillcombo();
 				 this->dateTimePicker1->MinDate=System::DateTime().Now;
-				 this->dateTimePicker2->MinDate=System::DateTime().Now;
+				 this->dateTimePicker2->MinDate=System::DateTime().Now.AddDays(1);
 				 //this->dateTimePicker2->Enabled=false;
 			 }
 
@@ -203,7 +217,7 @@ namespace GuestHouseManagement {
 						 //MessageBox::Show(newEntry);
 						 if(user_data->GetString(10) != "")
 							 continue;
-						comboBox1->Items->Add(newEntry);
+						 comboBox1->Items->Add(newEntry);
 					 }
 
 					 //cmd->ExecuteNonQuery();
@@ -306,7 +320,7 @@ namespace GuestHouseManagement {
 						 DB_Connection->Open();
 
 						 OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
-						 
+
 
 						 cmd->Parameters->Add(gcnew OleDbParameter("@Employee_Name",Convert::ToString(employeeName)));
 						 cmd->Parameters->Add(gcnew OleDbParameter("@EID",e_id));
@@ -334,7 +348,7 @@ namespace GuestHouseManagement {
 			 }
 	private: System::Void dateTimePicker1_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 				 //this->dateTimePicker2->Enabled=true;
-				 this->dateTimePicker2->MinDate=this->dateTimePicker1->Value;
+				 this->dateTimePicker2->MinDate=this->dateTimePicker1->Value.AddDays(1);
 
 			 }
 	private: System::Void mymouseenter(System::Object^  sender, System::EventArgs^  e) {
@@ -343,6 +357,8 @@ namespace GuestHouseManagement {
 				 pn3->Size = System::Drawing::Size(173, 44);
 				 pn4->Size = System::Drawing::Size(173, 44);
 				 pn5->Size = System::Drawing::Size(173, 44);
+			 }
+	private: System::Void dateTimePicker2_ValueChanged(System::Object^  sender, System::EventArgs^  e) {
 			 }
 };
 }

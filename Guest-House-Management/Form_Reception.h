@@ -1015,7 +1015,8 @@ namespace GuestHouseManagement {
 	private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
 				 button_hides();
-				 Output_Panel->Controls->Add(gcnew UserControl_Generate_Bill);
+				 //Output_Panel->Controls->Add(gcnew UserControl_Generate_Bill);
+				 Output_Panel->Controls->Add(gcnew UserControl_Generate_Bill(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_Housekeeping_App_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
@@ -1072,7 +1073,7 @@ namespace GuestHouseManagement {
 	private: System::Void button3_Click_1(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
 				 button_hides();
-				 //Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave_Approval(panel1,panel2,panel3,panel4,panel5));
+				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave_Approval(panel1,panel2,panel3,panel4,panel5));
 			 }
 
 
@@ -1175,7 +1176,7 @@ namespace GuestHouseManagement {
 	private: System::Void Leave_Button_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();
 				 button_hides();
-				 //Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave(panel1,panel2,panel3,panel4,panel5));
+				 Output_Panel->Controls->Add(gcnew UserControl_Staff_Leave(panel1,panel2,panel3,panel4,panel5));
 			 }
 	private: System::Void Btn_Edit_Records_Click(System::Object^  sender, System::EventArgs^  e) {
 				 Output_Panel->Controls->Clear();

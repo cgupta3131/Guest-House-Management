@@ -152,6 +152,8 @@ namespace GuestHouseManagement {
 			}
 			cliext::vector<String^> room_full_data;
 			String ^temp;
+			String ^aux_datefrom = datefrom;
+			String ^aux_dateto = dateto;
 			for(int j=0;j<room_type->Length;j++)
 			{
 				if(room_type[j] == ',')
@@ -191,7 +193,7 @@ namespace GuestHouseManagement {
 				{
 					
 					String ^room_number = room_data2->GetString(1);
-					MessageBox::Show(room_number);
+					//MessageBox::Show(room_number);
 					vec.push_back(room_number);
 				}
 
@@ -204,19 +206,23 @@ namespace GuestHouseManagement {
 				}
 				String ^room_to_be_booked = vec[0];
 				cliext::vector<String^> vec_can_be_booked;
-				MessageBox::Show("3");
-				for(int i=0;i<vec.size();i++)
+				//MessageBox::Show("3");
+				for(int p=0;p<vec.size();p++)
 				{
-					//vec[i] denotes the Potential Room No. Available
+					//vec[p] denotes the Potential Room No. Available
+					//MessageBox::Show("Potential" + vec[p]);
+
 					DB_Connection->Open();
 					String ^getUsers = "Select * from [Booking_Request] where [Approved] = 'YES' ;";
 					cmd = gcnew OleDbCommand(getUsers,DB_Connection);
 					OleDbDataReader ^roomdata = cmd->ExecuteReader();
 					int flag = 0;
+
 					while(roomdata->Read() == true)
 					{
-						String ^temp_room_num = room_data->GetString(14);
+						String ^temp_room_num = roomdata->GetString(14);
 						//MessageBox::Show(temp_room_num);
+
 						cliext::vector<String^> vec2;
 						String ^store = "";
 						for(int k=0;k<temp_room_num->Length;k++)
@@ -234,7 +240,7 @@ namespace GuestHouseManagement {
 						int aux = 0;
 						for(int k=0;k<vec2.size();k++)
 						{
-							if(vec2[k] == vec[i])
+							if(vec2[k] == vec[p])
 							{
 								aux=1;
 								break;
@@ -260,43 +266,43 @@ namespace GuestHouseManagement {
 						int dateto_int = System::Convert::ToInt32(dateto2);
 						int mydatefrom_int = System::Convert::ToInt32(datefrom);
 						int mydateto_int = System::Convert::ToInt32(dateto);
+						datefrom = aux_datefrom;
+						dateto = aux_dateto;
 						//MessageBox::Show(Convert::ToString(temp[4]));
 						if(mydatefrom_int < datefrom_int)
 						{
 							if(mydateto_int <= datefrom_int)
 							{
-								vec_can_be_booked.push_back(vec[i]);
-															}
+								vec_can_be_booked.push_back(vec[p]);
+							}
 							else
 							{
-								
 							}
 						}
 
 						else if(mydatefrom_int == datefrom_int)
 						{
-							
 						}
 
 						else if(mydatefrom_int > datefrom_int)
 						{
 							if(mydatefrom_int >= dateto_int)
 							{
-								vec_can_be_booked.push_back(vec[i]);
-								
+								vec_can_be_booked.push_back(vec[p]);
 							}
 							else
 							{
-								
 							}
 						}
 
 					}
 
-					if(flag == 0)
-						vec_can_be_booked.push_back(vec[i]);
+					
 					DB_Connection->Close();
-				
+					
+					//this line is added at last if issue remove it
+					if(vec_can_be_booked.size() == room_cnt )break;
+
 				}
 
 				if(vec_can_be_booked.size() < room_cnt )
@@ -307,14 +313,18 @@ namespace GuestHouseManagement {
 				}
 					
 				else
-					for(int i=0;i<room_cnt;i++)
-						 room_numbers = room_numbers + vec_can_be_booked[i] + ","; 
+				{
+					for(int r=0;r<room_cnt;r++)
+						room_numbers = room_numbers + vec_can_be_booked[r] + ","; 
+				}
+
+					
 			}
 
 			if(f == 1)
 			{
 				DB_Connection->Open();
-				String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app, [Room_No] = '" + room_numbers + "' Where [ID] = @idNum;";
+				String ^ approveUser = "UPDATE Booking_Request SET [Approved] = @app, [Room_No] = '" + room_numbers + "', [Status_Feedback]='Unread', [Checked_Out]='NO', [Comments_Feedback]=''  Where [ID] = @idNum;";
 				cmd = gcnew OleDbCommand(approveUser, DB_Connection);
 				cmd->Parameters->AddWithValue("@app", "YES");
 				cmd->Parameters->AddWithValue("@idNum", x);

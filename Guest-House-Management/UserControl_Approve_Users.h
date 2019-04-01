@@ -159,7 +159,6 @@ namespace GuestHouseManagement {
 				OleDbDataReader ^ users_data = cmd->ExecuteReader();
 
 				int i=0;
-				MessageBox::Show("Chirag");
 				while(users_data->Read() == true)
 				{
 					i=i+1;
